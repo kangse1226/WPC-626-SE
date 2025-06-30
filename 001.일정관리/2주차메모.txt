@@ -41,3 +41,13 @@ https://www.awwwards.com/sites/balance-4
     선택> modify> border(테두리)/smooth(부드럽게)/ expand(확장)/contract(줄이기)/feather : 선택툴 픽셀 조절
 
     지우고 배경고려해서 채우기 cotent-aware fill
+
+
+다시 코딩
+
+html 구조화할 수 있는 언어다!
+    소문자로 작성
+    속성값은 "" 쌍따옴표
+        <요소명 속성명="값">
+    요소와 속성명, 속성끼리는 한칸씩 띄우는게 약속
+    
