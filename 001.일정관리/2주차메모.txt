@@ -26,3 +26,6 @@ https://www.awwwards.com/sites/balance-4
 
 그래서 커밋은 작은 단위로 해야 수정하기 편리하다
 커밋단위로 리버트하며 수정하니까
+
+
+.gitignore 파일명으로 등록하면 안올라감: 버전관리할 필요 없는 것들 
