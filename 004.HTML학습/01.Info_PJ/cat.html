@@ -4,14 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <style>
+      html, body, hi, h2, ul{
+        margin: 0;
+        padding: 0;
+      }
+      .top-area{
+        max-width: 1280px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        border: 5px solid #2517a0;
+        text-align: center;
+        padding: 20px;
+        background-color: #f3f5fc;
+      }
+      .main-area{
+        max-width: 1280px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        border: 5px solid #f5a716;
+      }
+      .bottom-area{
+        max-width: 1280px;
+        box-sizing: border-box; 
+        text-align: center;
+        border: 3px solid #2517a0;
+      }
+      .menu ul{
+        list-style: none;
+      }
+      .menu li{
+        display: inline-block;
+        padding: 0 5px ;
+      }
+    </style>
   </head>
   <body>
     <header class="top-area">
       <h1 id="main-title">고양이가 세상을 지배한다</h1>
-      <nav class="manu">
+      <nav class="menu">
         <li>고양이를 자랑한다</li>
         <li>집사가 된다</li>
-        <li>물건을 바친다</li>
+        <li>물건을 산다</li>
         <li>후원한다</li>
       </nav>
     </header>
@@ -20,11 +55,11 @@
       <img src="./images/고양이파티.jpg" alt="위대한고양이사진" style="width: 100%;" />
     </main>
 
-    <footer>
-      <div>
+    <footer class="bottom-area">
+      <address>
         랜선집사 모집 <br />
-        email: kangse1226@gmail.com
-      </div>
+        email: kangse1226@gmail.com <br />
+      </address>
     </footer>
   </body>
 </html>
