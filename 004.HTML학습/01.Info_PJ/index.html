@@ -27,19 +27,7 @@
           /* 크기를 주면 기본적으로 내부 컨텐트 영역의 크기이며 패딩과 보더는 바깥쪽에 생긴다!
           이런박스를 컨텐트 박스라고 한다! */
 
-          /* 최대가로크기 maw (그냥w숫자하면 가로스크롤이 생기니까 maw숫자로 한다)*/
-          max-width: 1280px;
-          /* 효과는 1280px보다 부모박스 크기가 작아지면 auto로 전환되고, 이것보다 커지면 더이상 커지지 않고 크기를 유지함! */
-
-
-          /* 보더박스 만들기(크기에 보더까지 포함) */
-          box-sizing: border-box; 
-
-          /* 블록요소 가로 중앙정렬하기 
-          -> 양쪽 마진을 auto로 주면 된다! 
-          마진 0 auto 가 유명함
-          margin: 0 auto;  */
-          margin: 0 auto;
+         /* 여기있던 마영오 등을 공통클래스로 옮김 */
 
         /* 테두리 bd - border: 두께 종류 색상 */
         border: 5px solid #020077;
@@ -56,21 +44,6 @@
 
         /* 배경색 bgc */
         background-color: #dde4f8;
-      }
-
-      /* 메인 이미지 영역 박스도 상단 박스와 사이즈 동일하게 맞춤 */
-      .main-area{
-        max-width: 1280px;
-        margin: 0 auto;
-
-      }
-
-      /* 하단 주소 박스도 사이즈 맞춤 */
-      .bottom-area{
-        max-width: 1280px;
-        margin: 0 auto;
-        border: 3px solid #fa1313;
-        text-align: center;
       }
 
       /* 메뉴박스 */
@@ -92,12 +65,35 @@
         padding: 0 5px;
       }
 
+      /* 2. 공통클래스 */
+      /* 메인 이미지 영역 박스, 하단박스도 상단 박스와 사이즈 동일하게 맞춤
+      -> 메인 박스랑 하단 박스를 각각 코딩하면 각각 바꿔야하고 길어지니까 별로임
+      -> 공통클래스로 묶으면 관리하기 편해짐. 그리고 클래스도 각각 줘야함 */
+      .common-box{
+        /* 최대가로크기 maw (그냥w숫자하면 가로스크롤이 생기니까 maw숫자로 한다)*/
+          max-width: 1280px;
+          /* 효과는 1280px보다 부모박스 크기가 작아지면 auto로 전환되고, 
+          이것보다 커지면 더이상 커지지 않고 크기를 유지함! */
+
+
+          /* 보더박스 만들기(크기에 보더까지 포함) */
+          box-sizing: border-box; 
+
+          /* 블록요소 가로 중앙정렬하기 
+          -> 양쪽 마진을 auto로 주면 된다! 
+          마진 0 auto 가 유명함 마영오!
+          margin: 0 auto;  */
+          margin: 0 auto;
+      }
+      
+
+
     </style>
   </head>
   <!-- body요소 : 웹문서 본문 출력 -->
   <body>
     <!-- 1. 상단영역 -->
-    <header class="top-area">
+    <header class="top-area common-box">
       <!-- h1요소는 큰 제목 -->
       <h1 id="main-title">네이버 요약 뉴스</h1>
 
@@ -117,7 +113,7 @@
     </header>
 
     <!-- 2. 메인영역 -->
-    <main class="main-area">
+    <main class="main-area common-box">
       <!-- 메인 이미지 -->
       <img
         src="./images/Artboard 1.jpg"
@@ -127,7 +123,7 @@
     </main>
 
     <!-- 3. 하단영역 -->
-    <footer class="bottom-area">
+    <footer class="bottom-area common-box">
       <!-- br요소: 줄바꿈 -->
       <address>
         서울시 강남구 역삼동 119 대호B 8F <br />
