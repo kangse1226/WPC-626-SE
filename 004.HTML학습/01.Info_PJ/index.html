@@ -14,7 +14,12 @@
       /* 기본문법: 선택자{속성:값;} */
 
       /* 기본값 초기화 - 마진,패딩 0 */
-      html, body, h1, h2, h3, ul{
+      html,
+      body,
+      h1,
+      h2,
+      h3,
+      ul {
         margin: 0;
         padding: 0;
       }
@@ -23,24 +28,14 @@
       .top-area {
         /* 가로크기 w - width: 크기값
          가로크기를 안주면 auto가 기본값, w숫자 쓰면 픽셀까지 나옴 */
-         /* width: 1280px; */
-          /* 크기를 주면 기본적으로 내부 컨텐트 영역의 크기이며 패딩과 보더는 바깥쪽에 생긴다!
+        /* width: 1280px; */
+        /* 크기를 주면 기본적으로 내부 컨텐트 영역의 크기이며 패딩과 보더는 바깥쪽에 생긴다!
           이런박스를 컨텐트 박스라고 한다! */
 
-         /* 여기있던 마영오 등을 공통클래스로 옮김 */
+        /* 여기있던 마영오 등을 공통클래스로 옮김 */
 
-        /* 테두리 bd - border: 두께 종류 색상 */
-        border: 5px solid #020077;
-        /* 글자중앙정렬 tac */
+        /* 글자중앙정렬 tac 중앙정렬은 따로 잡아야함- 중간에 글자 좌측정렬이라서*/
         text-align: center;
-        /* 패딩 p 패딩 셋팅법(마진도 동일함) 
-        padding: 값;(4방향 공통)
-         padding: 값 값; (위아래 양쪽)
-          padding: 값 값 값; 위 양쪽 아래 
-          padding: 값 값 값 값; 위 오른 아래 왼
-        -> 물론 방향별 속성이 따로 있음
-        /* padding-top, padding-bottom,padding-right, padding-left  */
-        padding: 30px;
 
         /* 배경색 bgc */
         background-color: #dde4f8;
@@ -48,7 +43,7 @@
 
       /* 메뉴박스 */
       /* .menu ul (메뉴 밑에 유엘) */
-      .menu ul{
+      .menu ul {
         /* 기본블릿없앰 */
         list-style: none;
         /* 자식요소 옆으로 흐르게 변경-> flex는 나중에 적용할 예정! 중요하기 때문 */
@@ -58,7 +53,7 @@
       }
 
       /* li 리스트 요소 */
-      .menu li{
+      .menu li {
         /* 인라인 블록으로 display 변경: 이게 float보다 쉬움. 인라인으로 하면 위아래 마진이 안들어가서 인라인 블록으로 함*/
         display: inline-block;
         /* 패딩 p - padding: 위아래 양쪽 */
@@ -67,26 +62,54 @@
 
       /* 2. 공통클래스 */
       /* 메인 이미지 영역 박스, 하단박스도 상단 박스와 사이즈 동일하게 맞춤
-      -> 메인 박스랑 하단 박스를 각각 코딩하면 각각 바꿔야하고 길어지니까 별로임
-      -> 공통클래스로 묶으면 관리하기 편해짐. 그리고 클래스도 각각 줘야함 */
-      .common-box{
+        -> 메인 박스랑 하단 박스를 각각 코딩하면 각각 바꿔야하고 길어지니까 별로임
+        -> 공통클래스로 묶으면 관리하기 편해짐. 그리고 클래스도 각각 줘야함 */
+      .common-box {
         /* 최대가로크기 maw (그냥w숫자하면 가로스크롤이 생기니까 maw숫자로 한다)*/
-          max-width: 1280px;
-          /* 효과는 1280px보다 부모박스 크기가 작아지면 auto로 전환되고, 
+        max-width: 1280px;
+        /* 효과는 1280px보다 부모박스 크기가 작아지면 auto로 전환되고, 
           이것보다 커지면 더이상 커지지 않고 크기를 유지함! */
 
+        /* 보더박스 만들기(크기에 보더까지 포함) */
+        box-sizing: border-box;
 
-          /* 보더박스 만들기(크기에 보더까지 포함) */
-          box-sizing: border-box; 
-
-          /* 블록요소 가로 중앙정렬하기 
+        /* 블록요소 가로 중앙정렬하기 
           -> 양쪽 마진을 auto로 주면 된다! 
           마진 0 auto 가 유명함 마영오!
           margin: 0 auto;  */
-          margin: 0 auto;
-      }
-      
+        margin: 0 auto;
 
+        /* 테두리 bd - border: 두께 종류 색상 */
+        border: 3px dashed #020077;
+
+        /* 패딩 p 패딩 셋팅법(마진도 동일함) 
+         padding: 값;(4방향 공통)
+         padding: 값 값; (위아래 양쪽)
+         padding: 값 값 값; 위 양쪽 아래 
+         padding: 값 값 값 값; 위 오른 아래 왼
+         -> 물론 방향별 속성이 따로 있음
+         /* padding-top, padding-bottom,padding-right, padding-left  */
+        padding: 10px;
+
+        /* 둥근 보더 모서리 bdrs숫자 - border-radius */
+        border-radius: 20px;
+      }
+
+      /* 알쉬에이 일부분 주석 */
+      /* 2. 메인 영역 */
+      /* 위 아래 마진 넣기 */
+      .main-area{
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      /* 3. 하단 영역 */
+      .bottom-area{
+      /* 블록 내부 인라인 중앙정렬 tac */
+      text-align: center;
+      /* 배경색 bgc */
+        background-color: #dde4f8;
+      }
 
     </style>
   </head>
