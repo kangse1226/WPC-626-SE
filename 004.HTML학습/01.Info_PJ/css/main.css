@@ -190,6 +190,8 @@ ul {
 .main-area {
   margin-top: 20px;
   margin-bottom: 20px;
+  padding: 0;
+  overflow: hidden; /*이미지가 꽉차게 보이고 안튀어나오게 하는거; 클리핑마스크처럼 -자식요소가 부모보다 커지면 부모박스가 커지게 함 */
 }
 
 /* 3. 하단 영역 */
