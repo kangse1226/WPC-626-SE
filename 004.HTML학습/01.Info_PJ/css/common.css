@@ -1,0 +1,229 @@
+@charset "utf-8";
+/* 공통모듈 CSS - common.css */
+/* 메인CSS에 있는 걸 다 옮겨 상위조직에서 수정하면 연결된 하위조직에는 자동으로 반영되게하는거임 */
+
+/* 웹폰트 cdn으로 불러오기 제이쿼리도 cdn으로 불러온대
+컨텐트를 네트워크로 배달해
+CDN (Content Delivery Network)은 어떤 웹파일을 네트워크로 불러오는 것임!*/
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Do+Hyeon&family=Noto+Sans+R:wght@100..900&display=swap");
+
+/* 웹폰트 적용 코드*/
+/* font-family: "Noto Sans KR", sans-serif;
+font-family: "Bagel Fat One", system-ui;
+font-family: "Do Hyeon", sans-serif; */
+
+/* 전체 글씨체 적용하기 */
+body {
+  /* 웹폰트체를 전체에 적용함! 띄어쓰기가 필요한 건 ""로 씀. 붙어있거나 -있는건 ""안씀 */
+font-family: "Do Hyeon", sans-serif;
+}
+
+/* 기본값 초기화 - 마진,패딩 0 */
+html,
+body,
+h1,
+h2,
+h3,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* 1.상단영역 */
+.top-area {
+  /* 가로크기 w - width: 크기값
+         가로크기를 안주면 auto가 기본값, w숫자 쓰면 픽셀까지 나옴 */
+  /* width: 1280px; */
+  /* 크기를 주면 기본적으로 내부 컨텐트 영역의 크기이며 패딩과 보더는 바깥쪽에 생긴다!
+          이런박스를 컨텐트 박스라고 한다! */
+
+  /* 여기있던 마영오 등을 공통클래스로 옮김 */
+
+  /* 글자중앙정렬 tac 중앙정렬은 따로 잡아야함- 중간에 글자 좌측정렬이라서*/
+  text-align: center;
+
+  /* 배경색 bgc */
+  background-color: #faeded;
+}
+
+/* 메인타이틀 */
+#main-title {
+  /* 글자체 ff 폰트패밀리 */
+  /* 궁서,굴림,돋움 이렇게 쓰면 앞순서대로 폰트적용되고 
+  없으면 다음폰트 다 없으면 브라우저기본폰트
+  글자체를 뒤에 콤마로 여러개 쓰면 
+  지원되는 글자체를 순서대로 적용함
+  만약 없으면 브라우저 기본체 출력! */
+  /* font-family: 궁서,굴림,맑은고딕,돋움; */
+
+  /* 웹폰트 적용하기 */
+  font-family: "Bagel Fat One", system-ui;
+
+  /* 글자체에 따라 기본 h1의 두꺼운 설정을 해제함! */
+  font-weight: normal;
+  /* font-weight:bold 를 보통 많이 씀 */
+
+  /* 글자크기 fz */
+  font-size: 40px;
+
+  /* 글자색 c */
+  color: #f51212;
+
+  /* 자간 ls 엘에스 레터 스페이스  */
+  letter-spacing: 2px;
+  
+  /* ws 단어 간격 워드 스페이스 */
+  word-spacing: 5px;
+
+  /* 글자 그림자 ts x축(가로) y축(세로) 반투명조절할수잇음 
+  text-shadow: x축 y축 블러 색;*/
+  /* text-shadow: 3px 3px 2px #00000046; */
+
+  /* 글자 그림자로 글자 테두리 주기
+  글자 그림자를 4개 사용함! 블러는 안줌 0이라서 생략가능
+  콤마로 여러개 ! 4방향으로 그림자 1px씩 보내서 스트로크효과처럼 보이게   */
+  text-shadow: 
+  1px 0 #ffffff,
+  -1px 0 #ffffff,
+  0 1px #ffffff,
+   0 -1px #ffffff,
+   /* 그림자셋팅도 추가. 마지막에 세미클론 잊지마 */
+   3px 3px 2px #3a3c4d93;
+
+   /* 하단마진 mb */
+   margin-bottom: 10px;
+}
+
+/* 메뉴박스 */
+/* .menu ul (메뉴 밑에 유엘) */
+.menu ul {
+  
+  /* 기본블릿없앰 */
+  list-style: none;
+  /* 자식요소 옆으로 흐르게 변경-> flex는 나중에 적용할 예정! 중요하기 때문 */
+  /* display: flex; */
+  /* 사이간격 조절 */
+  /* gap: 10px; */
+}
+
+/* li 리스트 요소 */
+.menu li {
+  /* 인라인 블록으로 display 변경: 이게 float보다 쉬움. 인라인으로 하면 위아래 마진이 안들어가서 인라인 블록으로 함*/
+  display: inline-block;
+  /* 패딩 p - padding: 위아래 양쪽 */
+  padding: 0 5px;
+}
+
+/* 리스트 링크 */
+.menu a{
+  /* 웹폰트 작성하기 */
+  font-family: "Do Hyeon", sans-serif;
+  /* 글자크기 fz */
+  font-size: 20px;
+  /* 글자색 c */
+  color: #09871c;
+  /* 기본 밑줄 없앰! tdn*/
+  text-decoration: none;
+
+  /* 이미지를 포함한 글자 인라인요소간 진행방향 세로정렬
+  버티칼-얼라인 va vertical-align */
+  vertical-align: middle;
+  /* 사용값 top/middle/bottom/숫자값 */
+}
+
+/* a에 마우스 오버시-> 요소:hover 
+가상클래스 */
+.menu a:hover{
+  /* 마우스 오버시 글자색 변경 c */
+  color: #e83030;
+  /* 윗줄 생성 tdo */
+  text-decoration: overline;
+  /* 줄종류변경 tds: 파도모양 wavy */
+  text-decoration-style: dashed;
+}
+
+/* 네이버 로고 */
+.menu img{
+  width: 35px;
+}
+
+/* 2. 공통클래스 */
+/* 메인 이미지 영역 박스, 하단박스도 상단 박스와 사이즈 동일하게 맞춤
+        -> 메인 박스랑 하단 박스를 각각 코딩하면 각각 바꿔야하고 길어지니까 별로임
+        -> 공통클래스로 묶으면 관리하기 편해짐. 그리고 클래스도 각각 줘야함 */
+.common-box {
+  /* 최대가로크기 maw (그냥w숫자하면 가로스크롤이 생기니까 maw숫자로 한다)*/
+  max-width: 1280px;
+  /* 효과는 1280px보다 부모박스 크기가 작아지면 auto로 전환되고, 
+          이것보다 커지면 더이상 커지지 않고 크기를 유지함! */
+
+  /* 보더박스 만들기(크기에 보더까지 포함) */
+  box-sizing: border-box;
+
+  /* 블록요소 가로 중앙정렬하기 
+          -> 양쪽 마진을 auto로 주면 된다! 
+          마진 0 auto 가 유명함 마영오!
+          margin: 0 auto;  */
+  margin: 0 auto;
+
+  /* 테두리 bd - border: 두께 종류 색상 */
+  border: 7px double #106400;
+
+  /* 패딩 p 패딩 셋팅법(마진도 동일함) 
+         padding: 값;(4방향 공통)
+         padding: 값 값; (위아래 양쪽)
+         padding: 값 값 값; 위 양쪽 아래 
+         padding: 값 값 값 값; 위 오른 아래 왼
+         -> 물론 방향별 속성이 따로 있음
+         /* padding-top, padding-bottom,padding-right, padding-left  */
+  padding: 10px;
+
+  /* 둥근 보더 모서리 bdrs숫자 - border-radius */
+  border-radius: 20px;
+}
+
+/* 알쉬에이 일부분 주석 */
+/* 2. 메인 영역 */
+/* 위 아래 마진 넣기 */
+.main-area {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0;
+  overflow: hidden; /*이미지가 꽉차게 보이고 안튀어나오게 하는거; 
+  클리핑마스크처럼 -자식요소가 부모보다 커지면 부모박스가 커지게 함 */
+}
+
+.main-area img{
+  /* vertical-align: middle; 이미지 하나만 넣었을 때 
+  하단에 여백 발생하는 거 해결하는 거 */
+   vertical-align: middle;
+}
+
+/* 3. 하단 영역 */
+.bottom-area {
+  /* 블록 내부 인라인 중앙정렬 tac */
+  text-align: center;
+  /* 배경색 bgc */
+  background-color: #f3f3f3;
+  /* css 적용 우선순위가 있음 아무리 위에서 설정해도 밑에 다른 설정되어있으면 위에서 설정한거 안먹힘
+  밑에 설정이 안되어있으면 부모의 설정을 상속받음
+  그러나 자식한테 세팅되어있으면 또는 디폴트값이 구체적으로 되어있으면 위의 부모설정 무시함. 
+  그래서 브라우저 f12로 찍어서 구체적 위치 보고 거기다가 설정하는거래  */
+  
+}
+
+/* 주소요소 */
+.bottom-area address{
+  /* 기본 이탤릭 해제! 폰트스타일 일반 fsn */
+  font-style: normal;
+  font-size: 17px;
+  /* 줄간격 라인 하이트 lh line-height 값으로 기본 숫자만 쓰는 배수를 사용함(글자크기의 몇배)
+  단위를 사용하면 구체적인 크기로 줄간격을 줄 수 있음!
+  lh는 배수를 쓴다. 숫자만 쓰면 확 벌어짐. 숫자랑픽셀을 같이 쓰거나 아니면 그냥 배수로 쓰게 숫자만써 글자크기의 몇배 . 워드의 1 1.5 2 이거 생각하니까 이해감  */
+  line-height: 1;
+
+  /* 글자색 */
+  color: #383838;
+
+
+}
