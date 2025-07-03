@@ -45,7 +45,7 @@ ul {
   text-align: center;
 
   /* 배경색 bgc */
-  background-color: #dde4f8;
+  background-color: #f5f7fc;
 }
 
 /* 메인타이틀 */
@@ -69,7 +69,7 @@ ul {
   font-size: 40px;
 
   /* 글자색 c */
-  color: #1c0269;
+  color: #f51212;
 
   /* 자간 ls 엘에스 레터 스페이스  */
   letter-spacing: 2px;
@@ -143,7 +143,7 @@ ul {
 
 /* 네이버 로고 */
 .menu img{
-  width: 50px;
+  width: 35px;
 }
 
 /* 2. 공통클래스 */
@@ -166,7 +166,7 @@ ul {
   margin: 0 auto;
 
   /* 테두리 bd - border: 두께 종류 색상 */
-  border: 7px double #020077;
+  border: 7px double #f41b1b;
 
   /* 패딩 p 패딩 셋팅법(마진도 동일함) 
          padding: 값;(4방향 공통)
@@ -194,5 +194,5 @@ ul {
   /* 블록 내부 인라인 중앙정렬 tac */
   text-align: center;
   /* 배경색 bgc */
-  background-color: #dde4f8;
+  background-color: #f6f7fa;
 }
