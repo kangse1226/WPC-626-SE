@@ -9,5 +9,17 @@
 @import url(./common.css);
 
 /* 메인페이지에만 적용되는 코드 작성 */
+.main-area{
+   padding: 0;
+  overflow: hidden; /*이미지가 꽉차게 보이고 안튀어나오게 하는거; 
+  클리핑마스크처럼 -자식요소가 부모보다 커지면 부모박스가 커지게 함 */
+}
 
-/* css 파일 분리 */
+.main-area img{
+  /* vertical-align: middle; 이미지 하나만 넣었을 때 
+  하단에 여백 발생하는 거 해결하는 거 */
+   vertical-align: middle;
+}
+
+
+/* css 파일 분리 잘 생각하고 해*/
