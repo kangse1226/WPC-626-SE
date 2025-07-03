@@ -4,6 +4,22 @@
 
 /* 메인페이지 css - main.css */
 
+/* 웹폰트 불러오기 cdn으로 불러오기 컨텐트딜리버리네트워크 제이쿼리도 cdn으로 불러온대
+컨텐트를 네트워크로 배달해
+CDN (Content Delivery Network)은 어떤 웹파일을 네트워크로 불러오는 것임!*/
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Do+Hyeon&family=Noto+Sans+R:wght@100..900&display=swap");
+
+/* 웹폰트 적용 코드*/
+/* font-family: "Noto Sans KR", sans-serif;
+font-family: "Bagel Fat One", system-ui;
+font-family: "Do Hyeon", sans-serif; */
+
+/* 전체 글씨체 적용하기 */
+body {
+  /* 웹폰트체를 전체에 적용함! 띄어쓰기가 필요한 건 ""로 씀. 붙어있거나 -있는건 ""안씀 */
+font-family: "Do Hyeon", sans-serif;
+}
+
 /* 기본값 초기화 - 마진,패딩 0 */
 html,
 body,
@@ -30,6 +46,50 @@ ul {
 
   /* 배경색 bgc */
   background-color: #dde4f8;
+}
+
+/* 메인타이틀 */
+#main-title {
+  /* 글자체 ff 폰트패밀리 */
+  /* 궁서,굴림,돋움 이렇게 쓰면 앞순서대로 폰트적용되고 
+  없으면 다음폰트 다 없으면 브라우저기본폰트
+  글자체를 뒤에 콤마로 여러개 쓰면 
+  지원되는 글자체를 순서대로 적용함
+  만약 없으면 브라우저 기본체 출력! */
+  /* font-family: 궁서,굴림,맑은고딕,돋움; */
+
+  /* 웹폰트 적용하기 */
+  font-family: "Bagel Fat One", system-ui;
+
+  /* 글자체에 따라 기본 h1의 두꺼운 설정을 해제함! */
+  font-weight: normal;
+  /* font-weight:bold 를 보통 많이 씀 */
+
+  /* 글자크기 fz */
+  font-size: 40px;
+
+  /* 글자색 c */
+  color: #1c0269;
+
+  /* 자간 ls 엘에스 레터 스페이스  */
+  letter-spacing: 2px;
+  
+  /* ws 단어 간격 워드 스페이스 */
+  word-spacing: 5px;
+
+  /* 글자 그림자 ts x축(가로) y축(세로) 반투명조절할수잇음 
+  text-shadow: x축 y축 블러 색;*/
+  /* text-shadow: 3px 3px 2px #00000046; */
+
+  /* 글자 그림자로 글자 테두리 주기
+  글자 그림자를 4개 사용함! 블러는 안줌
+  콤마로 여러개 !   */
+  text-shadow: 
+  1px 0 #ffffff,
+  -1px 0 #ffffff,
+  0 1px #ffffff,
+   0 -1px #ffffff;
+
 }
 
 /* 메뉴박스 */
