@@ -10,7 +10,6 @@
 /* 상단,하단 공통모듈 */
 @import url(./common.css);
 
-
 /* 공통설정 */
 /* .main-area 직계자식(>) 모두 선택
 별(*)은 모든 것을 선택하는 문자열 */
@@ -83,14 +82,13 @@
   height: 32px;
 }
 /* 2-3. 기사제목  */
-.article-title{
+.article-title {
   font-size: 33px;
 }
 /* 2-4. 기사 사진 및 정보  */
-.article-picture{
-  
+.article-picture {
 }
-  /* figure 요소의 기본 마진, 패딩 초기화를 여기다가 하면 위에 margin-bottom: 해둔게 사라짐 
+/* figure 요소의 기본 마진, 패딩 초기화를 여기다가 하면 위에 margin-bottom: 해둔게 사라짐 
   그래서 여기가 아니라 상단에 초기화 파일을 만들어서 불러옴*/
 
 /* 2-5. 기사 내용 */
