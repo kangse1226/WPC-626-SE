@@ -15,7 +15,7 @@ font-family: "Do Hyeon", sans-serif; */
 /* 전체 글씨체 적용하기 */
 body {
   /* 웹폰트체를 전체에 적용함! 띄어쓰기가 필요한 건 ""로 씀. 붙어있거나 -있는건 ""안씀 */
-font-family: "Do Hyeon", sans-serif;
+font-family: "Noto Sans KR", sans-serif;
 }
 
 /* 기본값 초기화 - 마진,패딩 0 */

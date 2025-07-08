@@ -3,7 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>01-2.배경 크기 설정</title>
-    <style></style>
+    <style>
+        /* 타이틀 */
+        .tit{
+            text-align: center;
+            font-size: 40px;
+        }
+        /* 큰제목 */
+        .t1{
+            font-size: 50px;
+        }
+
+        /* 배경박스 부모 */
+        .wrap{
+            padding: 20px;
+        }
+        /* 배경박스 공통 */
+        .wrap>div{
+            /*공통배경세팅 */
+            /* 배경이미지 bgi*/
+            background-image: url(./imgs/bg_mainvisual.jpg);
+            /* 배경반복여부 bgr */
+            background-repeat: no-repeat;
+            /* 배경위치 bgp */
+            background-position: center;
+            /* 세로는 기본값이 센터여서 
+            center값을 하나만 주면 x축 중앙을 세팅해서 정중앙 위치가 됨 */
+            
+
+
+
+        }
+    </style>
 </head>
 <body>
     <h1 class="tit t1">배경연습 - background-size</h1>
