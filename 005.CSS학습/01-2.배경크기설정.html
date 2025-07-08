@@ -1,55 +1,90 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>01-2.배경 크기 설정</title>
     <style>
-        /* 타이틀 */
-        .tit{
-            text-align: center;
-            font-size: 40px;
-        }
-        /* 큰제목 */
-        .t1{
-            font-size: 50px;
-        }
+      /* 타이틀 */
+      .tit {
+        text-align: center;
+        font-size: 40px;
+      }
+      /* 큰제목 */
+      .t1 {
+        font-size: 50px;
+      }
 
-        /* 배경박스 부모 */
-        .wrap{
-            padding: 20px;
-        }
-        /* 배경박스 공통 */
-        .wrap>div{
-            /*공통배경세팅 */
-            /* 배경이미지 bgi*/
-            background-image: url(./imgs/bg_mainvisual.jpg);
-            /* 배경반복여부 bgr */
-            background-repeat: no-repeat;
-            /* 배경위치 bgp */
-            background-position: center;
-            /* 세로는 기본값이 센터여서 
+      /* 배경박스 부모 */
+      .wrap {
+        padding: 20px;
+      }
+      /* 배경박스 공통 */
+      .wrap > div {
+        /*공통배경세팅 */
+        /* 배경이미지 bgi*/
+        background-image: url(./imgs/bg_mainvisual.jpg);
+        /* 배경반복여부 bgr */
+        background-repeat: no-repeat;
+        /* 배경위치 bgp */
+        background-position: center;
+        /* 세로는 기본값이 센터여서 
             center값을 하나만 주면 x축 중앙을 세팅해서 정중앙 위치가 됨 */
-            
 
+        /* 가로크기 w숫자p치면 퍼센트나옴. 단위 안쓰면 픽셀로 나옴 */
+        width: 80%;
+        /* 세로크기h숫자 */
+        height: 400px;
+        /* 테두리bd */
+        border: 3px dashed indianred;
+        /* 블록요소 가로 중앙정렬 -> 마영오! */
+        margin: 0 auto;
+        /* 하단 마진 mb숫자 */
+        margin-bottom: 40px;
+        /* 둥근모서리 bdrs숫자 */
+        border-radius: 20px;
+      }
 
+      /* 가상클래스로 자식요소 선택하기 */
+      /* 요소: nth-of-type(순번)
+        여러종류가 섞여있는 자식요소 중 순번으로 선택하는 가상클래스
 
-        }
+        한가지 종류의 자식요소일 때는 요소:nth-child(순번) */
+      /* 1번 div 박스 */
+      .wrap > div:nth-of-type(1) {
+        background-size: 100% auto;
+      }
+      /* 2번 div 박스 */
+      .wrap > div:nth-of-type(2) {
+        background-size : auto 100%;
+      }
+      /* 3번 div 박스 */
+      .wrap > div:nth-of-type(3) {
+        /* 이미지 찌그러트려서 개못생김. 디자인적으로 거부 */
+        background-size : 100% 100%;
+      }
+      /* 4번 div 박스 cotain 은 다 보여주겠다 */
+      .wrap > div:nth-of-type(4) {
+        background-size : contain;
+      }
+      /* 5번 div 박스 cover 많이 씀. 박스에 빈공간 없이 예쁘게 비율맞춰 조절됨 */
+      .wrap > div:nth-of-type(5) {
+        background-size : cover;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1 class="tit t1">배경연습 - background-size</h1>
     <div class="wrap">
-        <h2 class="tit">background-size : 100% auto</h2>
-        <div></div>
-        <h2 class="tit">background-size : auto 100%</h2>
-        <div></div>
-        <h2 class="tit">background-size : 100% 100%</h2>
-        <div></div>
-        <h2 class="tit">background-size : contain</h2>
-        <div></div>
-        <h2 class="tit">background-size : cover</h2>
-        <div></div>
+      <h2 class="tit">background-size : 100% auto</h2>
+      <div></div>
+      <h2 class="tit">background-size : auto 100%</h2>
+      <div></div>
+      <h2 class="tit">background-size : 100% 100%</h2>
+      <div></div>
+      <h2 class="tit">background-size : contain</h2>
+      <div></div>
+      <h2 class="tit">background-size : cover</h2>
+      <div></div>
     </div>
-    
-</body>
+  </body>
 </html>
