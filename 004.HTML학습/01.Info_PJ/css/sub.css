@@ -129,7 +129,19 @@
   /* 줄간격 lh / 숫자 값은 배수임! 주의하깅 */
   line-height: 1.7;
 }
-
+.contents mark {
+  display: block;
+  background-color: #f6d5db;
+  margin: 30px 100px;
+  padding: 40px;
+  border-bottom: 3px solid #085bcf;
+  border-top: 3px solid #085bcf;
+  color: #085bcf;
+  font-family: "Do Hyeon", sans-serif;
+  font-size: 28px;
+  text-shadow: 2px 2px 2px #ffffff;
+  text-align: center;
+}
 /* 2-6. 기자 정보  */
 .reporter {
   font-size: 16px;
