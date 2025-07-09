@@ -129,14 +129,19 @@
   /* 줄간격 lh / 숫자 값은 배수임! 주의하깅 */
   line-height: 1.7;
 }
+
+/* mark 요소 디자인 변경 */
 .contents mark {
+  /* mark는 인라인. 기존inline에서 block으로 변경! */
   display: block;
+  /* 박스설정 */
   background-color: #f6d5db;
   margin: 30px 100px;
   padding: 40px;
   border-bottom: 3px solid #085bcf;
   border-top: 3px solid #085bcf;
   color: #085bcf;
+  /* 글자설정 */
   font-family: "Do Hyeon", sans-serif;
   font-size: 28px;
   text-shadow: 2px 2px 2px #ffffff;
