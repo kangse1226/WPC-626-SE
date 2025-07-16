@@ -196,21 +196,51 @@
   4px 4px 3px #000000af;
 }
 
-/* 뉴스공통박스 디자인  */
-/* 뉴스 공통 제목 디자인 */
-.news-box h3 {
-    display: inline-block;
-    font-size: 20px;
-    padding: 15px;
-    border: 2px groove #e75026;
-    /* border-style:  ; none지우고 컨트톨스페이스해서 종류보기 */
-    background-color: lightcoral;
-    border-radius: 10px;
-    margin-bottom: 20px;
+/* 기사 설명 공통박스 디자인  */
+.desc-box h4 {
+    border-top: 2px dashed #ccc;
+    padding: 30px;
+    margin-top: 30px;
+}
+/* 기사 설명 공통 제목 디자인 */
+.desc-box h4 {
+  display: inline-block;
+  font-size: 20px;
+  padding: 15px;
+  border: 2px groove #e75026;
+  /* border-style:  ; none지우고 컨트톨스페이스해서 종류보기 */
+  background-color: lightcoral;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
+/* 기사 설명 공통 내용 박스 디자인 
+공통이지만 인용블록은 blockquote이고 
+주해는 p 요소를 쓰고 있으므로 
+공통은 형제선택자 +를 쓴다
+.desc-box h4 + *
+설명: h4요소 다음 형제(+)요소 선택인데
+별(*)을 사용하여 어떤 타입이든 모든 선택함! */
+.desc-box h4 +  * {
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgb(77, 76, 76);
+}
+
+/* 뉴스공통박스 디자인  */
 .news-box {
     border-top: 2px dashed #ccc;
     padding: 30px;
     margin-top: 30px;
+}
+/* 뉴스 공통 제목 디자인 */
+.news-box h3 {
+  display: inline-block;
+  font-size: 20px;
+  padding: 15px;
+  border: 2px groove #e75026;
+  /* border-style:  ; none지우고 컨트톨스페이스해서 종류보기 */
+  background-color: lightcoral;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }

@@ -176,8 +176,9 @@
 
         <!-- 인용블록 영역 -->
 
-        <!-- 아티클은 독립된 내용 -->
-        <article class="quote-box">
+        <!-- 아티클은 독립된 내용 
+         .desc-box는 인용블록, 주해 박스 두가지에 대한 공통클래스-->
+        <article class="quote-box desc-box">
           <h4>
             <blockquote title="독일 막스플랑크 동물행동연구소와 동일 기관임">
               막스 플랑크 신경생물학 연구소
@@ -281,6 +282,22 @@
         "링크" 뒤에 target="_blank"는 새창으로 열 경우 사용함 -->
       </div>
 
+      <!-- 기사 주석 표시 박스(주해) -->
+      <article class="comment-box desc-box">
+        <!-- 제목 -->
+        <h4>주해</h4>
+        <!-- 내용 -->
+        <p>
+          ① 오랑우탄: 오랑우탄이라는 이름은 마인어로 '숲의 사람'이라는 뜻이다.
+          '오랑(Orang)'은 사람이라는 뜻이고, '우탄(Hutan)'은 숲이라는 뜻이다.
+          원래 말 그대로 숲에 사는 사람을 지칭하는 단어였으나 후에 의미가
+          확장되었다. <br><br>
+          ② 수마트라: 동남아시아의 서부에 있는 섬. 현재 인도네시아의 영토이다.
+          섬의 명칭은 대해를 뜻하는 산스크리트어 단어에서 유래되었다. 세계에서
+          6번째로 큰 섬으로 넓이는 일본 혼슈의 2배쯤 되는 47만 3,481km²이다.
+        </p>
+      </article>
+
       <!-- 2.7.1 오늘의 작품&느낌 -->
       <article class="work">
         <!-- 제목 -->
@@ -317,63 +334,115 @@
             </a>
           </li>
           <li>
-            <a href="https://n.news.naver.com/mnews/hotissue/article/001/0015470559?type=series&cid=1087298" target="_blank">
-                제임스웹, 110광년 밖 원시행성원반서 준목성급 외계행성 포착 </a>
+            <a
+              href="https://n.news.naver.com/mnews/hotissue/article/001/0015470559?type=series&cid=1087298"
+              target="_blank"
+            >
+              제임스웹, 110광년 밖 원시행성원반서 준목성급 외계행성 포착
+            </a>
           </li>
           <li>
-            <a href="https://n.news.naver.com/mnews/hotissue/article/001/0015473619?type=series&cid=1087298" target="_blank">
+            <a
+              href="https://n.news.naver.com/mnews/hotissue/article/001/0015473619?type=series&cid=1087298"
+              target="_blank"
+            >
               "다람쥐·들쥐, 도시생활 125년만에 두개골·치열이 달라졌다"
             </a>
           </li>
         </ul>
       </article>
-<!-- 랭킹뉴스: ol 사용 -->
+      <!-- 랭킹뉴스: ol 사용 -->
       <article class="rank-news news-box">
         <h3>인기뉴스</h3>
         <!-- ol li는 반드시 같이 사용함. 순서있는 리스트 -->
-          <!-- 젠코딩 ol>li*3>a[target=_blank] -->
-           <ol>
-            <li><a href="https://n.news.naver.com/mnews/article/277/0005622066" target="_blank">
-"더 얇은 폴더블은 '혁신'…내부 설계, 부품 배치까지 모든 걸 바꿨다"</a></li>
-            <li><a href="https://n.news.naver.com/mnews/article/422/0000759455" target="_blank">
-배경훈 과기장관 후보 "국가AI컴퓨팅센터 등 인프라 조속히 구축"</a></li>
-            <li><a href="https://n.news.naver.com/mnews/article/018/0006065371" target="_blank">
-
-"각국 기술패권 확보 위해 경쟁, 대한민국 미래 위해 변화해야"</a></li>
-           </ol>
+        <!-- 젠코딩 ol>li*3>a[target=_blank] -->
+        <ol>
+          <li>
+            <a
+              href="https://n.news.naver.com/mnews/article/277/0005622066"
+              target="_blank"
+            >
+              "더 얇은 폴더블은 '혁신'…내부 설계, 부품 배치까지 모든 걸
+              바꿨다"</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://n.news.naver.com/mnews/article/422/0000759455"
+              target="_blank"
+            >
+              배경훈 과기장관 후보 "국가AI컴퓨팅센터 등 인프라 조속히 구축"</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://n.news.naver.com/mnews/article/018/0006065371"
+              target="_blank"
+            >
+              "각국 기술패권 확보 위해 경쟁, 대한민국 미래 위해 변화해야"</a
+            >
+          </li>
+        </ol>
       </article>
 
       <!-- 분야별 뉴스 : dl > dt, dd  d리스트 아래에 디티와 디디는 형제  -->
       <article class="sec-news news-box">
         <!-- 제목 -->
-         <h3>분야별 뉴스</h3>
+        <h3>분야별 뉴스</h3>
         <dl>
           <!-- 경제 파트 -->
-           <dt>경제</dt>
-           <dd>
-            <a href="https://n.news.naver.com/mnews/article/052/0002218488" target="_blank">국세청, 지난해 유튜버 21명 세무조사...89억 부과</a>
-           </dd>
-           <dd>
-            <a href="https://n.news.naver.com/mnews/article/214/0001436124" target="_blank">금감원 "부동산 대출 쏠림, 경제 성장 막아‥외부 충격에도 취약"</a>
-           </dd>
-           <!-- 사회 파트 -->
-           <dt>사회</dt>
-           <dd>
-            <a href="https://n.news.naver.com/mnews/article/022/0004051277" target="_blank">
-선사시대 삶 새긴 ‘걸작’… “6000년 암각화 전통 독보적 증거” [뉴스 투데이]</a>
-           </dd>
-           <dd>
-            <a href="https://n.news.naver.com/mnews/article/079/0004044617" target="_blank">
-"민생회복 소비쿠폰 차질없이 지급하자"…민관 업무협약</a>
-           </dd>
-           <!-- tv/연예 파트 -->
-           <dt>tv/연예 파트</dt>
-           <dd>
-            <a href="https://n.news.naver.com/mnews/article/016/0002499293" target="_blank">“어? 이거 블핑 아냐?”…만화 속 그 노래에 전 세계가 열광 [K-코드 광풍 케데헌]</a>
-           </dd>
-           <dd>
-            <a href="https://m.entertain.naver.com/ranking/article/312/0000719442" target="_blank">YG "블랙핑크, LA서 전세계 걸그룹 최초 10만 관객 동원 신기록 달성 예정"[공식]</a>
-           </dd>
+          <dt>경제</dt>
+          <dd>
+            <a
+              href="https://n.news.naver.com/mnews/article/052/0002218488"
+              target="_blank"
+              >국세청, 지난해 유튜버 21명 세무조사...89억 부과</a
+            >
+          </dd>
+          <dd>
+            <a
+              href="https://n.news.naver.com/mnews/article/214/0001436124"
+              target="_blank"
+              >금감원 "부동산 대출 쏠림, 경제 성장 막아‥외부 충격에도 취약"</a
+            >
+          </dd>
+          <!-- 사회 파트 -->
+          <dt>사회</dt>
+          <dd>
+            <a
+              href="https://n.news.naver.com/mnews/article/022/0004051277"
+              target="_blank"
+            >
+              선사시대 삶 새긴 ‘걸작’… “6000년 암각화 전통 독보적 증거” [뉴스
+              투데이]</a
+            >
+          </dd>
+          <dd>
+            <a
+              href="https://n.news.naver.com/mnews/article/079/0004044617"
+              target="_blank"
+            >
+              "민생회복 소비쿠폰 차질없이 지급하자"…민관 업무협약</a
+            >
+          </dd>
+          <!-- tv/연예 파트 -->
+          <dt>tv/연예 파트</dt>
+          <dd>
+            <a
+              href="https://n.news.naver.com/mnews/article/016/0002499293"
+              target="_blank"
+              >“어? 이거 블핑 아냐?”…만화 속 그 노래에 전 세계가 열광 [K-코드
+              광풍 케데헌]</a
+            >
+          </dd>
+          <dd>
+            <a
+              href="https://m.entertain.naver.com/ranking/article/312/0000719442"
+              target="_blank"
+              >YG "블랙핑크, LA서 전세계 걸그룹 최초 10만 관객 동원 신기록 달성
+              예정"[공식]</a
+            >
+          </dd>
         </dl>
       </article>
       <!-- 용어 정의 리스트 : dl > dt + dd
@@ -383,7 +452,6 @@
        ______________________________
        주의사항! dl은 반드시 자식요소로 dt와 dd가 한번이상 사용되어야함! 
        또 주의!! dt dd 둘은 형제 관계임. 부모관계가 아니야!! -->
-
     </main>
 
     <!--*********** 3. 하단영역 -->
