@@ -197,8 +197,10 @@
 }
 
 /* 기사 설명 공통박스 디자인  */
-.desc-box h4 {
+.desc-box {
+  /* 경계선을 위와 아래만 설정함 */
     border-top: 2px dashed #ccc;
+    border-bottom: 2px dashed #ccc;
     padding: 30px;
     margin-top: 30px;
 }
@@ -214,6 +216,7 @@
   margin-bottom: 20px;
 }
 
+
 /* 기사 설명 공통 내용 박스 디자인 
 공통이지만 인용블록은 blockquote이고 
 주해는 p 요소를 쓰고 있으므로 
@@ -225,6 +228,22 @@
   font-size: 18px;
   line-height: 1.5;
   color: rgb(77, 76, 76);
+}
+
+/* 인용블록 박스 */
+.quote-box img {
+  /* 양쪽 정렬은 text-align:justify 로 설정함! */
+  text-align: justify;
+    width: auto;
+    height: 100px;
+    /* float 속성을 인라인요소에 사용할 경우 
+    나 자신은 설정한 위치에 오고 다른 인라인요소는 그 옆으로 흐른다
+    여기서는 이미지의 글자는 한줄만 옆에 오는데 이미지 높이 만큼 
+    글자가 옆으로 흘러가게 할 때 사용한다. */
+    float: right;
+    margin-left: 20px;
+    border-radius: 20px;
+        box-shadow: 3px 3px 5px #00000057;
 }
 
 /* 뉴스공통박스 디자인  */
@@ -244,3 +263,55 @@
   border-radius: 10px;
   margin-bottom: 20px;
 }
+
+/* 오늘의 작품과 느낌 */
+.work{
+  background-image: linear-gradient(45deg, #e26464, #ecbe40, #036b3a);
+  padding: 10px 46px;
+  text-align: center;
+  /* 박스그림자: bxsh (inset내부그림자)*/
+  box-shadow: inset 0  0 20px #000000d0;
+}
+/* 그라데이션 -> 배경 이미지 속성에 쓴다. 
+(예전에는 이미지로 만들어서 그럼)
+
+    [ 선형 그라데이션 : linear-gradient ]
+    linear-gradient(방향,색1,색2,...);
+    linear-gradient(방향,색1 몇%,색2 몇%,...);
+    linear-gradient(각도,색1 몇%,색2 몇%,...);
+    - 옵션 : 
+    1. 방향: to top, to bottom, to left, to right
+    2. 각도: 각도deg
+    3. 콤마로 나열된 색상 뒤에 %수치를 쓰면 비율조정가능 */
+
+/* 제목 */
+.work h4 {
+    font-family: "Bagel Fat One";
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: #e5785d;
+    -webkit-text-stroke: 0.75px black;
+}
+/* 이미지 */
+.work img {
+    border: 20px ridge #9c7343;
+    max-width: 100%;
+}
+
+/* 작품명 */
+.work figcaption {
+    font-family: "Do Hyeon";
+    font-weight: normal;
+    color: #c6b0a9;
+    -webkit-text-stroke: 0.5px black;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* 절규만 다른색 */
+.work figcaption cite {
+    font-style: normal;
+    color: crimson;
+}
+
