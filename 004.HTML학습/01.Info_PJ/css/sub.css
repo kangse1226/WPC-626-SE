@@ -275,13 +275,31 @@
   /* border-style:  ; none지우고 컨트톨스페이스해서 종류보기 */
   margin-bottom: 20px;
   /* 배경그라데이션 */
-  background-image: linear-gradient(to right, #fb4949, white);
+  background-image: linear-gradient(to right, #028f31, white);
   /* 최대길이 설정 */
   width: 50%;
 }
 
 /* 뉴스 공통 a 링크 */
 .news-box a{
+
+
+  /* 말줄임 표시 세팅하기 */
+  /* 1. 넘치는 자식요소 숨기기 */
+  overflow: hidden;
+  /* 2. 넘치는 텍스트 말줄임표시 나오게 하기 */
+  text-overflow: ellipsis;
+  /* 3. 줄바꿈 방지 */
+  white-space: nowrap;
+  /* 4. 말줄임해당박스는 블록요소로 변경 */
+  display: block;
+
+/* 한줄 긴거 말줄임표 처리하는 법 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;*/
+
   font-size: 16px;
   line-height: 30px;
 }
@@ -319,10 +337,19 @@
 }
 
 /* 분야별 뉴스 박스 */
+/* dl는 dt와 dd의 부모 박스*/
+.sec-news dl {
+/* 넘치는 자식요소를 숨기기, 
+부가적으로 자식의 float 설정이 바깥요소로 나가는 것을 차단한다.  */
+overflow: hidden;
+/* oh 단축*/
+}
+
 /* 분류 타이틀 = dt만 디자인 한번에 다하기  */
 .sec-news dt{
 /* 박스설정 */
-display: block;
+/* display: block; 기본으로 dt는 원래 블록이라서 주석으로 바꿈-첨에 인라인블록으로 
+하려고 만들엇다가 결국 블록으로 돌아옴 */
 width: 40px;
 /* 가로크기를 안 주고 자동으로 내용만큼 박스 크기를 잡으려고 
 display: inline-block으로 했었으나 가로 크기를 정할 경우 
@@ -335,9 +362,16 @@ dl을 3개로 만들엇음*/
 디스플레이 플렉스는 조금 나중에 배워서 일단 플롯을 먼저 해봄
 근데 실제론 플렉스 자주 쓴대. 근데 알고 써야하니까 */
 /* 플롯레프트를 넣어서 아래를 강제로 위로 땡김 */
+/* dt박스 옆으로 dd가 올라오도록 
+나는 왼쪽left로 갈게 너는 오른쪽으로 올라와라
+흘러가는 속성 float:left */
+float: left;
+/* 플롯레프트를 주게 되면 다른 블록요소에 영향을 주므로
+부모박스인 dl에 overflow:hidden을 줘서 플롯레프트의 영향을 차단해야한다! */
 
+/* 마진 순서 위 오른 아래 왼 */
+margin: 10px 15px 15px 0;
 
-margin: 10px 0 15px;
 padding: 15px;
 border: 5px dashed rgb(207, 198, 198);
 /* 원형 보더는 값이 50%임. bdrs50p */
@@ -345,15 +379,53 @@ border-radius: 50%;
 text-align: center;
 background-color: #eb7575;
 
+/* 글씨가 떨어지는 거 방지- 글자 줄바꿈방지 래핑방지 박스는 다 래핑
+박스가 좁으면 글자 다 내려감 근데 화이트스페이스노랩으로 막을수잇음
+white-space:nowrap  */
+
 /* 글자설정 */
   font-family: "Do Hyeon", sans-serif;
       font-size: 20px;
 }
 
-/* 글씨가 떨어지는 거 방지- 글자 줄바꿈방지 래핑방지 박스는 다 래핑
-박스가 좁으면 글자 다 내려감 근데 화이트스페이스노랩으로 막을수잇음
-white-space:nowrap  */
+/* 개별적으로 dt를 선택하여 글자 배경색 바꾸기
+dl은 왜 차일드고 dt는 타입쓰는지 생각해보기 아 헷갈려 dl 안에 dt dd잇어서??/?? */
+.sec-news dl:first-child dt:first-of-type {
+  background-color: #fff;
+}
 
+.sec-news dl:nth-child(2) dt:first-of-type {
+  background-color: #fff;
+}
+
+.sec-news dl:last-child dt:first-of-type {
+  background-color: #fff;
+}
+
+/* dd 용어 설명 박스 */
+
+/* dd 타입중에 첫번쨰 선택하기
+[자식 요소가 여러가지 섞인 경우 선택하기]
+가상클래스 ...-of-type 사용
+첫번째 타입-> 요소:first-of-type
+n번째 타입-> 요소:nth-of-type(n)
+마지막 타입-> 요소:last-of-type
+*/
+
+.sec-news dd:first-of-type {
+/* 첫번째 dd를 마진탑을 밀면 아래있는 다른 요소도 밀린다
+마진의 특징 */
+  margin-top: 15px;
+
+}
+
+/* 가상 요소 아이콘 넣기-> 대상요소::before */
+.sec-news dd:first-of-type a::before {
+  content: '🍹';
+}
+.sec-news dd:last-of-type a::before {
+  content: '🍸';
+}
 
 /* 인기랭킹뉴스 뒤에 이모지 추가 */
 .rank-news a::after { 
