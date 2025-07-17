@@ -47,21 +47,490 @@
     <!--******** 2. 메인영역 ******** -->
     <main class="main-area common-box">
       <!-- 여기에 뭐가 들어갈지 미리 써보기 - 정보의 체계화를 해야하잖아 순서 이런걸 설명할 수 있어야지-->
-      <!-- 2-1. 서브 타이틀 h2 -->
-       <h2 class="sub-title ec">경제</h2>
-      <!-- 2-2. 언론사 로고: 암것도 안쓰면 div 자동적용됨 -->
-       <div class="press-logo"></div>
-      <!-- 2-3. 기사제목 h3 -->
-       <h3 class="article-title"></h3>
-      <!-- 2-4. 기사 사진 및 정보 (figure 이미지 표) -->
-       <figure class="article-picture"></figure>
-      <!-- 2-5. 기사 내용 -->
-       <section class="contents"></section>
-      <!-- 2-6. 기자 정보 -->
-       <div class="reporter"></div>
-      <!-- 2-7. 기사 원문 -->
-       <div class="article-link"></div>
 
+      <!-- 2-2. 언론사 로고: 암것도 안쓰면 div 자동적용됨 -->
+      <div class="press-logo">
+        <img src="./images/한국경제로고.png" alt="로고" />
+      </div>
+
+      <!-- 2-3. 기사제목 h3 -->
+      <h3 class="article-title">파이브가이즈 매물로…기로에 선 프리미엄 버거</h3>
+
+      <!-- 스페셜 박스(추가내용박스) -->
+      <section class="special-box">
+        <!-- 제목 -->
+        <h4>
+          슈퍼두퍼 철수…쉐이크쉑 적자 <br />
+          가성비 소비 열풍에 설자리 잃고<br />
+          고급 개인 수제버거에도 밀려<br />
+        </h4>
+        <!-- 내용
+        <p>
+          (서울=연합뉴스) 이주영 기자 = 동물에게 생리적으로 매우 중요하지만,
+          취약한 상태가 될 수 있는 수면의 기원과 진화 과정을 밝히는 것은 중요한
+          연구 주제 중 하나다. 인간과 가까운 영장류 중 하나인
+          오랑우탄<sup>①</sup>도 밤잠을 충분히 자지 못하면 사람처럼 낮잠으로
+          보충하는 것으로 밝혀졌다.
+        </p> -->
+      </section>
+
+      <!-- 2-4. 기사 사진 및 정보 
+       figure는 이미지나 표를 넣는 박스 -->
+      <figure class="article-picture">
+        <img src="./images/fiveguys.jpg" alt="파이브가이즈 이미지" />
+        <!-- 이미지 설명은 figcaption 하위요소 사용 figc -->
+        <figcaption>
+          <small>
+            파이브가이즈 강남점 <br />
+            <i
+              >주문 즉시 조리하는 버거, 감자튀김, 핫도그를 판매하는 패스트푸드
+              체인점으로 기다리는 동안 무료 땅콩을 제공합니다.</i
+            >
+          </small>
+        </figcaption>
+      </figure>
+
+      <!-- 2-5. 기사 내용 -->
+      <section class="contents">
+        <p>
+          한화그룹이 미국 수제버거 브랜드 파이브가이즈의 국내 사업권 매각을
+          추진한다는 소식이 나오면서 국내 프리미엄 버거 시장 위기론이 불거지고
+          있다. 가성비 버거 중심의 소비 흐름이 가속화하면서 프리미엄 버거가
+          상대적으로 설 자리를 잃어버렸다는 게 식품업계 분석이다. <br>
+        
+          17일 투자업계
+          등에 따르면 파이브가이즈의 국내 사업권을 보유한 에프지코리아는 일부
+          사모펀드 운용사를 대상으로 티저레터(투자안내서)를 발송했다.<br>
+
+          파이브가이즈는 2023년 6월 서울 강남점을 시작으로 한국에 진출한 지 딱
+          2년이 됐다. 오는 25일 문을 여는 용산점을 포함해 총 8개 매장이 있다.
+          지난해 매출 465억원, 영업이익 34억원을 기록했다. <br>
+          
+          수익은 냈지만
+      프리미엄 버거 시장 전망이 밝지만은 않다. 
+          프리미엄 버거 프랜차이즈들은
+          가성비 버거를 앞세운 기존 버거 프랜차이즈와 다양한 메뉴를 앞세운 개인
+          수제버거집 사이에 끼어버렸다. <br>
+          
+          SPC그룹이 운영하는 쉐이크쉑은 지난해
+          매출이 1065억원이지만 영업손실 19억원을 기록했다. 사업 법인이 분할되는
+          과정에서 비용이 들었기 때문이라는 게 SPC 측 설명이지만 매출 대비
+          수익이 낮은 건 사실이다. 프리미엄 버거 트렌드가 꺾였다는 건 눈으로도
+          확인 가능하다. 줄을 서서 먹던 고든램지 스트리트버거 잠실롯데월드몰
+          매장은 이제 예약 없이 여유롭게 이용 가능하다.
+          다이닝브랜즈그룹이
+          운영하는 버거 브랜드 슈퍼두퍼는 한국 진출 3년을 채우지 못하고 지난 2월
+          사업을 접었다.  <br>
+          
+          가격 대비 만족도가 문제였다. 프리미엄 버거 브랜드들은
+          햄버거 단품 기준 최소 9000원대에서 최대 1만6000원대다. 가성비 버거
+          브랜드보다 2배가량 비싼 수준이다. 저렴하게 먹으려면 맘스터치 같은
+          가성비 버거를 찾고, 수제버거는 프랜차이즈보다 개인이 운영하는 매장을
+          찾아다니는 사람이 많다.
+          버거업계 관계자는 “메뉴 차별화가 어려운
+          프랜차이즈 프리미엄 버거가 개인 수제버거집과의 경쟁에서 밀리는
+          양상”이라고 말했다.<br>
+        </p>
+
+        <!-- 인용블록 영역 -->
+
+        <!-- 아티클은 독립된 내용 
+         .desc-box는 인용블록, 주해 박스 두가지에 대한 공통클래스-->
+        <article class="quote-box desc-box">
+          <div>
+            <h4>파이브 가이즈 코리아</h4>
+          </div>
+          <blockquote title="맛있지만 너무 비쌈">
+            <!-- 블록인용 내부에는 다른 블록요소를 넣을 수 없지만 
+             인라인 요소는 가능함. 여기에 img 태그를 넣어보자 -->
+            <img src="./images/fiveguys-logo.svg" alt="파이브가이즈코리아 공식사이트" />
+          </blockquote>
+          <!-- 블록쿼트박스 
+          이 박스 내부에 다른 블록요소 사용불가! 속성인 cite는 필수는 아님. 
+          내용으로 인용된 내용의 url을 쓴다-->
+          <blockquote cite="https://www.ab.mpg.de/who-we-are">
+            막스 플랑크 신경생물학 연구소는 자연 세계에서 동물의 의사결정을
+            이해하고 예측합니다. 새로운 기술 및 분석 접근법을 개발하고
+            적용함으로써, 우리의 사명은 시간적, 공간적, 조직적, 그리고 분류학적
+            규모 전반에 걸쳐 행동의 원동력을 밝히는 것입니다. 이러한 복잡한
+            과제를 해결하기 위해, 우리는 다양하고 학제적인 팀을 구성하여
+            엄격하고 재현 가능한 과학적 연구를 수행하고 이를 공개적으로
+            공유합니다. 이를 통해 우리는 전 세계 연구 커뮤니티에 긍정적으로
+            기여하고 차세대 연구자들을 위한 과학 교육을 제공합니다. 또한, 지적
+            교류와 생산적인 협업을 촉진하는 상호 지원적이고 포용적인 업무 환경을
+            조성합니다.
+          </blockquote>
+        </article>
+      </section>
+
+      <!-- [ 서식 태그 확장하기 ]
+    <b>- 굵은 글씨
+    <strong>- 중요한 텍스트
+    <i>- 이탤릭체 텍스트
+    <em>- 강조된 텍스트
+    <mark>- 표시된 텍스트
+    <small>- 더 작은 텍스트
+    <del>- 삭제된 텍스트
+    <ins>- 삽입된 텍스트
+    <sub>- 아래 첨자 텍스트
+    <sup>- 상위 첨자 텍스트 -->
+
+      <!--  [ 2. HTML 인용관련 요소 ]
+
+      1. 블록인용요소
+      <blockquote>
+          - 블록요소로 별도의 인용구를 구분하는 박스
+          - 주의: 내부에 p요소와 같은 다른 블록요소 사용불가!
+          (p안에는 다른 요소 못써. 글만씀)
+          - cite 속성 : 출처표시
+          (필수속성은 아니지만 url 주소가 들어가기 때문에
+          링크로 오해할 수 있으나 아님! 단순출처정보임)
+
+      2. 인라인 인용요소
+      <q>
+          - 작은 이용구(쌍따옴표가 자동생성됨!)
+          - 주의: 인라인요소임(blockquote와 구분할것!)
+
+      3. 줄임말 인용
+      <abbr>
+          - 줄임말의 원래 뜻을 표시하는 요소
+          - 필수속성 ->> title 속성 -> 툴팁으로 원래뜻을 표시
+      (참고: title 툴팁속성은 어느요소든 사용가능함!)
+          - 기본디자인 : 점선 밑줄
+          text-decoration: underline dotted;
+
+      4. 주소인용
+      <address>
+          - 주소, 대표자, 전화번호 등 사이트 정보표시
+      
+      5. 작품명 인용
+      <cite>
+          - 인용하고 있는 작품을 표시하기 위한 요소
+
+      6. 반대방향글 인용
+      <bdo>
+          - 글방향이 반대일때 사용함
+          - Bi-Directional Override(줄임)
+          - dir 속성 :  rtl(right to left : 오른쪽에서 왼쪽으로 진행)
+          - 아랍어, 이스라엘어 등 반대방향으로 
+          출력해야하는 문자를 인용할때 사용함!
+
+      __________________________________ -->
+
+      <!-- 2-6. 기자 정보 -->
+
+      <div class="reporter">
+        이주영(scitech@yna.co.kr) <br />
+        <bdo dir="ltr"
+          >정확하고 신속하게 보도하는 좋은 기자가 되고 싶습니다.
+        </bdo>
+        <!-- rtl 오른쪽에서 왼쪽으로 작성:거꾸로 보이게 됨. 
+          아랍문자처럼 오른쪽부터 쓰는거 유용쓰 세로방향도 있나 ?
+          여긴 아니고 css에서 right 모드가 있음 -->
+      </div>
+
+      <!-- 2-7. 기사 원문 -->
+      <div class="article-link">
+        <a
+          href="https://n.news.naver.com/mnews/hotissue/article/001/0015470776?type=series&cid=1087298"
+          target="_blank"
+          >기사원문</a
+        >
+        <!-- a링크 설정시 href=""에는 이동할 페이지 주소
+        "링크" 뒤에 target="_blank"는 새창으로 열 경우 사용함 -->
+      </div>
+
+      <!-- 기사 주석 표시 박스(주해) -->
+      <article class="comment-box desc-box">
+        <!-- 제목 -->
+        <div>
+          <h4>주해</h4>
+        </div>
+        <!-- 내용 -->
+        <p>
+          ① 오랑우탄: 오랑우탄이라는 이름은 마인어로 '숲의 사람'이라는 뜻이다.
+          '오랑(Orang)'은 사람이라는 뜻이고, '우탄(Hutan)'은 숲이라는 뜻이다.
+          원래 말 그대로 숲에 사는 사람을 지칭하는 단어였으나 후에 의미가
+          확장되었다. <br /><br />
+          ② 수마트라: 동남아시아의 서부에 있는 섬. 현재 인도네시아의 영토이다.
+          섬의 명칭은 대해를 뜻하는 산스크리트어 단어에서 유래되었다. 세계에서
+          6번째로 큰 섬으로 넓이는 일본 혼슈의 2배쯤 되는 47만 3,481km²이다.
+        </p>
+      </article>
+
+      <!-- 2.7.1 오늘의 작품&느낌 -->
+      <article class="work">
+        <!-- 제목 -->
+        <h4>오늘의 작품 &amp; 느낌</h4>
+        <!-- 그림박스 -->
+        <figure>
+          <img src="./images/img_the_scream.jpg" alt="뭉크의 절규" />
+          <!-- 이미지설명 -->
+          <figcaption>
+            뭉크의 <cite>&lt;절규&gt;</cite>
+            <!-- HTML 태그 내부에서 특수문자 처리 
+            & 또는 태그에 사용하는 기호인  <> 등은 특수문자인데
+            아래와 같이 처리함 
+            & 는 &amp; (amp 엠퍼센드)
+            < 는 &lt; (lt less than ~보다 작은)
+            > 는 &gt; (gt greater than ~보다 큰)
+            -->
+          </figcaption>
+        </figure>
+      </article>
+
+      <!-- main 안  -->
+      <!-- 테크뉴스 : ul 사용! 순서가 없는 리스트 ul li는 반드시 같이 사용해  -->
+      <article class="tech-news news-box">
+        <!-- article 안에는 제목을 써주면 좋다 -->
+        <h3>테크뉴스</h3>
+        <ul>
+          <li>
+            <a
+              href="https://n.news.naver.com/mnews/hotissue/article/001/0015473464?type=series&cid=1087298"
+              target="_blank"
+            >
+              "깊은 수면, '유레카 순간'으로 이어질 가능성 높다"
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://n.news.naver.com/mnews/hotissue/article/001/0015470559?type=series&cid=1087298"
+              target="_blank"
+            >
+              제임스웹, 110광년 밖 원시행성원반서 준목성급 외계행성 포착
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://n.news.naver.com/mnews/hotissue/article/001/0015473619?type=series&cid=1087298"
+              target="_blank"
+            >
+              "다람쥐·들쥐, 도시생활 125년만에 두개골·치열이 달라졌다"
+            </a>
+          </li>
+        </ul>
+      </article>
+      <!-- 랭킹뉴스: ol 사용 -->
+      <article class="rank-news news-box">
+        <h3>인기뉴스</h3>
+        <!-- ol li는 반드시 같이 사용함. 순서있는 리스트 -->
+        <!-- 젠코딩 ol>li*3>a[target=_blank] -->
+        <ol>
+          <li>
+            <a
+              href="https://n.news.naver.com/mnews/article/277/0005622066"
+              target="_blank"
+            >
+              "더 얇은 폴더블은 '혁신'…내부 설계, 부품 배치까지 모든 걸
+              바꿨다"</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://n.news.naver.com/mnews/article/422/0000759455"
+              target="_blank"
+            >
+              배경훈 과기장관 후보 "국가AI컴퓨팅센터 등 인프라 조속히 구축"</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://n.news.naver.com/mnews/article/018/0006065371"
+              target="_blank"
+            >
+              "각국 기술패권 확보 위해 경쟁, 대한민국 미래 위해 변화해야"</a
+            >
+          </li>
+        </ol>
+      </article>
+
+      <!-- 분야별 뉴스 : dl > dt, dd  d리스트 아래에 디티와 디디는 형제  -->
+      <article class="sec-news news-box">
+        <!-- 제목 -->
+        <h3>분야별 뉴스</h3>
+        <!-- dl 을 3개 만들거얌 -->
+        <!-- 경제 파트 -->
+        <dl>
+          <dt>경제</dt>
+          <dd>
+            <a
+              href="https://n.news.naver.com/mnews/article/052/0002218488"
+              target="_blank"
+              >국세청, 지난해 유튜버 21명 세무조사...89억 부과</a
+            >
+          </dd>
+          <dd>
+            <a
+              href="https://n.news.naver.com/mnews/article/214/0001436124"
+              target="_blank"
+              >금감원 "부동산 대출 쏠림, 경제 성장 막아‥외부 충격에도 취약"</a
+            >
+          </dd>
+        </dl>
+
+        <!-- 사회 파트 -->
+        <dl>
+          <dt>사회</dt>
+          <dd>
+            <a
+              href="https://n.news.naver.com/mnews/article/022/0004051277"
+              target="_blank"
+            >
+              선사시대 삶 새긴 ‘걸작’… “6000년 암각화 전통 독보적 증거” [뉴스
+              투데이]</a
+            >
+          </dd>
+          <dd>
+            <a
+              href="https://n.news.naver.com/mnews/article/079/0004044617"
+              target="_blank"
+            >
+              "민생회복 소비쿠폰 차질없이 지급하자"…민관 업무협약</a
+            >
+          </dd>
+        </dl>
+
+        <!-- tv/연예 파트 -->
+        <dl>
+          <dt>연예</dt>
+          <dd>
+            <a
+              href="https://n.news.naver.com/mnews/article/016/0002499293"
+              target="_blank"
+              >“어? 이거 블핑 아냐?”…만화 속 그 노래에 전 세계가 열광 [K-코드
+              광풍 케데헌]</a
+            >
+          </dd>
+          <dd>
+            <a
+              href="https://m.entertain.naver.com/ranking/article/312/0000719442"
+              target="_blank"
+              >YG "블랙핑크, LA서 전세계 걸그룹 최초 10만 관객 동원 신기록 달성
+              예정"[공식]</a
+            >
+          </dd>
+        </dl>
+      </article>
+
+      <!-- 용어 정의 리스트 : dl > dt + dd
+       dl defines the description list 용어리스트
+       dt defines the term 용어
+       dd description each term 용어설명
+       ______________________________
+       주의사항! dl은 반드시 자식요소로 dt와 dd가 한번이상 사용되어야함! 
+       또 주의!! dt dd 둘은 형제 관계임. 부모관계가 아니야!! 
+       
+       참고링크: https://www.w3schools.com/html/html_lists_other.asp
+       
+      ----------------------------------------------------------------->
+      <!--  table 사용 - 근데 동적 수정이 어려워서 잘 안씀-->
+      <!-- [ 테이블 요소 : table ]
+            table > tbody > tr > td
+
+            -> tbody는 안쓰고 tr부터 구현해도
+            브라우저가 자동으로 그려준다!
+
+            주의) table > tr 로 직계선택하게 되면
+            위와 같은 구조적인 이유로 선택되지 않는다!
+
+            _______________________________
+
+            ((간단한 테이블 작성시 필수요소 3가지!))
+            table : 테이블 박스 부모요소
+            tr : 테이블 행요소(table row)
+            td : 테이블 데이터요소(table data) -->
+
+      <!-- 사진뉴스 박스: table 사용 -->
+      <article class="photo-news news-box">
+        <!-- 제목 -->
+        <h3>포토 뉴스</h3>
+        <!-- 3행3열 테이블 구성하기 -->
+        <table>
+          <!-- 1번줄 tr -->
+          <tr>
+            <!-- 1-1. 숫자데이터 -->
+            <td>1</td>
+            <!-- 1-2. 글자 링크 데이터 -->
+            <td>
+              <a
+                href="http://www.msn.com/ko-kr/news/other/%ED%8F%90%EC%96%B4%EA%B5%AC-%EA%B1%B8%EB%A6%B0-%EB%82%A8%EB%B0%A9%ED%81%B0%EB%8F%8C%EA%B3%A0%EB%9E%98-%ED%96%89%EC%9A%B4%EC%9D%B4-%EA%B5%AC%ED%95%98%EC%9E%90-%EC%A0%84%EB%8B%B4%ED%8C%80-%EA%B0%80%EB%8F%99/ar-AA1I9IkU?apiversion=v2&noservercache=1&domshim=1&renderwebcomponents=1&wcseo=1&batchservertelemetry=1&noservertelemetry=1"
+                target="_blank"
+                >충격! 행운의 돌고래 실존</a
+              >
+            </td>
+            <!-- 1-3. 이미지 링크 데이터 -->
+            <td>
+              <a
+                href="https://www.msn.com/ko-kr/news/other/%ED%8F%90%EC%96%B4%EA%B5%AC-%EA%B1%B8%EB%A6%B0-%EB%82%A8%EB%B0%A9%ED%81%B0%EB%8F%8C%EA%B3%A0%EB%9E%98-%ED%96%89%EC%9A%B4%EC%9D%B4-%EA%B5%AC%ED%95%98%EC%9E%90-%EC%A0%84%EB%8B%B4%ED%8C%80-%EA%B0%80%EB%8F%99/ar-AA1I9IkU?apiversion=v2&noservercache=1&domshim=1&renderwebcomponents=1&wcseo=1&batchservertelemetry=1&noservertelemetry=1"
+                target="_blank"
+                ><img
+                  src="../../002.그래픽툴/02.일러스트연습/01.자료파일/돌고래.jpg"
+                  alt="포토뉴스섬네일"
+              /></a>
+            </td>
+          </tr>
+          <!-- 2번줄 tr -->
+          <tr>
+            <!-- 2-1. 숫자데이터 -->
+            <td>2</td>
+            <!-- 2-2. 글자 링크 데이터 -->
+            <td>
+              <a
+                href="https://www.newsis.com/view/NISX20250716_0003253204"
+                target="_blank"
+                >'케이팝 데몬 헌터스' OST 8곡, 빌보드 '핫100' 동시 차트인</a
+              >
+            </td>
+            <!-- 2-3. 이미지 링크 데이터 -->
+            <td>
+              <a
+                href="https://www.newsis.com/view/NISX20250716_0003253204"
+                target="_blank"
+                ><img
+                  src="../../002.그래픽툴/02.일러스트연습/01.자료파일/헌트릭스.jpg"
+                  alt="포토뉴스섬네일"
+              /></a>
+            </td>
+          </tr>
+          <!-- 3번줄 tr -->
+          <tr>
+            <!-- 3-1. 숫자데이터 -->
+            <td>3</td>
+            <!-- 3-2. 글자 링크 데이터 -->
+            <td>
+              <a
+                href="https://news.nate.com/view/20250716n07604"
+                target="_blank"
+                >'좀비딸' 김애용 캐스팅 비화 "오디션장서 배 깔고 드러눕는 대범함
+                보여"</a
+              >
+            </td>
+            <!-- 3-3. 이미지 링크 데이터 -->
+            <td>
+              <a
+                href="https://news.nate.com/view/20250716n07604"
+                target="_blank"
+                ><img
+                  src="../../002.그래픽툴/02.일러스트연습/01.자료파일/김애용.jpg"
+                  alt="섬네일"
+              /></a>
+            </td>
+          </tr>
+        </table>
+      </article>
+      <!-- 젠코딩(에밋코딩) 기본 사용법
+         아이디는 #
+         클래스는 .
+         요소는 요소명
+         자손은 직계(>)로만 표시
+         묶음 형제 요소는 소괄호 사용
+         형제요소는 +
+         개수만큼 생성시 *숫자 
+         속성은 대괄호[]
+
+         위의 테이블 만든 예시
+         table>tr*3>td*3>a[target=_blank]-->
     </main>
 
     <!--*********** 3. 하단영역 **********-->
