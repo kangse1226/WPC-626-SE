@@ -180,14 +180,12 @@
          .desc-box는 인용블록, 주해 박스 두가지에 대한 공통클래스-->
         <article class="quote-box desc-box">
           <div>
-            <h4>
-              막스 플랑크 신경생물학 연구소
-            </h4>
+            <h4>막스 플랑크 신경생물학 연구소</h4>
           </div>
           <blockquote title="독일 막스플랑크 동물행동연구소와 동일 기관임">
             <!-- 블록인용 내부에는 다른 블록요소를 넣을 수 없지만 
              인라인 요소는 가능함. 여기에 img 태그를 넣어보자 -->
-             <img src="./images/연구소.jpg" alt="막스연구소 전경">
+            <img src="./images/연구소.jpg" alt="막스연구소 전경" />
           </blockquote>
           <!-- 블록쿼트박스 
           이 박스 내부에 다른 블록요소 사용불가! 속성인 cite는 필수는 아님. 
@@ -295,7 +293,7 @@
           ① 오랑우탄: 오랑우탄이라는 이름은 마인어로 '숲의 사람'이라는 뜻이다.
           '오랑(Orang)'은 사람이라는 뜻이고, '우탄(Hutan)'은 숲이라는 뜻이다.
           원래 말 그대로 숲에 사는 사람을 지칭하는 단어였으나 후에 의미가
-          확장되었다. <br><br>
+          확장되었다. <br /><br />
           ② 수마트라: 동남아시아의 서부에 있는 섬. 현재 인도네시아의 영토이다.
           섬의 명칭은 대해를 뜻하는 산스크리트어 단어에서 유래되었다. 세계에서
           6번째로 큰 섬으로 넓이는 일본 혼슈의 2배쯤 되는 47만 3,481km²이다.
@@ -455,7 +453,6 @@
             >
           </dd>
         </dl>
-        
       </article>
 
       <!-- 용어 정의 리스트 : dl > dt + dd
@@ -467,7 +464,77 @@
        또 주의!! dt dd 둘은 형제 관계임. 부모관계가 아니야!! 
        
        참고링크: https://www.w3schools.com/html/html_lists_other.asp
-       -->
+       
+      ----------------------------------------------------------------->
+      <!--  table 사용 - 근데 동적 수정이 어려워서 잘 안씀-->
+      <!-- [ 테이블 요소 : table ]
+            table > tbody > tr > td
+
+            -> tbody는 안쓰고 tr부터 구현해도
+            브라우저가 자동으로 그려준다!
+
+            주의) table > tr 로 직계선택하게 되면
+            위와 같은 구조적인 이유로 선택되지 않는다!
+
+            _______________________________
+
+            ((간단한 테이블 작성시 필수요소 3가지!))
+            table : 테이블 박스 부모요소
+            tr : 테이블 행요소(table row)
+            td : 테이블 데이터요소(table data) -->
+
+      <!-- 사진뉴스 박스: table 사용 -->
+      <article class="photo-news news-box">
+        <!-- 제목 -->
+        <h3>포토 뉴스</h3>
+        <!-- 3행3열 테이블 구성하기 -->
+        <table>
+          <!-- 1번줄 tr -->
+          <tr>
+            <!-- 1-1. 숫자데이터 -->
+            <td>1</a></td>
+            <!-- 1-2. 글자 링크 데이터 -->
+            <td><a href="http://www.msn.com/ko-kr/news/other/%ED%8F%90%EC%96%B4%EA%B5%AC-%EA%B1%B8%EB%A6%B0-%EB%82%A8%EB%B0%A9%ED%81%B0%EB%8F%8C%EA%B3%A0%EB%9E%98-%ED%96%89%EC%9A%B4%EC%9D%B4-%EA%B5%AC%ED%95%98%EC%9E%90-%EC%A0%84%EB%8B%B4%ED%8C%80-%EA%B0%80%EB%8F%99/ar-AA1I9IkU?apiversion=v2&noservercache=1&domshim=1&renderwebcomponents=1&wcseo=1&batchservertelemetry=1&noservertelemetry=1" target="_blank">충격! 행운의 돌고래 실존</a></td>
+            <!-- 1-3. 이미지 링크 데이터 -->
+            <td>
+              <a href="https://www.msn.com/ko-kr/news/other/%ED%8F%90%EC%96%B4%EA%B5%AC-%EA%B1%B8%EB%A6%B0-%EB%82%A8%EB%B0%A9%ED%81%B0%EB%8F%8C%EA%B3%A0%EB%9E%98-%ED%96%89%EC%9A%B4%EC%9D%B4-%EA%B5%AC%ED%95%98%EC%9E%90-%EC%A0%84%EB%8B%B4%ED%8C%80-%EA%B0%80%EB%8F%99/ar-AA1I9IkU?apiversion=v2&noservercache=1&domshim=1&renderwebcomponents=1&wcseo=1&batchservertelemetry=1&noservertelemetry=1" target="_blank"
+              ><img src="../../002.그래픽툴/02.일러스트연습/01.자료파일/돌고래.jpg" alt="포토뉴스섬네일"
+              /></a>
+            </td>
+          </tr>
+          <!-- 2번줄 tr -->
+          <tr>
+            <!-- 2-1. 숫자데이터 -->
+            <td>2</td>
+            <!-- 2-2. 글자 링크 데이터 -->
+            <td><a href="https://www.newsis.com/view/NISX20250716_0003253204" target="_blank">'케이팝 데몬 헌터스' OST 8곡, 빌보드 '핫100' 동시 차트인</a></td>
+            <!-- 2-3. 이미지 링크 데이터 -->
+            <td><a href="https://www.newsis.com/view/NISX20250716_0003253204" target="_blank"><img src="../../002.그래픽툴/02.일러스트연습/01.자료파일/헌트릭스.jpg" alt="포토뉴스섬네일"></a></td>
+          </tr>
+          <!-- 3번줄 tr -->
+          <tr>
+            <!-- 3-1. 숫자데이터 -->
+            <td>3</td>
+            <!-- 3-2. 글자 링크 데이터 -->
+            <td><a href="https://news.nate.com/view/20250716n07604" target="_blank">'좀비딸' 김애용 캐스팅 비화 "오디션장서 배 깔고 드러눕는 대범함 보여"</a></td>
+            <!-- 3-3. 이미지 링크 데이터 -->
+            <td><a href="https://news.nate.com/view/20250716n07604" target="_blank"><img src="../../002.그래픽툴/02.일러스트연습/01.자료파일/김애용.jpg" alt="섬네일"></a></td>
+          </tr>
+        </table>
+        
+      </article>
+      <!-- 젠코딩(에밋코딩) 기본 사용법
+         아이디는 #
+         클래스는 .
+         요소는 요소명
+         자손은 직계(>)로만 표시
+         묶음 형제 요소는 소괄호 사용
+         형제요소는 +
+         개수만큼 생성시 *숫자 
+         속성은 대괄호[]
+
+         위의 테이블 만든 예시
+         table>tr*3>td*3>a[target=_blank]-->
     </main>
 
     <!--*********** 3. 하단영역 -->

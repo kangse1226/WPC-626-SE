@@ -373,7 +373,7 @@ float: left;
 margin: 10px 15px 15px 0;
 
 padding: 15px;
-border: 5px dashed rgb(207, 198, 198);
+border: 5px dashed rgb(206, 190, 190);
 /* 원형 보더는 값이 50%임. bdrs50p */
 border-radius: 50%;
 text-align: center;
@@ -389,17 +389,20 @@ white-space:nowrap  */
 }
 
 /* 개별적으로 dt를 선택하여 글자 배경색 바꾸기
-dl은 왜 차일드고 dt는 타입쓰는지 생각해보기 아 헷갈려 dl 안에 dt dd잇어서??/?? */
-.sec-news dl:first-child dt:first-of-type {
-  background-color: #fff;
+ dl은 다른 h3형제 요소와 섞여있으므로 child선택자가 아닌 of-type선택자를 써야한다 */
+.sec-news dl:first-of-type dt {
+  background-color: #ffffff;
+  color: rgb(0, 129, 0);
 }
 
-.sec-news dl:nth-child(2) dt:first-of-type {
+.sec-news dl:nth-of-type(2) dt {
   background-color: #fff;
+   color: rgb(0, 129, 0);
 }
 
-.sec-news dl:last-child dt:first-of-type {
+.sec-news dl:last-of-type dt {
   background-color: #fff;
+   color: rgb(0, 129, 0);
 }
 
 /* dd 용어 설명 박스 */
@@ -452,6 +455,37 @@ n번째 자식은 -> 선택요소:nth-child(숫자)
 .tech-news li:last-child a {
   color: rgb(18, 201, 1);
 }
+
+
+/* 포토뉴스 박스 */
+/* 전체 테이블 */
+.photo-news table {
+    max-width: 500px;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    border-collapse: collapse;
+}
+/* td비율 설정 td만 넣을수잇자나*/
+.photo-news td:nth-child(1) {
+  width: 10%;
+}
+.photo-news td:nth-child(2) {
+  width: 60%;
+}
+.photo-news td:nth-child(3) {
+  width: 30%;
+}
+/* a글자 세팅 변경 */
+.photo-news a {
+  white-space: normal;
+}
+/* 테이블 이미지 */
+.photo-news img {
+  width: 100%;
+  /* 이미지 비율 강제 설정 속성 */
+  /* aspect-ratio 값을 4/3 가로:세로  */
+}
+
 
 
 /* 오늘의 작품과 느낌 */
