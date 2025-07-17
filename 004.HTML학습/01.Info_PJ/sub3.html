@@ -393,8 +393,9 @@
       <article class="sec-news news-box">
         <!-- 제목 -->
         <h3>분야별 뉴스</h3>
+        <!-- dl 을 3개 만들거얌 -->
+        <!-- 경제 파트 -->
         <dl>
-          <!-- 경제 파트 -->
           <dt>경제</dt>
           <dd>
             <a
@@ -410,7 +411,10 @@
               >금감원 "부동산 대출 쏠림, 경제 성장 막아‥외부 충격에도 취약"</a
             >
           </dd>
-          <!-- 사회 파트 -->
+        </dl>
+
+        <!-- 사회 파트 -->
+        <dl>
           <dt>사회</dt>
           <dd>
             <a
@@ -429,8 +433,11 @@
               "민생회복 소비쿠폰 차질없이 지급하자"…민관 업무협약</a
             >
           </dd>
-          <!-- tv/연예 파트 -->
-          <dt>tv/연예 파트</dt>
+        </dl>
+
+        <!-- tv/연예 파트 -->
+        <dl>
+          <dt>연예</dt>
           <dd>
             <a
               href="https://n.news.naver.com/mnews/article/016/0002499293"
@@ -448,14 +455,19 @@
             >
           </dd>
         </dl>
+        
       </article>
+
       <!-- 용어 정의 리스트 : dl > dt + dd
        dl defines the description list 용어리스트
        dt defines the term 용어
        dd description each term 용어설명
        ______________________________
        주의사항! dl은 반드시 자식요소로 dt와 dd가 한번이상 사용되어야함! 
-       또 주의!! dt dd 둘은 형제 관계임. 부모관계가 아니야!! -->
+       또 주의!! dt dd 둘은 형제 관계임. 부모관계가 아니야!! 
+       
+       참고링크: https://www.w3schools.com/html/html_lists_other.asp
+       -->
     </main>
 
     <!--*********** 3. 하단영역 -->
@@ -508,6 +520,28 @@
         1. style 속성 : 요소에 인라인으로 CSS속성값을 셋팅함
         예) <요소명 style="속성:값;속성:값;">
         2. title 속성 : 툴팁제공속성(마우스오버시 등장)
+
+
+
+        /* [ 순서없는 리스트 : ul ]
+          unordered list
+
+          (참고: 블릿옵션
+          https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ul_type_css)
+
+          [ 순서있는 리스트 : ol ]
+          ordered list
+
+          (참고: 순서표시옵션
+          https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ol_type_all_css)
+
+          [ ul/ol 공통사항 ]
+          - 하위필수요소 : li (개별리스트)
+          - 주의 : 하위에 li 이외의 블록요소나 
+          그 어떤 요소도 직계자식으로 사용할 수 없다!
+          예) <ul><li></li><div></div></ul> -> 사용불가! 
+          
+          */
     -->
   </body>
 </html>
