@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* 아카이브 사이트 공통 세팅 CSS - core.css */
+
+/* 1. 웹폰트 */
+/* 2. 공통 클래스 */
+/* 2-1. 속박스 */
+.inbox{
+    /* 최대크기 지정 */
+    max-width: 1400px;
+    /* 마영오! */
+    margin: 0 auto;
+    /* 임시 최소높이 */
+    min-height: 200px;
+    /* 임시외곽선 ol 두종색 두께종류색깔 */
+    outline: 2px dotted #ccc;
+    /* outline은 border와 세팅법은 같음
+    단, 크기를 차지하지 않고 바깥쪽으로 아무 영향없이 보이기만 함! */
+}
