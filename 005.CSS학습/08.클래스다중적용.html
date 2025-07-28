@@ -76,14 +76,19 @@
         border: 15px dotted red;
       }
       /* 보더관련 클래스 */
+      /* id가 클래스보다 쎄고, 클래스끼리는 부모있는게 더 쎔. 호가호위
+       아이디>부모있는 클래스>부모없는 클래스>그냥 요소명 */
       .bx .bd1 {
-        border: 10px dotted pink !important;
+        border: 10px dotted pink;
       }
-      .bx .bd3 {
+     .bx .bd2 {
+        border: 5px dashed darkcyan !important;
+        /* !important 넣으면 자바스크립트(인라인으로 바로 넣음)로 넣어도 안먹음.
+        important가 가장 최우선으로 적용됨. 그래서 이거 팀장허락없이 안씀
+        이걸 쓰면 자바스크립트로 변경해도 적용이 안되기 때문에... */
+      }
+     .bx .bd3 {
         border: 20px ridge darkorchid;
-      }
-      .bx .bd2 {
-        border: 5px dashed darkcyan;
       }
 
       /* 
@@ -116,15 +121,23 @@
   <body>
     <h1>클래스 다중적용</h1>
     <ul class="bx">
-      <li class="">클래스적용1</li>
-      <li class="">클래스적용2</li>
-      <li class="">클래스적용3</li>
-      <li class="">클래스적용4</li>
-      <li class="">클래스적용5</li>
-      <li class="">클래스적용6</li>
-      <li class="">클래스적용7</li>
-      <li class="">클래스적용8</li>
-      <li class="">클래스적용9</li>
+      <li class="fcls1 bd1">클래스적용1</li>
+      <li class="fcls2 bd2">클래스적용2</li>
+      <li class="fcls3 bd3">클래스적용3</li>
+      <li class="fcls1 bd1" id="bd4" style="border: 5px dashed #4ddb54;">클래스적용4</li>
+      <!-- 직접넣은 인라인> id> class 순으로 힘이 쎄 -->
+      <li class="fcls3 bd3" style="border: 5px dashed #b3297e;" >클래스적용5</li>
+      <li class="fcls3 bd3 bd1">클래스적용6</li>
+      <!-- 실제 코드의 순서가 중요함. bd1, bd2, bd3이 위에 클래스 적용할 때 
+       bd1
+       bd2
+       bd3 순서로 작성했기 때문에 실제 코드가 작성된 순서에 따라서
+       그래서 li class="bd3 bd1" 이렇게 써봤지 bd1이 뒤에 썻다고 bd1이 적용되지 않음. 
+       이 경우에는 bd1을 소스코드작성에 밑에 쓰던가 아니면 bd3을 삭제해야함 -->
+      <li class="fcls3 bd1">클래스적용7</li>
+      <li class="fcls2 bd2 bd3">클래스적용8</li>
+      <!-- bd2에 important 적용해서 그래 -->
+      <li class="fcls1 bd1 bd2 bd3">클래스적용9</li>
     </ul>
 
     <!--  하단컨텐츠박스 -->
