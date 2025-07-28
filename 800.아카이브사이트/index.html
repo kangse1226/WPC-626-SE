@@ -1,63 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>나의 아카이브 사이트</title>
+    <!-- 폰트어썸 CSS : 이사이트에서 임티를 글자처럼 맘대로 가져올 수 있음!!!-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
     <!-- 메인 css  -->
-     <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
     <!-- 할아버지는 html이고 화면에 보이게 하는 건 body가 부모???ㅠㅠㅠㅠㅠ -->
 
     <!-- 이중박스 설정 : 겉박스는 화면끝까지 쫙 가고, 안에 박스하나 더 넣어..
      이름 같은데 하나는 id 하나는 class-->
-     
+
     <!-- 1. 상단영역 -->
-     <div id="top-area">
-        <section class="top-area inbox">
-            <!-- top-area 클래스와 inbox 클래스 두가지를 가지고 있음.  -->
-             <!-- 로고파티션 -->
-                                <!-- 이미지한테 로고 라고 클래스 줌 -->
-             <div class="part-box col-1"> <img class="logo" src="../002.그래픽툴/01.포토샵연습/２．작업파일/10일차/나의로고1.jpg" alt="메인로고"></div>
-             <!-- 메뉴파티션 -->
-             <div class="part-box col-10"> 
-                <!-- GNB 메뉴 아이디 설정 -->
-                <ul id="gnb">
-                    <li>
-                        <a href="#">HOME</a>
-                    </li>
-                    <li>
-                        <a href="#">LUNCH BOX</a>
-                    </li>
-                    <li>
-                        <a href="#">SHADOWING</a>
-                    </li>
-                    <li>
-                        <a href="#">TARINING</a>
-                    </li>
-                </ul>
-             </div>
-             <!-- 깃허브아이콘파티션 -->
-             <div class="part-box col-1"> 
-                깃허브
-             </div>
-        </section>
-     </div>
+    <div id="top-area">
+      <section class="top-area inbox">
+        <!-- top-area 클래스와 inbox 클래스 두가지를 가지고 있음.  -->
+        <!-- 로고파티션 -->
+        <!-- 이미지한테 로고 라고 클래스 줌 -->
+        <div class="part-box col-1">
+          <img
+            class="logo"
+            src="../002.그래픽툴/01.포토샵연습/２．작업파일/10일차/나의로고1.jpg"
+            alt="메인로고"
+          />
+        </div>
+        <!-- 메뉴파티션 -->
+        <div class="part-box col-10">
+          <!-- GNB 메뉴 아이디 설정 -->
+          <ul id="gnb">
+            <li>
+              <a href="#">HOME</a>
+            </li>
+            <li>
+              <a href="#">LUNCH BOX</a>
+            </li>
+            <li>
+              <a href="#">SHADOWING</a>
+            </li>
+            <li>
+              <a href="#">TARINING</a>
+            </li>
+          </ul>
+        </div>
+        <!-- 깃허브아이콘파티션 -->
+        <div class="part-box col-1 git-box">
+          <a
+            class="fa-brands fa-github"
+            href="https://github.com/kangse1226/WPC-626-SE"
+            target="_blank"
+          ></a>
+        </div>
+      </section>
+    </div>
 
     <!-- 2. 메인영역 -->
-     <div id="main-area">
-        <main class="main-area inbox">
+    <div id="main-area">
+      <main class="main-area inbox">
+        <!-- 2-1. 자기소개 박스 -->
+        <section class="intro-box">
+          <!-- 자기소개 글박스 -->
+          <div class="part-box col-3 txt-box">
+            <h2>HI!</h2>
+            <p>
+              😉 안녕하세요! <br> 털 달린 동물을 사랑하지만 키울 체력과 재력 부족
+              이슈로 랜선집사로 살아가고 있습니다. <br> 웹소설, 웹툰을 좋아해서
+              웹툰PD로 근무했는데, 그 과정에서 사용자 ui, ux에 관심을 갖게
+              되었어요. <br> 디자인 감각을 키우고 개발 공부를 하면서 사용자에게
+              편리함과 즐거움을 주는 프로덕트 디자이너가 되고 싶습니다!! 😊 <br>
+            </p>
+          </div>
 
-        </main>
-     </div>
+          <!-- 자기소개 이미지박스 -->
+        <div class="part-box col-7 img-box">
+            <img src="../008.쉐도잉프로젝트/01.DKB_PJ/03.구현소스/01.구현디자인/도깨비배너2.jpg" alt="자기소개이미지">
+        </div>
+      </main>
+    </div>
     <!-- 3. 하단영역 -->
-     <div id="bottom-area">
-        <footer class="bottom-area inbox">
-
-        </footer>
-     </div>
-
-
-</body>
+    <div id="bottom-area">
+      <footer class="bottom-area inbox"></footer>
+    </div>
+  </body>
 </html>
