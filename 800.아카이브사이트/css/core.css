@@ -26,7 +26,7 @@ body{
 
 /* 인박스 클리어세팅 */
 .inbox::after{
-    content:'';
+    content:"";
     display: block;
     clear: both;
 }
