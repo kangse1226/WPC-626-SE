@@ -10,7 +10,7 @@ body{
     background-color: #000000;
 }
 
-/* 1. 상단영역 */
+/*************** 1. 상단영역***************** */
 /* 겉박스 */
 #top-area{
     background-color: rgb(255, 255, 255);
@@ -66,9 +66,42 @@ height: 91px;
     text-align: right;
     font-size: 44px;
     line-height: 91px;
+
 }
 
-/* 2. 메인영역 */
+/* 내 캐릭터 링크 박스*/
+/* 마이캐링크 이름의 a요소이다. 이렇게 쓰면 내가 a에게 이 이름을 줬다 이럴때 종속선택자를 쓴다 */
+a.my-cha-link{
+    /* a요소는 위아래 마진이 적용이 안되므로 인라인블록으로 display변경한다! */
+    display: inline-block;
+    margin-top: 22px;
+    /* 인라인요소간 진행방향을 세로정렬
+    -> 옆에 있는 깃허브 로고가 영향을 받으므로
+    이 정렬속성으로 세로 위치를 조정함 */
+    vertical-align: -22px;
+
+}
+
+.my-cha-link img{
+    height: 70px;
+}
+
+/* 마우스 오버시 이미지 교체하기 */
+/* 1 처음에 마지막 이미지는 안보이게 함 */
+.my-cha-link img:last-child{
+    display: none;
+}
+
+/* 2 마우스 오버시 첫번째 이미지 안보이게 함 */
+.my-cha-link:hover img:first-child{
+    display: none;
+}
+/* 3 마우스 오버시 마지막 이미지 보이게 함 */
+.my-cha-link:hover img:last-child{
+    display: inline;
+}
+
+/*************** 2. 메인영역 *****************/
 .main-area{
     color: #ffffff;
 }
