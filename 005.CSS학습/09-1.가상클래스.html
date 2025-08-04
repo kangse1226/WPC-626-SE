@@ -78,32 +78,64 @@
       /* a 요소 가상클래스 */
       /* 처음 링크 :link */
       h2 a:link {
+        color: #d65050;
+        /* 밑줄없앰 tdn */
+        text-decoration: none;
       }
       /* 방문후 :visited */
       h2 a:visited {
-        /* color: lime;             */
+        /* color: rgb(5, 138, 5); 
+        ->방문후 가상요소를 주면 a 기본 세팅이 덮어써져서 적용안됨!
+        이유는 visited가 더 우선순위가 높다!       */
+        text-decoration: none;     
       }
       /* 마우스 오버시 :hover */
       h2 a:hover {
+        color: #f31919;
         
         /* 텍스트 데코레이션에 스타일은
             뒤에 띄어쓰기로 추가해서 쓸 수 있음 */
+            text-decoration: overline dashed;
       }
       /* 마우스를 누르고 있는 상태 :active */
       h2 a:active {
+        color: #51b7d1;
+
+        text-decoration: underline double #f79a9a;
       }
 
       /* 요즘은 a요소를 바로 선택하여
         셋팅하고 :hover 정도만 변경한다! */
       h2 a {
-        color: darkorange;
+        color: rgb(255, 0, 119);
       }
 
       /* 포커스 가상클래스 :focus */
-      h2 a:focus {}
+      h2 a:focus {
+        /* 아웃라인 outline은 border와 비슷하지만
+        박스 구성요소가 아니라 외곽선만 보여주고
+        주변과 자신에게 아무 영향을 주지 않는다. 
+        포커스 표시나 입력창 포커스를 줄 때 많이 이용된다.  */
+        /* outline: 두께 종류 색상 */
+        outline: 5px dashed #14ac53;
+
+      }
 
       /* 시인이름 */
-      h3 {}
+      h3 {
+         /* 가로크기 */
+        width: 800px;
+        /* 부모박스보다 작은 크기를 가지는
+            블록요소에 적용된다 -> 마.영.오! */
+        margin: 0 auto;
+        /* 내부 인라인요소 오른쪽정렬 */
+        text-align: right;
+
+        /* outline: 1px solid red; */
+        padding: 20px;
+        box-sizing: border-box;
+        color: #0c0042;
+      }
 
       /* 
             요소명.클래스명 / 요소명#아이디명
@@ -115,43 +147,100 @@
 
       /* ul / ol 요소 기본초기화! */
       ul,
-      ol {}
+      ol {
+        /* 3가지 없애기! 3無! */
+        margin: 0; /* m0 */
+        padding: 0; /* p0 */
+        list-style: none; /* lin */
+      }
 
       /* 부모박스 셋팅 */
       ul.part1,
-      div.part2 {}
+      div.part2 {
+        width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        border: 2px solid #34a061;
+        /* 둥근모서리 */
+        border-radius: 20px;
+        /* 보더,패딩 설정크기 내부로
+            포함시키는 속성은? 
+            box-sizing:border-box 
+            bxb */
+        box-sizing: border-box;
+        /* 글자중앙 */
+        text-align: center;
+      }
 
       /* 
             [ font 한번에 셋팅하기! ]
             font : 스타일 두께 크기/줄간격 글자체
             font : 스두크/줄체
-            ->>> font 한번에 쓰기에서 글자체는 필수!
+            ->>> font 한번에 쓰기에서 글자 크기와 글자체는 필수!
             ->>> 2개이상 셋팅필수
         */
-      /* 모든 li에 오버서 손가락모양 */
-      .part1 li {}
+      /* 모든 li에 오버시 손가락모양으로 바뀌게 설정하기 */
+      .part1 li {
+        cursor: pointer;
+      }
 
       /* .part1 li 의 첫번째 자식 */
-      .part1 li:first-child {}
+      .part1 li:first-child {
+        /* 궁서체, 40px */
+        /* font-family: dohyen;
+        font-size: 40px; */
+        color: #ff4e18;
+        font: italic bold 40px/2 dohyen;
+      }
       /* .part1 li 의 첫번째 자식 오버시 */
-      .part1 li:first-child:hover {}
+      .part1 li:first-child:hover {
+        color: #44c7bc;
+        font-style: normal;
+      }
       
       /* .part1 li 의 두번째 자식 */
-      .part1 li:nth-child(2) {}
+      .part1 li:nth-child(2) {
+        /* 20px 굴림 */
+        font: 20px dohyen;
+        color: #914354;
+      }
       /* .part1 li 의 두번째 자식 오버시 */
-      .part1 li:nth-child(2):hover {}
+      .part1 li:nth-child(2):hover {
+        /* 두껍게 */
+        font-weight: bold;
+      }
       /* .part1 li 의 세번째 자식 */
-      .part1 li:nth-child(3) {}
+      .part1 li:nth-child(3) {
+        font: bold 20px 궁서;
+        color: #ee1212;
+      }
       /* .part1 li 의 세번째 자식 오버시 */
-      .part1 li:nth-child(3):hover {}
+      .part1 li:nth-child(3):hover {
+        /* 단어간격 ws 20px  */
+        /* 자간 ls 10px  */
+        word-spacing: 20px;
+        letter-spacing: 10px;
+        color: #fa0808;
+        font: bold 35px 궁서;
+      }
       
       /* .part1 li 의 네번째 자식 */
-      .part1 li:nth-child(4) {}
+      .part1 li:nth-child(4) {
+        font: bold 25px "맑은 고딕";
+        color: #058143;
+      }
       /* 한글이 있는 b요소만 숨기기 */
-      .part1 li:nth-child(4) b {}
+      .part1 li:nth-child(4) b {
+        display:none;
+
+      }
       /* 오버시 한자(span)숨기고 한글(b)보이기 */
-      .part1 li:nth-child(4):hover b {}
-      .part1 li:nth-child(4):hover span {}
+      .part1 li:nth-child(4):hover b {
+        display: inline;
+      }
+      .part1 li:nth-child(4):hover span {
+        display: none;
+      }
 
       /* 4번째 li이후 모든 li를 전부 선택하기
             [틸드(~)는 다중형제선택자]
