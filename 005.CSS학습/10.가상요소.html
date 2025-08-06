@@ -52,12 +52,47 @@
             참고)
             https://www.w3schools.com/css/css_pseudo_elements.asp
 
+            노션)
+            https://cerulean-spy-f57.notion.site/09-246e4c9eb9288094a0f1ecef02ae487e
+
 
              */
       /* h2요소 맨앞에 이미지 넣기 */
-      
+      h2::before{
+        content: url(../005.CSS학습/imgs/blogo.png);
+        /* 이미지 크기 적용 안됨! */
+        /* 마진 적용은 됨 */
+        margin-right: 20px;
+        /* 인라인요소간 세로 정렬  va */
+        /* 로고랑 h2 글 정렬되도록 조절 */
+        vertical-align: -6px;
+
+      }
 
       /* 맨뒤 추가요소 ::after */
+      h2::after{
+        /* content: url(./imgs/bg_logo_a_01.png);  그냥 넣으면 너무 커 근데 이미지 크기
+        조절이 안되니까 응용해야함
+        디자인 적용을 위해서 인라인-블록으로 바꿔준다  */
+        content: '';
+        display: inline-block;
+        width: 40px;
+        height: 60px;
+        border: 2px solid #4f6dc0;
+        border-radius: 5px;
+        /* 배경넣기 */
+        background: #b0cbee url(./imgs/bg_logo_a_01.png) no-repeat center/88%;
+
+        /* 박스그림자 */
+        box-shadow: 0 5px 20px #528de6, 
+        10px 10px 10px 1px #2159d1;
+
+        /* 인라인요소간 세로정렬 va */
+        vertical-align: middle;
+        /* 왼쪽 마진  */
+        margin-left: 25px;
+
+      }
       
 
       /* dl요소 디자인 */
@@ -76,34 +111,84 @@
 
       /* 반복되는 요소의 앞에 아이콘 가상요소로 넣기 */
       
+      dt::before{
+        content: '🎬';
+        /* 글자크기변경 */
+        font-size: 25px;
+        vertical-align: 1px;
+        margin-right: 5px;
+        /* color: #1a7c38; */
+      }
       /* dt아이콘 변경 */
       /* dt중 두번째 */
+      dt:nth-of-type(2)::before{
+        content: '🎭';
+      }
       
       /* dt중 세번째 */
+      dt:nth-of-type(3)::before{
+        content: '🎵';
+      }
       
       /* dt중 네번째 */
+      dt:nth-of-type(4)::before{
+        content: '💖';
+      }
       
 
       /* dd전체 before적용하기 */
-      
-      /* 여자인 경우 이모지 변경 */
-      
+      dd::before{
+        content: '👩';
+        margin-right: 10px;
+      }
+      /* 남자인 경우 이모지 변경 */
+      dd:nth-of-type(1)::before,
+      dd:nth-of-type(2)::before,
+      dd:nth-of-type(5)::before,
+      dd:nth-of-type(6)::before,
+      dd:nth-of-type(7)::before,
+      dd:nth-of-type(10)::before
+      {
+        content: '🧑';
+      }
+
       /* 남자,여자 같이 출력
       "찬열,펀치" */
-      
+      dd:nth-of-type(13)::before{
+        content: '👩🧑';
+      }
 
       
       /* 스토리의 dd는 가상요소 없애기 */
-      
+      dd.story::before{
+        display: none;
+        /* 질문: 없앨때 빼고는 ct필수인건가여? */
+      }
 
       /* 스토리의 dd 아래 h3 이모지넣기 */
+      dd.story h3::before{
+        content: '📃';
+        margin-right: 10px;
+      }
       
 
       /* .story의 첫번째 p태그의 첫번째 글자 디자인 변경하기 */
       
+      .story p:nth-of-type(1)::first-letter {
+          font-size: 50px;
+          color: rgb(255, 0, 128);
+          font-weight: bold;
+          font-style: italic;
+      }
 
       /* .story의 첫번째 p태그의 첫번째줄 디자인 변경하기 */
       
+      .story p:nth-of-type(1)::first-line {
+          font-size: 24px;
+          color: rgb(255, 0, 0);
+          font-family: dohyen;
+          font-style: italic;
+      }
 
       /* 두번째 p태그는 태그로 
         첫번째 글자(b태그), 첫번째 줄(span)변경 */
@@ -119,6 +204,13 @@
 
       /* 기타 가상요소 ::selection */
       /* 드래그 선택시 글자색 배경색 설정변경! */
+      /* p::selection{ */
+      ::selection{
+        color: #ff9d9d;
+        background-color: #49e9ce;
+      }
+      /* 페이지 전체에 적용하고 싶으면 바로 ::selection을 사용! */
+
       
       
     </style>
