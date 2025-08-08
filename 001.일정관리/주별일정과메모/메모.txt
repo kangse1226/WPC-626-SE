@@ -42,4 +42,24 @@ vertical-align: middle;
 
 3) 
 
-   
+
+uiux 디자이너로서 생각해야할 것들
+
+https://cerulean-spy-f57.notion.site/247e4c9eb9288040ac94c7724510d3e2
+
+ai에게 조사맡길 때 프롬프트 작성하기
+
+프롬프트 전략
+https://cerulean-spy-f57.notion.site/12-AI-249e4c9eb92880618c09e763e256a796?pvs=74
+
+클로드는 보고서 잘 만들어준다
+https://claude.ai/public/artifacts/b289c5ea-fa08-471f-a96e-46b4aebb8920
+
+    **“신뢰성 중심”으로 쓸만한 AI 추천**:
+
+1. **Perplexity AI**: 출처가 가장 투명. 정보 검색 + 정리 목적에 최고.
+2. **ChatGPT (웹 탐색 모드)**: GPT-4의 언어 능력 + 검색 정확성. 균형 잡힘.
+3. **Gemini**: 구글 검색 기반으로, 빠른 최신 정보에 적합.
+4. **Claude**: 판단은 조심스럽지만, 외부 정보는 직접 줘야 함.
+5. **뤼튼은 "AI 검색 요약기"에 가까운 접근**→ 질문 →**검색 → 요약 → 출처 제공**
+
