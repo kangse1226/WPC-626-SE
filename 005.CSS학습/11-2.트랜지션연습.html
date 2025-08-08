@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜지션 연습</title>
+    <style>
+        /* css 코드구역 */
+        html, body{
+            height: 100%;
+        }
+        body{
+            background-image: linear-gradient(to bottom, skyblue, skyblue 30%, rgb(240, 167, 138) 60%);
+
+        }
+
+        /* 애니박스 */
+        .ani-box{
+            /* 부모자격 */
+            position: relative;
+            top: 200px;
+            height: 400px;
+            /* 블록은 옆으로 끝까지 가니까 w 값 줄필요없음 */
+
+            outline: 2px solid rgb(46, 46, 54);
+        }
+
+        /* 고양이 이미지 크기 조절 */
+        #cat{
+            position: absolute;
+            /* 고양이가 처음에 나가서 안보임 */
+            left: -70%;
+            bottom: -210px;
+            /* 원본이미지가 세로로 길어서 바텀이 0이면 위로 뜨고 픽셀음수로 수치조정해야함 */
+            width: 550px;
+           
+
+        }
+        /* 하츄핑 박스 */
+        #ping-box{
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            /* 고양이가 하츄핑 위에오게 하려고 */
+            z-index: 1;
+            overflow: hidden;
+            height: 3opx;
+        }
+
+        /* 하츄핑 이미지 조절 */
+        #ping-box img{
+            width: 150px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- 하츄핑 고양이 타기 애니박스 -->
+    <div class="ani-box">
+        <!-- 고양이 이미지 -->
+         <img src="./레벨/고양이누끼.png" alt="고양이" id="cat">
+
+         <!-- 하츄핑 박스 -->
+          <div id="ping-box">
+            <img src="./레벨/Adobe Express 2025-08-08 12시 56분 43초.png" alt="하츄핑">
+          </div>
+    </div>
+</body>
+</html>

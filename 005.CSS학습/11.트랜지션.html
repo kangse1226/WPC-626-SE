@@ -93,9 +93,9 @@
         border-radius: 50%;
 
         /* 배경셋팅 */
-        background: #ff0
-          url(../005.CSS학습/레벨/1OBY9G6YNO_1.jpg)
-          no-repeat top/100%;
+        background: rgb(20, 111, 128)
+          url(./레벨/다운로드\ \(3\).jfif)
+          no-repeat center/cover;
       }
 
       /*  #tr1에 트랜지션 적용 */
@@ -105,14 +105,13 @@
         /* 트랜지션 trs */
         transition: 2s;
         /* transition: all 2s; */
-        
       }
       /* 오버시 변경 */
       #tr1:hover span {
         /* 위치이동 */
-        left: 50px;
+        left: 50%;
         /* 배경색 */
-        background-color: #f0a9a9;
+        background: #fa2222 url(./레벨/Adobe\ Express\ 2025-08-08\ 11시\ 41분\ 58초.png) no-repeat center/cover;
         /* 다시 사각형으로 */
         border-radius: 0;
       }
@@ -121,27 +120,55 @@
       #tr2 span {
         width: 100px;
         height: 100px;
+        background-image: url(./레벨/l_2022031702001014000194201.jpg);
 
         /* 이경우는 원본에는 안하고 오버시에만 트랜지션 준다 */
-        
       }
       /* 오버시에만 트랜지션을 주면 오버시에만 적용 */
       #tr2:hover span {
         left: 70%;
         width: 300px;
         height: 300px;
-        background-color: #fc4747;
+        /* background-color: #f9faea; */
         /* 이미지 누끼가 아니어서 배경색은 어차피 가려져서 안보임 */
+        background: url(./레벨/images.jfif) no-repeat center/cover;
         /* 오버시에만 적용되는 트랜지션 */
         transition: 3s;
       }
 
       /* #tr3에 트랜지션 설정 */
       #tr3 span {
+        /* left 위치 왼쪽 살짝 바깥쪽 */
+        left: -2%;
+        /* 가로세로값50px */
+        width: 50px;
+        height: 50px;
+        /* 배경색  */
+        background-color: #fc4747;
+
+        /* 오버시 트랜지션이 있을 경우, 
+      원본의 트랜지션은 돌아올 때 적용된다 */
+        transition: 2s 0.5s, top 0.5s;
+        /* 모두 2초간 작동하는데, .5초 기다려, top 속성만 .5초간 작동 */
       }
+
       /* 마우스 오버시 트랜지션설정 */
       #tr3:hover span {
-       
+        /* 위로올라감- 유동적일 땐 % 말고 px 줘야함?? */
+        top: -200px;
+
+        /* left 값 70%로 이동 */
+        left: 70px;
+        /* 가로세로크기 400px */
+        width: 400px;
+        height: 400px;
+        /* 배경색 */
+        background-color: #f3a6a6;
+
+        /* 트랜지션 trs -> 전부 2초인데, top 속성만 2초후에 따로 작동설정*/
+        transition: 2s, top 0.5s 2s;
+        /* 트렌지션: 속시이지, 속시이지, .... 쉼표로 계속 쓸수있음 */
+        /* all은 생략가능 */
       }
 
       /* #tr4에 트랜지션 설정하기 */
@@ -150,53 +177,84 @@
         속시이지 순으로 셋팅하고 콤마로 구분한다!
     */
       #tr4 span {
-        
+        /* 왼쪽 위치 10% */
+        left: 10%;
+        /* 가로세로 크기 30px */
+        width: 30px;
+        height: 30px;
+        /* 배경색말고 이미지를 바꿈 */
+        /* background-color: #ffffff; */
+        background: url(./레벨/3142031_VBh.jpg) no-repeat center/cover;
       }
-      
+
+      /* 체크박스가 체크되면 그 다음 형제요소를 변경하여
+      클릭시 변경된 것 같은 효과로 작동시킨다! */
+      #chkbx:checked + span {
+        /* 왼쪽에서 50% */
+        left: 50%;
+        /* 가로 700px 400px  */
+        width: 700px;
+        height: 400px;
+        /* 이미지를 변경 background-color: #fff; */
+        background-image: url(./레벨/309328_213696_5924.jpg);
+        /* 다시 네모박스로 */
+        border-radius: 0;
+        /* 보더모양변경 */
+        border: 5px ridge #f1d1d9;
+
+        /* 체크박스 체크시 트랜지션 - 여러개 할거라서 , 쉼표로 연결 */
+        transition:
+        /* 1. left는 3초간 처음과 끝에 천천히 6초 기다림  */
+        left 3s ease-in-out 6s, 
+        /* 2. width는 2초간 끝에 천천히 4초 기다림  */
+        width 2s ease-out 4s,
+        /* 3. height는 1초간 처음에 천천히 3초 기다림  */
+        height 1s ease-in 3s,
+
+        /* 4~6번이 가장 먼저 작동함(대기시간 없음) */
+        /* 4. 배경색은 3초간 등속도로 (위 3번  고려) */
+        background-color 3s linear,
+        /* 5. 둥근 모서리는 2초간 등속도로  (4,5번은 같이 )*/
+        border-radius 2s linear,
+        /* 6. 보더는 1초간 등속도로   */
+        border 1s linear,
+        /* 7. 배경이미지는 2초간 등속도로  */
+        background-image 2s linear;
+
+      }
+
     </style>
   </head>
 
   <body>
     <h1>트랜지션</h1>
 
-    <h2>
-      1.원본에 트랜지션 주고 양방향이
-      동일함
-    </h2>
+    <h2>1.원본에 트랜지션 주고 양방향이 동일함</h2>
     <div id="tr1">
       <span></span>
     </div>
 
-    <h2>
-      2.오버시에 트랜지션 주고 원본엔
-      없음
-    </h2>
+    <h2>2.오버시에 트랜지션 주고 원본엔 없음</h2>
     <div id="tr2">
       <span></span>
     </div>
 
-    <h2>
-      3.원본과 오버시 트랜지션을 각각
-      잡아준다
-    </h2>
+    <h2>3.원본과 오버시 트랜지션을 각각 잡아준다</h2>
     <div id="tr3">
       <span></span>
     </div>
 
-    <h2>
-      4.원본에 트랜지션을 각 속성별로
-      다르게 준다
-    </h2>
+    <h2>4.원본에 트랜지션을 각 속성별로 다르게 준다</h2>
     <div id="tr4">
-      <label for="chkbx"
-        >체크하면 작동!</label
-      >
-      <input
-        type="checkbox"
-        name="chkbx"
-        id="chkbx"
-      />
+      <label for="chkbx">체크하면 작동!</label>
+      <input type="checkbox" name="chkbx" id="chkbx" />
       <span></span>
+
+      <!-- 라벨이랑 인풋은 같이 쓸 수 있당
+ 라벨은 for을 꼭 같이 써야함. ~로 향하여
+ 체크박스 네모뿐 아니라 체크박스의 문구를 눌렀을 때도 적용되도록
+ 라벨 포로 연결하는 건가봐  -->
+
       <!-- 체크박스 다음에 변경할 요소가 와야함!
         그래야 형제선택자로 변경을 할 수 있음! -->
     </div>
@@ -215,7 +273,7 @@
                 기본적으로 name속성의 값으로 읽어간다! 필수셋팅!
             -> id 속성은 label의 for와 연결하므로 필수셋팅!
 
-            [클릭 이벤트처럼 효과내기]
+            [클릭 이벤트처럼 효과내기] @근데 이건 자바스크립트로 하는게 나음?@
             :checked 라는 가상클래스를 사용!
             + 형제요소 선택자를 사용!
 
