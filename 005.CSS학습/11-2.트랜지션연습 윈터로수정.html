@@ -34,13 +34,13 @@
             outline: 2px solid rgb(5, 86, 192);
         }
 
-        /* 공유어깨 박스 */
-        #man-box{
+        /* 윈터 박스 */
+        #winter-box{
             position: absolute;
-            /* 공유가 처음에 나가서 안보임 */
-            left: 0%;
+            /* 윈터가 처음에는 밖에 있어서 안보임 */
+            right: -20%;
             /* 만약 원본이미지가 세로로 길어서 바텀이 0이면 위로 뜨고 픽셀음수로 수치조정해야함 */
-            bottom: 0%;
+            bottom: -10%;
             /* 가로세로크기는 내가 넣은 공유이미지에 따라 조절 브라우저에서 f12누르고
             직접찍어서 값 스크롤해서 조정하면 편함! */
             /* width: 504px; */
@@ -53,20 +53,22 @@
             본 박스의 width크기에 대한 %다!!!!
             패딩의 속성을 기억해...  */
 
-            /* 공유가 하츄핑 위에오게 하려고 */
+            /* 윈터가 하츄핑 위에오게 하려고 */
             z-index: 1;
 
-            /* 공유 배경 이미지-> 배경이미지는 css에서 변경가능하기 때문에
+            /* 윈터 배경 이미지-> 배경이미지는 css에서 변경가능하기 때문에
             이미지 요소 대신 박스 배경을 사용한다 */
-            background: url(./레벨/공유차.png) no-repeat 0/100%;
+            background: url(./레벨/윈터하츄핑타기전누끼.png) no-repeat center/50%;
            
 
         }
+       
+
         /* 하츄핑 박스 */
         #ping-box{
             position: absolute;
-            top: -3%;
-            left: 50%;
+            bottom:40%;
+            left: 30%;
             width: 20%;
         }
 
@@ -114,25 +116,26 @@
             display: none;
         }
 
-        /* 체크박스 체크시 man-box 이동 애니
+        /* 체크박스 체크시 winter-box 이동 애니
         -> 체크 박스 체크시 다음 형제요소들 중 .ani-box의 
-        자손 #man-box 선택 */
-        #chkbx:checked ~ .ani-box #man-box{
+        자손 #winter-box 선택 */
+        #chkbx:checked ~ .ani-box #winter-box{
             /* 오른쪽 바깥으로 슝 나감 */
-            left: 100%;
+            right: 100%;
+            width: 60%;
             /* 배경이미지를 태운 걸로 바꿈 */
-            background-image: url(./레벨/공유어깨하츄핑.png);
-            /* 트랜지션 trs : 4초, 배경이미지는 2초 기다렸다가 .1초동안 다른 이미지로 변경된다 */
-            transition: 4s ease-in-out, background-image .1s 2s;
+            background-image: url(./레벨/윈터하츄핑탄후누끼.png);
+            /* 트랜지션 trs : 4초, 배경이미지는 1초 기다렸다가 .1초동안 다른 이미지로 변경된다 */
+            transition: 4s, background-image .1s 1s;
         }
 
-        /* 체크박스 체크시 하츄핑 박스 3초 후 투명하게 변경하기 */
+        /* 체크박스 체크시 하츄핑 박스 1초 후 투명하게 변경하기 */
         #chkbx:checked ~ .ani-box #ping-box{
             /* 투명도 op -
              opacity: 0~1사이값 0은 투명 소수점은 반투명 1은 불투명 */
             opacity: 0;
             /* 트랜지션 trs */
-            transition: 0.1s 2s;
+            transition: 0.1s 1s;
 
         }
 
@@ -147,20 +150,18 @@
     <!-- 체크박스가 라벨의 위에 있어야 함 css는 순서 꼭 생각을 해 
       -->
 
-    <!-- 하츄핑이 공유어깨 타기 애니박스 -->
+    <!-- 하츄핑이 윈터 손 타기 애니박스 -->
     <div class="ani-box">
-        <!-- 공유 박스 -->
-         <div id="man-box"></div>
-
-         <!-- 이미지로 넣으면 src 속성 때문에 css 안돼서 배경이미지로 넣어야함
-          백그라운<img src="./레벨/공유차.png" alt="공유어깨" id="man"> -->
+        <!-- 윈터 박스 -->
+         <div id="winter-box"></div>
 
          <!-- 하츄핑 박스 -->
           <div id="ping-box">
             <img src="./레벨/하츄핑누끼.png" alt="하츄핑">
           </div>
 
-          <!-- 공유 어깨에 탄 하츄핑 -->
+          <!--  윈터 손에 탄 하츄핑 -->
+            <div id="winterping"></div>
     </div>
 </body>
 </html>
