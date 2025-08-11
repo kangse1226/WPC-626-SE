@@ -149,13 +149,6 @@
         transform: rotateY(180deg);
         /* 동시효과중 필터주기 */
         filter: grayscale(100%);
-        /* CSS 필터 적용하기
-            : 필터속성은 흑백,흐림,세피아,명암,
-            채도 등 출력이미지를 변경하고자 할때
-            사용하는 속성
-            (참고)
-            https://www.w3schools.com/cssref/playit.php?filename=playcss_filter&preval=blur(5px)
-        */
       }
         /********************************************** 
             2. transform : rotateX(각도deg) - X축회전
@@ -164,17 +157,13 @@
         #transform-box2 img{
             /* 미리 x축 회전 해놓기 tfrx */
             transform: rotateX(180deg);
-            /* 필터블러 */
-            filter: blur(2px);
         }
+
         /* 마우스 오버시 원상복귀 */
         #transform-box2:hover img{
             /* 0도 */
-            transform: rotateX(0deg);
-            /* 필터블러 */
-            filter: blur(0px);
-        }
-
+            transform: rotateX(0deg)
+            ;        }
         /***********************************
             3. transform : translateX(거리) - X축이동
             - 단위 : px, % 등
@@ -221,25 +210,14 @@
               /* transform: translate(x, y); */
               /* transform: translate(-100%, -100%); */
               /* -> %단위 기준은 항상 자기자신의 크기다!! */
-
               /* translate: -100% -> x축 이동; */
               /* translate: 0 -100%  -> y축 이동; */
               translate: -100% -100%; /* x,y축 동시 이동 */
               
               /********************************************** 
-           원래는 translate는 transform 하위 세팅속성임
-           translate의 사용률이 높아짐에 따라 속성값으로 독립됨!
-              @@@@이때는 콤마 찍으면 안돼!!!!!!!!!!!!!!!@@@@
-           [translate 속성]
-           translate: 값 값; -> x y축 이동설정값
-           translate: 값;  -> x축 이동설정값
-           translate: 0 값 -> y축 이동설정값
-           
-            **********************************************/
      
             /* 투명도 조정. -opacity속성*/
             opacity: .5;
-            
         }
         
         /************************************** 
@@ -296,6 +274,47 @@
             transition-duration: 15s;
         }
 
+         #transform-box7:hover img{
+          transform:skewX(15deg);
+         }
+         
+         #transform-box8 img{
+          transform: scale(-1);
+         }
+         #transform-box8:hover img{
+          transform: scale(3);
+         }
+
+         #transform-box9:hover img{
+           transform: rotateY(5turn);
+           transition-duration: 10s;
+        }
+        
+        
+        #transform-box10:hover img{
+           transform: scale(2)
+           skew(300deg, 400deg);
+           rotate(100%, 200%);
+           transition-duration: 30s;
+         }
+
+        /* 콘텐츠 이미지 움직이기 */
+        .main-contents{
+          translate: 150%;
+        }
+        body:hover .main-contents{
+          translate: 0;
+          transition: 1s ease-out .5s;
+        }
+
+        /* 타이틀 움직이기 */
+        .main-title{
+          translate: 100%;
+        }
+        body:hover .main-title{
+          translate: 0;
+        }
+
     </style>
   </head>
   <body>
@@ -307,35 +326,35 @@
     <section class="main-contents">
       <!-- id는 # , transform-box이란 아이디로 만들건데 box 숫자개 만들거면
          $*숫자 쓰면 된다/ 그 밑에 자식으로 img  -->
-      <div id="transform-box1">
-        <img src="../레벨/080ccb001480241a5f896e01f6198ef5.jpg" alt="캐릭터" />
+      <div id="transform-box1"> 
+        <img src="../레벨/슬기.webp" alt="캐릭터" />
       </div>
       <div id="transform-box2">
-        <img src="../레벨/1OBY9G6YNO_1.jpg" alt="캐릭터" />
-      </div>
-      <div id="transform-box3">
         <img src="../레벨/20150911_1_bodyFimg_307464.jpg" alt="캐릭터" />
       </div>
+      <div id="transform-box3">
+        <img src="../레벨/아이린.jpg" alt="캐릭터" />
+      </div>
       <div id="transform-box4">
-        <img src="../레벨/3142031_VBh.jpg" alt="캐릭터" />
+        <img src="../레벨/레드벨벳.webp" alt="캐릭터" />
       </div>
       <div id="transform-box5">
-        <img src="../레벨/images (1).jfif" alt="캐릭터" />
+        <img src="../레벨/조이1.jfif" alt="캐릭터" />
       </div>
       <div id="transform-box6">
         <img src="../레벨/images.jfif" alt="캐릭터" />
       </div>
       <div id="transform-box7">
-        <img src="../레벨/레드벨벳.webp" alt="캐릭터" />
+        <img src="../레벨/images (1).jfif" alt="캐릭터" />
       </div>
       <div id="transform-box8">
         <img src="../레벨/다운로드.jfif" alt="캐릭터" />
       </div>
       <div id="transform-box9">
-        <img src="../레벨/다운로드 (3).jfif" alt="캐릭터" />
+        <img src="../레벨/예리.jpg" alt="캐릭터" />
       </div>
       <div id="transform-box10">
-        <img src="../레벨/슬기.webp" alt="캐릭터" />
+        <img src="../레벨/080ccb001480241a5f896e01f6198ef5.jpg" alt="캐릭터" />
       </div>
     </section>
   </body>
