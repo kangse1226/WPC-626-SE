@@ -80,6 +80,10 @@
         -> 백드롭필터! 블러! */
         backdrop-filter: blur(3px);
         /* 백드롭필터에 대해 더 알고 싶으면 MDN reference클릭  */
+        /* backdrop-filter: sepia(90%); */
+        /* backdrop-filter: invert(70%); */
+        /* backdrop-filter: hue-rotate(120deg); */
+        /* backdrop-filter: grayscale(100%); */
       }
 
       /* 부모박스 가상요소 clear 세팅( float 떄문에) */
@@ -219,24 +223,37 @@
               /* translate: -100% -> x축 이동; */
               /* translate: 0 -100%  -> y축 이동; */
               translate: -100% -100%; /* x,y축 동시 이동 */
-
-              /* 투명도 조정. -opacity속성*/
-              opacity: .5;
+              
+              /********************************************** 
+           원래는 translate는 transform 하위 세팅속성임
+           translate의 사용률이 높아짐에 따라 속성값으로 독립됨!
+              @@@@이때는 콤마 찍으면 안돼!!!!!!!!!!!!!!!@@@@
+           [translate 속성]
+           translate: 값 값; -> x y축 이동설정값
+           translate: 값;  -> x축 이동설정값
+           translate: 0 값 -> y축 이동설정값
+           
+            **********************************************/
+     
+            /* 투명도 조정. -opacity속성*/
+            opacity: .5;
             
-          }
+        }
+        
+        /************************************** 
+            6. rotate(각도deg) - 원형회전
+            - 각도의 숫자가 양수이면 시계방향
+            음수는 반시계방향
+            - 기본회전축은 정중앙
+            (변경가능: transform-origin)
+        **************************************/
 
-          /********************************************** 
-       원래는 translate는 transform 하위 세팅속성임
-       translate의 사용률이 높아짐에 따라 속성값으로 독립됨!
-          @@@@이때는 콤마 찍으면 안돼!!!!!!!!!!!!!!!@@@@
-       [translate 속성]
-       translate: 값 값; -> x,y
-       translate: 값 
-       translate: 0 값 
-       
-        **********************************************/
-
-
+        #transform-box6:hover img{
+           /* 원형회전 tfr */
+            transform: rotate(4587deg);
+            /* 트랜지션 시간 늘리기! */
+            transition-duration: 20s;
+        }
 
     </style>
   </head>
