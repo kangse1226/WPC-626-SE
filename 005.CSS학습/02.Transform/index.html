@@ -54,7 +54,7 @@
         /* 글자테두리 */
         /* 글꼴에 따라 이상함 -webkit-text-stroke: 1px rgb(0, 0, 0); */
         text-shadow: 0px 1px rgb(49, 48, 48), 1px 0px rgb(49, 48, 48),
-          0px 1px rgb(49, 48, 48), 0px 1px rgb(49, 48, 48);
+          0px -1px rgb(49, 48, 48), -1px 0px rgb(49, 48, 48);
       }
 
       /* 전체부모박스 */
@@ -129,6 +129,9 @@
             - 선택요소의 크기, 회전, 이동, 기울임
                 등 변형을 하기위한 속성
             - 2D, 3D 지원됨  */
+            /* @ 기본 값이 있어서 기본값안줘도 됨 */
+
+    /* 속성 여러개를 복합 적용: transform: 속성1 속성2 속성3...; */
 
         /**********************************************   
          1. transform : rotateY(Y축 각도deg) - Y축회전
@@ -241,7 +244,7 @@
         }
         
         /************************************** 
-            6. rotate(각도deg) - 원형회전
+            6. transform : rotate(각도deg) - 원형회전
             - 각도의 숫자가 양수이면 시계방향
             음수는 반시계방향
 
@@ -255,13 +258,14 @@
                 - 기본값 : 가로, 세로 center임! 
 
             rotate도 독립햇다..!
+
+            레코드판 돌아가듯 피자판ㅋㅋ
         **************************************/
 
-        /* 이미지 회전축 변경하기 */
+        /* 이미지 회전축 변경하기 tfoo */
         #transform-box6 img{
-            
+            transform-origin: left bottom;
         }
-
 
         #transform-box6:hover img{
            /* 원형회전 tfr */
@@ -294,6 +298,96 @@
             transition-duration: 15s;
         }
 
+        /****************************************** 
+            7. transform : skew - x,y축 기울임
+            - skewX(각도deg), skewY(각도deg)
+            - skew(x축,y축)
+            - 각도가 양수/음수에 따라 기울임 방향이 달라짐
+        ******************************************/
+        #transform-box7:hover img{
+            /* transform: skewX(-30deg); */
+            /* transform: skewY(30deg); */
+            transform: skew(-30deg, 10deg);
+        }
+        
+        /******************************************** 
+            8. transform : scale(x축배수, y축배수)
+            - 값을 하나만쓰면 양방향 같은 값 셋팅
+            - 배수가 1보다 크면 확대, 작으면 축소
+            - scaleX(배수), scaleY(배수) - x,y별셋팅
+            - 값이 0이면 사라짐
+            -> 가끔 크기가 정해진 요소를 일정크기로
+            축소, 확대해서 크기를 맞출때도 용이함!
+
+            심장 이미지랑 박동소리 넣고 하면 재밌다
+            -, .3 소수점 미세 조정도 되고 좋다
+
+            [스케일 속성 한번에 쓰기]
+            scale: 값; -> 전체 확대/축소
+            scale: 값 값; -> x,y 따로 확대/축소
+            scale: 값 1; -> x 확대/축소
+            scale: 1 값; -> y 확대/축소
+            
+            /* 예시 #transform-box9:hover img{
+             scale: 4 4;
+            }
+            ********************************************/
+            #transform-box8 img{
+                transform: scale(0);
+            }
+            #transform-box8:hover img{
+                transform: scale(3,3);
+            }
+
+            /***************************
+            9. 복합적용하기
+            transform: 속성1 속성2 속성3 ...;
+            ****************************/
+            #transform-box9:hover img{
+                transform: scale(5) 
+                translate(-200%, -100%)
+                rotateX(1200deg)
+                skewX(50deg)
+                rotate(5300deg); 
+                /* 트랜지션 시간 늘리기 */
+                transition-duration: 15s;
+
+            }
+            /* 10. 복합적용2 */
+              #transform-box10:hover img{
+                transform: 
+                scale(2)
+                translate(-100%, 100%)
+                rotateY(3turn)
+                ;
+                /* 트랜지션 시간 늘리기 */
+                transition: 5s ease-in-out;
+              }
+
+
+              /* 인트로 등장 애니메이션 설정하기 */
+              /* animate를 배우기 전이므로  :hover을 사용! */
+            .main-contents{
+                /*오른쪽 바깥에 나가있게 세팅함 translate 이용  */
+                translate: 150%;
+                /* 트랜지션trs */
+                transition: .8s ease-out 1s;
+
+              }
+              /* 오버시 원래위치로 등장 */
+              body:hover .main-contents{
+                translate:0;
+              }
+
+
+              /* 메인타이틀도 생기게 하고 싶음 */
+              .main-title{
+                translate: 100%;
+                transition: 1s;
+              }
+             body:hover .main-title{
+                translate: 0;
+              }
     </style>
   </head>
   <body>
