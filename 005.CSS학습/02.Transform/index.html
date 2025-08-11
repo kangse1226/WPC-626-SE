@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>트랜스폼 기본연습</title>
+    <!-- 트랜스폼 샘플사이트
+     https://tombap8.github.io/FED-RV-TOM-2024/002.HTML%ED%95%99%EC%8A%B5/05.Transform_PJ/index.html -->
+    <style>
+      /* 전체 배경 넣기 */
+      body {
+        /* bg: 색 이미지링크 반복 고정 위치/크기 */
+        /* background: url(./images/bg-main.jpg) no-repeat fixed center top/cover; */
+        /* 배경 이미지 고정의 fixed랑 포지션 고정의 fixed은 달라. 
+            포지션은 요소를 고정하는 거야 */
+        /*  여기서는 위치값을 center top  으로 설정했는데, 띄어쓰기가 있어서
+            헷갈리지말자  */
+
+        /* 배경이미지 하나씩 연습 */
+        /* 1. 이미지  */
+        background-image: url(./images/bg-main.jpg);
+        /* 2. 반복여부 */
+        background-repeat: no-repeat;
+        /* 3. 고정 @질문: 고정안해도 뭐가 달라지는 걸 모르겠음..??? ㅠㅠ*/
+        background-attachment: fixed;
+        /* 4. 위치: 가로 x축 세로 y축 
+                가로값- left(기본값), right, center, 수치값
+                세로값- top, bottom, center(기본값), 수치값*/
+        background-position: center top;
+        /* bg-p에서 center만 쓰면 정가운데 (center 뒤에오는 center는 생략) */
+        /* 5. 크기: 가로width 세로 height
+            - 특이한 값들
+            1) contain: 배경이미지가 모두 보임(비율에 맞게) 
+            2) cover: 비율에 맞게 대상박스의 빈공간이 없음!!
+            3) 모두 채운 후 비율없이 만드는 방법 그러나 쓰진 않음 100% 100% 
+            */
+        /* 크기 조절안하면 원본이미지 사이즈로 됨 */
+        background-size: cover;
+        /* bgz를 100% 100% 이따구로 해서 찌그러뜨리면 혼남 */
+      }
+      /* 1. 제목 */
+      .main-title {
+        /* 박스세팅 */
+        text-align: center;
+        background-color: #fdfcff6c;
+        /* border-radius: 50px; */
+
+        /* 글자세팅 */
+        color: #f7fff8;
+        font-size: 40px;
+        line-height: 100px;
+        font-family: Pretendard, sans-serif;
+
+        /* 글자테두리 */
+        /* 글꼴에 따라 이상함 -webkit-text-stroke: 1px rgb(0, 0, 0); */
+        text-shadow: 0px 1px rgb(49, 48, 48), 1px 0px rgb(49, 48, 48),
+          0px 1px rgb(49, 48, 48), 0px 1px rgb(49, 48, 48);
+      }
+
+      /* 전체부모박스 */
+      .main-contents {
+        /* 박스세팅 */
+        max-width: 1500px;
+        margin: 100px auto;
+        border: 10px solid rgb(175, 155, 155);
+        border-radius: 10px;
+        padding: 30px;
+
+        /* 기본적으로 박스 크기를 잡으면
+        그 크기는 컨텐트 영역의 크기임.
+        보더와 패딩은 바깥쪽으로 생김
+        그래서 박스가 커짐!
+        보더, 패딩을 크기 세팅에 포함시킬 필요가 있는 경우에는
+        box-sizing:border-box 세팅을 한다  */
+        box-sizing: border-box;
+
+        /* 쉽게 생각해서 컨텐트의 width + (보더+패딩 크기)*2  */
+
+        /* 겹쳐지는 부분의 배경 흐리게 처리하기
+        -> 백드롭필터! 블러! */
+        backdrop-filter: blur(3px);
+        /* 백드롭필터에 대해 더 알고 싶으면 MDN reference클릭  */
+      }
+
+      /* 부모박스 가상요소 clear 세팅( float 떄문에) */
+      .main-contents::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      /* 캐릭터박스 공통 */
+      .main-contents > div {
+        /* 옆으로 흐르게  */
+        /* 그럼 부모박스가 쪼그라들지롱 */
+        float: left;
+
+        /* 5등분하기: 한줄에 5개씩 오도록 */
+        width: calc(100% / 5);
+
+        /* 중앙정렬 */
+        text-align: center;
+      }
+      /* 5번 div 이후 자식 마진 탑 주기 */
+      .main-contents > div:nth-child(5) ~ div {
+        /*  위쪽 마진 */
+        margin-top: 30px;
+      }
+
+      /* 캐릭터 이미지 공통 */
+      .main-contents > div img {
+        width: 200px;
+        height: 200px;
+        /* 원형 */
+        border-radius: 50%;
+
+        /* 트랜지션  trs
+        - 박스에 안주고 이미지에게 주는 이유:
+        그럼 이벤트가 잘 안먹어서..  */
+        /* 0.6s앞에 all이 생략되어있는거임! */
+        transition: .9s;
+      }
+
+     /*   [ Transform 효과주기 ]
+                - 선택요소의 크기, 회전, 이동, 기울임
+                 등 변형을 하기위한 속성
+                - 2D, 3D 지원됨  */
+
+            /*   1. transform : rotateY(Y축 각도deg) - Y축회전
+                - deg 는 각도의 단위(도:degree)
+
+                [ 각도 단위 확장 ]
+                (1) deg: 도 단위 (360 deg는 한 바퀴 회전)
+                (2) grad: 그라디언트 (400 grad는 한 바퀴 회전)
+                (3) rad: 라디안 (2π rad는 한 바퀴 회전)
+                (4) turn: 턴 (1 turn은 한 바퀴 회전)
+
+            */
+
+      #transform-box1:hover img {
+        /*  y축 회전: tfry */
+        transform: rotateY(180deg);
+        /* 동시효과중 필터주기 */
+        filter: grayscale(100%);
+        /* CSS 필터 적용하기
+                    : 필터속성은 흑백,흐림,세피아,명암,
+                    채도 등 출력이미지를 변경하고자 할때
+                    사용하는 속성
+                    (참고)
+                    https://www.w3schools.com/cssref/playit.php?filename=playcss_filter&preval=blur(5px)
+                */
+      }
+            /* 
+                2. transform : rotateX(각도deg) - X축회전
+                - deg 는 각도의 단위(도:degree)
+            */
+            #transform-box2 img{
+                /* 미리 x축 회전 해놓기 tfrx */
+                transform: rotateX(180deg);
+                /* 필터블러 */
+                filter: blur(2px);
+            }
+            /* 마우스 오버시 원상복귀 */
+            #transform-box2:hover img{
+                /* 0도 */
+                transform: rotateX(0deg);
+                /* 필터블러 */
+                filter: blur(0px);
+            }
+
+            /* 
+                3. transform : translateX(거리) - X축이동
+                - 단위 : px, % 등
+                - 현재 위치로부터 이동
+                - 기준점은 요소의 왼쪽
+                - % 단위를 쓸경우 기준은 요소의 width값
+                - 이동방향: + 오른쪽, -는 왼쪽
+            */
+#transform-box3:hover img{
+    /* x축이동 tftx */
+    /* 내크기의 50%만큼 왼쪽으로 이동 */
+    transform: translateX(-50%);
+    /* -> %단위 기준은 항상 자기자신의 크기다!! */
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- 1. 제목 -->
+    <h1 class="main-title">캐릭터 소개</h1>
+    <!-- <h1>구그달 캐릭터 소개</h1>  대신에 h1.main-title로 작성-->
+
+    <!-- 2. 콘텐츠 박스 -->
+    <section class="main-contents">
+      <!-- id는 # , transform-box이란 아이디로 만들건데 box 숫자개 만들거면
+         $*숫자 쓰면 된다/ 그 밑에 자식으로 img  -->
+      <div id="transform-box1">
+        <img src="images/cast01.jpg" alt="캐릭터" />
+      </div>
+      <div id="transform-box2">
+        <img src="images/cast02.jpg" alt="캐릭터" />
+      </div>
+      <div id="transform-box3">
+        <img src="images/cast03.jpg" alt="캐릭터" />
+      </div>
+      <div id="transform-box4">
+        <img src="images/cast04.jpg" alt="캐릭터" />
+      </div>
+      <div id="transform-box5">
+        <img src="images/cast05.jpg" alt="캐릭터" />
+      </div>
+      <div id="transform-box6">
+        <img src="images/cast01.jpg" alt="캐릭터" />
+      </div>
+      <div id="transform-box7">
+        <img src="images/cast02.jpg" alt="캐릭터" />
+      </div>
+      <div id="transform-box8">
+        <img src="images/cast03.jpg" alt="캐릭터" />
+      </div>
+      <div id="transform-box9">
+        <img src="images/cast04.jpg" alt="캐릭터" />
+      </div>
+      <div id="transform-box10">
+        <img src="images/cast05.jpg" alt="캐릭터" />
+      </div>
+    </section>
+  </body>
+</html>
