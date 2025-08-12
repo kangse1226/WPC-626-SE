@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>트랜스폼 기본연습_레벨</title>
+    <!-- 탭메뉴 아이콘 넣기 -->
+    <link
+      rel="shortcut icon"
+      href="../레벨/레벨로고2.jpg"
+      type="image/ico"
+    />
+    <title>레드벨벳을봐</title>
     <!-- 트랜스폼 샘플사이트
      https://tombap8.github.io/FED-RV-TOM-2024/002.HTML%ED%95%99%EC%8A%B5/05.Transform_PJ/index.html -->
     <style>
@@ -179,12 +185,12 @@
             - % 단위를 쓸경우 기준은 요소의 width값
             - 이동방향: + 오른쪽, -는 왼쪽
         **********************************/
-        #transform-box3:hover img{
+        /* #transform-box3:hover img{
             /* x축이동 tftx */
             /* 내크기의 50%만큼 왼쪽으로 이동 */
-            transform: translateX(-132%);
+            transform: translateX(-132%);}
             /* -> %단위 기준은 항상 자기자신의 크기다!! */
-        }
+         */
 
         /********************************************** 
             4. transform : translateY(거리) - Y축이동
@@ -212,20 +218,20 @@
         - 이동방향: + 오른쪽/아랫쪽, -는 왼쪽/윗쪽
         **********************************************/
         
-        #transform-box5:hover img{
+        /* #transform-box5:hover img{
               /* x, y축이동 tft */
               /* transform: translate(x, y); */
               /* transform: translate(-100%, -100%); */
               /* -> %단위 기준은 항상 자기자신의 크기다!! */
               /* translate: -100% -> x축 이동; */
               /* translate: 0 -100%  -> y축 이동; */
-              translate: -100% -100%; /* x,y축 동시 이동 */
-              
+              /* translate: -100% -100%;  */
+              /* x,y축 동시 이동 */
+              /* {opacity: .5;} */ 
               /********************************************** 
      
             /* 투명도 조정. -opacity속성*/
-            opacity: .5;
-        }
+            
         
         /************************************** 
             6. rotate(각도deg) - 원형회전
@@ -281,9 +287,34 @@
             transition-duration: 15s;
         }
 
-         #transform-box7:hover img{
+         /* #transform-box7:hover img{
           transform:skewX(15deg);
-         }
+         } */
+          #transform-box3:hover img {
+        /*  y축 회전: tfry */
+        transform: rotateY(180deg);
+        /* 동시효과중 필터주기 */
+        filter: grayscale(100%);
+      }
+          #transform-box5:hover img {
+        /*  y축 회전: tfry */
+        transform: rotateY(180deg);
+        /* 동시효과중 필터주기 */
+        filter: grayscale(100%);
+      }
+          #transform-box7:hover img {
+        /*  y축 회전: tfry */
+        transform: rotateY(180deg);
+        /* 동시효과중 필터주기 */
+        filter: grayscale(100%);
+      }
+          #transform-box9:hover img {
+        /*  y축 회전: tfry */
+        transform: rotateY(180deg);
+        /* 동시효과중 필터주기 */
+        filter: grayscale(100%);
+      }
+
          
          #transform-box8 img{
           transform: scale(0);
@@ -292,7 +323,11 @@
           transform: scale(3);
          }
 
-         #transform-box9:hover img{
+         /* #transform-box9:hover img{
+           transform: rotateY(5turn);
+           transition-duration: 10s;
+        } */
+         #transform-box4:hover img{
            transform: rotateY(5turn);
            transition-duration: 10s;
         }
@@ -323,13 +358,68 @@
            transition: 1s ease-in-out;
         }
 
+
+        /* 뒤집어지는 애니박스 */
+              .transform-special{
+                position: absolute;
+                top: 30px;
+                left: 30px;
+                
+                /* 부모는? 보이는 화면! */
+
+              }
+              /* 유정이랑 보검이 이미지가 겹쳐지게 앱솔루트 세팅 */
+              .transform-special img{
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                /* border-radius: 50%; */
+              }
+
+              /* 1) 첫번째 img 자식- 유정이 원본(돌아올 때). */
+              .transform-special img:first-child{
+                /* 처음에 90도로 돌려서 숨겨둠 */
+                transform: rotateY(90deg);
+                /* 트랜지션 다시 돌아갈 때 바로 출발,
+                처음만 천천히 */
+                transition: .4s ease-in;
+              }
+              /* 2) 첫번째 img 자식- 유정이 오버시. */
+              .transform-special:hover img:first-child{
+                /* 오버시 0도가 되어 보여짐 */
+                transform: rotateY(0deg);
+                /* 트랜지션 - 보검이 돌동안 .4초 기다렸다가
+                그대로 받아서 끝에 천천히*/
+                transition: .4s ease-out .4s ;
+              }
+              
+              /* 3) 마지막째 img 자식은 관식이. 보검이 원본(돌아올 때) */
+              .transform-special img:last-child{
+                /* 처음에 0도여서 보임 */
+                transform: rotateY(0deg);
+                /* 트랜지션: 돌아올 때 유정이 .4초 기다려, 
+                그대로 받아서 끝에 천천히 ease-out */
+                transition: .4s ease-out .4s;
+              }
+              /* 4) 마지막째 img 자식은 관식이. 보검이 오버시 */
+              .transform-special:hover img:last-child{
+                /* 오버시 90도로 돌아서 안보여짐 */
+                transform: rotateY(90deg);
+                /* 트랜지션 기다릴 필요 없이 바로 출발,
+                이징은 처음만 천천히 =ease-in */
+                transition: .4s ease-in;
+              }
     </style>
   </head>
   <body>
     <!-- 1. 제목 -->
     <h1 class="main-title">Red Velvet</h1>
     <!-- <h1>구그달 캐릭터 소개</h1>  대신에 h1.main-title로 작성-->
-
+ <!-- 2. 뒤집어지는 애니박스 -->
+     <div class="transform-special">
+        <img src="../레벨/레벨로고3.jpg" alt="유정이" />
+        <img src="../레벨/레벨로고.jpg" alt="관식이" />
+      </div>
     <!-- 2. 콘텐츠 박스 -->
     <section class="main-contents">
       <!-- id는 # , transform-box이란 아이디로 만들건데 box 숫자개 만들거면
