@@ -1,11 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스벅스벅</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 탭메뉴 아이콘 넣기 -->
+    <link
+      rel="shortcut icon"
+      href="https://image.istarbucks.co.kr/common/img/common/favicon.ico?v=200828"
+      type="image/ico"
+    />
+    <title>스벅이뒤집어진다</title>
+    <style>
+      body {
+        background: #2C2A29 url(./starbucks_img/reserve_bg.jpg)
+          no-repeat fixed center/100%;
+      }
+
+      /* 뒤집어지는 애니박스 */
+      .transform-special {
+        position: absolute;
+        /* 정중앙 이동하기 */
+        /* 1. top, left 값을 50%주고
+        2. translate 값을 -50%, x,y 주기
+        -> 4사분면에 보내고 크기의 절반을 이동시키면
+        정중앙에 가는 원리를 응용한 것!!!!! */
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        /* 자식 이미지가 앱솔루트이므로 
+        크기를 별도로 줘야 한다 - 크기를 안주면 이동할게 없음 */
+        width: 334px;
+        height: 334px;
+      }
+      
+      /* 유정이랑 보검이 이미지가 겹쳐지게 앱솔루트 세팅 */
+      .transform-special img {
+        position: absolute;
+        width: 334px;
+        height: 334px;
+      }
+
+      /* 1) 첫번째 img 자식- 유정이 원본(돌아올 때). */
+      .transform-special img:first-child {
+        /* 처음에 90도로 돌려서 숨겨둠 */
+        transform: rotateY(90deg);
+        /* 트랜지션 다시 돌아갈 때 바로 출발,
+                처음만 천천히 */
+        transition: 0.4s ease-in;
+      }
+      /* 2) 첫번째 img 자식- 유정이 오버시. */
+      .transform-special:hover img:first-child {
+        /* 오버시 0도가 되어 보여짐 */
+        transform: rotateY(0deg);
+        /* 트랜지션 - 보검이 돌동안 .4초 기다렸다가
+                그대로 받아서 끝에 천천히*/
+        transition: 0.4s ease-out 0.4s;
+      }
+
+      /* 3) 마지막째 img 자식은 관식이. 보검이 원본(돌아올 때) */
+      .transform-special img:last-child {
+        /* 처음에 0도여서 보임 */
+        transform: rotateY(0deg);
+        /* 트랜지션: 돌아올 때 유정이 .4초 기다려, 
+                그대로 받아서 끝에 천천히 ease-out */
+        transition: 0.4s ease-out 0.4s;
+      }
+      /* 4) 마지막째 img 자식은 관식이. 보검이 오버시 */
+      .transform-special:hover img:last-child {
+        /* 오버시 90도로 돌아서 안보여짐 */
+        transform: rotateY(90deg);
+        /* 트랜지션 기다릴 필요 없이 바로 출발,
+                이징은 처음만 천천히 =ease-in */
+        transition: 0.4s ease-in;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 뒤집어지는 애니박스 -->
+    <div class="transform-special">
+      <img src="./starbucks_img/reserve_medal02.png" alt="스벅리저브1" />
+      <img src="./starbucks_img/reserve_medal01.png" alt="스벅리저브2" />
+    </div>
+  </body>
 </html>
