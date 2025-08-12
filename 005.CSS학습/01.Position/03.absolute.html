@@ -7,7 +7,7 @@
       .bx {
         width: 300px;
         height: 300px;
-        border: 2px solid blue;
+        border: 5px solid rgb(33, 185, 255);
         text-align: center;
         font-size: 24px;
         font-weight: bold; /* fwb */
@@ -74,17 +74,22 @@
       ********************************/
 
         height: 700px;
-        background: url(./images/elsa.png) no-repeat center/cover;
+        background: url(../레벨/조이1.jfif) no-repeat center/cover;
       }
 
       /* 앱솔루트를 주면 위로 날아올라 그 빈자리엔 아래있던게 깔림?
       현재 있던 자리에서 날아올라/으엥? 헷갈려요? */
 
-      /* 두번째 앱솔루트 박스 */
+      /* 두번째 앱솔루트 박스 ->위치값을 주면 부모를 찾음
+      ->자식을 싸고 있는 모든 요소가 부모자격이 없으면
+      스크롤 상단 보이는 화면이 부모가 된다*/
       #a2 {
         position: absolute;
         width: 650px;
-        background: url(./images/superman.png) no-repeat center/cover;
+        /* 오른쪽 아래 0 위치 부모는? 보이는 화면 */
+        right: 0;
+        bottom: 0;
+        background: url(../레벨/레벨단체.jpg) no-repeat center/cover;
       }
 
       #r1 {
@@ -92,10 +97,10 @@
         position: relative;
 
         /* 위로부터 100px : t100 */
-        top: 100px;
+        top: 260px;
 
         /* 왼쪽으로부터 100px : l100 */
-        left: 100px;
+        left: 50px;
 
         /* 원래있던 자리에서 이동했는데 주변을 안 망가뜨려?!!
             다른 걸 밀어서 이동하는게 아님. 내 원래 위치도 보존이 됨
@@ -193,7 +198,7 @@
 
             *************************************/
 
-        background: url(../images/capma.png) no-repeat center/cover;
+        background: url(../레벨/572180_246763_4411.jpg) no-repeat center/cover;
       }
       #r2 {
         /* 포지션 relative */
@@ -203,7 +208,7 @@
 
       /* 첫번째 박스에 포지션 체크 */
       #s1 {
-        background-color: lightgreen;
+        background-color: rgb(5, 39, 88);
       }
       #s2 {
         background-color: lightcoral;
@@ -217,14 +222,43 @@
         text-align: center;
         margin: 0;
         padding: 20px;
-        border: 4px solid #2b7b85;
+        border: 4px solid #ff2b2b;
         border-radius: 20px;
-        background-color: #18555d;
-        color: #ece9e9;
+        background-color: #ffffff;
+        color: #ff0000;
         box-shadow: 2px 2px 20px #776f6fc7;
-        font-size: 40px;
-        font-family: sans-serif;
+
+        /* 글자세팅 */
+        color: #ffffff;
+        font-size: 45px;
+        line-height: 100px;
+        font-family: Pretendard, sans-serif;
+
+        /* 글자테두리 */
+        /* 웹킷은 글꼴에 따라 이상함 -webkit-text-stroke: 1px rgb(0, 0, 0); */
+        text-shadow: 4px 0px rgb(255, 0, 0),
+        -4px 0px rgb(49, 48, 48),
+        0px 4px rgb(243, 91, 91), 
+        0px -4px rgb(0, 0, 0);
       }
+
+      /* 부제목 꾸미기 */
+       h2.sub-title {
+        /* 포지션, 위치 */
+        position: absolute;
+        top: 4.8%;
+        left: 59%;
+
+         /* 글자세팅 */
+        color: #ff4545;
+        font-size: 30px;
+        line-height: 100px;
+        font-family: Pretendard, sans-serif;
+
+        text-shadow:  
+        3px 0px rgb(48, 47, 47);
+      
+       }
 
       /* 부모를 찾는 앱솔루트! */
       .bx2 {
@@ -276,34 +310,138 @@
         border: 10px dotted darkblue;
       }
 
-      /* 앱솔루트 : 판타롱스타킹! */
-      .a5 {
+      /* span을 앱솔루트로 만들경우! */
+      .spabs{
+        /* 포지션 앱솔루트 poa */
         position: absolute;
-        /* 박스크기를 주지 않은 앱솔루트는
-            그 크기가 내용만큼 자동으로 설정됨! */
+        bottom: 0;
+        right: 0;
+        /*나의 부모는? =   .s8 */
+
+        /* 아웃라인ol */
+        outline: 4px dotted #023d5f;
+      }
+
+      /* 앱솔루트 판타롱스타킹 
+      -> 앱솔루트 박스에 width, height를 주지 않아도 내용물 만큼
+      자동으로 크기가 생성된다!! 내용물에 달라붙는다잉*/
+      .a5{
+        position: absolute;
+        right: 30%;
         top: 20%;
-        right: 10%;
-        /* 나의 부모는? 보이는 화면 */
+        /* 부모는 누구? 보이는 화면*/
 
-        outline: 2px solid red;
-        /* 보더와 비슷하나 박스구성요소가 아니고
-            주변에 영향을 주지 않는 외곽선만 보여주는 속성
-            사용법은 border와 유사함 */
+        /* 아웃라인 */
+        outline: 4px solid rgb(186, 159, 248);
+        max-width: 300px;
+        
+      }
+     /* 이미지가 박스에 단독으로 들어갈 경우
+     하단에 생기는 공백을 없애기 */
+      .a5 img{ 
+        vertical-align: middle;
+        /* 인라인요소가 세로정렬 속성인
+        vertical-align의 값을 top/middle/bottom 중 
+        어떤 값을 사용해도 하단 공백을 없애는 효과가 있다.
+        땡기는 효과가 있음.
+        공통적으로 적용하는게 참 좋겠지!
+        단, baseline은 효과가 없다 */
+        max-width: 300px;
+
+
+      }
+      
+      /* 앱솔루트끼리는 서로 겹친다!- 예리 아이린 이미지 두개를 겹치게 */
+     /* 포지션을 주고, 박스에 위치값을 안주면 앱솔루트가 가만히 제자리에 잇어서 편하다 */
+       .absolute-images {
+        position: absolute;
+         height: 600px;
+         width: 400px; 
+          top: 40%;
+              left: 30%;
+
+              border: 5px solid rgb(192, 59, 59);
+        }
+
+        .absolute-images img {
+
+          position: absolute;
+          /* 이미지사이즈 달라서 가로100퍼세로100퍼로 설정해도 
+          이미지 찌그러지지 않기 위해 오브젝트 핏 커버 설정함 */
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+              z-index: 1;
+             
       }
 
-      /*블록박스 내에 단독 이미지 하단공백 4px은 무엇인가? */
-      .a5 img {
-        vertical-align: top;
-        /* 
-                박스에 단일한 이미지를 넣은 경우
-                하단에 자연스런 간극이 존재한다!
-                이것을 없애려면 vertical-align
-                인라인요소간 세로정렬 속성의 값으로
-                top/bottom/middle 중 하나로 셋팅하면
-                하단 간극이 사라진다!
-                (baseline값은 적용안됨!)
-            */
+
+      /* 두번째 이미지만 투명하게 하기 */
+      .absolute-images img:nth-child(2) {
+        opacity: 0;
+        /*  trs */
+        transition: .3s;
       }
+      /* 싸고있는 박스에 마우스 오버시 두번째 이미지 등장 즉 투명도1 */
+       .absolute-images:hover img:nth-child(2) {
+        opacity: 1;
+       }
+
+
+
+       /* 앱솔루트 위치값으로 크기만들기 */
+       .car-box{
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* 부모는 보이는 화면! */
+
+        /* 가로크기 - 부모의 25%*/
+         width: 25%;
+         border: 4px solid rgb(255, 56, 155);
+         border-radius: 5px;
+       }
+       /* 자동차 이미지 */
+       .car-box img{
+        width: 100%;
+        /* 이미지는 한쪽 크기만 주면 나머지 방향크기는
+        자동비율유지함! */
+       }
+
+       /* 자동차 앱솔루트 타이틀 박스  */
+       .car-box h3{
+        position: absolute;
+        /* 위치값으로 부모가로크기를 채우게함!
+        동적 크기 생성! 모바일에서 많이씀 */
+         left: 0;
+         right: 0;
+
+        bottom: 0;
+        /* 부모는 .car-box */
+        border: 4px solid rgb(0, 0, 0);
+
+        /* 글자중앙정렬 */
+        text-align: center;
+
+        /* 기본마진없애기 */
+        margin: 0;
+       }
+
+
+       /* 윈터 추가 */
+       .winter-box{
+        position: absolute;
+        top: 0;right: 0;
+
+        width: 20%;
+       }
+
+       .winter-box img{
+        width: 100%;
+       }
+
+       
+
     </style>
   </head>
   <body>
@@ -311,6 +449,12 @@
     <h1 class="tit">Absolute 포지션</h1>
     <div class="bx" id="r1">r1</div>
     <div class="bx" id="s1">s1</div>
+
+    <!-- 부제목 -->
+     <!-- <h2>w.Red Velvet</h2> -->
+      <h2 class="sub-title">
+        w.Red Velvet
+      </h2>
 
     <!-- 첫번째 앱솔루트 박스 -->
     <div class="bx" id="a1">a1</div>
@@ -320,6 +464,25 @@
 
     <!-- 두번째 앱솔루트 박스 -->
     <div class="bx" id="a2">a2</div>
+
+    <!-- 앱솔루트 판타롱스타킹! -->
+     <div class="a5" title="앱솔루트 스타킹!"> <img src="../레벨/하츄핑.jpg" alt="타노스"></div>
+
+
+     <!-- 앱솔루트끼리는 서로 겹친다! -->
+      <div class="absolute-images">
+        <img src="../레벨/예리.jpg" alt="레드벨벳">
+        <img src="../레벨/아이린.jpg" alt="아이린">
+      </div>
+
+
+      <!-- /* 앱솔루트 위치값으로 크기만들기 */ -->
+      <div class="car-box"><img src="../레벨/공유어깨하츄핑.png" alt="공유차">
+      <!-- 위치값으로 크기 만들 타이틀 박스 -->
+       <h3>😎공유핑🚗</h3>
+      </div>
+
+      <div class="winter-box"><img src="../레벨/윈터손하츄핑.webp" alt="윈터와하츄핑"></div>
 
     <!-- 부모를 찾는 앱솔루트! -->
     <div class="bx2 s5">
