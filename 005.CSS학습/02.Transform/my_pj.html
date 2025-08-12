@@ -47,7 +47,7 @@
 
         /* 글자세팅 */
         color: #ffffff;
-        font-size: 40px;
+        font-size: 45px;
         line-height: 100px;
         font-family: Pretendard, sans-serif;
 
@@ -163,7 +163,14 @@
         #transform-box2:hover img{
             /* 0도 */
             transform: rotateX(0deg)
-            ;        }
+            scale(2)
+                translate(-70%, 70%)
+                rotateY(3turn) ;       
+      
+                /* 트랜지션 시간 늘리기 */
+                transition: 5s ease-in-out;
+              }
+          
         /***********************************
             3. transform : translateX(거리) - X축이동
             - 단위 : px, % 등
@@ -279,7 +286,7 @@
          }
          
          #transform-box8 img{
-          transform: scale(-1);
+          transform: scale(0);
          }
          #transform-box8:hover img{
           transform: scale(3);
@@ -313,6 +320,7 @@
         }
         body:hover .main-title{
           translate: 0;
+           transition: 1s ease-in-out;
         }
 
     </style>
@@ -348,7 +356,7 @@
         <img src="../레벨/images (1).jfif" alt="캐릭터" />
       </div>
       <div id="transform-box8">
-        <img src="../레벨/다운로드.jfif" alt="캐릭터" />
+        <img src="../레벨/레벨단체.jpg" alt="캐릭터" />
       </div>
       <div id="transform-box9">
         <img src="../레벨/예리.jpg" alt="캐릭터" />
