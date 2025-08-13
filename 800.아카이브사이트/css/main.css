@@ -83,7 +83,7 @@ a.my-cha-link{
 }
 
 .my-cha-link img{
-    height: 70px;
+    height: 100px;
 }
 
 /* 마우스 오버시 이미지 교체하기 */
@@ -147,3 +147,134 @@ a.my-cha-link{
     /* 이미지를 마치 배경처럼 박스에 비율맞게 빈틈없이 잘 보이게 채워줌 */
     object-fit: cover;
 }
+
+/* ************2-2. 나의 프로젝트 박스 */
+/* 공통 pj박스 직계 속 박스 div */
+.pj-box > div {
+    /* padding-top:31px; */
+}
+/* ************2-2-1. 제목박스 */
+.sub-part-title{
+/* 박스설정 */
+padding-bottom: 16px;
+text-align: center;
+/* 글자설정 */
+font-size: 36px;
+}
+/* 구분선은 타이틀박스의 가상요소로 구현함 */
+.sub-part-title::before{
+    content: '';
+    display: block;
+    /* margin: 위 양쪽 아래 */
+    /* 마영오, 하단마진 16px */
+    margin: 0 auto 16px;
+    max-width: 765px;
+    height: 1px;
+    background-color: #f1c5c5;
+    /* 구분선을 가상요소로 구현했더니 구분선이 붙어버려서 맘에 안드네
+    바꿔야지  */
+}
+
+/* ************2-2-2. 링크 박스 */
+.link-box{
+    /* 가로크기는 레이아웃은 아니지만
+    12그리드 크기를 기준해서 준다 */
+    width: calc(100%/12*10);
+    /* 마영오 - 블록요소 가로중앙 */
+    margin: 0 auto; 
+   /* 둥근모서리 */
+   border-radius: 0 100px 0 60px;
+
+   /* 흰색 배경색 흰색 반투명 80% */
+   /* rgba형식에서 a는 알파값으로 투명도이며, 
+   0.8이면 80%를 의미한다 */
+   /* 예전형식 rgba(숫자, 숫자,숫자, 알파값) */
+   /* 새로운 형식 rgba(숫자 숫자 숫자/ 알파값) */
+
+
+   /* color: rgba(255, 255, 255, 0.8); */
+   background-color: rgba(255 255 255/ 0.9);
+}
+/*  플롯팅 설정하기 */
+.link-box>div{
+    /* 옆으로 흐르게 */
+    float: left;
+    /* 절반 크기 세팅 */
+    width: 50%;
+
+    /* 최소높이값 설정 */
+    min-height: 540px;
+
+    /* 패딩 -> 값을 %로 잡을 경우, 기준은 부모박스의 width다!
+    이 기준은 margin도 동일히ㅏ다*/
+    padding: 5% 7%;
+
+    /* 패딩, 보더 포함 박스 세팅 bxb */
+    box-sizing: border-box;
+}
+/* v플롯팅 해제 clear는
+core.css의 clb 클래스로 처리함! */
+
+/* 왼쪽 파트 */
+.left-part{
+    /* 부모자격주기 - 가상요소 after 앱솔루트 자식의 부모*/
+    position: relative;
+}
+.left-part::after{
+    content: '';
+    /* 앱솔주면 자동으로 블록이 됨 */
+    position: absolute;
+    top: 15%;
+    right: 0;
+    /* 부모는? .left-part가 렐러티브여서 부모ㅇㅇ */
+    width: 1px;
+    height: 70%;
+    background-color: #535252;
+
+}
+
+/* 링크박스 a요소 */
+.link-box a{
+    /* 가상요소 자식이 block이므로 최소한 
+  display를 inline-block로 해야 자신의 크기만큼
+  크기를 가지게 된다! 왜? inline내부의 block은
+  inline부모를 무시하고 바깥박스를 기준하여
+  끝까지 width를 차지한다! */
+    display: inline-block;
+    font-size: 24px;
+    line-height: 37px;
+
+}
+
+/* 가상 요소로 애니메이션 밑줄 만들기
+오버시 밑줄이 왼쪽에서 들어와서
+아웃시 오른쪽으로 밑줄이 나감 */
+.link-box a::after{
+    content: '';
+    display: block;
+    /* 처음에 안보임 가로크기0 (돌아올 때) */
+    width: 0;
+    /* 마진값으로 돌아올 때 오른쪽으로 나가는 것처럼 보이기 */
+    margin-left: 100%;
+    /* 마진값의 %는 부모박스 (a요소)의 가로크기다! */
+    height: 3px;
+    background-color: #e9adad;
+    /* 트랜지션 */
+    transition: .5s linear;
+}
+/* a에 오버시 가상요소 밑줄 글씨만큼 늘어나기 */
+.link-box a:hover::after{
+    width: 100%;
+    /* 왼쪽 마진 값은 오버시 0이 되어야 하고, 애니메이션 처리는 하지 말아야한다.
+    따라서 트랜지션속성값을 width로 써서 처리한다 */
+    margin-left: 0;
+    transition: width 0.5s linear;
+    }
+
+/* 가상요소로 마우스 오버시 글자 색 바꾸기 */
+.link-box a:hover{
+    color: #f77b7b;
+    font-style: italic;
+}
+
+/* 오른쪽 파트 */

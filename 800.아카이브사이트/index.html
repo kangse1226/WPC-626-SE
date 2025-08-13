@@ -4,13 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>나의 아카이브 사이트</title>
-    <!-- 폰트어썸 CSS : 이사이트에서 임티를 글자처럼 맘대로 가져올 수 있음!!!-->
+    <!-- 폰트어썸 CSS : 아이콘을 위한 CSS CDN
+     이사이트에서 임티를 글자처럼 맘대로 불러올 수 있음!!!-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
     />
     <!-- 메인 css  -->
     <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- @@@@@@@@@경로잡기@@@@@@@@@@@@
+1. 절대경로: 웹서버의 url로 되어있는 경로 
+2. 상대경로: 현재 웹페이지의 상대위치를 찾는 경로
+        -> ./ 현재위치(아무것도 안써도 현재 위치지만 자바스크립트를 위해 ./ 꼭쓰자)
+        -> ../ 한 폴더 위로 경로 이동 
+3. 절대/상대경로: 프로젝트 최상위 폴더 기준 경로 
+-> / 맨 앞에 슬래쉬만 있고 이 표시기ㅏ 최상위 root 폴더 의미 -->
+
   </head>
   <body>
     <!-- 할아버지는 html이고 화면에 보이게 하는 건 body가 부모???ㅠㅠㅠㅠㅠ -->
@@ -27,7 +37,7 @@
         <div class="part-box col-1">
           <img
             class="logo"
-            src="../002.그래픽툴/01.포토샵연습/２．작업파일/10일차/나의로고1.jpg"
+            src="../002.그래픽툴/01.포토샵연습/２．작업파일/jpg/나의로고1.jpg"
             alt="메인로고"
           />
         </div>
@@ -39,10 +49,10 @@
               <a href="#">HOME</a>
             </li>
             <li>
-              <a href="#">LUNCH BOX</a>
+              <a href="#">MY PROJECT</a>
             </li>
             <li>
-              <a href="#">SHADOWING</a>
+              <a href="#">LUNCH</a>
             </li>
             <li>
               <a href="#">TARINING</a>
@@ -57,9 +67,9 @@
             href="https://www.figma.com/design/P7Lxrlhm4qImS68oUJRUOY/%EC%84%B1%EC%9D%80%EC%9D%98-%EC%95%84%EC%B9%B4%EC%9D%B4%EB%B9%99-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%B6%84%EC%84%9D-%EC%84%A4%EA%B3%84?node-id=6-15&p=f&t=gp9r8TRxARVzYur2-0"
             title="나의 프로젝트 사이트 바로가기"
             >
-              <img src="../002.그래픽툴/02.일러스트연습/02.작업파일/7일차(725)/72ppi/자산 9.png" alt="쿼카">
+              <img src="../002.그래픽툴/02.일러스트연습/02.작업파일/작업물_jpg_png/태닝캐릭터.png" alt="쿼카">
       
-        <img src="../002.그래픽툴/02.일러스트연습/02.작업파일/7일차(725)/72ppi/자산 1.png" alt="쿼카2">
+        <img src="../002.그래픽툴/02.일러스트연습/02.작업파일/작업물_jpg_png/태닝캐릭터2.png" alt="쿼카2">
         </a>
           <!-- 깃허브 로고 링크 -->
           <a
@@ -104,6 +114,42 @@
             </div>
           </div>
         </section>
+        <!-- 2-2. 나의 프로젝트 박스 -->
+         <!-- section#아이디.클래스 -->
+         <section id="my-pj-part" class="pj-box">
+          <div class="my-pj-box inbox">
+            <!-- 2-2-1. 제목박스 -->
+             <h2 class="sub-part-title">나의 프로젝트 파트</h2>
+             <!-- 2-2-2. 링크 박스 -->
+              <!-- clb 클래스를 넣어서 float설정을 위한
+               clear 셋팅 가상요소가 적용된다:core.css에 수정함 -->
+              <article class="link-box clb"> 
+                <!-- div*2>ul.link-list>li*5>a[target=_blank] -->
+                 <!-- ul 클래스명을 link-list로 할거고 그 밑에 li 5개 만들고 
+                  그밑에 a 링크 만들건데 새창으로 띄울거야 -->
+                <!-- 왼쪽 파트 -->
+                <div class="left-part"> <!-- div두개 만들고 왼쪽 오른쪽으로 구분하게 클래스 추가 -->
+                  <ul class="link-list">
+                    <li><a href="" target="_blank">오늘의 점심</a></li>
+                    <li><a href="" target="_blank">직화그릴소시지</a></li>
+                    <li><a href="" target="_blank">명란김</a></li>
+                    <li><a href="" target="_blank">병아리콩밥</a></li>
+                    <li><a href="" target="_blank">보성녹차</a></li>
+                  </ul>
+                </div>
+                <!-- 오른쪽 파트 -->
+                <div class="right-part">
+                  <ul class="link-list">
+                    <li><a href="" target="_blank">내일저녁메뉴</a></li>
+                    <li><a href="" target="_blank">양꼬치앤칭따오</a></li>
+                    <li><a href="" target="_blank">혜장국</a></li>
+                    <li><a href="" target="_blank">스텔라</a></li>
+                    <li><a href="" target="_blank">나초</a></li>
+                  </ul>
+                </div>
+              </article>
+          </div>
+         </section>
       </main>
     </div>
     <!-- 3. 하단영역 -->
