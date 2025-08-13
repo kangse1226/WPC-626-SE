@@ -6,275 +6,304 @@
 @import url(./core.css);
 
 /* 전체 배경 */
-body{
-    background-color: #000000;
+body {
+  background-color: #000000;
 }
 
 /*************** 1. 상단영역***************** */
 /* 겉박스 */
-#top-area{
-    background-color: rgb(255, 255, 255);
+#top-area {
+  background-color: rgb(255, 255, 255);
 }
 /* 속박스 */
 .top-area .part-box {
-/* padding-top: 23.5px; */
-/* 상단영역 높이값 동일하게 통일 */
-height: 91px;
+  /* padding-top: 23.5px; */
+  /* 상단영역 높이값 동일하게 통일 */
+  height: 91px;
 }
 
 /* 로고이미지 */
-.logo{
-    width: 100%;
-    margin-top: 20px;
-
+.logo {
+  width: 100%;
+  margin-top: 20px;
 }
 
 /* GMB 메뉴 */
 
 /* float해제설정 */
-#gnb{
-    max-width: 762px;
-    margin: 0 auto;
-    /* outline: 1px solid #e70b0b; */
-
+#gnb {
+  max-width: 762px;
+  margin: 0 auto;
+  /* outline: 1px solid #e70b0b; */
 }
 
-
-#gnb::after{
-    content: '';
-    display: block;
-    clear: both;
+#gnb::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
-#gnb li{
-    float: left;
-    /* float는 폭 좁아지면 밑으로 떨어져서 안쓰고flex씀 */
-    /* 높이값만큼 줄간격세팅 */
-    line-height: 91px;
-
+#gnb li {
+  float: left;
+  /* float는 폭 좁아지면 밑으로 떨어져서 안쓰고flex씀 */
+  /* 높이값만큼 줄간격세팅 */
+  line-height: 91px;
 }
 
 /* 두번째 li부터 끝까지 왼쪽 마진  */
-#gnb li+li {
-    margin-left: 17.8%;
-    /* 마진의 %값의 기준은
+#gnb li + li {
+  margin-left: 17.8%;
+  /* 마진의 %값의 기준은
     부모박스의 크기이다! */
 }
 
 /* 깃허브 박스 */
-.git-box{
-    text-align: right;
-    font-size: 44px;
-    line-height: 91px;
-
+.git-box {
+  text-align: right;
+  font-size: 44px;
+  line-height: 91px;
 }
 
 /* 내 캐릭터 링크 박스*/
 /* 마이캐링크 이름의 a요소이다. 이렇게 쓰면 내가 a에게 이 이름을 줬다 이럴때 종속선택자를 쓴다 */
-a.my-cha-link{
-    /* a요소는 위아래 마진이 적용이 안되므로 인라인블록으로 display변경한다! */
-    display: inline-block;
-    margin-top: 22px;
-    /* 인라인요소간 진행방향을 세로정렬
+a.my-cha-link {
+  /* a요소는 위아래 마진이 적용이 안되므로 인라인블록으로 display변경한다! */
+  display: inline-block;
+  margin-top: 22px;
+  /* 인라인요소간 진행방향을 세로정렬
     -> 옆에 있는 깃허브 로고가 영향을 받으므로
     이 정렬속성으로 세로 위치를 조정함 */
-    vertical-align: -22px;
-
+  vertical-align: -22px;
 }
 
-.my-cha-link img{
-    height: 100px;
+.my-cha-link img {
+  height: 100px;
 }
 
 /* 마우스 오버시 이미지 교체하기 */
 /* 1 처음에 마지막 이미지는 안보이게 함 */
-.my-cha-link img:last-child{
-    display: none;
+.my-cha-link img:last-child {
+  display: none;
 }
 
 /* 2 마우스 오버시 첫번째 이미지 안보이게 함 */
-.my-cha-link:hover img:first-child{
-    display: none;
+.my-cha-link:hover img:first-child {
+  display: none;
 }
 /* 3 마우스 오버시 마지막 이미지 보이게 함 */
-.my-cha-link:hover img:last-child{
-    display: inline;
+.my-cha-link:hover img:last-child {
+  display: inline;
 }
 
 /*************** 2. 메인영역 *****************/
-.main-area{
-    color: #ffffff;
+.main-area {
+  color: #ffffff;
 }
 
 /* 2-1. 자기소개 박스 */
 /* 자기소개 겉박스 */
-#intro-box{
-    /* 가로폭 끝까지 그라데이션 나오게 하기 위해 겉박스에 세팅함 */
-    background-image: linear-gradient(to bottom, #A14C4C, black);
+#intro-box {
+  /* 가로폭 끝까지 그라데이션 나오게 하기 위해 겉박스에 세팅함 */
+  background-image: linear-gradient(to bottom, #a14c4c, black);
 }
 /* 자기소개 속박스 */
-.intro-box{
-    /* 위아래 패딩 */
-    padding: 136px 93px;
+.intro-box {
+  /* 위아래 패딩 */
+  padding: 136px 93px;
 }
- 
+
 /* 자기소개글 타이틀 */
-.intro-box .txt-box h2{
-    color: #ffffff;
-    font-weight: normal;
-    font-size: 36px;
-    margin-bottom: 72px;
+.intro-box .txt-box h2 {
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 36px;
+  margin-bottom: 72px;
 }
 
 /* 자기소개글 내용 타이틀 */
-.intro-box .txt-box p{
-    color: #d4d0d0;
-    font-size: 16px;
-    line-height: 30px;
+.intro-box .txt-box p {
+  color: #d4d0d0;
+  font-size: 16px;
+  line-height: 30px;
 }
 
 /* 자기소개 이미지 박스 */
-.img-box{
-    height: 428px;
-    border-radius: 27px;
-    /* 모퉁이 부분 이미지 숨김 */
-    overflow: hidden;
+.img-box {
+  height: 428px;
+  border-radius: 27px;
+  /* 모퉁이 부분 이미지 숨김 */
+  overflow: hidden;
 }
 
-.img-box img{
-    width: 100%;
-    height: 100%;
-    /* 이미지를 마치 배경처럼 박스에 비율맞게 빈틈없이 잘 보이게 채워줌 */
-    object-fit: cover;
+.img-box img {
+  width: 100%;
+  height: 100%;
+  /* 이미지를 마치 배경처럼 박스에 비율맞게 빈틈없이 잘 보이게 채워줌 */
+  object-fit: cover;
 }
 
 /* ************2-2. 나의 프로젝트 박스 */
 /* 공통 pj박스 직계 속 박스 div */
 .pj-box > div {
-    /* padding-top:31px; */
+  /* padding-top:31px; */
 }
 /* ************2-2-1. 제목박스 */
-.sub-part-title{
-/* 박스설정 */
-padding-bottom: 16px;
-text-align: center;
-/* 글자설정 */
-font-size: 36px;
+.sub-part-title {
+  /* 박스설정 */
+  padding-bottom: 16px;
+  text-align: center;
+  /* 글자설정 */
+  font-size: 36px;
 }
 /* 구분선은 타이틀박스의 가상요소로 구현함 */
-.sub-part-title::before{
-    content: '';
-    display: block;
-    /* margin: 위 양쪽 아래 */
-    /* 마영오, 하단마진 16px */
-    margin: 0 auto 16px;
-    max-width: 765px;
-    height: 1px;
-    background-color: #f1c5c5;
-    /* 구분선을 가상요소로 구현했더니 구분선이 붙어버려서 맘에 안드네
+.sub-part-title::before {
+  content: "";
+  display: block;
+  /* margin: 위 양쪽 아래 */
+  /* 마영오, 하단마진 16px */
+  margin: 0 auto 16px;
+  max-width: 765px;
+  height: 1px;
+  background-color: #f1c5c5;
+  /* 구분선을 가상요소로 구현했더니 구분선이 붙어버려서 맘에 안드네
     바꿔야지  */
 }
 
 /* ************2-2-2. 링크 박스 */
-.link-box{
-    /* 가로크기는 레이아웃은 아니지만
+.link-box {
+  /* 가로크기는 레이아웃은 아니지만
     12그리드 크기를 기준해서 준다 */
-    width: calc(100%/12*10);
-    /* 마영오 - 블록요소 가로중앙 */
-    margin: 0 auto; 
-   /* 둥근모서리 */
-   border-radius: 0 100px 0 60px;
+  width: calc(100% / 12 * 10);
+  /* 마영오 - 블록요소 가로중앙 */
+  margin: 0 auto;
+  /* 둥근모서리 */
+  border-radius: 0 100px 0 60px;
 
-   /* 흰색 배경색 흰색 반투명 80% */
-   /* rgba형식에서 a는 알파값으로 투명도이며, 
+  /* 흰색 배경색 흰색 반투명 80% */
+  /* rgba형식에서 a는 알파값으로 투명도이며, 
    0.8이면 80%를 의미한다 */
-   /* 예전형식 rgba(숫자, 숫자,숫자, 알파값) */
-   /* 새로운 형식 rgba(숫자 숫자 숫자/ 알파값) */
+  /* 예전형식 rgba(숫자, 숫자,숫자, 알파값) */
+  /* 새로운 형식 rgba(숫자 숫자 숫자/ 알파값) */
 
-
-   /* color: rgba(255, 255, 255, 0.8); */
-   background-color: rgba(255 255 255/ 0.9);
+  /* color: rgba(255, 255, 255, 0.8); */
+  background-color: rgba(255 255 255/ 0.9);
 }
 /*  플롯팅 설정하기 */
-.link-box>div{
-    /* 옆으로 흐르게 */
-    float: left;
-    /* 절반 크기 세팅 */
-    width: 50%;
+.link-box > div {
+  /* 옆으로 흐르게 */
+  float: left;
+  /* 절반 크기 세팅 */
+  width: 50%;
 
-    /* 최소높이값 설정 */
-    min-height: 540px;
+  /* 최소높이값 설정 */
+  min-height: 540px;
 
-    /* 패딩 -> 값을 %로 잡을 경우, 기준은 부모박스의 width다!
+  /* 패딩 -> 값을 %로 잡을 경우, 기준은 부모박스의 width다!
     이 기준은 margin도 동일히ㅏ다*/
-    padding: 5% 7%;
+  padding: 5% 7%;
 
-    /* 패딩, 보더 포함 박스 세팅 bxb */
-    box-sizing: border-box;
+  /* 패딩, 보더 포함 박스 세팅 bxb */
+  box-sizing: border-box;
 }
 /* v플롯팅 해제 clear는
 core.css의 clb 클래스로 처리함! */
 
 /* 왼쪽 파트 */
-.left-part{
-    /* 부모자격주기 - 가상요소 after 앱솔루트 자식의 부모*/
-    position: relative;
+.left-part {
+  /* 부모자격주기 - 가상요소 after 앱솔루트 자식의 부모*/
+  position: relative;
 }
-.left-part::after{
-    content: '';
-    /* 앱솔주면 자동으로 블록이 됨 */
-    position: absolute;
-    top: 15%;
-    right: 0;
-    /* 부모는? .left-part가 렐러티브여서 부모ㅇㅇ */
-    width: 1px;
-    height: 70%;
-    background-color: #535252;
-
+.left-part::after {
+  content: "";
+  /* 앱솔주면 자동으로 블록이 됨 */
+  position: absolute;
+  top: 15%;
+  right: 0;
+  /* 부모는? .left-part가 렐러티브여서 부모ㅇㅇ */
+  width: 1px;
+  height: 70%;
+  background-color: #535252;
 }
 
 /* 링크박스 a요소 */
-.link-box a{
-    /* 가상요소 자식이 block이므로 최소한 
+.link-box a {
+  /* 가상요소 자식이 block이므로 최소한 
   display를 inline-block로 해야 자신의 크기만큼
   크기를 가지게 된다! 왜? inline내부의 block은
   inline부모를 무시하고 바깥박스를 기준하여
   끝까지 width를 차지한다! */
-    display: inline-block;
-    font-size: 24px;
-    line-height: 37px;
-
+  display: inline-block;
+  font-size: 24px;
+  line-height: 37px;
 }
 
 /* 가상 요소로 애니메이션 밑줄 만들기
 오버시 밑줄이 왼쪽에서 들어와서
 아웃시 오른쪽으로 밑줄이 나감 */
-.link-box a::after{
-    content: '';
-    display: block;
-    /* 처음에 안보임 가로크기0 (돌아올 때) */
-    width: 0;
-    /* 마진값으로 돌아올 때 오른쪽으로 나가는 것처럼 보이기 */
-    margin-left: 100%;
-    /* 마진값의 %는 부모박스 (a요소)의 가로크기다! */
-    height: 3px;
-    background-color: #e9adad;
-    /* 트랜지션 */
-    transition: .5s linear;
+.link-box a::after {
+  content: "";
+  display: block;
+  /* 처음에 안보임 가로크기0 (돌아올 때) */
+  width: 0;
+  /* 마진값으로 돌아올 때 오른쪽으로 나가는 것처럼 보이기 */
+  margin-left: 100%;
+  /* 마진값의 %는 부모박스 (a요소)의 가로크기다! */
+  height: 3px;
+  background-color: #e9adad;
+  /* 트랜지션 */
+  transition: 0.5s linear;
 }
 /* a에 오버시 가상요소 밑줄 글씨만큼 늘어나기 */
-.link-box a:hover::after{
-    width: 100%;
-    /* 왼쪽 마진 값은 오버시 0이 되어야 하고, 애니메이션 처리는 하지 말아야한다.
+.link-box a:hover::after {
+  width: 100%;
+  /* 왼쪽 마진 값은 오버시 0이 되어야 하고, 애니메이션 처리는 하지 말아야한다.
     따라서 트랜지션속성값을 width로 써서 처리한다 */
-    margin-left: 0;
-    transition: width 0.5s linear;
-    }
+  margin-left: 0;
+  transition: width 0.5s linear;
+}
 
 /* 가상요소로 마우스 오버시 글자 색 바꾸기 */
-.link-box a:hover{
-    color: #f77b7b;
-    font-style: italic;
+.link-box a:hover {
+  color: #f77b7b;
+  font-style: italic;
+}
+
+/* 가상 요소로 애니메이션 만들기
+    기차가 움직임 */
+.link-box a::before {
+  content: "";
+  display: block;
+  /* 처음에 안보임 가로크기0 (돌아올 때) */
+  width: 0;
+  /* 마진값으로 돌아올 때 오른쪽으로 나가는 것처럼 보이기 */
+  margin-left: 100%;
+  /* 마진값의 %는 부모박스 (a요소)의 가로크기다! */
+  height: 30px;
+  /* 기차철길처럼보이게 */
+  border-bottom: 2px dashed #666565;
+  /* 기차철길 대신 다른 걸로 바꿈*/
+  border-bottom: 3px solid #31c473;
+
+  /* 트랜지션 */
+  transition: 2s linear;
+
+  /*  gif 애니메이션 이미지를 배경으로 넣기 */
+  background: url(../images/train.gif) no-repeat right/auto 100%;
+  /* 이미지 x축 뒤집기 (스케일값이 음수가 되면 뒤집어진다)
+  -> trnasform:scaleX(-1)
+  참고: Y축 뒤집기는 트랜스폼:스케일대문자와이(-1) */
+  /* transform: scaleX(-1); */
+
+  /* 기차대신 뉴진스로고로 변경함- 방향반대로 할필요없으 */
+  background: url(../../005.CSS학습/뉴진스/로고\ \(1\).png) no-repeat left/auto 60%;
+}
+/* a에 오버시 가상요소 글씨만큼 늘어나기 */
+.link-box a:hover::before {
+  width: 100%;
+  /* 왼쪽 마진 값은 오버시 0이 되어야 하고, 애니메이션 처리는 하지 말아야한다.
+        따라서 트랜지션속성값을 width로 써서 처리한다 */
+  margin-left: 0;
+  transition: width 2s linear;
 }
 
 /* 오른쪽 파트 */
