@@ -1,0 +1,90 @@
+/* #transform-box7:hover img{
+          transform:skewX(15deg);
+         } */
+          #transform-box3:hover img {
+        /*  y축 회전: tfry */
+        transform: rotateY(180deg);
+        /* 동시효과중 필터주기 */
+        filter: grayscale(100%);
+      }
+          #transform-box5:hover img {
+        /*  y축 회전: tfry */
+        transform: rotateY(180deg);
+        /* 동시효과중 필터주기 */
+        filter: grayscale(100%);
+      }
+       
+
+        /* 콘텐츠 이미지 움직이기 */
+        .main-contents{
+          translate: 150%;
+        }
+        body:hover .main-contents{
+          translate: 0;
+          transition: 1s ease-out .5s;
+        }
+
+        /* 타이틀 움직이기 */
+        .main-title{
+          position: relative;
+          left: 0;
+          translate: 0 -100%;
+        }
+        body:hover .main-title{
+          translate: 0;
+          left: 75%;
+           transition: translate 1s ease-in-out,
+           left 3s ease-in-out 1s;
+        }
+
+
+        /* 뒤집어지는 애니박스 */
+              .transform-special{
+                position: absolute;
+                top: 30px;
+                left: 30px;
+    
+                /* 부모는? 보이는 화면! */
+
+              }
+              /* 유정이랑 보검이 이미지가 겹쳐지게 앱솔루트 세팅 */
+              .transform-special img{
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+              }
+
+              /* 1) 첫번째 img 자식- 유정이 원본(돌아올 때). */
+              .transform-special img:first-child{
+                /* 처음에 90도로 돌려서 숨겨둠 */
+                transform: rotateY(90deg);
+                /* 트랜지션 다시 돌아갈 때 바로 출발,
+                처음만 천천히 */
+                transition: .4s ease-in;
+              }
+              /* 2) 첫번째 img 자식- 유정이 오버시. */
+              .transform-special:hover img:first-child{
+                /* 오버시 0도가 되어 보여짐 */
+                transform: rotateY(0deg);
+                /* 트랜지션 - 보검이 돌동안 .4초 기다렸다가
+                그대로 받아서 끝에 천천히*/
+                transition: .4s ease-out .4s ;
+              }
+              
+              /* 3) 마지막째 img 자식은 관식이. 보검이 원본(돌아올 때) */
+              .transform-special img:last-child{
+                /* 처음에 0도여서 보임 */
+                transform: rotateY(0deg);
+                /* 트랜지션: 돌아올 때 유정이 .4초 기다려, 
+                그대로 받아서 끝에 천천히 ease-out */
+                transition: .4s ease-out .4s;
+              }
+              /* 4) 마지막째 img 자식은 관식이. 보검이 오버시 */
+              .transform-special:hover img:last-child{
+                /* 오버시 90도로 돌아서 안보여짐 */
+                transform: rotateY(90deg);
+                /* 트랜지션 기다릴 필요 없이 바로 출발,
+                이징은 처음만 천천히 =ease-in */
+                transition: .4s ease-in;
+              }
