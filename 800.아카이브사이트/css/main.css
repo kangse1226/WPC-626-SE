@@ -225,6 +225,13 @@ core.css의 clb 클래스로 처리함! */
   background-color: #535252;
 }
 
+/* 소제목 꾸미기 */
+.part-sub-title{
+  color: #f06e6e;
+  font-size: 30px;
+  text-align: center;
+}
+
 /* 링크박스 a요소 */
 .link-box a {
   /* 가상요소 자식이 block이므로 최소한 
