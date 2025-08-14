@@ -145,8 +145,25 @@
           left: 100%;
           
         }  
-        .name-title:hover{
+        /* 멩버이름 왼쪽으로 이동하는데, 사선 */
+        .name-title li:hover:first-child{
           translate: -70% 0;
+          transition: 1s;
+        }
+        .name-title li:hover:nth-child(2){
+          translate: -67% 0;
+          transition: 1s;
+        }
+        .name-title li:hover:nth-child(3){
+          translate: -50% 0;
+          transition: 1s;
+        }
+        .name-title li:hover:nth-child(4){
+          translate: -40% 0;
+          transition: 1s;
+        }
+        .name-title li:hover:nth-child(5){
+          translate: -30% 0;
           transition: 1s;
         }
 
