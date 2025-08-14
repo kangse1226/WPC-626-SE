@@ -144,9 +144,12 @@
         
  /* 캐릭터 박스 */
         .sub-contents {
+        position: fixed;
+        bottom: 0;
+        right: 0;
           max-width: 300px;
           margin: 10px auto;
-          padding: 200px;
+          padding: 0px;
 
         }
         .sub-contents img{
@@ -323,21 +326,20 @@
           opacity: .3;
         }
         #transform-box5 img{
-          /*  */
+          height: 300px;
+          margin-top: 100px;
+          border-radius: 50%;
+
         }
         #transform-box5 img:hover{
-          background: url(../뉴진스/뉴진스\ \(1\).jfif);
-          transition: 3s;
+          transform: scale(4);
+          transition: 2s;
         }
 
         #transform-box6:hover img{
           transform: rotate(90deg);
           transition: 3s;
         }
-
-    
-
-      
 
 
         /* 상단 로고- 뒤집어지는 애니박스 */

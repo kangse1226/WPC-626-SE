@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <title>04. FIXED 포지션</title>
     <style>
+      body {
+        overflow-x: hidden;
+        
+      }
+
       .bx {
         width: 300px;
         height: 300px;
@@ -119,16 +124,13 @@
         background: url(../레벨/조이1.jfif) no-repeat center/cover;
       }
 
-
-      /* 두번째 앱솔루트 박스 ->위치값을 주면 부모를 찾음
-      ->자식을 싸고 있는 모든 요소가 부모자격이 없으면
-      스크롤 상단 보이는 화면이 부모가 된다*/
+        /*  */
       #a2 {
-        position: absolute;
+        position: fixed;
         width: 650px;
         /* 오른쪽 아래 0 위치 부모는? 보이는 화면 */
-        right: 0;
-        bottom: 0;
+        right: 0%;
+        bottom: 10%;
         background: url(../레벨/레벨단체.jpg) no-repeat center/cover;
       }
 
@@ -444,7 +446,9 @@
         vertical-align: middle;
        }
 
-       
+       /* 픽스드 고정했다가 오버시 생기게 */
+
+
 /* 부모를 찾는 앱솔루트! */
       .bx2 {
         border: 5px solid rgb(58, 160, 80);
@@ -546,13 +550,54 @@
         땡기는 효과가 있음.
         공통적으로 적용하는게 참 좋겠지!
         단, baseline은 효과가 없다 */
-        max-width: 300px;
+        max-width: 300px;}
 
 
+
+        /* 픽스드로 포스터 미리보기 */
+        .poster-fixed {
+          position: fixed;
+          top: 20%;
+          right: 10%;
+          border: 10px solid #ee91c4;
+          z-index: 3;
+        }
+
+        /* 포스터보기 타이틀 */
+        .poster-fixed h3{
+          position: absolute;
+          top: 0;
+          right: 85%;
+          
+          /* 기본마진없앰 */
+          margin: 0;
+          
+          /* 글자 세로 */
+          font-size: 50px;
+          font-family: dohyen;
+          color: #fd619d;
+          text-align: center;
+          height: 100%;
+          writing-mode: vertical-lr;
+          letter-spacing: 10px;
+          background-color: #fff;
+          border: 10px solid #ee91c4;
+        }
+
+        /* 이미지가 박스에 단독으로 들어갈 경우
+      하단에 생기는 공백 없애기 */
+      .poster-fixed img {
+        vertical-align: middle;
+        /* 인라인요소가 세로정렬 속성인 vertical-align의
+        값을 top/middle/bottom 중 어떤값을 사용해도
+        하단공백을 없애는 효과가 있다!
+        (단,baseline값 효과없음) */
       }
+    
     </style>
   </head>
   <body>
+    
     <!-- 제목 -->
     <h1 class="tit">FIXED 포지션</h1>
     <div class="bx" id="r1"></div>
@@ -572,6 +617,12 @@
 
     <!-- 두번째 앱솔루트 박스 -->
     <div class="bx" id="a2"></div>
+
+    <!-- 픽스드로 포스터 미리보기 -->
+     <div class="poster-fixed" title="포스터 미리보기">
+      <h3>사랑의 하츄핑 보기</h3>
+      <img src="../레벨/윈터손하츄핑.webp" alt="포스터">
+     </div>
 
     <!-- 앱솔루트 판타롱스타킹! -->
      <div class="a5" title="앱솔루트 스타킹!"> <img src="../레벨/하츄핑.jpg" alt="타노스"></div>
