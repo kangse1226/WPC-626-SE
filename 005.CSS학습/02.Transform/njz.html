@@ -38,7 +38,58 @@
         background-size: cover;
         /* bgz를 100% 100% 이따구로 해서 찌그러뜨리면 혼남 */
       }
-      /* 1. 제목 */
+
+      /* 배경이미지를 여러개 넣고 싶음 
+      냅두면 30초 단위로 자동으로 바뀌고 
+      아무데나 클릭하면 다음 이미지로 바뀜 */
+
+      /*  1. 이미지가 겹쳐지게 앱솔루트 세팅 */
+              .transform-special-bg img{
+                position: absolute;
+                width: px;
+                height: px;
+              
+              }
+              /* 2. 첫번째 이미지 오버시 사라지기  */
+
+              /* 1) 첫번째 img 자식- 1 원본(돌아올 때). */
+              .transform-special-bg img:first-child{
+                /* 처음에 90도로 돌려서 숨겨둠 */
+                transform: rotateY(90deg);
+                /* 트랜지션 다시 돌아갈 때 바로 출발,
+                처음만 천천히 */
+                transition: .4s ease-in;
+              }
+              /* 2) 첫번째 img 자식- 유정이 오버시. */
+              .transform-special:hover img:first-child{
+                /* 오버시 0도가 되어 보여짐 */
+                transform: rotateY(0deg);
+                /* 트랜지션 - 보검이 돌동안 .4초 기다렸다가
+                그대로 받아서 끝에 천천히*/
+                transition: .4s ease-out .4s ;
+              }
+              
+              /* 3) 마지막째 img 자식은 관식이. 보검이 원본(돌아올 때) */
+              .transform-special img:last-child{
+                /* 처음에 0도여서 보임 */
+                transform: rotateY(0deg);
+                /* 트랜지션: 돌아올 때 유정이 .4초 기다려, 
+                그대로 받아서 끝에 천천히 ease-out */
+                transition: .4s ease-out .4s;
+              }
+              /* 4) 마지막째 img 자식은 관식이. 보검이 오버시 */
+              .transform-special:hover img:last-child{
+                /* 오버시 90도로 돌아서 안보여짐 */
+                transform: rotateY(90deg);
+                /* 트랜지션 기다릴 필요 없이 바로 출발,
+                이징은 처음만 천천히 =ease-in */
+                transition: .4s ease-in;
+              }
+      
+
+
+
+      /* 1. 타이틀-뉴진스 */
       .main-title {
         /* 박스세팅 */
         max-width: 700px;
@@ -58,6 +109,46 @@
         0px -4px rgb(113, 177, 113);
       }
 
+        /*@@@@@@@@@@@ 타이틀 움직이기 @@@@@@@@@@@*/
+        .main-title{
+          position: relative;
+          left: 0;
+          translate: 0 -150%;
+        }
+        body:hover .main-title{
+          translate: 0 2%;
+          left: 75%;
+           transition: translate 1s ease-in-out,
+           left 3s ease-in-out 1s;
+        }
+
+        /*@@@@멤버이름 타이틀-@@@@*/
+        .name-title{
+          max-width: 400px;
+          text-align: center;
+          background-color: #0c0c0c7e;
+          color: #0f3ccf;
+          font-size: 30px;
+          line-height: 55px;
+         font-family: Pretendard, sans-serif;
+         /* opacity: 0; */
+         text-shadow: 2px 0px rgb(255, 255, 255),
+          0px 2px rgb(255, 255, 255),
+          -2px 0px rgb(255, 255, 255),
+          0px -2px rgb(255, 255, 255);
+        }
+        /*@@@@네임 타이틀-멤버이름 움직이기 @@@@*/
+        .name-title{
+          position: relative;
+          left: 100%;
+          
+        }  
+        .name-title:hover{
+
+          translate: -70% 0;
+          transition: 1s;
+        }
+
       /* 전체부모박스 */
       .main-contents {
         /* 박스세팅 */
@@ -65,17 +156,13 @@
         margin: 500px auto;
         border: 10px solid rgba(255, 241, 241, 0.555);
         border-radius: 0px;
-        padding: 30px;
-
-        /* 기본적으로 박스 크기를 잡으면
-        그 크기는 컨텐트 영역의 크기임.
-        보더와 패딩은 바깥쪽으로 생김
-        그래서 박스가 커짐!
-        보더, 패딩을 크기 세팅에 포함시킬 필요가 있는 경우에는
-        box-sizing:border-box 세팅을 한다  */
-        box-sizing: border-box;
-        /* 쉽게 생각해서 컨텐트의 width + (보더+패딩 크기)*2  */
+        padding: 54px;
+      
+        /* 겹쳐지는 부분의 배경 흐리게 처리하기
+          -> 백드롭필터! 블러! */
+          backdrop-filter: blur(3px);
       }
+
 
       /* 부모박스 가상요소 clear 세팅( float 떄문에) */
       .main-contents::after {
@@ -213,28 +300,37 @@
            */
 
       #transform-box1:hover img {
+        transform: translate(50%, -50%);
+        transition: 2s;
+        /* 트랜지션을 안주면 순간이동같다ㅋㅋ */
       }
         
-        #transform-box2 img{
+        #transform-box2:hover img{
+          transform: translateY(-80%);
+          transition: 2s;
         }
+        #transform-box3:hover img{
+          transform: rotateY(5turn);
+          transition: 5s;
+        }
+        #transform-box4:hover img{
+          opacity: .3;
+        }
+        #transform-box5 img{
+        }
+
+        #transform-box6:hover img{
+          transform: rotate(90deg);
+          transition: 3s;
+        }
+
     
       
 
-        /*@@@@@@@@@@@ 타이틀 움직이기 @@@@@@@@@@@*/
-        .main-title{
-          position: relative;
-          left: 0;
-          translate: 0 -100%;
-        }
-        body:hover .main-title{
-          translate: 0;
-          left: 75%;
-           transition: translate 1s ease-in-out,
-           left 3s ease-in-out 1s;
-        }
+      
 
 
-        /* 뒤집어지는 애니박스 */
+        /* 상단 로고- 뒤집어지는 애니박스 */
               .transform-special{
                 position: absolute;
                 top: 30px;
@@ -284,12 +380,15 @@
                 이징은 처음만 천천히 =ease-in */
                 transition: .4s ease-in;
               }
+
     </style>
   </head>
   <body>
     <!-- 1. 제목 -->
     <h1 class="main-title">NJZ</h1>
-    <!-- <h1>구그달 캐릭터 소개</h1>  대신에 h1.main-title로 작성-->
+    <!-- 1-1. 멤버이름 -->
+     <h3 class="name-title">민지</h3>
+    <!-- <h1>캐릭터 소개</h1>  대신에 h1.main-title로 작성-->
  <!-- 2. 뒤집어지는 애니박스 -->
      <div class="transform-special">
         <img src="../뉴진스/로고 (2).png" alt="2" />

@@ -116,14 +116,15 @@ a.my-cha-link {
 .intro-box .txt-box h2 {
   color: #ffffff;
   font-weight: normal;
-  font-size: 36px;
-  margin-bottom: 72px;
+  font-size: 40px;
+  margin-bottom: 30px;
+  font-style: italic;
 }
 
 /* 자기소개글 내용 타이틀 */
 .intro-box .txt-box p {
   color: #d4d0d0;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 30px;
 }
 
@@ -226,7 +227,7 @@ core.css의 clb 클래스로 처리함! */
   right: 0;
   /* 부모는? .left-part가 렐러티브여서 부모ㅇㅇ */
   width: 1px;
-  height: 70%;
+  height: 80%;
   background-color: #535252;
 }
 
