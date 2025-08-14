@@ -15,79 +15,31 @@
     <style>
       /* 전체 배경 넣기 */
       body {
-      
-        /* 배경이미지  */
-        /* 1. 이미지  */
-        background-image: url(../뉴진스/뉴진스단체\ \(22\).jpg);
-        /* 2. 반복여부 */
-        background-repeat: no-repeat;
-        /* 3. 고정 @질문: 고정안해도 뭐가 달라지는 걸 모르겠음..??? ㅠㅠ*/
-        background-attachment: fixed;
-        /* 4. 위치: 가로 x축 세로 y축 
-                가로값- left(기본값), right, center, 수치값
-                세로값- top, bottom, center(기본값), 수치값*/
-        background-position: center top;
-        /* bg-p에서 center만 쓰면 정가운데 (center 뒤에오는 center는 생략) */
-        /* 5. 크기: 가로width 세로 height
-            - 특이한 값들
-            1) contain: 배경이미지가 모두 보임(비율에 맞게) 
-            2) cover: 비율에 맞게 대상박스의 빈공간이 없음!!
-            3) 모두 채운 후 비율없이 만드는 방법 그러나 쓰진 않음 100% 100% 
-            */
-        /* 크기 조절안하면 원본이미지 사이즈로 됨 */
-        background-size: cover;
-        /* bgz를 100% 100% 이따구로 해서 찌그러뜨리면 혼남 */
-      }
+        /* @@@@@@@@@@@가로스크롤만 없애기!!!!!!!!!!!!!! */
+      overflow-x: hidden;
 
-      /* 배경이미지를 여러개 넣고 싶음 
+
+        /* 배경이미지  */
+        /* background: url(../뉴진스/뉴진스단체\ \(13\).jpg) no-repeat ; */
+
+        /* 배경이미지를 여러개 넣고 싶음 
       냅두면 30초 단위로 자동으로 바뀌고 
       아무데나 클릭하면 다음 이미지로 바뀜 */
+        /* 이미지를 박스안에 여러개 넣고, 그 박스를 바디전체 넣고싶음
+        -> 자바스크립트 배우기 전이라 그냥 css에서 전체 박스를 바디사이즈로
+        만들고 라디오버튼만들어서 버튼 누르면 이미지 바뀌게 함...  */
+      }
+
+      
 
       /*  1. 이미지가 겹쳐지게 앱솔루트 세팅 */
               .transform-special-bg img{
                 position: absolute;
-                width: px;
-                height: px;
-              
-              }
-              /* 2. 첫번째 이미지 오버시 사라지기  */
-
-              /* 1) 첫번째 img 자식- 1 원본(돌아올 때). */
-              .transform-special-bg img:first-child{
-                /* 처음에 90도로 돌려서 숨겨둠 */
-                transform: rotateY(90deg);
-                /* 트랜지션 다시 돌아갈 때 바로 출발,
-                처음만 천천히 */
-                transition: .4s ease-in;
-              }
-              /* 2) 첫번째 img 자식- 유정이 오버시. */
-              .transform-special:hover img:first-child{
-                /* 오버시 0도가 되어 보여짐 */
-                transform: rotateY(0deg);
-                /* 트랜지션 - 보검이 돌동안 .4초 기다렸다가
-                그대로 받아서 끝에 천천히*/
-                transition: .4s ease-out .4s ;
-              }
-              
-              /* 3) 마지막째 img 자식은 관식이. 보검이 원본(돌아올 때) */
-              .transform-special img:last-child{
-                /* 처음에 0도여서 보임 */
-                transform: rotateY(0deg);
-                /* 트랜지션: 돌아올 때 유정이 .4초 기다려, 
-                그대로 받아서 끝에 천천히 ease-out */
-                transition: .4s ease-out .4s;
-              }
-              /* 4) 마지막째 img 자식은 관식이. 보검이 오버시 */
-              .transform-special:hover img:last-child{
-                /* 오버시 90도로 돌아서 안보여짐 */
-                transform: rotateY(90deg);
-                /* 트랜지션 기다릴 필요 없이 바로 출발,
-                이징은 처음만 천천히 =ease-in */
-                transition: .4s ease-in;
-              }
+                
       
-
-
+              }
+             
+    
 
       /* 1. 타이틀-뉴진스 */
       .main-title {
@@ -169,14 +121,24 @@
 
 /* 맴버 이름 가상요소 줘서 맨 위는 많이 왼쪽으로 오고
 맨 뒤는 적게 왼쪽으로 이동하게 하고 싶고
+
+
 화면도 가로 스크롤안생기게 하고싶은데 오버플로우히든해도 안됨뭐지??
+-> 오버플로우엑스히든!!
+
 큰 배경 사진도 여러가지 디졸브로 클릭하면 바뀌게 애니메이션 주고싶고
+-> 자바스크립트 때 열심히 하기
+
 컨텐츠박스 안의 작은 단체사진도 바꾸고싶음
 파프걸 캐릭터 이미지  작게 해서 타이틀이랑 컨텐츠 박스 사이
 로 오게 하고 싶은데
 계속 밑에 가잇음... */
+
+
 /* 파프걸 눈알-> 파프걸각멤버별,토끼->단체별모양 순서로 ,
 휙휙 사선으로 이동하고 난리나게 만들어야지 */
+
+
 
       /* @@@@@여기부터 이미지@@@@@@ */
         
@@ -361,6 +323,11 @@
           opacity: .3;
         }
         #transform-box5 img{
+          /*  */
+        }
+        #transform-box5 img:hover{
+          background: url(../뉴진스/뉴진스\ \(1\).jfif);
+          transition: 3s;
         }
 
         #transform-box6:hover img{
@@ -377,7 +344,7 @@
               .transform-special{
                 position: absolute;
                 top: 30px;
-                left: 30px;
+                left: 80%;
     
                 /* 부모는? 보이는 화면! */
 
@@ -424,9 +391,91 @@
                 transition: .4s ease-in;
               }
 
+
+
+              /* 자바스크립트 하기 전에 임시로 라디오버튼 만들어서 배경 변경하기 */
+              .bg-box{
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+              }
+              .bg-box img{
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 999;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0;
+                transition: 0.6s;
+              }
+              .bg-box img:first-of-type{
+                opacity: 1;
+              }
+
+              .bg-box input {
+                display: none;
+              }
+              .btn-box{
+                position: absolute;
+                z-index: 1;
+                padding: 20px;
+              }
+              .btn-box label{
+                font-style: italic;
+                font-family: Pretandard;
+                color: #fff;
+                padding: 10px 15px;
+                background-color: rgb(99, 99, 99);
+                border: 4px solid lightcoral;
+                border-radius: 50%;
+              }
+
+              .bg-box #chk2:checked ~ img:nth-of-type(2) {
+                opacity: 1;
+              }
+
+              .bg-box #chk3:checked ~ img:nth-of-type(3) {
+                opacity: 1;
+              }
+
+              .bg-box #chk4:checked ~ img:nth-of-type(4) {
+                opacity: 1;
+              }
+              .bg-box #chk1:checked ~ img:nth-of-type(2) {
+                opacity: 0;
+              }
+              .bg-box #chk1:checked ~ img:nth-of-type(3) {
+                opacity: 0;
+              }
+              .bg-box #chk1:checked ~ img:nth-of-type(4) {
+                opacity: 0;
+              }
+
     </style>
   </head>
   <body>
+    <!-- 자바스크립트 배우기 전에 임시로 라디오버튼으로 배경변경하기 -->
+    <div class="btn-box">
+      <label for="chk1">1</label>
+      <label for="chk2">2</label>
+      <label for="chk3">3</label>
+      <label for="chk4">4</label>
+    </div>
+    <div class="bg-box">
+    <input type="radio" id="chk1" name="my-button">
+    <input type="radio" id="chk2" name="my-button">
+    <input type="radio" id="chk3" name="my-button">
+    <input type="radio" id="chk4" name="my-button">
+      <img src="../뉴진스/뉴진스단체 (22).jpg" alt="뉴진스">
+      <img src="../뉴진스/뉴진스단체 (11).jpg" alt="뉴진스">
+      <img src="../뉴진스/뉴진스단체 (4).jpg" alt="뉴진스">
+      <img src="../뉴진스/뉴뉴 (4).jpg" alt="뉴진스">
+    </div>
     <!-- 1. 제목 -->
     <h1 class="main-title">NJZ</h1>
     <!-- 1-1. 멤버이름 -->
