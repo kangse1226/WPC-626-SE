@@ -557,36 +557,63 @@
         /* 픽스드로 포스터 미리보기 */
         .poster-fixed {
           position: fixed;
-          top: 20%;
-          right: 10%;
-          border: 10px solid #ee91c4;
+          top: 10%;
+          right: 0;
+
+          /* 오른쪽에 박스르 붙여놓고,
+          translate로 내 크기만큼 오른쪽 방향(x)으로 이동
+          그럼 h3만 보이고 이미지는 안보이자나 */
+          translate: 100%;
+          /* @@@@@@@@@@@@@@@@@@@@@@@@@
+          트랜지션을 양방향으로 주고 싶으면 부모박스에 넣고
+          들어갈때 나갈 때 다르게 주고 싶으면 오버시에 넣고 */
+         transition: 2s;
+
+          border: 5px solid #ee91c4;
           z-index: 3;
+        }
+        /* 그리고 이제 마우스 오버시 x축으로 0%오면 이미지보이지 */
+        .poster-fixed:hover{
+          translate: 0%;
+          
         }
 
         /* 포스터보기 타이틀 */
         .poster-fixed h3{
           position: absolute;
-          top: 0;
-          right: 85%;
+          /* 보더는 빠지므로 보더 크기는 앱솔루트에서 제외드므로
+          보더크기만큼  */
+          top: -4.5px;
+          /* 오른쪽 기준선으로부터 밀기
+          = 부모박스보더제외한 내부 크기100%+ 옆 한쪽 보더 */
+          right: calc(100% + 2px);
           
           /* 기본마진없앰 */
           margin: 0;
+          /* 글자중앙정렬은 글자  */
           
           /* 글자 세로 */
-          font-size: 50px;
+          padding: 0 10px;
+          font-size: 20px;
           font-family: dohyen;
           color: #fd619d;
           text-align: center;
-          height: 100%;
+          /* 높이값= 부모100%+위아래보더값 */
+          height: calc(100% + 8.2px);
           writing-mode: vertical-lr;
           letter-spacing: 10px;
-          background-color: #fff;
-          border: 10px solid #ee91c4;
+          background-color: #8bc7fc;
+          /* 디자인상 보더를 추가 */
+          border: 5px solid #ee91c4;
+          border-radius: 20px 0 0 20px;
+          box-sizing: border-box;
         }
 
         /* 이미지가 박스에 단독으로 들어갈 경우
       하단에 생기는 공백 없애기 */
       .poster-fixed img {
+        width: 300px;
+      
         vertical-align: middle;
         /* 인라인요소가 세로정렬 속성인 vertical-align의
         값을 top/middle/bottom 중 어떤값을 사용해도
@@ -620,7 +647,9 @@
 
     <!-- 픽스드로 포스터 미리보기 -->
      <div class="poster-fixed" title="포스터 미리보기">
-      <h3>사랑의 하츄핑 보기</h3>
+      <h3>
+        사랑의 하츄핑 보기 
+      </h3>
       <img src="../레벨/윈터손하츄핑.webp" alt="포스터">
      </div>
 
@@ -645,7 +674,7 @@
 
    <!-- 부모를 찾는 앱솔루트!였던것 -->
     <!-- <div class="bx2 s5"> -->
-  아아마시고싶어
+빠빠빨간맛 궁금해 허니
       <!-- <div class="bx2 s6"> -->
       
         <!-- <div class="bx2 s7"> -->
