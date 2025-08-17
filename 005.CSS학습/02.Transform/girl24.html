@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 탭메뉴 아이콘 넣기 -->
+    <link
+      rel="shortcut icon"
+      href="../남경언니/logo.jpg"
+      type="image/ico"
+    />
+    <title>GIRLS NEVER DIE</title>
+    <!-- 트랜스폼 샘플사이트
+     https://tombap8.github.io/FED-RV-TOM-2024/002.HTML%ED%95%99%EC%8A%B5/05.Transform_PJ/index.html -->
+    <style>
+      /* 전체 배경 넣기 */
+      body {
+        /* @@@@@@@@@@@가로스크롤만 없애기!!!!!!!!!!!!!! */
+      overflow-x: hidden;
+      }
+
+      /*  1. 이미지가 겹쳐지게 앱솔루트 세팅 */
+              .transform-special-bg img{
+                position: absolute;
+              }
+            
+      /* 1. 타이틀-트리플24 */
+      .main-title {
+        /* 박스세팅 */
+        max-width: 600px;
+        text-align: center;
+        background-color: #ffffff6c;
+        
+        /* 글자세팅 */
+        color: #ffffff;
+        font-size: 45px;
+        line-height: 70px;
+        font-family: Pretendard, sans-serif;
+
+        /* 글자테두리 */
+        text-shadow: 4px 0px rgb(181, 236, 181),
+        -4px 0px rgb(92, 185, 120),
+        0px 4px rgb(5, 128, 46), 
+        0px -4px rgb(113, 177, 113);
+      }
+
+        /*@@@@@@@@@@@ 타이틀 움직이기 @@@@@@@@@@@*/
+        .main-title{
+          position: relative;
+          left: 0;
+          translate: 0 -150%;
+        }
+        body:hover .main-title{
+          translate: 0 2%;
+          left: 75%;
+           transition: translate 1s ease-in-out,
+           left 1s ease-in-out 1s;
+        }
+
+        /*@@@@멤버이름 타이틀-@@@@*/
+        .name-title li{
+          list-style: none;
+          margin: 10px;
+          max-width: 400px;
+          text-align: center;
+          background-color: #081b0cc7;
+          color: #f3f3f3;
+          font-size: 30px;
+          line-height: 50px;
+         font-family: Pretendard, sans-serif;
+         /* opacity: 0; */
+         text-shadow: 2px 0px rgb(255, 255, 255),
+          0px 2px rgb(255, 255, 255),
+          -2px 0px rgb(255, 255, 255),
+          0px -2px rgb(255, 255, 255);
+        }
+        /*@@@@네임 타이틀-멤버이름 움직이기 @@@@*/
+        .name-title{
+          position: relative;
+          left: 90%;
+          
+          
+        }  
+        /* 멩버이름 왼쪽으로 이동 */
+        .name-title li:hover:first-child{
+          color: #db0c74;
+          translate: -80% 0;
+          transition: 1s;
+        }
+        .name-title li:hover:nth-child(2){
+          color: #6799a0;
+          translate: -80% 0;
+          transition: 1s;
+        }
+        .name-title li:hover:nth-child(3){
+          color: #22afff;
+          translate: -80% 0;
+          transition: 1s;
+        }
+        .name-title li:hover:nth-child(4){
+          color: #ff9ad6;
+          translate: -80% 0;
+          transition: 1s;
+        }
+        .name-title li:hover:nth-child(5){
+          color: #ffde00;
+          translate: -80% 0;
+          transition: 1s;
+        }
+        .name-title li:hover:nth-child(6){
+          color: #98f21d;
+          translate: -80% 0;
+          transition: 1s;
+        }
+      /* @@@@@여기부터 이미지@@@@@@ */
+        
+ /* 유튜브이동 캐릭터 박스 */
+        .sub-contents {
+        position: fixed;
+        bottom: 0;
+        right: 0%;
+
+          max-width: 300px;
+          padding: 0px;
+
+
+          /* 숨엇다나타나기 */
+          translate: 90%;
+          transition: 2s;
+          z-index: 3;
+
+        }
+        .sub-contents img{
+          width: 300px;
+          margin: 10px auto;
+        }
+
+      
+        /* 그리고 이제 마우스 오버시 x축으로 0%오면 이미지보이지 */
+        .sub-contents:hover{
+          translate: 0%;
+          
+        }
+
+
+
+      /* 전체부모박스 */
+      .main-contents {
+        /* 박스세팅 */
+        max-width: 1800px;
+        margin: 20px auto;
+        border: 1px solid rgba(43, 175, 60, 0.692);
+        border-radius: 0px;
+        padding: 24px;
+      
+        /* 겹쳐지는 부분의 배경 흐리게 처리하기
+          -> 백드롭필터! 블러! */
+          backdrop-filter: blur(3px);
+      }
+
+
+      /* 부모박스 가상요소 clear 세팅( float 떄문에) */
+      .main-contents::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      /* 캐릭터박스 공통 */
+      .main-contents > div {
+        /* 옆으로 흐르게  */
+        /* 그럼 부모박스가 쪼그라들지롱 */
+        float: left;
+
+        /* 등분하기: 한줄에 개씩  */
+        width: calc(100% / 6);
+
+        /* 중앙정렬 */
+        text-align: center;
+      }
+      /* 3번 div 이후 자식 마진 탑 주기 */
+      /* .main-contents > div:nth-child(3) ~ div { */
+        /*  위쪽 마진 */
+        /* margin-top: 30px; */
+      /* } */
+
+      /* 캐릭터 이미지 공통 */
+      .main-contents > div img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover; 
+      border-radius: 50%;
+      }
+
+
+        /* 트랜지션  trs
+        - 박스에 안주고 이미지에게 주는 이유:
+        그럼 이벤트가 잘 안먹어서..  */
+        /* 0.6s앞에 all이 생략되어있는거임! */
+      
+     /**********************************************   
+      [ Transform 효과주기 ]
+
+      
+        0.  트랜지션 시간 늘리기
+          transition: 5s ease-in-out;
+        /**********************************************   
+         1. transform : rotateY(Y축 각도deg) - Y축회전
+            - deg 는 각도의 단위(도:degree)
+
+            [ 각도 단위 확장 ]
+            (1) deg: 도 단위 (360 deg는 한 바퀴 회전)
+            (2) grad: 그라디언트 (400 grad는 한 바퀴 회전)
+            (3) rad: 라디안 (2π rad는 한 바퀴 회전)
+            (4) turn: 턴 (1 turn은 한 바퀴 회전)
+
+         2. transform : rotateX(각도deg) - X축회전
+            - deg 는 각도의 단위(도:degree)
+
+         3. transform : translateX(거리) - X축이동
+            - 단위 : px, % 등
+            - 현재 위치로부터 이동
+            - 기준점은 요소의 왼쪽
+            - % 단위를 쓸경우 기준은 요소의 width값
+            - 이동방향: + 오른쪽, -는 왼쪽
+          #transform-box3:hover img{
+           x축이동 tftx 
+           내크기의 50%만큼 왼쪽으로 이동 
+           transform: translateX(-132%); 
+            -> %단위 기준은 항상 자기자신의 크기다!! 
+            
+            
+           4. transform : translateY(거리) - Y축이동
+            - 단위 : px, % 등
+            - 현재 위치로부터 이동
+            - 기준점은 요소의 윗쪽
+            - % 단위를 쓸경우 기준은 요소의 height값
+            - 이동방향: + 아랫쪽, -는 윗쪽
+
+           5. transform : translate(x축거리,y축거리) - X,Y축이동
+          - 단위 : px, % 등
+          - 현재 위치로부터 이동
+          - 기준점은 요소의 윗쪽, 왼쪽선
+          - % 단위를 쓸경우 기준은 요소의 
+            width,height값
+          - 이동방향: + 오른쪽/아랫쪽, -는 왼쪽/윗쪽
+
+            y축이동 tfty 
+             내높이의 200%만큼 윗쪽으로 이동 
+            transform: translateY(-150%);
+             -> %단위 기준은 항상 자기자신의 크기다!!
+            
+            %단위 기준은 항상 자기자신의 크기다!! 
+           translate: -100% -> x축 이동; 
+           translate: 0 -100%  -> y축 이동; 
+           translate: -100% -100%;  
+           x,y축 동시 이동 
+           {opacity: .5;} *
+           
+           6. rotate(각도deg) - 원형회전
+            - 각도의 숫자가 양수이면 시계방향
+            음수는 반시계방향
+
+            - 기본회전축은 정중앙
+            (변경가능: transform-origin)
+           
+            [ 트랜스폼 회전축 변경속성 ]
+                transform-origin: 가로 세로;
+                - 가로값 : left, right, center, 몇px,몇%
+                - 세로값 : top, bottom, center, 몇px,몇%
+                - 기본값 : 가로, 세로 center임! 
+
+            rotate도 독립햇다..!
+           원형회전 tfr
+           transform: rotate(4587deg);
+           rotate: 4563deg;
+           rotate: x 4563deg;
+           rotate: y 4563deg;
+
+            [rotate 속성]
+           rotate: 각도; -> 평면회전
+           rotate: x 각도;  -> x축회전
+           rotate: y 각도; ->  y축회전
+           rotate: z 각도; ->  z축회전
+
+           참고: 축회전조합하기
+           rotate : 숫자 숫자 숫자 각도
+           -> 숫자에 1을 쓰면 순서대로 x,y,z축 사용 표시
+           -> 숫자에 0을 쓰면 순서대로 x,y,z축 미사용 표시
+           예를 들어,
+           rotate: 1 1 0 45deg;
+           -> x,y축 동시 45도 회전
+           
+           rotate: 1 1 1 180deg;
+           -> x,y,z축 동시 180도 회전
+
+
+           복합설정
+           #transform-box10:hover img{
+           transform: scale(2)
+           skew(300deg, 400deg);
+           rotate(100%, 200%);
+           transition-duration: 30s;
+         }
+           */
+
+      #transform-box1:hover img {
+        transform: translate(380%, -120%);
+        /* transition: 2s; */
+        /* 트랜지션을 안주면 순간이동같다ㅋㅋ */
+      }
+        
+        #transform-box2:hover img{
+          transform: rotateX(10turn);
+          transition: 5s;
+        }
+      
+        
+        #transform-box3:hover img{
+        
+          transform: scale(5);
+          transition: 2s;
+        }
+        #transform-box4:hover img{
+          rotate: 3000deg;
+          transition: 10s ease-in-out;
+        }
+    
+        #transform-box5 img:hover{
+          transform: scale(2);
+          translate: -10% -100%;
+          transition: 3s;
+        }
+
+        #transform-box6:hover img{
+          /* transform: rotate(-90deg)
+          translateX(100%); */
+
+          translate: -350% -100%;
+          transform: rotate(45deg);
+          
+          transition: 3s;
+        }
+
+
+        /* 상단 로고- 뒤집어지는 애니박스 */
+              .transform-special{
+                position: absolute;
+                top: 10%;
+                left: 45%;
+    
+                /* 부모는? 보이는 화면! */
+
+              }
+              /* 유정이랑 보검이 이미지가 겹쳐지게 앱솔루트 세팅 */
+              .transform-special img{
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                /* border-radius: 50%; */
+              }
+
+              /* 1) 첫번째 img 자식- 유정이 원본(돌아올 때). */
+              .transform-special img:first-child{
+                /* 처음에 90도로 돌려서 숨겨둠 */
+                transform: rotateY(90deg);
+                /* 트랜지션 다시 돌아갈 때 바로 출발,
+                처음만 천천히 */
+                transition: .4s ease-in;
+              }
+              /* 2) 첫번째 img 자식- 유정이 오버시. */
+              .transform-special:hover img:first-child{
+                /* 오버시 0도가 되어 보여짐 */
+                transform: rotateY(0deg);
+                /* 트랜지션 - 보검이 돌동안 .4초 기다렸다가
+                그대로 받아서 끝에 천천히*/
+                transition: .4s ease-out .4s ;
+              }
+              
+              /* 3) 마지막째 img 자식은 관식이. 보검이 원본(돌아올 때) */
+              .transform-special img:last-child{
+                /* 처음에 0도여서 보임 */
+                transform: rotateY(0deg);
+                /* 트랜지션: 돌아올 때 유정이 .4초 기다려, 
+                그대로 받아서 끝에 천천히 ease-out */
+                transition: .4s ease-out .4s;
+              }
+              /* 4) 마지막째 img 자식은 관식이. 보검이 오버시 */
+              .transform-special:hover img:last-child{
+                /* 오버시 90도로 돌아서 안보여짐 */
+                transform: rotateY(90deg);
+                /* 트랜지션 기다릴 필요 없이 바로 출발,
+                이징은 처음만 천천히 =ease-in */
+                transition: .4s ease-in;
+              }
+
+
+
+              /* 자바스크립트 하기 전에 임시로 라디오버튼 만들어서 배경 변경하기 */
+              .bg-box{
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+              }
+              .bg-box img{
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 999;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0;
+                transition: 0.6s;
+              }
+              .bg-box img:first-of-type{
+                opacity: 1;
+              }
+
+              .bg-box input {
+                display: none;
+              }
+              .btn-box{
+                position: absolute;
+                z-index: 1;
+                padding: 20px;
+              }
+              .btn-box label{
+                font-style: italic;
+                font-family: Pretandard;
+                color: #fff;
+                padding: 10px 15px;
+                background-color: rgb(188, 212, 185);
+                border: 4px solid rgb(204, 247, 222);
+                border-radius: 50%;
+              }
+
+              .bg-box #chk2:checked ~ img:nth-of-type(2) {
+                opacity: 1;
+              }
+
+              .bg-box #chk3:checked ~ img:nth-of-type(3) {
+                opacity: 1;
+              }
+
+              .bg-box #chk4:checked ~ img:nth-of-type(4) {
+                opacity: 1;
+              }
+              .bg-box #chk1:checked ~ img:nth-of-type(2) {
+                opacity: 0;
+              }
+              .bg-box #chk1:checked ~ img:nth-of-type(3) {
+                opacity: 0;
+              }
+              .bg-box #chk1:checked ~ img:nth-of-type(4) {
+                opacity: 0;
+              }
+
+       
+    </style>
+  </head>
+  <body>
+    <!-- 자바스크립트 배우기 전에 임시로 라디오버튼으로 배경변경하기 -->
+    <div class="btn-box">
+      <label for="chk1">1</label>
+      <label for="chk2">2</label>
+      <label for="chk3">3</label>
+      <label for="chk4">4</label>
+    </div>
+    <div class="bg-box">
+    <input type="radio" id="chk1" name="my-button">
+    <input type="radio" id="chk2" name="my-button">
+    <input type="radio" id="chk3" name="my-button">
+    <input type="radio" id="chk4" name="my-button">
+      <img src="../남경언니/yFmLod.jpg" alt="뉴진스">
+      <img src="../남경언니/단체.jpg" alt="뉴진스">
+      <img src="../남경언니/단체2.jpg" alt="뉴진스">
+      <img src="../남경언니/유연.jpg" alt="뉴진스">
+    </div>
+    <!-- 1. 제목 -->
+    <h1 class="main-title">tripleS</h1>
+    <!-- 1-1. 멤버이름 -->
+     <h3 class="name-title">
+      <ul>
+        <li>유연</li>
+        <li>나경</li>
+        <li>서연</li>
+        <li>다현</li>
+        <li>코토네</li>
+        <li>채원</li>
+      </ul></h3>
+    <!-- <h1>캐릭터 소개</h1>  대신에 h1.main-title로 작성-->
+ <!-- 2. 뒤집어지는 애니박스 -->
+     <div class="transform-special">
+        <img src="../남경언니/로고2.jpg" alt="2" />
+        <img src="../남경언니/logo.jpg" alt="1" />
+      </div>
+    <!-- 2. 콘텐츠 박스 -->
+    <section class="main-contents">
+      <!-- id는 # , transform-box이란 아이디로 만들건데 box 숫자개 만들거면
+         $*숫자 쓰면 된다/ 그 밑에 자식으로 img  -->
+      <div id="transform-box1"> 
+        <img src="../남경언니/김나경 (1).jpg" alt="민지" />
+        <span></span>
+      </div>
+      <div id="transform-box2">
+        <img src="../남경언니/김채원 (1).jpg" alt="하니" />
+      </div>
+      <div id="transform-box3">
+        <img src="../남경언니/김유연 (1).jpg" alt="다니" />
+      </div>
+      <div id="transform-box4">
+        <img src="../남경언니/코토네.jpg" alt="해린" />
+      </div>
+      <div id="transform-box5">
+        <img src="../남경언니/서다현.webp" alt="로고" />
+      </div>
+      <div id="transform-box6">
+        <img src="../남경언니/윤서연 (1).jpg" alt="혜인" />
+      </div>
+     
+    </section>
+    <section class="sub-contents">
+      <div class="logo-box">
+         <a
+            title="유튜브바로가기"
+            class="njz-youtube"
+            href="https://www.youtube.com/channel/UCJnL-TBcsYrF2SLs7tmiC8Q"
+            target="_blank"
+          >
+        <img src="../남경언니/김유연 (2).jpg" alt="유튜브바로가기">
+        </a>
+      </div>
+    </section>
+  </body>
+</html>
