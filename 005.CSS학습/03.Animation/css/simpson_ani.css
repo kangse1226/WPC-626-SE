@@ -1,3 +1,114 @@
 @charset "utf-8";
 
 /* 심슨 가족 애니메이션 코드 : simpson_ani.css */
+
+/* 트랜스폼 사용법  
+    y축 회전
+    transform: rotateY(각도deg)
+    == 같은 세팅 rotate: y 각도deg
+    */
+
+/* 1-1. 문짝에 애니메이션 호출적용! */
+.door{
+    /* 애니메이션- animation: 이시이지반방마 */
+    /* animation: door-ani 1s ease-in-out 1s 3 alternate forwards; */
+    /* alternate 는 from->to 경로 애니를 반대방향도 진행해주는 옵션값.
+    기본값(backwards): 애니가 끝나면 처음값으로 돌아감.
+     forwards 애니가 끝나면 끝나는 값으로 유지하게 하는 옵션값 */
+    
+    animation: door-ani 2s ease-in-out;
+}
+/* 1-2. 문 열기 애니 키프레임 */
+@keyframes door-ani {
+    0%{
+        rotate: y 0deg;
+    }
+    30%{
+        rotate: y 141deg;
+    }
+    80%{
+        rotate: y 141deg;
+    }
+    100%{
+        rotate: y 0deg;
+    }
+}
+
+/* 2-1. 심슨 애니호출 설정 */
+.simpson{
+    animation: simpson-ani 2s .5s forwards;
+}
+/* 2. 심슨 걸어나오기 키프레임 */
+@keyframes simpson-ani {
+    0%{
+    top: 302px;
+    left: 357px; 
+    width: 33px;
+    
+    }
+    20%{
+        /* 중간장면 */
+    top: 311px;
+    left: 357px; 
+    width: 50px; 
+    /* 문짝보다 위로 오게 */
+    z-index: 1;
+    }
+    40%{
+    top: 319px;
+    left: 357px;
+    width: 64px;
+    /* 기울어지는 거 방지 */
+    rotate: 0deg; 
+    /* 문짝보다 위로 오게 */
+    z-index: 1;
+    }
+    
+    50%{
+    top: 319px;
+    left: 390px;
+    width: 70px;
+    /* 기울어지기 */
+    rotate: -20deg;
+    /* 문짝보다 위로 오게 */
+    z-index: 1;
+    }
+    70%{
+    top: 321px;
+    left: 390px;
+    width: 70px;
+    /* 기울어지기 */
+    rotate: 10deg;
+    /* 문짝보다 위로 오게 */
+    z-index: 1;
+    }
+    80%{
+    top: 300px;
+    left: 400px;
+    width: 100px;
+    /* 기울어지기 */
+    rotate: -30deg;
+    /* 문짝보다 위로 오게 */
+    z-index: 1;
+    }
+    90%{
+    top: 200px;
+    left: 400px;
+    width: 200px;
+    /* 기울어지기 */
+    rotate: 40deg;
+    /* 문짝보다 위로 오게 */
+    z-index: 1;
+    }
+    100%{
+    top: 200px;
+    left: 300px;
+    width: 300px;
+    /* 기울어지기 */
+    rotate: 0deg;
+    /* 문짝보다 위로 오게 */
+    z-index: 1;
+    }
+    
+}
+
