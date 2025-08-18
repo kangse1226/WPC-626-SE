@@ -14,7 +14,7 @@
     기본값(backwards): 애니가 끝나면 처음값으로 돌아감.
      forwards 애니가 끝나면 끝나는 값으로 유지하게 하는 옵션값 */
     
-    animation: door-ani 2s ease-in-out forwards;
+    animation: door-ani 1s ease-in-out forwards;
 }
 /* 1-2. 문 열기 애니 키프레임 */
 @keyframes door-ani {
@@ -35,8 +35,8 @@
     animation: mundae-ani 2s .5s forwards;
 }
 
-/* 2-2. 문대 걸어나오기 키프레임 */
-@keyframes mundae-ani {
+/* 2-2. 문대 걸어나오기 키프레임 @지워돔 */
+keyframes mundae-ani {
     0%{
     top: 339px;
     left: 329px;
@@ -108,4 +108,74 @@
     }
 }
 
+/* 애니메이션 호출설정 */
+.ah{
+    animation: ah-ani 2s ease-in-out 2s forwards;
+}
+.sj{
+    animation: sj-ani 2s ease-in-out 2s forwards;
+}
+.rb{
+    animation: rb-ani 2s ease-in-out 2s forwards;
+}
+.yj{
+    animation: yj-ani 2s ease-in-out 2s forwards;
+}
+.cw{
+    animation: cw-ani 2s ease-in-out 2s forwards;
+}
+.bsj{
+    animation: bsj-ani 2s ease-in-out 2s forwards;
+}
 
+/* 키프레임 */
+/* 아현이 왼쪽 위에서 문대 왼쪽 옆으로 사선으로 사르르 내려옴 */
+@keyframes ah-ani {
+    0%{
+    top: 10px;
+    left: -10px;
+    width: 100px;
+    }
+    50%{
+    top: 50px;
+    left: 20px;
+    width: 100px;
+    }
+    70%{
+    top: 50px;
+    right: 409px;
+    width: 100px;
+    }
+    
+    100%{
+    top: 200px;
+    right: 409px;
+    width: 300px;
+    }
+
+}
+/* 유진이 오른쪽 창문에서 튀어나와서 문대왼쪽 아래로 사라졌다가 위로 뿅 올라옴 */
+@keyframes yj-ani {
+    0%{
+    top: 200px;
+    right: 80px;
+    width: 30px;
+    }
+    
+    50%{
+    top: 200px;
+    right: 309px;
+    width: 300px;
+    }
+    70%{
+    top: 500px;
+    right: 309px;
+    width: 300px;
+    }
+
+    100%{
+    top: 300px;
+    right: 300px;
+    width: 290px;  
+    z-index: 1;}
+}
