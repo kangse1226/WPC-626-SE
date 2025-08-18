@@ -10,10 +10,10 @@
     /* 가운데 오기 */
     margin: 0 auto;
     /* house.png와 동일한 크기 */
-    width: 800px;
-    height: 441px;
+    width: 680px;
+    height: 453px;
     /* 배경이미지 */
-    background: url(../images/house.png) no-repeat;
+    background: url(./데못죽/ediya.jpg) no-repeat;
 
     /* 문(.door)을 원근 입체로 보이게 하기 위해 
     부모 요소인 .house에 원근 설정을 한다
@@ -30,50 +30,26 @@
     display: none;
 } */
 
-/* 1. 심슨 */
-.simpson{
+/* 1. 문대 */
+.mundae{
     position: absolute;
-    top: 302px;
-    left: 357px; 
-    /* 부모는 .house  */
-    width: 33px;
+    top: 339px;
+    left: 329px;
+    width: 84px;
 }
 
 /* 2. 문짝 */
 .door{
     position: absolute;
-    top: 284px;
-    left: 357px;
-    /* 부모는 .house  */
-
-    /* 문 회전축 오른쪽끝으로 변경 */
-    transform-origin: right;
-    /* 문 y축회전 테스트*/
-    /* rotate: y 141deg; */
+    bottom: -2px;
+    left: 331px;
+    width: 78px; 
 }
 
-/* 3. 마지 */
-.marge{
-    position: absolute;
-    bottom: -211px;
-    right: -300px;
-    width: 424px;
-    transform-origin: bottom;
-    rotate: 0deg;
-}
-/* 4. 리사 */
-.lisa{
-    position: absolute;
-    bottom: -500px;
-    right: 300px;
-    width: 300px;
-    rotate: 90deg;
-}
-/* 5.바트 */
-.bart{
-    position: absolute;
-    top: -300px;
-    left: -30px;
-    width: 300px;
-    rotate: 180deg;
+/* 3. 아현 */
+.ah{
+   position: absolute;
+    top: 200px;
+    right: 309px;
+    width: 300px;  
 }

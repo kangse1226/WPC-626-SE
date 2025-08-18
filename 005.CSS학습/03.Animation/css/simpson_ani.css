@@ -16,7 +16,7 @@
     기본값(backwards): 애니가 끝나면 처음값으로 돌아감.
      forwards 애니가 끝나면 끝나는 값으로 유지하게 하는 옵션값 */
     
-    animation: door-ani 2s ease-in-out;
+    animation: door-ani .1s ease-in-out;
 }
 /* 1-2. 문 열기 애니 키프레임 */
 @keyframes door-ani {
@@ -36,9 +36,9 @@
 
 /* 2-1. 심슨 애니호출 설정 */
 .simpson{
-    animation: simpson-ani 2s .5s forwards;
+    animation: simpson-ani 1s .5s forwards;
 }
-/* 2. 심슨 걸어나오기 키프레임 */
+/* 2-2. 심슨 걸어나오기 키프레임 */
 @keyframes simpson-ani {
     0%{
     top: 302px;
@@ -46,7 +46,7 @@
     width: 33px;
     
     }
-    20%{
+    5%{
         /* 중간장면 */
     top: 311px;
     left: 357px; 
@@ -54,7 +54,7 @@
     /* 문짝보다 위로 오게 */
     z-index: 1;
     }
-    40%{
+    20%{
     top: 319px;
     left: 357px;
     width: 64px;
@@ -64,7 +64,7 @@
     z-index: 1;
     }
     
-    50%{
+    40%{
     top: 319px;
     left: 390px;
     width: 70px;
@@ -73,7 +73,7 @@
     /* 문짝보다 위로 오게 */
     z-index: 1;
     }
-    70%{
+    60%{
     top: 321px;
     left: 390px;
     width: 70px;
@@ -101,14 +101,58 @@
     z-index: 1;
     }
     100%{
-    top: 200px;
+    top: 180px;
     left: 300px;
-    width: 300px;
+    width: 350px;
     /* 기울어지기 */
     rotate: 0deg;
     /* 문짝보다 위로 오게 */
     z-index: 1;
     }
     
+}
+
+/* 3-1. 마지 애니호출 설정 */
+.marge{
+    animation: marge-ani .8s ease-in-out 5s forwards;
+}
+/* 3-2. 마지 움직이는 애니 키프레임 */
+@keyframes marge-ani {
+/* from혹은 0% 설정이 원본세팅과 같다면 생략할 수 있다   */
+/* 그래서 to 또는 백퍼센트 세팅만 설정해두됨 */
+100%{
+    right: -231px;
+    rotate: -18deg;
+}
+}
+/* 4-1. 리사 애니호출 설정 */
+.lisa{
+    animation: lisa-ani .8s ease-in-out 5s forwards;
+}
+/* 4-2. 리사 움직이는 애니 키프레임 */
+@keyframes lisa-ani {
+/* from혹은 0% 설정이 원본세팅과 같다면 생략할 수 있다   */
+/* 그래서 to 또는 백퍼센트 세팅만 설정해두됨 */
+100%{
+    bottom: 0px;
+    right: -300px;
+    width: 300px;
+    rotate: 0deg;
+}
+}
+/* 5-1. 바트 애니호출 설정 */
+.bart{
+    animation: bart-ani .8s ease-in-out 5s forwards;
+}
+/* 5-2. 바트 움직이는 애니 키프레임 */
+@keyframes bart-ani {
+/* from혹은 0% 설정이 원본세팅과 같다면 생략할 수 있다   */
+/* 그래서 to 또는 백퍼센트 세팅만 설정해두됨 */
+100%{
+    bottom: 150px;
+    right: -30px;
+    width: 300px;
+    rotate: 0deg;
+}
 }
 
