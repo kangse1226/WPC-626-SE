@@ -3,11 +3,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap');
 
+
 /* 타이틀꾸미기 */
 .title{
     font-family: 'HeirofLight', SUIT;
+    font-size: 30px;
+    text-align: center;
+    color: #303bc9;
+    
+    padding: 10px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
+
+
+/* 애니메이션 */
 /* 전체박스 */
 .house{
     /* 부모자격을 준다 - 하위 앱솔루트 요소들의 부모 */
