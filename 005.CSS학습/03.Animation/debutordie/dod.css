@@ -3,6 +3,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap');
 
+/* 타이틀꾸미기 */
+.title{
+    font-family: 'HeirofLight', SUIT;
+}
+
 /* 전체박스 */
 .house{
     /* 부모자격을 준다 - 하위 앱솔루트 요소들의 부모 */
@@ -74,14 +79,21 @@
     width: 30px;  
 }
 .cw{
-    position: absolute;
+    /* position: absolute;
     top: 175px;
     left: -200px;
-    width: 320px;  
+    width: 320px;   */
+    position: absolute;
+    top: 500px;
+    left: -100px;/* -231px; */
+    width: 300px;
+    transform-origin: bottom;
+    rotate: 0deg;/* -18deg; */
 }
 .bsj{
     position: absolute;
     top: 300px;
     right: 80px;
     width: 300px;  
+    opacity: 0.3;
 }

@@ -109,7 +109,7 @@
 
 /* 애니메이션 호출설정 */
 .ah {
-  animation: ah-ani 2s ease-in-out 1s forwards;
+  animation: ah-ani 3s ease-in-out 1s forwards;
 }
 .sj {
   animation: sj-ani 2s ease-in-out 4s forwards;
@@ -242,17 +242,42 @@
 }
 /* 청우 */
 @keyframes cw-ani {
+  
+  0%{
+    top: 500px;
+    left: -100px;
+    width: 300px;
+    transform-origin: bottom;
+    rotate: 0deg;
+  }
+  30%{
+    top: 175px;
+    left: -100px;
+    width: 300px;
+    transform-origin: bottom;
+    right: -231px;
+    rotate: -18deg;
+  }
   100% {
     top: 155px;
     left: -110px;
     width: 320px;
+    rotate: 0deg;
   }
 }
+
 /* 배세진 */
 @keyframes bsj-ani {
+  0%{
+    opacity: 0.3;
+    top: 300px;
+    right: 80px;
+    width: 300px;  
+  }
   100% {
     top: 250px;
     right: -100px;
     width: 300px;
+    opacity: 1;
   }
 }
