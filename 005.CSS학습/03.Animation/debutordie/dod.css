@@ -26,9 +26,9 @@
 }
 
 /* 임시로 숨기기 */
-.yj ~ * {
+/* .yj ~ * {
     display: none;
-}
+} */
 
 /* 1. 문대 */
 .mundae{
@@ -47,42 +47,41 @@
     width: 78px; 
 }
 
-/* 3. 주석은 각자 최종위치 */
+/* 3. 0%가 처음 위치 100%가 최종위치 여기는 처음위치 */
 .ah{
     position: absolute;
-    /* top: 200px;
-    right: 409px; */
-    width: 300px;
+    top: -200px;
+    left: 10px;
+    width: 100px;
     z-index: 1;  
 }
 .sj{
     position: absolute;
-    /* top: 200px;
-    right: 209px; */
-    width: 300px;  
+    top: 339px;
+    left: 329px;
+    width: 84px;
 }
 .yj{
     position: absolute;
-    /* top: 300px;
-    right: 300px; */
-    width: 290px;  
-    z-index: 1;
+    top: 212px;
+    right: 99px;
+    width: 30px;
 }
 .rb{
     position: absolute;
-    /* top: 200px;
-    right: 3px; */
-    width: 300px;  
+    top: 212px;
+    left: 99px;
+    width: 30px;  
 }
 .cw{
     position: absolute;
-    /* top: 175px;
-    right: 500px; */
+    top: 175px;
+    left: -200px;
     width: 320px;  
 }
 .bsj{
     position: absolute;
-    /* top: 250px;
-    right: -100px; */
+    top: 300px;
+    right: 80px;
     width: 300px;  
 }

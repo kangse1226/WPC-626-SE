@@ -7,61 +7,60 @@
     */
 
 /* 1-1. 문짝에 애니메이션 호출적용! */
-.door{
-    /* 애니메이션- animation: 이시이지반방마 */
-    /* animation: door-ani 1s ease-in-out 1s 3 alternate forwards; */
-    /* alternate 는 from->to 경로 애니를 반대방향도 진행해주는 옵션값.
+.door {
+  /* 애니메이션- animation: 이시이지반방마 */
+  /* animation: door-ani 1s ease-in-out 1s 3 alternate forwards; */
+  /* alternate 는 from->to 경로 애니를 반대방향도 진행해주는 옵션값.
     기본값(backwards): 애니가 끝나면 처음값으로 돌아감.
      forwards 애니가 끝나면 끝나는 값으로 유지하게 하는 옵션값 */
-    
-    animation: door-ani 1s ease-in-out forwards;
+
+  animation: door-ani 1s ease-in-out forwards;
 }
 /* 1-2. 문 열기 애니 키프레임 */
 @keyframes door-ani {
-    0%{
-        transition: 0;
-    }
-    30%{
-        opacity: 0%;
-    }
+  0% {
+    transition: 0;
+  }
+  30% {
+    opacity: 0%;
+  }
 
-    100%{
-        opacity: 0;
-    }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* 2-1. 문대 애니호출 설정 */
-.mundae{
-    animation: mundae-ani 2s .5s forwards;
+.mundae {
+  animation: mundae-ani 2s 0.5s forwards;
 }
 
-/* 2-2. 문대 걸어나오기 키프레임 @지워돔 */
-keyframes mundae-ani {
-    0%{
+/* 2-2. 문대 걸어나오기 키프레임 */
+@keyframes mundae-ani {
+  0% {
     top: 339px;
     left: 329px;
     width: 84px;
-    
-    }
-    20%{
-        /* 중간장면 */
+  }
+  20% {
+    /* 중간장면 */
     top: 349px;
     left: 329px;
     width: 84px;
     /* 문짝보다 위로 오게 */
     z-index: 1;
-    }
-    40%{
+  }
+  40% {
     top: 349px;
     left: 329px;
     width: 90px;
     /* 기울어지는 거 방지 */
-    rotate: 0deg; 
+    rotate: 0deg;
     /* 문짝보다 위로 오게 */
     z-index: 1;
-    }
-    
-    50%{
+  }
+
+  50% {
     top: 369px;
     left: 329px;
     width: 90px;
@@ -69,8 +68,8 @@ keyframes mundae-ani {
     rotate: -10deg;
     /* 문짝보다 위로 오게 */
     z-index: 1;
-    }
-    70%{
+  }
+  70% {
     top: 379px;
     left: 320px;
     width: 100px;
@@ -78,8 +77,8 @@ keyframes mundae-ani {
     rotate: 10deg;
     /* 문짝보다 위로 오게 */
     z-index: 1;
-    }
-    80%{
+  }
+  80% {
     top: 310px;
     left: 280px;
     width: 150px;
@@ -87,8 +86,8 @@ keyframes mundae-ani {
     rotate: -10deg;
     /* 문짝보다 위로 오게 */
     z-index: 1;
-    }
-    90%{
+  }
+  90% {
     top: 300px;
     left: 280px;
     width: 180px;
@@ -96,8 +95,8 @@ keyframes mundae-ani {
     rotate: 10deg;
     /* 문짝보다 위로 오게 */
     z-index: 1;
-    }
-    100%{
+  }
+  100% {
     top: 200px;
     left: 250px;
     width: 300px;
@@ -105,77 +104,155 @@ keyframes mundae-ani {
     rotate: 0deg;
     /* 문짝보다 위로 오게 */
     z-index: 1;
-    }
+  }
 }
 
 /* 애니메이션 호출설정 */
-.ah{
-    animation: ah-ani 2s ease-in-out 2s forwards;
+.ah {
+  animation: ah-ani 2s ease-in-out 1s forwards;
 }
-.sj{
-    animation: sj-ani 2s ease-in-out 2s forwards;
+.sj {
+  animation: sj-ani 2s ease-in-out 4s forwards;
 }
-.rb{
-    animation: rb-ani 2s ease-in-out 2s forwards;
+.rb {
+  animation: rb-ani 2s ease-in-out 2s forwards;
 }
-.yj{
-    animation: yj-ani 2s ease-in-out 2s forwards;
+.yj {
+  animation: yj-ani 2s ease-in-out 3s forwards;
 }
-.cw{
-    animation: cw-ani 2s ease-in-out 2s forwards;
+.cw {
+  animation: cw-ani 1s ease-in-out 4s forwards;
 }
-.bsj{
-    animation: bsj-ani 2s ease-in-out 2s forwards;
+.bsj {
+  animation: bsj-ani .5s 1s forwards;
 }
 
 /* 키프레임 */
 /* 아현이 왼쪽 위에서 문대 왼쪽 옆으로 사선으로 사르르 내려옴 */
 @keyframes ah-ani {
-    0%{
-    top: 10px;
-    left: -10px;
+  0% {
+    top: -200px;
+    left: 10px;
     width: 100px;
-    }
-    50%{
+  }
+  50% {
     top: 50px;
     left: 20px;
     width: 100px;
-    }
-    70%{
+  }
+  70% {
     top: 50px;
-    right: 409px;
+    left: 10px;
     width: 100px;
-    }
-    
-    100%{
-    top: 200px;
-    right: 409px;
-    width: 300px;
-    }
+  }
 
+  100% {
+    top: 180px;
+    left: 0px;
+    width: 300px;
+  }
 }
 /* 유진이 오른쪽 창문에서 튀어나와서 문대왼쪽 아래로 사라졌다가 위로 뿅 올라옴 */
 @keyframes yj-ani {
-    0%{
-    top: 200px;
-    right: 80px;
+  0% {
+    top: 212px;
+    right: 99px;
     width: 30px;
-    }
-    
-    50%{
+  }
+  30% {
     top: 200px;
-    right: 309px;
+    right: 275px;
     width: 300px;
-    }
-    70%{
-    top: 500px;
-    right: 309px;
+  }
+  40% {
+    top: 400px;
+    right: 311px;
     width: 300px;
-    }
+  }
 
-    100%{
+  80% {
+    top: 300px;
+    right: 311px;
+    width: 300px;
+    z-index: 1;
+  }
+  85% {
+    top: 300px;
+    right: 31px;
+    width: 300px;
+    z-index: 1;
+  }
+  90% {
+    top: 300px;
+    right: 500px;
+    width: 300px;
+    z-index: 1;
+  }
+  95% {
+    top: 300px;
+    right: 30px;
+    width: 300px;
+    z-index: 1;
+  }
+  100% {
     top: 300px;
     right: 300px;
-    width: 290px;  
-    z-index: 1;}
+    width: 300px;
+    z-index: 1;
+  }
+}
+
+/* 큰세느 문대 나온곳에서 나와서 문대 옆으로 커짐 */
+@keyframes sj-ani {
+  80% {
+    top: 200px;
+    left: 209px;
+    width: 300px;
+  }
+  100% {
+    top: 200px;
+    left: 159px;
+    width: 300px;
+  }
+}
+
+/* 래빈 */
+@keyframes rb-ani {
+  /* 80% {
+    top: 200px;
+    right: 35px;
+    width: 300px;
+  } */
+  0%
+  {
+    top: 212px;
+    left: 99px;
+    width: 30px; 
+  }
+  50% {
+    top: 220px;
+    right: -100px;
+    width: 300px;
+  }
+  100% {
+    top: 200px;
+    left: 400px;
+    width: 300px;
+  }
+}
+/* 청우 */
+@keyframes cw-ani {
+  100% {
+    top: 155px;
+    left: -110px;
+    width: 320px;
+  }
+}
+/* 배세진 */
+@keyframes bsj-ani {
+  100% {
+    top: 250px;
+    right: -100px;
+    width: 300px;
+  }
 }
