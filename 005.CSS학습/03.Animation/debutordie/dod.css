@@ -1,22 +1,44 @@
 @charset "utf-8";
-/* 심슨 가족 인사 애니메이션 CSS - simpson.css */
 
 @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap');
 
-
-/* 타이틀꾸미기 */
-.title{
-    font-family: 'HeirofLight', SUIT;
-    font-size: 30px;
-    text-align: center;
-    color: #303bc9;
-    
-    padding: 10px;
-    margin: 0 auto;
-    box-sizing: border-box;
+/* 전체 배경 */
+body{
+background: url(../debutordie/데못죽/main_visual.webp) no-repeat top/cover;
 }
 
+/* 타이틀꾸미기 */
+      .title {
+        /* 박스세팅 */
+        max-width: 690px;
+        text-align: center;
+        background-color: #ffffff6c;
+        
+        /* 글자세팅 */
+        color: #ffffff;
+        font-size: 45px;
+        line-height: 100px;
+        font-family: Pretendard, sans-serif;
 
+        /* 글자테두리 */
+        text-shadow: 4px 0px rgb(0, 19, 185),
+        -4px 0px rgb(10, 102, 155),
+        0px 4px rgb(5, 7, 128), 
+        0px -4px rgb(0, 153, 255);
+      }
+
+        /*@@@@@@@@@@@ 타이틀 움직이기 @@@@@@@@@@@*/
+        .title{
+          position: relative;
+          left: 0;
+          translate: 0 -150%;
+        }
+        body:hover .title{
+          translate: 0 2%;
+          left: 36.5%;
+           transition: translate 1s ease-in-out,
+           left 1s ease-in-out 1s;
+        }
 
 /* 애니메이션 */
 /* 전체박스 */
@@ -39,6 +61,7 @@
     perspective: 480px;
     /* 화면밖튀어나오는거 안보이게 */
     overflow: hidden;
+    border: 5px solid #022f91;
 }
 
 /* 임시로 숨기기 */
