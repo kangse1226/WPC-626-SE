@@ -2,10 +2,83 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap');
 
-/* 전체 배경 */
-body{
-background: url(../debutordie/데못죽/main_visual.webp) no-repeat top/cover;
+body {
+    overflow-x: hidden;
 }
+/* 전체 배경 */
+ /* 이미지를 박스안에 여러개 넣고, 그 박스를 바디전체 넣고싶음
+        -> 자바스크립트 배우기 전이라 그냥 css에서 전체 박스를 바디사이즈로
+        만들고 라디오버튼만들어서 버튼 누르면 이미지 바뀌게 함...  */
+      /*  1. 이미지가 겹쳐지게 앱솔루트 세팅 */
+              .transform-special-bg img{
+                position: absolute;
+              }
+
+   /* 자바스크립트 하기 전에 임시로 라디오버튼 만들어서 배경 변경하기 */
+              .bg-box{
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+              }
+              .bg-box img{
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 999;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0;
+                transition: 0.6s;
+              }
+              .bg-box img:first-of-type{
+                opacity: 1;
+              }
+
+              .bg-box input {
+                display: none;
+              }
+              .btn-box{
+                position: absolute;
+                z-index: 1;
+                padding: 20px;
+              }
+              .btn-box label{
+                font-style: italic;
+                font-family: Pretandard;
+                color: #fff;
+                padding: 10px 15px;
+                background-color: rgb(188, 212, 185);
+                border: 4px solid rgb(204, 247, 222);
+                border-radius: 50%;
+              }
+
+              .bg-box #chk2:checked ~ img:nth-of-type(2) {
+                opacity: 1;
+              }
+
+              .bg-box #chk3:checked ~ img:nth-of-type(3) {
+                opacity: 1;
+              }
+
+              .bg-box #chk4:checked ~ img:nth-of-type(4) {
+                opacity: 1;
+              }
+              .bg-box #chk1:checked ~ img:nth-of-type(2) {
+                opacity: 0;
+              }
+              .bg-box #chk1:checked ~ img:nth-of-type(3) {
+                opacity: 0;
+              }
+              .bg-box #chk1:checked ~ img:nth-of-type(4) {
+                opacity: 0;
+              }
+
+
+
 
 /* 타이틀꾸미기 */
       .title {

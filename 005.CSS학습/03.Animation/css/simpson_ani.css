@@ -36,7 +36,7 @@
 
 /* 2-1. 심슨 애니호출 설정 */
 .simpson{
-    animation: simpson-ani 1s .5s forwards;
+    animation: simpson-ani 2s .5s forwards;
 }
 /* 2-2. 심슨 걸어나오기 키프레임 */
 @keyframes simpson-ani {
@@ -102,7 +102,7 @@
     }
     100%{
     top: 180px;
-    left: 300px;
+    left: 200px;
     width: 350px;
     /* 기울어지기 */
     rotate: 0deg;
@@ -116,7 +116,7 @@
 /* 2.5-1. 말풍선 등장하기 애니메이션 호출 설정 */
 .words{
     /* 애니메이션 */
-    animation: words-ani .2s linear 1.5s forwards;
+    animation: words-ani .2s linear 2.5s forwards;
 }
 
 /* 2.5-2. 말풍선 키프레임 */
@@ -128,7 +128,7 @@
 
 /* 3-1. 마지 애니호출 설정 */
 .marge{
-    animation: marge-ani .8s ease-in-out 5s forwards;
+    animation: marge-ani .8s ease-in-out 3s forwards;
 }
 /* 3-2. 마지 움직이는 애니 키프레임 */
 @keyframes marge-ani {
@@ -141,33 +141,177 @@
 }
 /* 4-1. 리사 애니호출 설정 */
 .lisa{
-    animation: lisa-ani .8s ease-in-out 5s forwards;
+    animation: lisa-ani .8s ease-in-out 2.5s forwards;
 }
 /* 4-2. 리사 움직이는 애니 키프레임 */
 @keyframes lisa-ani {
 /* from혹은 0% 설정이 원본세팅과 같다면 생략할 수 있다   */
 /* 그래서 to 또는 백퍼센트 세팅만 설정해두됨 */
 100%{
-    bottom: 0px;
-    right: -300px;
-    width: 300px;
-    rotate: 0deg;
-}
-}
-/* 5-1. 바트 애니호출 설정 */
-.bart{
-    animation: bart-ani .8s ease-in-out 5s forwards;
-}
-/* 5-2. 바트 움직이는 애니 키프레임 */
-@keyframes bart-ani {
-/* from혹은 0% 설정이 원본세팅과 같다면 생략할 수 있다   */
-/* 그래서 to 또는 백퍼센트 세팅만 설정해두됨 */
-100%{
-    bottom: 150px;
-    right: -30px;
-    width: 300px;
+    bottom: -50px;
+    right: 150px;
+    width: 200px;
     rotate: 0deg;
 }
 }
 
-.maggie
+/* 5-1. 바트 애니호출 설정 */
+/* .bart{
+    animation: bart-ani .8s ease-in-out 2.5s forwards;
+} */
+/* 5-2. 바트 움직이는 애니 키프레임 */
+/* @keyframes bart-ani {} */
+/* from혹은 0% 설정이 원본세팅과 같다면 생략할 수 있다   */
+/* 그래서 to 또는 백퍼센트 세팅만 설정해두됨 */
+/* 
+0%{
+    top: -300px;
+    left: -30px;
+    width: 300px;
+    rotate: 180deg;
+}
+50%{
+    bottom: 300px;
+    right: -30px;
+    width: 300px;
+    rotate: 0deg;
+}
+60%{
+    bottom: 300px;
+    right: -30px;
+    width: 300px;
+    rotate: -90deg;
+}
+70%{
+    bottom: 200px;
+    right: -30px;
+    width: 300px;
+    rotate: 0deg;
+}
+80%{
+    bottom: 200px;
+    left: -50px;
+    width: 300px;
+    rotate: 180deg;
+}
+90%{
+    bottom: 220px;
+    right: 0px;
+    width: 300px;
+    rotate: 90deg;
+}
+100%{
+    translate: 0 500px;
+    right: -30px;
+    width: 300px;
+    rotate: 0deg;
+}
+} */
+
+/* 5-1. 바트 애니호출 설정 */
+.bart{
+    animation: 
+    bart-ani 1s ease-out 3s forwards,
+    bart-dancing-ani .2s ease-in 4s 5 forwards,
+    bart-falling-ani .1s ease-in-out 4.2s forwards,
+    bart-up-ani .8s linear 6s forwards;
+}
+/* 5-2-1. 바트심슨 키프레임: 등장애니 */
+@keyframes bart-ani {
+   
+    100%{
+    top: -300px;
+    left: -30px;
+    width: 300px;
+    rotate: 0deg;
+    }
+}
+
+/* 5-2-1. 바트심슨 키프레임: 빙빙도는 애니 */
+@keyframes bart-dancing-ani {
+    0%{
+    top: 300px;
+    left: 50px;
+    width: 100px;
+    rotate: 0deg;
+}
+30%{
+        top: 300px;
+        left: 50px;
+        width: 100px;
+        rotate: 90deg;
+    }
+    60%{
+        top: 300px;
+        left: 50px;
+        width: 100px;
+        rotate: 180deg;
+    }
+    
+    100%{
+        top: 300px;
+        left: 50px;
+        width: 100px;
+      
+        rotate: -90deg;
+    }
+    
+}
+
+/* 5-2-1. 바트심슨 키프레임: 떨어지는 애니 */
+@keyframes bart-falling-ani {
+    0%{
+top: -100px;
+        left: -30px;
+        width: 300px;
+        rotate: 180deg;
+    }
+    100%{
+translate: 0 -100px;
+    }
+
+}
+/* 5-2-1. 바트심슨 키프레임: 다시 올라오는 애니 */
+@keyframes bart-up-ani {
+    0%{
+top: -500px
+    }
+    100%{
+translate: 0 100px;
+    }
+}
+
+/* 바트는 빙글빙글돌고 내려오게 하고 싶음... */
+/* 오르락내리락하면서 오른쪽으로 이동했따가 왼쪽으로 이동하면서 오르락내리락하게 하고싶음 */
+/* 매기 */
+
+/* 매기 */
+/* 5-1. 메기심슨 애니메이션 호출설정 */
+.maggie {
+  /* 애니메이션 - animation: 이시이지반방마 */
+  animation: 
+    /* 등장애니 */ 
+    maggie-ani 0.8s ease-out 6.5s forwards,
+    /* 업다운애니 */ 
+    maggie-updown-ani 0.5s ease-in-out 7.3s infinite alternate,
+    /* 왔다갔다애니 */ 
+    maggie-comego-ani 8s ease-in-out 17s infinite alternate;
+}
+/* 5-2-1. 메기심슨 애니 키프레임 : 등장애니 */
+@keyframes maggie-ani {
+  to {
+    bottom: -55px;
+  }
+}
+/* 5-2-2. 메기심슨 애니 키프레임 : 오르락내리락 애니 */
+@keyframes maggie-updown-ani {
+  to {
+    translate: 0 5%;
+  }
+}
+/* 5-2-3. 메기심슨 애니 키프레임 : 왔다갔다 애니 */
+@keyframes maggie-comego-ani {
+  to {
+    left: 633px;
+  }
+}
