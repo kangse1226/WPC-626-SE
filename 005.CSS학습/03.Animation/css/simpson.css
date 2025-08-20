@@ -52,6 +52,72 @@
     /* rotate: y 141deg; */
 }
 
+/* 말풍선 */
+.words{
+/* 앱솔루트 포지션 */
+position: absolute;
+top: 43px;
+left: 110px;
+/* 부모는 .house */
+
+/* 트랜스폼 스케일로 축소 */
+scale: .85;
+/* 트랜스폼 스케일에서 스케일이 독립함~ */
+
+/* 박스설정 */
+background-color: #fff;
+padding: 40px;
+border-radius: 50%;
+text-align: center;
+border: 10px solid rgb(255, 198, 9);
+/* 글자설정 font: 스두크/줄체 크기랑 글자체는필수 */
+font: 20px/1.5 akbar;
+/* 말풍선 처음엔 안보이게 */
+opacity: 0;
+}
+
+/* 말풍선 삼각형 말풍선 꼬리 가상요소로 만들기 */
+.words::before{
+    content: '';
+    position: absolute;
+    /* 앱솔이 자동 블록만들어주니까 디플블록안해도됨 */
+    bottom: 0;
+    right: 0;
+    /* 보더로 삼각형 모양 만들기 */
+    /* 가로, 세로는 모두 0
+    위 또는 아래에 보더 주기
+    양쪽 보더는 동일하고 투명색 transparent설정 */
+    width: 0;
+    height: 0;
+    border-top: 50px solid rgb(255, 198, 9);
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+
+    /* 트랜스폼으로 위치이동과 회전 */
+    translate: -10px 16px;
+    rotate: -38deg;
+}
+/* 말풍선 꼬리 내부 흰색처리 */
+.words::after{
+    content: '';
+    position: absolute;
+    /* 앱솔이 자동 블록만들어주니까 디플블록안해도됨 */
+    bottom: 0;
+    right: 0;
+    /* 보더로 삼각형 모양 만들기 */
+    /* 가로, 세로는 모두 0
+    위 또는 아래에 보더 주기
+    양쪽 보더는 동일하고 투명색 transparent설정 */
+    width: 0;
+    height: 0;
+    border-top: 37px solid rgb(255, 255, 255);
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    translate: -27px -3px;
+    rotate: -39deg;
+}
+    
+
 /* 3. 마지 */
 .marge{
     position: absolute;
@@ -76,4 +142,12 @@
     left: -30px;
     width: 300px;
     rotate: 180deg;
+}
+
+/* 6.  매기 */
+.maggie{
+    position: absolute;
+    bottom: -200px;
+    left: -30px;
+    width: 300px;
 }
