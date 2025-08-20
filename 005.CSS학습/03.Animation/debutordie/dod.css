@@ -9,11 +9,6 @@ body {
  /* 이미지를 박스안에 여러개 넣고, 그 박스를 바디전체 넣고싶음
         -> 자바스크립트 배우기 전이라 그냥 css에서 전체 박스를 바디사이즈로
         만들고 라디오버튼만들어서 버튼 누르면 이미지 바뀌게 함...  */
-      /*  1. 이미지가 겹쳐지게 앱솔루트 세팅 */
-              .transform-special-bg img{
-                position: absolute;
-              }
-
    /* 자바스크립트 하기 전에 임시로 라디오버튼 만들어서 배경 변경하기 */
               .bg-box{
                 position: fixed;
@@ -42,7 +37,7 @@ body {
                 display: none;
               }
               .btn-box{
-                position: absolute;
+                position: fixed;
                 z-index: 1;
                 padding: 20px;
               }
@@ -78,14 +73,20 @@ body {
               }
 
 
+/* 애니메이션 적용 */
 
 
-/* 타이틀꾸미기 */
+/* 1. 타이틀꾸미기 */
       .title {
+        position: absolute;
+        top: -150px;
+        left: 10px;
+
         /* 박스세팅 */
-        max-width: 690px;
+        max-width: 800px;
         text-align: center;
-        background-color: #ffffff6c;
+        /* background-color: #ffffff6c; */
+
         
         /* 글자세팅 */
         color: #ffffff;
@@ -100,24 +101,32 @@ body {
         0px -4px rgb(0, 153, 255);
       }
 
-        /*@@@@@@@@@@@ 타이틀 움직이기 @@@@@@@@@@@*/
-        .title{
-          position: relative;
-          left: 0;
-          translate: 0 -150%;
-        }
-        body:hover .title{
-          translate: 0 2%;
-          left: 36.5%;
-           transition: translate 1s ease-in-out,
-           left 1s ease-in-out 1s;
-        }
+      .sub-title{
+        /* 위치 */
+        position: absolute;
+        bottom: -300px;
+        left: 810px;
+        /* 꾸미기 */
+        text-align: center;
+        color: rgb(255, 107, 107);
+        font-size: 100px;
+        line-height: 100px;
+        font-family: Pretendard, sans-serif;
+        text-shadow: 4px 0px rgb(255, 255, 255),
+        -4px 0px rgb(255, 255, 255),
+        0px 4px rgb(255, 255, 255), 
+        0px -4px rgb(255, 255, 255);
+      }
+      
 
-/* 애니메이션 */
-/* 전체박스 */
+/* 이디야 박스  */
 .house{
     /* 부모자격을 준다 - 하위 앱솔루트 요소들의 부모 */
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% 50%;
+
     /* 가운데 오기 */
     margin: 0 auto;
     /* house.png와 동일한 크기 */

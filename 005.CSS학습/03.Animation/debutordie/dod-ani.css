@@ -6,6 +6,53 @@
     == 같은 세팅 rotate: y 각도deg
     */
 
+/* 영상이 스크롤하면서 크기 커지면서 시작하게 설정하는 건?
+ */
+
+  /*타이틀 움직이기*/
+  .title{
+    animation: title-ani 0.8s ease-out .5s forwards,
+    title-moving-ani 3s ease-in-out 4s 10 alternate;
+  }
+
+  @keyframes title-ani {
+    0%{
+      top: 0;    
+      left: 0;
+          
+    }
+    100%{
+    top: 80%;
+    left: 50%;
+    }
+  }
+  @keyframes title-moving-ani {
+ to {
+    left: 300px;
+  }
+  }
+
+
+/* 서브타이틀 움직이기 */
+.sub-title{
+  animation: sub-ani 3s linear 2.5s forwards;
+}
+@keyframes sub-ani {
+ 0%{
+   bottom: -300px;
+        left: 810px;
+ }
+  50%{
+    bottom: -70px;
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+
 /* 1-1. 문짝에 애니메이션 호출적용! */
 .door {
   /* 애니메이션- animation: 이시이지반방마 */

@@ -295,7 +295,7 @@ translate: 0 100px;
     /* 업다운애니 */ 
     maggie-updown-ani 0.5s ease-in-out 7.3s infinite alternate,
     /* 왔다갔다애니 */ 
-    maggie-comego-ani 8s ease-in-out 17s infinite alternate;
+    maggie-comego-ani 5s ease-in-out 10s infinite alternate;
 }
 /* 5-2-1. 메기심슨 애니 키프레임 : 등장애니 */
 @keyframes maggie-ani {

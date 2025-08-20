@@ -30,10 +30,11 @@ body{
 .house{
     /* 부모자격을 준다 - 하위 앱솔루트 요소들의 부모 */
     position: absolute;
-    top: 92px;
+    top: 50%;
     left: 50%;
-    translate: -50%;
-    
+    /* 정중앙이동 */
+    translate: -50% 50%;
+
     /* 가운데 오기 */
     /* margin: 0 auto; */
     /* house.png와 동일한 크기 */
@@ -176,7 +177,7 @@ opacity: 0;
     position: absolute;
     bottom: -200px;
     left: -30px;
-    width: 300px;
+    width: 200px;
 }
 
 /* 7. 티비 */
