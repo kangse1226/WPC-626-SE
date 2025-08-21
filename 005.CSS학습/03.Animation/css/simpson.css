@@ -3,10 +3,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap');
 
+ @font-face{
+                font-family: 빛의계승자;
+                src: url(../../fonts/HeirofLightBold.woff2) format("woff2"),
+                url(../../fonts/HeirofLightBold.ttf) format("truetype"),
+        
+            }
+/* 적용하기 */
+            .tit{
+                font-family: '빛의계승자';
+                font-weight: normal;
+                font-size: 5vw;
+                color: rgb(13, 0, 128);
+            }
 
 html, body{
     /* 보이는 높이값을 보이는 화면에 맞춤 */
     height: 100%;
+    
 }
 /* 배경넣기 - 이미지 중앙, 높이는 모두 나옴*/
 body{
@@ -19,19 +33,21 @@ body{
     bottom: 10%;
     left: 50%;
     translate: -50%;
-    font-family: 'Black And White Picture', sans-serif;
+    /* font-family: 'Black And White Picture', sans-serif; */
     font-weight: normal;
     font-size: 100px;
-    color: yellow;
+    /* color: yellow; */
     white-space: nowrap;
+    background-color: #ffffff76;
+   
 }
 
 /* 전체박스 */
 .house{
     /* 부모자격을 준다 - 하위 앱솔루트 요소들의 부모 */
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: -13%;
+    left: 40%;
     /* 정중앙이동 */
     translate: -50% 50%;
 
