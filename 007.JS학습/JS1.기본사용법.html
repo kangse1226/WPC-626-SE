@@ -36,9 +36,11 @@
         /* 줄바꿈방지 */
         white-space: nowrap;
 
-        border: 4px solid rgb(194, 168, 255);
+        border: 4px solid rgb(99, 152, 237);
         /* 보더박스:보더,패딩포함 */
         box-sizing: border-box;
+        background: url(../005.CSS학습/뉴진스/뉴진스\ \(1\).jpeg) no-repeat top/cover;
+        
       }
     </style>
 
@@ -48,18 +50,50 @@
 
   // 함수 만들기////// (){} 옆구리 터지면 안돼
   // 함수형식-> fuction 함수명(){코드구역}
-  function 김비서나와라(){
+  function 김비서나와라(주머니){
+    // (메모리주소)인데 주머니라고 이해하기 쉽게 부르자.
+    //  그릇, 매개 역할을 함. 
+    // 밥을 담는 그릇이라고 생각하자
+    // 기존값에 + 로 더해
 
 // 1. 함수호출확인!
-console.log('연봉 올려주세요!');
+console.log('연봉 올려주세요!'+주머니);
+
+
 
 // 2. 변경대상에 변경반영하기
 // 2-1. 배경이미지 넣기 
-document.getElementsByClassName('pbox')
+
+document
+// 클래스 가져오기
+// get 가져와라 Elenments 요소들을!
+// By Class Name 클래스명으로!
+.getElementsByClassName('pbox')
 // 클래스는 여러개일수 있으므로 0부터 시작!
+// 자바스크립트는 0부터 숫자셈. 0,1,2,3...
 .item(0)
 // CSS 배경 변경하기
-.style.background = 'url(./images/kimbs.jpg) no-repeat top/cover';
+// style 객체 안에 각종 css 속성이 모두 만들어져있음
+.style.background = 'url(./images/njz1.jpg) no-repeat top/cover';
+
+// 2-2. 글자색 변경하기
+document.getElementsByClassName('pbox')
+.item(0).style.color = 'white';
+
+// 2-3.글자그림자넣기
+document.getElementsByClassName('pbox')
+.item(0).style.textShadow = '4px 4px 1px green';
+// text-shadow는 빼기로 인식하기때문에 textShadow로 써야함
+
+// 2-4. 박스 둥글게 만들기
+document.getElementsByClassName('pbox')
+.item(0).style.borderRadius = '50%';
+
+// 2-5. 트랜지션 넣기
+document.getElementsByClassName('pbox')
+.item(0).style.transition = '3s';
+
+
 
 
   } /////////// 김비서나와라 함수의 끝//////////
@@ -77,7 +111,7 @@ document.getElementsByClassName('pbox')
     <!-- 드라마 소개박스 -->
     <p 
     class="pbox" 
-    title="클릭하면 김비서 등장!"
+    title="클릭하면 뉴진스 등장!!"
     onclick="
     // onclick 이벤트 속성은 js와 연결되는 기본속성이다!
     // 이벤트 속성 이름은 아래와 같이 구성된다!
@@ -88,7 +122,7 @@ document.getElementsByClassName('pbox')
     // JS 한줄주석 : 현업에서는 이렇게 안하는데, 자바스크립트 이해하기 위해 여기다가 먼저 해보기
 
     // 경고창 띄우기
-    // alert('김비서! 어서 나와!!');
+    // alert('뉴진스 컴백해');
 
     // 콘솔찍기
     console.log('클릭했네~!!');
@@ -127,7 +161,7 @@ document.getElementsByClassName('pbox')
 // 호출은 함수 이름으로 호출한다!
 // 호출시 소괄호()를 뒤에 사용한다
 
-김비서나와라();
+김비서나와라('하겐다즈 사줘!');
     "
     >
       나는 요즘 매일 생각한다. <br />
