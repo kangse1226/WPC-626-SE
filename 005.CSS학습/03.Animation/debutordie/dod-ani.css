@@ -8,6 +8,19 @@
 
 /* 영상이 스크롤하면서 크기 커지면서 시작하게 설정하는 건?
  */
+.house{
+  animation: 
+  house-hi-ani 1s ease-in-out .5s forwards,
+  house-bye-ani 1.5s ease-in 12s 3 alternate forwards;
+}
+@keyframes house-hi-ani {
+  100%{top: 0%;
+  }
+}
+@keyframes house-bye-ani {
+  100%{top: -80%;
+  }
+}
 
   /*타이틀 움직이기*/
   .title{
@@ -35,15 +48,10 @@
 
 /* 서브타이틀 움직이기 */
 .sub-title{
-  animation: sub-ani 3s linear 2.5s forwards;
+  animation: sub-ani 2s linear 3s forwards;
 }
 @keyframes sub-ani {
- 0%{
-   bottom: -300px;
-        left: 810px;
- }
-  50%{
-    bottom: -70px;
+0%{
     opacity: 1;
   }
   100%{
@@ -79,7 +87,7 @@
 
 /* 2-1. 문대 애니호출 설정 */
 .mundae {
-  animation: mundae-ani 2s 0.5s forwards;
+  animation: mundae-ani 2s 0.2s forwards;
 }
 
 /* 2-2. 문대 걸어나오기 키프레임 */

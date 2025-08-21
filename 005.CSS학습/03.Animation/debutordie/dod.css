@@ -1,7 +1,12 @@
 @charset "utf-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap');
-
+ @font-face{
+                font-family: 빛의계승자;
+                src: url(../../fonts/HeirofLightBold.woff2) format("woff2"),
+                url(../../fonts/HeirofLightBold.ttf) format("truetype"),
+        
+            }
 body {
     overflow-x: hidden;
 }
@@ -92,7 +97,11 @@ body {
         color: #ffffff;
         font-size: 45px;
         line-height: 100px;
-        font-family: Pretendard, sans-serif;
+    
+        font-family: '빛의계승자';
+                font-weight: normal;
+                font-size: 40px;
+                color: rgb(255, 255, 255);
 
         /* 글자테두리 */
         text-shadow: 4px 0px rgb(0, 19, 185),
@@ -104,14 +113,15 @@ body {
       .sub-title{
         /* 위치 */
         position: absolute;
-        bottom: -300px;
-        left: 810px;
-        /* 꾸미기 */
-        text-align: center;
-        color: rgb(255, 107, 107);
-        font-size: 100px;
-        line-height: 100px;
-        font-family: Pretendard, sans-serif;
+           bottom: -160px;
+    left: 645px;
+    text-align: center;
+    color: rgb(255, 107, 107);
+    line-height: 100px;
+    font-family: '빛의계승자';
+    font-weight: normal;
+    font-size: 70px;
+                
         text-shadow: 4px 0px rgb(255, 255, 255),
         -4px 0px rgb(255, 255, 255),
         0px 4px rgb(255, 255, 255), 
@@ -123,12 +133,14 @@ body {
 .house{
     /* 부모자격을 준다 - 하위 앱솔루트 요소들의 부모 */
     position: absolute;
-    top: 50%;
+    top: -100%;
     left: 50%;
     translate: -50% 50%;
 
     /* 가운데 오기 */
     margin: 0 auto;
+    
+    margin-bottom: 700px;
     /* house.png와 동일한 크기 */
     width: 680px;
     height: 453px;
