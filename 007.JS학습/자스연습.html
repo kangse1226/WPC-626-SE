@@ -51,12 +51,12 @@
         /* 줄바꿈방지 */
         white-space: nowrap;
 
-        border: 2px solid rgb(111, 123, 142);
+        border: 2px solid rgb(250, 212, 236);
         /* 보더박스:보더,패딩포함 */
         box-sizing: border-box;
         background: url(../005.CSS학습/뉴진스/뉴진스\ \(1\).jpeg) no-repeat top/cover;
         /* 자스영역에 넣을거 */
-        /* background: url(../005.CSS학습/03.Animation/debutordie/데못죽/logo.webp) no-repeat top/cover; */
+        /* background: url(../005.CSS학습/03.Animation/debutordie/데못죽/md.png) no-repeat top/cover; */
       }
     </style>
 
@@ -77,7 +77,7 @@ document
 
 // 2. 변경대상에 변경반영하기
 // 2-1. 배경이미지 넣기 
-피박스.style.background = 'url(./images/njz1.jpg) no-repeat top/cover';
+피박스.style.background = 'url(../005.CSS학습/03.Animation/debutordie/데못죽/ah.png) no-repeat top/cover';
 // 2-2. 글자색 변경하기
 피박스.style.color = 'white';
 // 2-3.글자그림자넣기
@@ -92,6 +92,44 @@ document
 피박스.style.fontSize = '50px';
 피박스.style.lineHeight = '0';
 
+// 2-6. 회전: 720deg=2turn 두바퀴회전. +-로 시계반시계 방향설정
+피박스.style.rotate = '2turn';
+
+// 2-7. 중앙이동:
+피박스.style.top = '50%';
+피박스.style.left = '50%';
+
+// 2-8. 트랜스폼으로 중앙이동하기- 트랜스레이트마오마오
+피박스.style.translate = '-50% -50%';
+
+// body요소를 메모리공간주소에 넣기
+var 바디 = document.body;
+
+// 2-9. 바디에 배경색 넣기
+바디.style.backgroundColor = 'rgb(250, 212, 236)';
+// 2-10. 천천히 바뀌게 하기
+바디.style.transition = '5s';
+
+// 요청 클래스 요소를 메모리공간주소에 담기(밑에 요청 클래스를 만들엇음 )
+var 요청 = document.getElementsByClassName('요청').item(0);
+// 2-11. 김비서에 요청내용 찍기-> 주머니 사용
+// innerText 속성은 요소 내부 데이터로 문자열을 넣는역할
+요청.innerText = 주머니;
+
+// 2-12. 요청 클래스 요소에 css 한번에 넣기
+// cssText속성: css설정값을 한번에 넣는 속성
+// !!!! `백틱쓰면 엔터가능
+요청.style.cssText = `
+    position: absolute;
+    top: 0;
+    right: -51px;
+    border: 4px solid skyblue;
+    background-color: white;
+    padding: 20px;
+    rotate: 20deg;
+    color: darkslategrey;
+    
+`;
 
 
 
@@ -115,15 +153,19 @@ document
     .getElementById('name')
     .innerHTML=`
     <img 
-    src='../005.CSS학습/뉴진스/로고\ \(2\).png' 
-    alt='뉴진스'>
+    src='../005.CSS학습/03.Animation/debutordie/데못죽/md.png' 
+    alt='문대'>
     `;
 
 오늘의메뉴('빨리빨리줘요!');
     "
     >
-      아이스 아메리카노 5잔 <br />
-      물 빼고 얼음 많이 주세요!! <span id="name"></span>
+      <!-- 아아!! <br /> -->
+      얼음많이 샷추가!!
+       <span id="name"></span>
+
+      <!-- 김비서에게 전달된 요청 찍기 -->
+       <b class="요청"></b>
     </p>
       <!-- p요소 안에는 div 넣을 수 없음! -->
   </body>
