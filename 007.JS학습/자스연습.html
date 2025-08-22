@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>전연화퇴근해</title>
+<!-- 글꼴 가져올 CSS -->
+    <link rel="stylesheet" href="../007.JS학습/글꼴가져올.css">
+    <!-- 아이콘추가 -->
+      <link
+      rel="shortcut icon"
+      href="../005.CSS학습/03.Animation/debutordie/데못죽/logo.webp"
+      type="image/ico"
+    />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        /* 보이는 화면에 채우기 */
+      }
+      body {
+        overflow: hidden;
+      }
+
+      .pbox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        /* 부모는? window(보이는화면) */
+        margin: 0;
+        padding: 0;
+
+        width: 500px;
+        height: 500px;
+        padding-top: 200px;
+
+        /* 글자 */
+        line-height: 50px;
+        font-size: 30px;
+        text-align: center;
+        /* 줄바꿈방지 */
+        white-space: nowrap;
+
+        border: 2px solid rgb(111, 123, 142);
+        /* 보더박스:보더,패딩포함 */
+        box-sizing: border-box;
+        background: url(../005.CSS학습/뉴진스/뉴진스\ \(1\).jpeg) no-repeat top/cover;
+        /* 자스영역에 넣을거 */
+        /* background: url(../005.CSS학습/03.Animation/debutordie/데못죽/logo.webp) no-repeat top/cover; */
+      }
+    </style>
+
+<!-- 자바스크립트 코딩구역! -->
+ <script>
+  // 함수형식-> fuction 함수명(){코드구역}
+  function 오늘의메뉴(그릇){
+    // (메모리주소)
+
+// 1. 함수호출확인!
+console.log('아아 얼음 많이주세요!'+그릇);
+
+// 피박스 변수 만들기
+var 피박스 = 
+document
+.getElementsByClassName('pbox')
+.item(0)
+
+// 2. 변경대상에 변경반영하기
+// 2-1. 배경이미지 넣기 
+피박스.style.background = 'url(./images/njz1.jpg) no-repeat top/cover';
+// 2-2. 글자색 변경하기
+피박스.style.color = 'white';
+// 2-3.글자그림자넣기
+피박스.style.textShadow = '1px 1px 1px gray';
+// 2-4. 박스 둥글게 만들기
+피박스.style.borderRadius = '50%';
+// 2-5. 트랜지션 넣기
+피박스.style.transition = '3s';
+
+// 글꼴
+피박스.style.fontFamily = 'HeirofLight';
+피박스.style.fontSize = '50px';
+피박스.style.lineHeight = '0';
+
+
+
+
+
+
+  } /////////// 김비서나와라 함수의 끝//////////
+  ///////////////////////////////////////////
+
+ </script>
+<!--  -->
+  </head>
+  <body>
+    <!-- 드라마 소개박스 -->
+    <p 
+    class="pbox" 
+    title="클릭하면 선아현 등장!!"
+    onclick="
+    // 콘솔찍기
+    console.log('클릭했네~!!');
+    document
+    .getElementById('name')
+    .innerHTML=`
+    <img 
+    src='../005.CSS학습/뉴진스/로고\ \(2\).png' 
+    alt='뉴진스'>
+    `;
+
+오늘의메뉴('빨리빨리줘요!');
+    "
+    >
+      아이스 아메리카노 5잔 <br />
+      물 빼고 얼음 많이 주세요!! <span id="name"></span>
+    </p>
+      <!-- p요소 안에는 div 넣을 수 없음! -->
+  </body>
+</html>
