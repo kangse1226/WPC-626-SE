@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap');
  @font-face{
                 font-family: 빛의계승자;
-                src: url(../../fonts/HeirofLightBold.woff2) format("woff2"),
+                src: url(./fonts/HeirofLightBold.ttf) format("woff2"),
                 url(../../fonts/HeirofLightBold.ttf) format("truetype"),
         
             }
