@@ -15,10 +15,14 @@
 }
 @keyframes house-hi-ani {
   100%{top: 0%;
+    scale: 2;
+    transition: 3s;
   }
 }
 @keyframes house-bye-ani {
   100%{top: -80%;
+    scale: 1;
+    transition: 1s;
   }
 }
 
