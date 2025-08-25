@@ -5,6 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS1. 자바스크립트 기본 + DOM선택법</title>
 
+ <!--  자바스크립트 코드구역 
+ 1. onclick"자바스크립트 코드구역"
+ 2. <script> 제이에스 구역 </script>  -->
+ <!-- JS가 하는 일
+  1. 요소(엘러먼트) 넣기 = 즉 html 넣기, 변경하기
+  2. CSS 변경 --> 
+
+  <!-- 태그와 요소의 차이
+   요소 element 
+   태그 tag -->
+
+
+   <!-- 전체 요소를 가지고 있는 문서객체는 문서객체모델? 돔 
+    도큐먼트. 도큐먼트가 문서잖아. 
+    도큐먼트는 웹문서를 의미하고
+    DOM D도큐먼트 O오브젝트 (객체=실제대상, 실제요소를 연결) M모델(인터페이스, 프로그래밍 인터페이스, api어플리케이션프로그레밍인터페이스)
+    자바스크립트에서 실제 웹문서 요소들을 접근하기 위한 인터페이스이다?
+    인터페이스는 소통이 이루어지는 장소에서의 수단과 방법
+     -->
+
+     <!-- document. 점을 찍으면 그 안으로 들어간다~~ 
+      도큐먼트 밑에는 각 속성과 메서드가 잇어
+      속성
+      메서드는 함수. 메소드연기를 생각해봐 완전 몰입. 
+      펑션이라고 안하고 메소드라고 하는 이유는 
+      전부다 설계도를 만들어서 이 브라우저 안에서 
+      완벽하게 돌아가는 세계관 
+      도큐먼트의 세계관에 완전히 녹아들어있어서
+      메소드라고 한대
+      한국말로 내장함수라고 함
+      일하는함수ㅋㅋ 
+
+      속성과 메서드라고 되어있는걸 객체라고 한대
+      document.getElementById("이름")
+      아이디가 "이름"인 애를 데려와라
+
+      =이퀄문법
+      -->
     <style>
       html,
       body {
@@ -43,6 +81,41 @@
         background: url(../005.CSS학습/뉴진스/뉴진스\ \(1\).jpeg) no-repeat top/cover;
         
       }
+
+      /* 원모양 박스 만들기 */
+      .동그라미야{
+        position: absolute;
+        top: 0;
+        right: 0;
+        /* 부모는 보이는 상단화면 */
+        
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        
+        /* 배경공통 */
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* 보더박스 */
+        box-sizing: border-box;
+      }
+
+        /* 원모양 개별세팅 */
+
+      
+        .동그라미야:nth-child(1) {
+          right: 400px;
+          background-image: url("../005.CSS학습/뉴진스/뉴뉴\ \(1\).jpg");
+        }
+        .동그라미야:nth-child(2){
+          right: 200px;
+          background-image: url("../005.CSS학습/뉴진스/뉴뉴\ \(1\).jpg");
+        }
+        .동그라미야:nth-child(3){
+          /* right: 600px; */
+          background-image: url("../005.CSS학습/뉴진스/뉴뉴\ \(1\).jpg");
+          /* background-position: center; */
+        }
     </style>
 
 <!-- 자바스크립트 코딩구역! -->
@@ -51,6 +124,10 @@
 
   // 함수 만들기////// (){} 옆구리 터지면 안돼
   // 함수형식-> fuction 함수명(){코드구역}
+  // 함수는 명령어 코드가 있는 실행 메모리 공간이다.
+  // 이 함수를 호출하기 위한 주소가 함수이름이다.  
+  // 함수 이름은 띄어쓰기, 따옴표없이써야해
+  // 주머니는 전달변수: 함수를 호출할 때 보낸 값을 담는 값의 메모리 공간이름이다. 
   function 김비서나와라(주머니){
     // (메모리주소)인데 주머니라고 이해하기 쉽게 부르자.
     //  그릇, 매개 역할을 함. 
@@ -147,6 +224,9 @@ var 요청 = document.getElementsByClassName('요청').item(0);
 
 // 2-12. 요청 클래스 요소에 css 한번에 넣기
 // cssText속성: css설정값을 한번에 넣는 속성
+// 주의사항: 한번에 설정하면 기존값도 지워짐!
+// 한번에 완전히 변경이 필요한 경우에 사용함
+// 값을 하나만 넣어도 기존값이 지워진다!
 // !!!! `백틱쓰면 엔터가능
 요청.style.cssText = `
     position: absolute;
@@ -157,6 +237,7 @@ var 요청 = document.getElementsByClassName('요청').item(0);
     padding: 20px;
     rotate: 20deg;
     color: darkslategrey;
+    text-shadow: 1px 1px 1px white;
     
 `;
 
@@ -244,5 +325,12 @@ var 요청 = document.getElementsByClassName('요청').item(0);
        <b class="요청"></b>
     </p>
       <!-- p요소 안에는 div 넣을 수 없음! -->
+
+<!-- 원모양박스 -->
+  <div class="박스야">
+    <div class="동그라미야"></div>
+    <div class="동그라미야"></div>
+    <div class="동그라미야"></div>
+  </div>
   </body>
 </html>
