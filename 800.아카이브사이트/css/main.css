@@ -183,7 +183,7 @@ a.my-cha-link {
   /* 마영오 - 블록요소 가로중앙 */
   margin: 0 auto;
   /* 둥근모서리 */
-  border-radius: 0 100px 0 60px;
+  border-radius: 0 200px 0 120px;
 
   /* 흰색 배경색 흰색 반투명 80% */
   /* rgba형식에서 a는 알파값으로 투명도이며, 
@@ -226,8 +226,8 @@ core.css의 clb 클래스로 처리함! */
   top: 15%;
   right: 0;
   /* 부모는? .left-part가 렐러티브여서 부모ㅇㅇ */
-  width: 1px;
-  height: 80%;
+  width: 0.5px;
+  height: 90%;
   background-color: #535252;
 }
 
