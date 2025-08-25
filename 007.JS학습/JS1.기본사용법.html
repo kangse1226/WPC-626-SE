@@ -105,16 +105,30 @@
       
         .동그라미야:nth-child(1) {
           right: 400px;
-          background-image: url("../005.CSS학습/뉴진스/뉴뉴\ \(1\).jpg");
+          background-image: url("../005.CSS학습/뉴진스/다니\ \(4\).jpg");
+          background-position: center;
         }
         .동그라미야:nth-child(2){
           right: 200px;
-          background-image: url("../005.CSS학습/뉴진스/뉴뉴\ \(1\).jpg");
+          background-image: url("../005.CSS학습/뉴진스/다니\ \(2\).jpg");
         }
         .동그라미야:nth-child(3){
           /* right: 600px; */
-          background-image: url("../005.CSS학습/뉴진스/뉴뉴\ \(1\).jpg");
-          /* background-position: center; */
+          background-image: url("../005.CSS학습/뉴진스/다니\ \(3\).jpg");
+          background-position: center;
+        }
+
+        /* 동그라미야 클래스에 돌아 클래스를 넣으면 돌게한다! */
+        .동그라미야.돌아{
+          /* 애니메이션-ani:이시이지반방마 */
+          animation: 돌아애니 2s linear infinite;
+        }
+        /* 키프레임 회전하는 키프레임 돌아애니 */
+        @keyframes 돌아애니 {
+          to{
+            rotate: 1turn;
+          }
+          
         }
     </style>
 
@@ -259,7 +273,12 @@ var 요청 = document.getElementsByClassName('요청').item(0);
 
   // ///////////////////////////////////////////////////////
  </script>
-<!--  -->
+
+
+<!--외부js 파일 불러오기:익스터널 방식 JS
+외부js파일의 확장자는 .js다!!  -->
+<script src="./js/JS1.기본사용법.js"></script>
+
   </head>
   <body>
     <!-- 드라마 소개박스 -->
@@ -328,9 +347,12 @@ var 요청 = document.getElementsByClassName('요청').item(0);
 
 <!-- 원모양박스 -->
   <div class="박스야">
-    <div class="동그라미야"></div>
-    <div class="동그라미야"></div>
-    <div class="동그라미야"></div>
+    <div class="동그라미야" onclick="돌아랏(0)"></div>
+    <div class="동그라미야" onclick="돌아랏(1)"></div>
+    <div class="동그라미야" onclick="돌아랏(2)"></div>
+    <!-- <div class="동그라미야 돌아" onclick="돌아랏()"></div>
+    <div class="동그라미야 돌아"></div>
+    <div class="동그라미야 돌아"></div> -->
   </div>
   </body>
 </html>
