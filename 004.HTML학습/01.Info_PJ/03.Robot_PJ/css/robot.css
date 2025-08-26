@@ -51,7 +51,7 @@ border-radius: 50%;
 outline: none;
 /* border: 0px double rgba(255, 255, 255, 0); */
 /* 배경공통 */
-background-color: #fff;
+background-color: #ffffff00;
 background-repeat: no-repeat;
 background-size: 100% 100%;
 
@@ -60,12 +60,12 @@ background-size: 100% 100%;
 /* 왼쪽눈 */
 .eye1{
     left: 50px;
-    background-image: url(../images/eye1.PNG);
+    background-image: url(../images/eye.png);
 }
 /* 오른쪽눈 */
 .eye2{
     right: 50px;
-    background-image: url(../images/eye2.PNG);
+    background-image: url(../images/eye.PNG);
 }
 
 

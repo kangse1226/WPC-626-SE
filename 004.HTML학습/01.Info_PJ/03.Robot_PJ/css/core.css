@@ -15,10 +15,13 @@
 */
 
 /********** 2. 공통 클래스 **********/
-/* 메탈배경 클래스 */
+/* 머리 배경 클래스 */
 .metal1{
   background: url(../images/metal01.jpg) no-repeat center/cover;
 }
-.metal2{
-  background: url(../images/metal02.jpg) no-repeat center/cover;
+.fur{
+  background: url(../images/fur.jpg) no-repeat center/cover;
 }
+/* .metal2{
+  background: url(../images/metal02.jpg) no-repeat center/cover;
+} */
