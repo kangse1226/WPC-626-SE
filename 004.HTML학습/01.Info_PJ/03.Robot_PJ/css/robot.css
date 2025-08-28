@@ -32,7 +32,7 @@ body * {
     height: 250px;
     /* 무대중간으로 마영오씨를 모셔 */
     margin: 0 auto;
-
+    
     /* top: 50%;
     left: 50%;
     translate: -50% -50%; */
@@ -41,7 +41,15 @@ body * {
 .robot-head > div {
     position: absolute;
 }
-
+/* .face {
+    
+    top: 10px;
+    left: 10px;
+    background-image: url(../images/face.png);
+    background-color: #ffffff00;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+} */
 /* 눈공통 */
 .eye{
 top: 50px;
@@ -60,14 +68,30 @@ background-size: 100% 100%;
 /* 왼쪽눈 */
 .eye1{
     left: 50px;
-    background-image: url(../images/eye.png);
+    background-image: url(../images/lefteye2.png);
 }
 /* 오른쪽눈 */
 .eye2{
     right: 50px;
-    background-image: url(../images/eye.PNG);
+    background-image: url(../images/righteye2.png);
 }
 
+/* 코 */
+.nose{
+    top: 10px;
+    left: 80px;
+    width: 500px;
+    background-image: url(../images/nose.png);
+    background-color: #ffffff00;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+
+/* 입 */
+.mouth {
+    bottom: 21px;
+
+}
 
 
 
