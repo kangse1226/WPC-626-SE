@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS1. 자바스크립트 기본 + DOM선택법</title>
 
- <!--  자바스크립트 코드구역 
+    <!--  자바스크립트 코드구역 
  1. onclick"자바스크립트 코드구역"
  2. <script> 제이에스 구역 </script>  -->
- <!-- JS가 하는 일
+    <!-- JS가 하는 일
   1. 요소(엘러먼트) 넣기 = 즉 html 넣기, 변경하기
-  2. CSS 변경 --> 
+  2. CSS 변경 -->
 
-  <!-- 태그와 요소의 차이
+    <!-- 태그와 요소의 차이
    요소 element 
    태그 tag -->
 
-
-   <!-- 전체 요소를 가지고 있는 문서객체는 문서객체모델? 돔 
+    <!-- 전체 요소를 가지고 있는 문서객체는 문서객체모델? 돔 
     도큐먼트. 도큐먼트가 문서잖아. 
     도큐먼트는 웹문서를 의미하고
     DOM D도큐먼트 O오브젝트 (객체=실제대상, 실제요소를 연결) M모델(인터페이스, 프로그래밍 인터페이스, api어플리케이션프로그레밍인터페이스)
@@ -25,7 +24,7 @@
     인터페이스는 소통이 이루어지는 장소에서의 수단과 방법
      -->
 
-     <!-- document. 점을 찍으면 그 안으로 들어간다~~ 
+    <!-- document. 점을 찍으면 그 안으로 들어간다~~ 
       도큐먼트 밑에는 각 속성과 메서드가 잇어
       속성
       메서드는 함수. 메소드연기를 생각해봐 완전 몰입. 
@@ -46,7 +45,6 @@
     <style>
       html,
       body {
-        
         margin: 0;
         padding: 0;
         height: 100%;
@@ -72,27 +70,28 @@
         line-height: 50px;
         font-size: 30px;
         text-align: center;
+        color: #ffffff;
         /* 줄바꿈방지 */
         white-space: nowrap;
 
         border: 4px solid rgb(99, 152, 237);
         /* 보더박스:보더,패딩포함 */
         box-sizing: border-box;
-        background: url(../005.CSS학습/뉴진스/뉴진스\ \(1\).jpeg) no-repeat top/cover;
-        
+        background: url(../005.CSS학습/뉴진스/뉴뉴\ \(2\).jpg) no-repeat
+          top/cover;
       }
 
       /* 원모양 박스 만들기 */
-      .동그라미야{
+      .동그라미야 {
         position: absolute;
         top: 0;
         right: 0;
         /* 부모는 보이는 상단화면 */
-        
+
         width: 200px;
         height: 200px;
         border-radius: 50%;
-        
+
         /* 배경공통 */
         background-repeat: no-repeat;
         background-size: cover;
@@ -100,149 +99,144 @@
         box-sizing: border-box;
       }
 
-        /* 원모양 개별세팅 */
+      /* 원모양 개별세팅 */
 
-      
-        .동그라미야:nth-child(1) {
-          right: 400px;
-          background-image: url("../005.CSS학습/뉴진스/다니\ \(4\).jpg");
-          background-position: center;
-        }
-        .동그라미야:nth-child(2){
-          right: 200px;
-          background-image: url("../005.CSS학습/뉴진스/다니\ \(2\).jpg");
-        }
-        .동그라미야:nth-child(3){
-          /* right: 600px; */
-          background-image: url("../005.CSS학습/뉴진스/다니\ \(3\).jpg");
-          background-position: center;
-        }
+      .동그라미야:nth-child(1) {
+        right: 400px;
+        background-image: url("../005.CSS학습/뉴진스/다니\ \(4\).jpg");
+        background-position: center;
+      }
+      .동그라미야:nth-child(2) {
+        right: 200px;
+        background-image: url("../005.CSS학습/뉴진스/다니\ \(2\).jpg");
+      }
+      .동그라미야:nth-child(3) {
+        /* right: 600px; */
+        background-image: url("../005.CSS학습/뉴진스/다니\ \(3\).jpg");
+        background-position: center;
+      }
 
-        /* 동그라미야 클래스에 돌아 클래스를 넣으면 돌게한다! */
-        .동그라미야.돌아{
-          /* 애니메이션-ani:이시이지반방마 */
-          animation: 돌아애니 2s linear infinite;
+      /* 동그라미야 클래스에 돌아 클래스를 넣으면 돌게한다! */
+      .동그라미야.돌아 {
+        /* 애니메이션-ani:이시이지반방마 */
+        animation: 돌아애니 2s linear infinite;
+      }
+      /* 키프레임 회전하는 키프레임 돌아애니 */
+      @keyframes 돌아애니 {
+        to {
+          rotate: 1turn;
         }
-        /* 키프레임 회전하는 키프레임 돌아애니 */
-        @keyframes 돌아애니 {
-          to{
-            rotate: 1turn;
-          }
-          
-        }
+      }
     </style>
 
-<!-- 자바스크립트 코딩구역! -->
- <script>
-  // 인터널 자바스크립트 코딩 구역 html안에 잇으니 인터널 ///
+    <!-- 자바스크립트 코딩구역! -->
+    <script>
+      // 인터널 자바스크립트 코딩 구역 html안에 잇으니 인터널 ///
 
-  // 함수 만들기////// (){} 옆구리 터지면 안돼
-  // 함수형식-> fuction 함수명(){코드구역}
-  // 함수는 명령어 코드가 있는 실행 메모리 공간이다.
-  // 이 함수를 호출하기 위한 주소가 함수이름이다.  
-  // 함수 이름은 띄어쓰기, 따옴표없이써야해
-  // 주머니는 전달변수: 함수를 호출할 때 보낸 값을 담는 값의 메모리 공간이름이다. 
-  function 김비서나와라(주머니){
-    // (메모리주소)인데 주머니라고 이해하기 쉽게 부르자.
-    //  그릇, 매개 역할을 함. 
-    // 밥을 담는 그릇이라고 생각하자
-    // 기존값에 + 로 더해
+      // 함수 만들기////// (){} 옆구리 터지면 안돼
+      // 함수형식-> fuction 함수명(){코드구역}
+      // 함수는 명령어 코드가 있는 실행 메모리 공간이다.
+      // 이 함수를 호출하기 위한 주소가 함수이름이다.
+      // 함수 이름은 띄어쓰기, 따옴표없이써야해
+      // 주머니는 전달변수: 함수를 호출할 때 보낸 값을 담는 값의 메모리 공간이름이다.
+      function 김비서나와라(주머니) {
+        // (메모리주소)인데 주머니라고 이해하기 쉽게 부르자.
+        //  그릇, 매개 역할을 함.
+        // 밥을 담는 그릇이라고 생각하자
+        // 기존값에 + 로 더해
 
-// 1. 함수호출확인!
-// console.log('연봉 올려주세요!'+주머니);
-console.log('연봉 올려주세요!',주머니);
-// 여기에 주머니라고 정확히똑같이 써야 호출이되는겨
-// 주며니라고 쓰면 하겐다즈 사줘가 안나옴
-// 콘솔은 자바스크립트의 엔진... 로그기록 찍어보는거..ㅜㅜ
+        // 1. 함수호출확인!
+        // console.log('연봉 올려주세요!'+주머니);
+        console.log("연봉 올려주세요!", 주머니);
+        // 여기에 주머니라고 정확히똑같이 써야 호출이되는겨
+        // 주며니라고 쓰면 하겐다즈 사줘가 안나옴
+        // 콘솔은 자바스크립트의 엔진... 로그기록 찍어보는거..ㅜㅜ
 
+        // 2. 변경대상('pbox')에 변경반영하기
 
-// 2. 변경대상('pbox')에 변경반영하기
+        // 반복되는 변경대상을 특정 메모리 공간에 넣기
+        // 메모리 공간을 이렇게 만들자: 봐 여기 = 값
+        // 이퀄 = 의 오른쪽에 있는 '값'을 '여기'에 넣는다 (즉, 할당한다)
+        // var 여기 = 값
+        // 변수 앞글자3개 따서 var 쓴대.
+        var 피박스 = document
+          // 피박스에 도큐멘트가 들어간다
+          // 클래스 가져오기
+          // get 가져와라 Elenments 요소들을!
+          // By Class Name 클래스명으로!
+          .getElementsByClassName("pbox")
+          // 클래스는 여러개일수 있으므로 0부터 시작!
+          // 자바스크립트는 0부터 숫자셈. 0,1,2,3...
+          .item(0);
 
-// 반복되는 변경대상을 특정 메모리 공간에 넣기
-// 메모리 공간을 이렇게 만들자: 봐 여기 = 값
-// 이퀄 = 의 오른쪽에 있는 '값'을 '여기'에 넣는다 (즉, 할당한다)
-// var 여기 = 값
-// 변수 앞글자3개 따서 var 쓴대. 
-var 피박스 = 
-document
-// 피박스에 도큐멘트가 들어간다
-// 클래스 가져오기
-// get 가져와라 Elenments 요소들을!
-// By Class Name 클래스명으로!
-.getElementsByClassName('pbox')
-// 클래스는 여러개일수 있으므로 0부터 시작!
-// 자바스크립트는 0부터 숫자셈. 0,1,2,3...
-.item(0);
+        // 피박스라는 저장공간주소에 .pbox요소를 넣음!
+        // console.log(값,값,값)-> +기호 대신 콤마,사용 가능
+        console.log("내가 담은 것이 뭐지?;", 피박스);
 
-// 피박스라는 저장공간주소에 .pbox요소를 넣음!
-// console.log(값,값,값)-> +기호 대신 콤마,사용 가능
-console.log('내가 담은 것이 뭐지?;',피박스);
+        // [문자에 대한 매우 중요한 구분!!]@@@@@
+        // 일반적으로 변수라고 하는 메모리공간 주소는
+        // 문자열로 되어있음! 그래서 문자데이터와 헷갈림!!
+        // 그래서 메모리공간 주소이름은 따옴표로 싸지않는다!!!
 
-// [문자에 대한 매우 중요한 구분!!]@@@@@
-// 일반적으로 변수라고 하는 메모리공간 주소는 
-// 문자열로 되어있음! 그래서 문자데이터와 헷갈림!!
-// 그래서 메모리공간 주소이름은 따옴표로 싸지않는다!!!
+        // 반면 문자데이터는 따옴표로 반드시 싼다!!
+        // 따옴표로 싸고 있는 문자는 값임.
+        // 따옴표 없는 문자는 변수.
 
-// 반면 문자데이터는 따옴표로 반드시 싼다!!
-// 따옴표로 싸고 있는 문자는 값임.
-// 따옴표 없는 문자는 변수.
+        // 내 집주소를 다른 사람이 못쓰잖아!
 
-// 내 집주소를 다른 사람이 못쓰잖아! 
+        // 함수는 실행명령문을 담고 있고
+        // 변수(메모리주소)는 함수, 코드 등등 담는다.@@@@@@@
 
+        // 2-1. 배경이미지 넣기
+        // CSS 배경 변경하기
+        // style 객체 안에 각종 css 속성이 모두 만들어져있음
+        피박스.style.background = "url(./images/njz1.jpg) no-repeat top/cover";
 
-// 함수는 실행명령문을 담고 있고
-// 변수(메모리주소)는 함수, 코드 등등 담는다.@@@@@@@
+        // 2-2. 글자색 변경하기
+        // document.getElementsByClassName('pbox').item(0) -> 이걸 피박스로 담았음
+        피박스.style.color = "white";
 
-// 2-1. 배경이미지 넣기 
-// CSS 배경 변경하기
-// style 객체 안에 각종 css 속성이 모두 만들어져있음
-피박스.style.background = 'url(./images/njz1.jpg) no-repeat top/cover';
+        // 2-3.글자그림자넣기
+        피박스.style.textShadow = "2px 2px 1px gray";
+        // text-shadow는 빼기로 인식하기때문에 textShadow로 써야함
 
-// 2-2. 글자색 변경하기
-// document.getElementsByClassName('pbox').item(0) -> 이걸 피박스로 담았음
-피박스.style.color = 'white';
+        // 2-4. 박스 둥글게 만들기
+        피박스.style.borderRadius = "50%";
 
-// 2-3.글자그림자넣기
-피박스.style.textShadow = '2px 2px 1px gray';
-// text-shadow는 빼기로 인식하기때문에 textShadow로 써야함
+        // 2-5. 트랜지션 넣기
+        피박스.style.transition = "2s";
 
-// 2-4. 박스 둥글게 만들기
-피박스.style.borderRadius = '50%';
+        // 2-6. 회전: 720deg=2turn 두바퀴회전. +-로 시계반시계 방향설정
+        피박스.style.rotate = "2turn";
 
-// 2-5. 트랜지션 넣기
-피박스.style.transition = '2s';
+        // 2-7. 중앙이동:
+        피박스.style.top = "50%";
+        피박스.style.left = "50%";
 
-// 2-6. 회전: 720deg=2turn 두바퀴회전. +-로 시계반시계 방향설정
-피박스.style.rotate = '2turn';
+        // 2-8. 트랜스폼으로 중앙이동하기- 트랜스레이트마오마오
+        피박스.style.translate = "-50% -50%";
 
-// 2-7. 중앙이동:
-피박스.style.top = '50%';
-피박스.style.left = '50%';
+        // body요소를 메모리공간주소에 넣기
+        var 바디 = document.body;
 
-// 2-8. 트랜스폼으로 중앙이동하기- 트랜스레이트마오마오
-피박스.style.translate = '-50% -50%';
+        // 2-9. 바디에 배경색 넣기
+        바디.style.backgroundColor = "lightPink";
+        // 2-10. 천천히 바뀌게 하기
+        바디.style.transition = "3s";
 
-// body요소를 메모리공간주소에 넣기
-var 바디 = document.body;
+        // 요청 클래스 요소를 메모리공간주소에 담기(밑에 요청 클래스를 만들엇음 )
+        var 요청 = document.getElementsByClassName("요청").item(0);
+        // 2-11. 김비서에 요청내용 찍기-> 주머니 사용
+        // innerText 속성은 요소 내부 데이터로 문자열을 넣는역할
+        요청.innerText = 주머니;
 
-// 2-9. 바디에 배경색 넣기
-바디.style.backgroundColor = 'lightPink';
-// 2-10. 천천히 바뀌게 하기
-바디.style.transition = '5s';
-
-// 요청 클래스 요소를 메모리공간주소에 담기(밑에 요청 클래스를 만들엇음 )
-var 요청 = document.getElementsByClassName('요청').item(0);
-// 2-11. 김비서에 요청내용 찍기-> 주머니 사용
-// innerText 속성은 요소 내부 데이터로 문자열을 넣는역할
-요청.innerText = 주머니;
-
-// 2-12. 요청 클래스 요소에 css 한번에 넣기
-// cssText속성: css설정값을 한번에 넣는 속성
-// 주의사항: 한번에 설정하면 기존값도 지워짐!
-// 한번에 완전히 변경이 필요한 경우에 사용함
-// 값을 하나만 넣어도 기존값이 지워진다!
-// !!!! `백틱쓰면 엔터가능
-요청.style.cssText = `
+        // 2-12. 요청 클래스 요소에 css 한번에 넣기
+        // cssText속성: css설정값을 한번에 넣는 속성
+        // 주의사항: 한번에 설정하면 기존값도 지워짐!
+        // 한번에 완전히 변경이 필요한 경우에 사용함
+        // 값을 하나만 넣어도 기존값이 지워진다!
+        // !!!! `백틱쓰면 엔터가능
+        요청.style.cssText = `
     position: absolute;
     top: 0;
     right: -51px;
@@ -255,37 +249,28 @@ var 요청 = document.getElementsByClassName('요청').item(0);
     font-family:'빛의계승자';
 `;
 
+        // 2-9 수정하고 여긴 주석으로 변경함 메모리공간주소에 넣지 않고 일일이쓰는 방법
+        // 2-9. body에 배경색 넣기/ 2-8까지는 pbox에 넣고잇엇음
+        // 바디는 겟어쩌구안하고 바로 가져올수잇음
+        // document.body.style.backgroundColor = 'lightPink';
+        //2-9-1. 트렌지션 주기. 색 천천히 바뀌게하고싶어서
+        // document.body.style.transition  = '6s';
+      } /////////// 김비서나와라 함수의 끝//////////
+      ///////////////////////////////////////////
 
-// 2-9 수정하고 여긴 주석으로 변경함 메모리공간주소에 넣지 않고 일일이쓰는 방법
-// 2-9. body에 배경색 넣기/ 2-8까지는 pbox에 넣고잇엇음
-// 바디는 겟어쩌구안하고 바로 가져올수잇음
-// document.body.style.backgroundColor = 'lightPink';
-//2-9-1. 트렌지션 주기. 색 천천히 바뀌게하고싶어서
-// document.body.style.transition  = '6s';
+      // ///////////////////////////////////////////////////////
+    </script>
 
-
-  } /////////// 김비서나와라 함수의 끝//////////
-  ///////////////////////////////////////////
-
-
-
-
-
-  // ///////////////////////////////////////////////////////
- </script>
-
-
-<!--외부js 파일 불러오기:익스터널 방식 JS
+    <!--외부js 파일 불러오기:익스터널 방식 JS
 외부js파일의 확장자는 .js다!!  -->
-<script src="./js/JS1.기본사용법.js"></script>
-
+    <script src="./js/JS1.기본사용법.js"></script>
   </head>
   <body>
     <!-- 드라마 소개박스 -->
-    <p 
-    class="pbox" 
-    title="클릭하면 뉴진스 등장!!"
-    onclick="
+    <p
+      class="pbox"
+      title="클릭하면 뉴진스 등장!!"
+      onclick="
     // onclick 이벤트 속성은 js와 연결되는 기본속성이다!
     // 이벤트 속성 이름은 아래와 같이 구성된다!
     // -> on+이벤트명 예. onclick, onmouseover ...
@@ -322,11 +307,12 @@ var 요청 = document.getElementsByClassName('요청').item(0);
     alt='김비서가 왜그럴까?'>
     `;
 // 따옴표 규칙
-// 따옴표 내부에 같은 따옴표를 쓸 수 없다 
+// 따옴표 내부에 같은 따옴표를 쓸 수 없다 - 출력시 오류남!
 // 쌍따옴표 내부에 홑따옴표
 // 홑따옴표 내부에 쌍따옴표
 // 쌍따옴표 또는 홑따옴표 내부에 백틱
 // 그래서 `백틱 너무 유용쓰
+// `백틱 안에 ${변수}
 
 // 나머지 기능은 외부 함수를 호출해서 구현하자!
 // 함수란 무엇일까? 에프엑스  함 해보슈(수)
@@ -341,21 +327,39 @@ var 요청 = document.getElementsByClassName('요청').item(0);
       도대체 <span id="name"></span>
 
       <!-- 김비서에게 전달된 요청 찍기 -->
-       <b class="요청"></b>
+      <b class="요청"></b>
     </p>
-      <!-- p요소 안에는 div 넣을 수 없음! -->
+    <!-- p요소 안에는 div 넣을 수 없음! -->
 
-<!-- 원모양박스 -->
-  <div class="박스야">
-    <div class="동그라미야" onclick="돌아랏(0,'seagreen')"
-    ondblclick="멈춰랏(this)"></div>
-    <div class="동그라미야" onclick="돌아랏(1, 'lightPink')"ondblclick="멈춰랏(this)"></div>
-    <div class="동그라미야" onclick="돌아랏(2,'coral')"ondblclick="멈춰랏(this)"></div>
-    <!-- <div class="동그라미야 돌아" onclick="돌아랏()"></div>
+    <!-- 원모양박스 -->
+    <div class="박스야">
+      <div
+        class="동그라미야"
+        onclick="돌아랏(0,'seagreen')"
+        ondblclick="멈춰랏(this)//this는 이벤트 발생 요소 자신임!!!"
+        oncontextmenu="움직여랏(this,1,'A6DS-wBn4is')//동영상아이디"
+      ></div>
+      <div
+        class="동그라미야"
+        onclick="돌아랏(1, 'lightPink')"
+        ondblclick="멈춰랏(this)"
+        oncontextmenu="움직여랏(this,2,'eny0BqmSwmM')"
+      ></div>
+      <div
+        class="동그라미야"
+        onclick="돌아랏(2,'coral')"
+        ondblclick="멈춰랏(this)"
+        oncontextmenu="움직여랏(this,3,'B1ShLiq3EVc')"
+      ></div>
+      <!-- <div class="동그라미야 돌아" onclick="돌아랏()"></div>
     <div class="동그라미야 돌아"></div>
     <div class="동그라미야 돌아"></div> -->
-  </div>
+    </div>
   </body>
 </html>
 
-<!-- 함수(this) this is me 의 this-->
+<!-- 함수(this) this is me 의 this
+ onclick 왼클
+ ondblclick더블클릭
+ oncontextmenu 오클-->
+<!-- -마이너스 띄어쓰기 !!!!!!!!!!!! -->
