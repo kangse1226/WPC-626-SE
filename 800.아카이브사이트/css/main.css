@@ -32,7 +32,7 @@ body {
 
 /* float해제설정 */
 #gnb {
-  max-width: 762px;
+  max-width: 760px;
   margin: 0 auto;
   /* outline: 1px solid #e70b0b; */
 }
@@ -52,15 +52,16 @@ body {
 
 /* 두번째 li부터 끝까지 왼쪽 마진  */
 #gnb li + li {
-  margin-left: 17.8%;
+  margin-left: 7.8%;
   /* 마진의 %값의 기준은
     부모박스의 크기이다! */
 }
 
 /* 깃허브 박스 */
 .git-box {
-  text-align: right;
-  font-size: 80px;
+  text-align: center;
+  font-size: -1px;
+  padding-bottom: 100px;
   line-height: 91px;
 }
 
