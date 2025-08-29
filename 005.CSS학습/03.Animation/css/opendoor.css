@@ -1,0 +1,111 @@
+@charset "utf-8";
+/* Open Door CSS - opendoor.css */
+
+/* 웹폰트 */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
+/* font-family: 'Comfortaa', cursive; */
+
+/* 초기화 */
+html,body,h1{
+    margin: 0;
+    padding: 0;
+}
+
+/* 공사중 표시 */
+body * {
+    outline: 2px dashed rgb(255, 255, 255);
+}
+
+body{
+    height: 100vh;
+    overflow: hidden;
+    background-color: #ff894f;
+}
+
+/* 타이틀 */
+    .tit{
+        font-family: 'Pretendard';
+        font-size: 42px;
+        margin: 20px auto;
+        text-align: center;
+        text-shadow: 2px 2px 2px #000000a2;
+        color: #fff;
+
+    }
+    /* 전체 래핑 박스 */
+    .wrap{
+        padding: 50px 0;
+
+    }
+    /* 전체 문 부모 */
+    .cont{
+        width: 400px;
+        height: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+    }
+    /* 문프레임 */
+    .frame{
+        position: relative;
+        top: 18px;
+        width: 350px;
+        height: 580px;
+        margin: 0 auto;
+        background: url(../images/seashore.jpg) no-repeat center/auto 100%;
+
+         /*********************************** 
+        [ 3D 원근설정 ]
+        1. 셋팅위치:
+        3D원근 설정을 할 대상의 부모요소
+        2. 설정방법:
+        perspective: 수치
+        -> 수치는 px단위 또는 구체적인
+        상대단위(em,rem,vw,vh등)로 설정.
+        -> 기준축으로 부터 소실점까지의 거리
+        -> 이값이 커지면 원근각도가 완만해짐
+    ***********************************/
+
+    perspective: 1000px;
+    /* 이 소실점 조정덕분에 입체로 보임1 */
+
+
+    /* perspective-origin: 50% 50%; 이게 센터값이자 기본값 */
+     /*********************************************** 
+        [ 뷰포인트(관찰자위치) 변경옵션 ]
+        perpective-origin : 가로 세로;
+        - 가로축: left, center, right, px, % 등 단위
+        - 세로축: top, center, bottom, px, % 등 단위
+        -> 두 값 중에 하나만 쓸 수 있고 복합일 경우
+        2가지를 같이 셋팅함!
+    ***********************************************/
+
+    }
+/* 문짝 */
+.door{
+    position: relative;
+    /* 문고리를 앱솔로 만들거라서 문짝을 부모자격준다 */
+
+    width: 350px;
+    height: 580px;
+    background-color: #ffcb61;
+
+    /* y축 회전 */
+    rotate: y 30deg;
+    /* 축 위치 옮기기 */
+    transform-origin: left;
+}
+
+/* 문고리 */
+.handle{
+    position: absolute;
+    top: 50%;
+    /* y축 중앙이동 */
+    transition: 0 -50%;
+    right: 25px;
+    /* 부모는 .door */
+    width: 50px;
+    height: 50px;
+    background-color: #77bef0;
+    border-radius: 50%;
+
+}
