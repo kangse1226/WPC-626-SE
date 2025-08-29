@@ -12,9 +12,9 @@ html,body,h1{
 }
 
 /* 공사중 표시 */
-body * {
+/* body * {
     outline: 2px dashed rgb(255, 255, 255);
-}
+} */
 
 body{
     height: 100vh;
@@ -42,7 +42,7 @@ body{
         width: 400px;
         height: 600px;
         margin: 0 auto;
-        background-color: #fff;
+        background-color: #ffbf3f;
     }
     /* 문프레임 */
     .frame{
@@ -79,7 +79,17 @@ body{
         2가지를 같이 셋팅함!
     ***********************************************/
 
+    /* 배경 애니 애니메이션 호출 */
+    animation: bg-ani 4s ease-in-out infinite alternate;
     }
+
+/* 문프레임 배경 애니 키프레임 */
+@keyframes bg-ani {
+    to{
+        background-size: auto 120%;
+
+    }
+}
 /* 문짝 */
 .door{
     position: relative;
@@ -89,12 +99,60 @@ body{
     height: 580px;
     background-color: #ffcb61;
 
-    /* y축 회전 */
-    rotate: y 30deg;
+    /* y축 회전- 처음엔 닫힌것처럼 0 */
+    rotate: y 0;
     /* 축 위치 옮기기 */
     transform-origin: left;
+
+    /* 애니호출
+    (1) door-first-open-ani 문 처음 열기 처음과 끝 천천히, 한번만, 끝상태유지  */
+    animation: 
+    door-first-open-ani 
+    1s ease-in-out 1s forwards,
+    /* (2) door-infinite-ani 문 계속 여닫기 2초간 처음과 끝천천히 2초 기다림 영원히 반대방향애니세팅-  */
+    door-infinite-ani 
+    2s ease-in-out 2s infinite alternate;
+
+    /* 애니메이션 플레이 상태 설정하여 멈추기 
+    animation-play-state:
+    1. 재생 상태값: runnig 
+    2. 멈춤 상태값: paused
+    anps*/
+
+    animation-play-state: paused;
+    z-index: 1;
+}
+/* 문의 최상위 부모에 마우스 오버시 애니 재생 */
+.cont:hover .door {
+    animation-play-state: running;
 }
 
+/* 문애니- 처음 열리는 키프레임 */
+@keyframes door-first-open-ani {
+
+    to{
+        rotate: y 90deg;
+    }
+}
+
+/* 문애니 영원히 열렸다 닫히는 키프레임 */
+@keyframes door-infinite-ani {
+    from{
+        rotate: y 90deg;
+    }
+    to{
+        
+        rotate: y -70deg;
+    }
+}
+/* 문 경고문 */
+.warning{
+    position: absolute;
+    left: 35%;
+    top: 20px;
+    font-size: 30px;
+    color: #77bef0;
+}
 /* 문고리 */
 .handle{
     position: absolute;
@@ -108,4 +166,49 @@ body{
     background-color: #77bef0;
     border-radius: 50%;
 
+}
+
+/* 엘사박스 - 문에서 나올 캐릭터*/
+
+.elsa-box{
+    position: absolute;
+    /* 부모는 .frame */
+    bottom: 0;
+    right: 0;
+    width: 350px;
+    height: 580px;
+    /* 넘치는 자식숨기기 */
+    overflow: hidden;
+
+}
+/* 엘사 이미지 */
+.elsa{
+    position: absolute;
+    right: -200px;
+    bottom: 0;
+    /* 부모는 .elsa-box */
+    /* 살짝 기울어진 몸 */
+    rotate: 0deg;
+    transform-origin: bottom;
+
+
+
+    /* 엘사 애니 호출 */
+    animation: 
+    elsa-ani 
+    1s ease-in-out 2s infinite alternate;
+
+    /* 처음에 멈춰잇음 */
+    animation-play-state: paused;
+}
+/* 최상위 부모에 마우스 오버시 애니 재생 */
+.cont:hover .elsa {
+    animation-play-state: running;}
+
+/* 엘사 애니 키프레임 */
+@keyframes elsa-ani {
+    to{
+         right: -100px;
+         rotate: -20deg;
+    }
 }

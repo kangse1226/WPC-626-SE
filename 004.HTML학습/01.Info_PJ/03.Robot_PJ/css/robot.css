@@ -41,20 +41,21 @@ body * {
 .robot-head > div {
     position: absolute;
 }
-/* .face {
-    
-    top: 10px;
-    left: 10px;
-    background-image: url(../images/face.png);
-    background-color: #ffffff00;
-background-repeat: no-repeat;
-background-size: 100% 100%;
-} */
+.face {
+   top: -40px;
+   left: 25px;
+    width: 200px;
+    height: 200px;
+    background: url(../images/face.png) no-repeat center 100% / 100%;
+    z-index: 1;
+}
+
+
 /* 눈공통 */
 .eye{
-top: 50px;
-width: 50px;
-height: 50px;
+
+width: 70px;
+height: 70px;
 border-radius: 50%;
 outline: none;
 /* border: 0px double rgba(255, 255, 255, 0); */
@@ -67,20 +68,25 @@ background-size: 100% 100%;
 
 /* 왼쪽눈 */
 .eye1{
+    top: 52px;
     left: 50px;
     background-image: url(../images/lefteye2.png);
 }
 /* 오른쪽눈 */
 .eye2{
-    right: 50px;
+
+    top: 49px;
+    right: 45px;
     background-image: url(../images/righteye2.png);
 }
 
 /* 코 */
 .nose{
-    top: 10px;
-    left: 80px;
-    width: 500px;
+    top: 50%;
+    left: 50%;
+    translate: -50% -120%;
+    width: 50px;
+    height: 30px;
     background-image: url(../images/nose.png);
     background-color: #ffffff00;
 background-repeat: no-repeat;
