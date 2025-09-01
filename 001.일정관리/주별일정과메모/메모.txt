@@ -1,3 +1,27 @@
+js에서 
+변수는 따옴표로 싸지 않는다!
+그런데
+true false는 특별한 데이터여서 ""쌓여있지 않아도 불린형.
+
+var 아니고 let const쓰는데 이유를 알고 써야함
+
+데이터형 결정할 필요는 없는데 하면 좋아서
+TypeScript가 유행. 데이터형 결정해서 하기
+
+///////////////////////////////////////////
+When to Use var, let, or const?
+1. Always declare variables
+
+2. Always use const if the value should not be changed
+
+3. Always use const if the type should not be changed (Arrays and Objects)
+
+4. Only use let if you cannot use const
+
+5. Never use var if you can use let or const.
+////////////////////////////////////////////////
+
+
 윈도우 + .
 이모지 
 

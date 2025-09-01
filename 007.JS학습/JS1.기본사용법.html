@@ -127,6 +127,22 @@
           rotate: 1turn;
         }
       }
+    
+    .넌뭐니{
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      text-align: center;
+      /* 글자 세로 중앙 */
+      line-height: 200px;
+      /* 줄바꿈방지 */
+      white-space: nowrap;
+      background: #bcd4b4 url(./images/prog.jpg) no-repeat center/auto 100%;
+    }
+    
     </style>
 
     <!-- 자바스크립트 코딩구역! -->
@@ -355,6 +371,8 @@
     <div class="동그라미야 돌아"></div>
     <div class="동그라미야 돌아"></div> -->
     </div>
+    <!-- 사각형으로 변할 전체 마무리 원박스  -->
+     <div class="넌뭐니" title="클릭하면 마무리됩니다!" onclick="마무리해(this)"></div>
   </body>
 </html>
 

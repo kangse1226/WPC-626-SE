@@ -29,9 +29,11 @@ body * {
      position: relative;
 
     width: 250px;
-    height: 250px;
+    height: 200px;
     /* 무대중간으로 마영오씨를 모셔 */
     margin: 0 auto;
+    /* border-radius: 60px 60px 30px 30px; */
+    border-radius: 50% 50% 30% 30%;
     
     /* top: 50%;
     left: 50%;
@@ -42,12 +44,13 @@ body * {
     position: absolute;
 }
 .face {
-   top: -40px;
+   top: -10px;
    left: 25px;
     width: 200px;
     height: 200px;
     background: url(../images/face.png) no-repeat center 100% / 100%;
     z-index: 1;
+
 }
 
 
@@ -63,26 +66,26 @@ outline: none;
 background-color: #ffffff00;
 background-repeat: no-repeat;
 background-size: 100% 100%;
+/* top: 83px; 사진크기가달라서큐ㅠㅠ*/
 
 }
 
 /* 왼쪽눈 */
 .eye1{
-    top: 52px;
+   top: 83px;
     left: 50px;
     background-image: url(../images/lefteye2.png);
 }
 /* 오른쪽눈 */
 .eye2{
-
-    top: 49px;
+top: 80px;
     right: 45px;
     background-image: url(../images/righteye2.png);
 }
 
 /* 코 */
 .nose{
-    top: 50%;
+    top: 80%;
     left: 50%;
     translate: -50% -120%;
     width: 50px;
@@ -93,12 +96,45 @@ background-repeat: no-repeat;
 background-size: 100% 100%;
 }
 
-/* 입 */
-.mouth {
-    bottom: 21px;
-
+/* 귀 */
+.ear{
+    top: -80px;
+    width: 80px;
+    height: 120px;
+    /* border-radius: 60px 40px 0 0; */
+    background: url(../images/fur.jpg) no-repeat center/auto;
+    z-index: -1;
+}
+/* 왼귀 */
+.ear1{
+    left: 30px;
+    border-radius: 100px 60px 0 0;
+}
+/* 오른귀 */
+.ear2{
+    right: 30px;
+    border-radius: 60px 100px 0 0;
 }
 
+
+/* 2-1-2. 로봇몸통 */
+.robot-body{
+    position: relative;
+    top: -20px;
+    /* 부모자격 */
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+     border-radius: 100px 100px;
+     z-index: -1;
+    /* margin-top: 50px; */
+}
+/* 목 */
+/* 왼팔 */
+/* 오른팔 */
+/* 왼다리 */
+/* 오른다리 */
+/* TV */
 
 
 /*************** 3. 하단영역 ***************/
