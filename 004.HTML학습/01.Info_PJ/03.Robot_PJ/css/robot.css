@@ -6,135 +6,164 @@
 @import url(./reset.css);
 
 /* 전체 배경 넣기 */
-body{
-/* 배경이미지 스크롤해도 안움직이는 고정형 세팅 */
-background: url(../images/20220907500854.jpg) no-repeat fixed top/cover;
+body {
+  /* 배경이미지 스크롤해도 안움직이는 고정형 세팅 */
+  background: url(../images/bg3.jpg) no-repeat fixed top/cover;
 }
 
 /* 공사중 표시 */
 body * {
-    outline: 2px dashed #ccc;
+  outline: 2px dashed #ccc;
 }
 
 /*************** 1. 상단영역 ***************/
 /*************** 2. 메인영역 ***************/
-.main-area{
-    padding-top: 150px;
-
+.main-area {
+  padding-top: 150px;
 }
 
 /* 로봇머리 */
-.robot-head{
-     /* 부모자격- 자식앱솔루트의 부모 */
-     position: relative;
+.robot-head {
+  /* 부모자격- 자식앱솔루트의 부모 */
+  position: relative;
 
-    width: 250px;
-    height: 200px;
-    /* 무대중간으로 마영오씨를 모셔 */
-    margin: 0 auto;
-    /* border-radius: 60px 60px 30px 30px; */
-    border-radius: 50% 50% 30% 30%;
-    
-    /* top: 50%;
+  width: 250px;
+  height: 200px;
+  /* 무대중간으로 마영오씨를 모셔 */
+  margin: 0 auto;
+  /* border-radius: 60px 60px 30px 30px; */
+  border-radius: 50% 50% 30% 30%;
+
+  /* top: 50%;
     left: 50%;
     translate: -50% -50%; */
 }
 /* 자식요소 모두 앱솔루트 */
 .robot-head > div {
-    position: absolute;
+  position: absolute;
+  
 }
 .face {
-   top: -10px;
-   left: 25px;
-    width: 200px;
-    height: 200px;
-    background: url(../images/face.png) no-repeat center 100% / 100%;
-    z-index: 1;
-
+  top: -10px;
+  left: 25px;
+  width: 200px;
+  height: 200px;
+  background: url(../images/face.png) no-repeat center 100% / 100%;
+  z-index: 2;
 }
 
-
 /* 눈공통 */
-.eye{
-
-width: 70px;
-height: 70px;
-border-radius: 50%;
-outline: none;
-/* border: 0px double rgba(255, 255, 255, 0); */
-/* 배경공통 */
-background-color: #ffffff00;
-background-repeat: no-repeat;
-background-size: 100% 100%;
-/* top: 83px; 사진크기가달라서큐ㅠㅠ*/
-
+.eye {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  outline: none;
+  /* border: 0px double rgba(255, 255, 255, 0); */
+  /* 배경공통 */
+  background-color: #ffffff00;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* top: 83px; 사진크기가달라서큐ㅠㅠ*/
 }
 
 /* 왼쪽눈 */
-.eye1{
-   top: 83px;
-    left: 50px;
-    background-image: url(../images/lefteye2.png);
+.eye1 {
+  /* 지금은 이미지 크기가 멋대로라 직접 잡았는데 */
+  /* 퍼센트로 잡기 */
+  /* left: 50%;
+    translate: -120%; */
+  top: 83px;
+  left: 50px;
+  background-image: url(../images/lefteye2.png);
 }
 /* 오른쪽눈 */
-.eye2{
-top: 80px;
-    right: 45px;
-    background-image: url(../images/righteye2.png);
+.eye2 {
+    /* 퍼센트로 */
+    /* right: 50%;
+    translate: 120%; */
+  top: 80px;
+  right: 45px;
+  background-image: url(../images/righteye2.png);
 }
 
 /* 코 */
-.nose{
-    top: 80%;
-    left: 50%;
-    translate: -50% -120%;
-    width: 50px;
-    height: 30px;
-    background-image: url(../images/nose.png);
-    background-color: #ffffff00;
-background-repeat: no-repeat;
-background-size: 100% 100%;
+.nose {
+  top: 80%;
+  left: 50%;
+  translate: -50% -120%;
+
+  width: 50px;
+  height: 30px;
+  background-image: url(../images/nose.png);
+  background-color: #ffffff00;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 /* 귀 */
-.ear{
-    top: -80px;
-    width: 80px;
-    height: 120px;
-    /* border-radius: 60px 40px 0 0; */
-    background: url(../images/fur.jpg) no-repeat center/auto;
-    z-index: -1;
+.ear {
+  top: -80px;
+  width: 80px;
+  height: 120px;
+  /* border-radius: 60px 40px 0 0; */
+  background: url(../images/fur.jpg) no-repeat center/auto;
+  z-index: -2;
 }
 /* 왼귀 */
-.ear1{
-    left: 30px;
-    border-radius: 100px 60px 0 0;
+.ear1 {
+  left: 30px;
+  border-radius: 100px 60px 0 0;
 }
 /* 오른귀 */
-.ear2{
-    right: 30px;
-    border-radius: 60px 100px 0 0;
+.ear2 {
+  right: 30px;
+  border-radius: 60px 100px 0 0;
 }
-
 
 /* 2-1-2. 로봇몸통 */
-.robot-body{
-    position: relative;
-    top: -20px;
-    /* 부모자격 */
-    width: 280px;
-    height: 280px;
-    margin: 0 auto;
-     border-radius: 100px 100px;
-     z-index: -1;
-    /* margin-top: 50px; */
+.robot-body {
+  position: relative;
+  top: -20px;
+  /* 부모자격 */
+  width: 280px;
+  height: 280px;
+  margin: 0 auto;
+  border-radius: 90% 90% 60% 60%;
+
+  z-index: -1;
+  /* margin-top: 50px; */
 }
-/* 목 */
+
+/* 몸통 직계자식 요소> 모두 앱솔루트 */
+.robot-body > div {
+  position: absolute;
+}
+
+/* 움직이는 팔다리관절 버전 그건 그냥 쌤버전꺼 복사해서 따로 두고 비교해보기
+가상요소 사용함*/
+
+
 /* 왼팔 */
 /* 오른팔 */
 /* 왼다리 */
 /* 오른다리 */
-/* TV */
 
+/* TV */
+.tv {
+      top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  width: 250px;
+  height: 180px;
+  background: url(../images/wacom.png) no-repeat 0/100%;
+}
+.pen {
+      top: 80%;
+    left: 50%;
+    translate: -50% -50%;
+  width: 200px;
+  height: 180px;
+  background: url(../images/pen.png) no-repeat 0/100%;
+}
 
 /*************** 3. 하단영역 ***************/
