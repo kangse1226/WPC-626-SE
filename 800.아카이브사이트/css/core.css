@@ -11,25 +11,30 @@ font-family: "Montserrat Alternates", sans-serif; */
 body{
   /* 한글체, 영문체 */
  font-family: "Montserrat Alternates", "Gowun Dodum", sans-serif;
+ overflow-x: hidden;
 }
 
 /* 2. 공통 클래스 */
 /* 2-1. 속박스 */
 .inbox{
+  /* 플렉스 박스 */
+  display: flex;
+  /* 플렉스 래핑 fxww: 넘치면 알아서 떨어짐*/
+  flex-wrap: wrap;
+
     /* 최대크기 지정 */
     max-width: 1440px;
     /* 마영오! */
     margin: 0 auto;
-    
-    
 }
 
-/* 인박스 클리어세팅 + 클리어클래스세팅 */
-.inbox::after, .clb::after{
+/* 인박스 클리어세팅 + 클리어클래스세팅
+-> 플롯레프트에서 플렉스로 변경하면서 필요없어짐 */
+/* .inbox::after, .clb::after{
     content:"";
     display: block;
     clear: both;
-}
+} */
 
 /* 2-2. 파티션박스 
 .inbox 내부에 옆으로 흘러가는
@@ -37,14 +42,17 @@ body{
 float 방식으로 구현할 경우 
 부모박스의 가상요소로 clear 한다! 그래서 위에 부모박스 clear 추가해야함*/
 .part-box{
-    float: left;
-    
+    /* float: left;-> flex배워서 이제 안씀!!!!!!!!!!!!!!!!!! */
+    /* flex는 부모인 인박스에 주기!!!!!!!!!!!!!!!!!!!  */
+
     /* 임시 최소높이 */
     /* min-height: 200px; */
+
     /* 임시외곽선 ol 두종색 두께종류색깔 */
     /* outline: 2px dotted #ccc; */
     /* outline은 border와 세팅법은 같음
-    단, 크기를 차지하지 않고 바깥쪽으로 아무 영향없이 보이기만 함! */
+    단, 크기를 차지하지 않고 바깥쪽으로 아무 영향없이 보이기만 함! 
+    만들때 보기 편하라고 임시로 넣고 다만들고 주석다는거~~*/
 }
 
 /* 2-3. 파티션 박스 12그리드 비율 클래스 */

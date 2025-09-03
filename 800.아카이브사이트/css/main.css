@@ -32,30 +32,35 @@ body {
 
 /* float해제설정 */
 #gnb {
+  /* 플렉스박스 */
+  display: flex;
+  /* 진행방향 정렬 : 사이간격 일정*/
+justify-content: space-between;
+
   max-width: 760px;
   margin: 0 auto;
   /* outline: 1px solid #e70b0b; */
 }
 
-#gnb::after {
+/* #gnb::after {
   content: "";
   display: block;
   clear: both;
-}
+} */
 
 #gnb li {
-  float: left;
+  /* float: left; -> 안씀 부모한테 플렉스줄거임*/
   /* float는 폭 좁아지면 밑으로 떨어져서 안쓰고flex씀 */
   /* 높이값만큼 줄간격세팅 */
   line-height: 91px;
 }
 
-/* 두번째 li부터 끝까지 왼쪽 마진  */
-#gnb li + li {
-  margin-left: 7.8%;
+/* 두번째 li부터 끝까지 왼쪽 마진-> 플렉스로 바뀌면서 필요없어짐 */
+/* #gnb li + li { */
+  /* margin-left: 7.8%; */
   /* 마진의 %값의 기준은
     부모박스의 크기이다! */
-}
+/* } */
 
 /* 깃허브 박스 */
 .git-box {
@@ -178,6 +183,9 @@ a.my-cha-link {
 
 /* ************2-2-2. 링크 박스 */
 .link-box {
+  /* 플렉스 박스 */
+  display: flex;
+
   /* 가로크기는 레이아웃은 아니지만
     12그리드 크기를 기준해서 준다 */
   width: calc(100% / 12 * 10);
@@ -195,10 +203,10 @@ a.my-cha-link {
   /* color: rgba(255, 255, 255, 0.8); */
   background-color: rgba(255 255 255/ 0.9);
 }
-/*  플롯팅 설정하기 */
+/*  플롯팅 설정하기-> 플렉스로 변경하기 */
 .link-box > div {
-  /* 옆으로 흐르게 */
-  float: left;
+  /* 옆으로 흐르게- 플롯레프트 대신 부모인 링크박스에 플렉스 설정*/
+  /* float: left; */
   /* 절반 크기 세팅 */
   width: 50%;
 
