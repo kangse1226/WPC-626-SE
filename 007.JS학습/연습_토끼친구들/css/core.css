@@ -1,0 +1,131 @@
+@charset "utf-8";
+/* 아카이브 사이트 공통 세팅 CSS - core.css */
+
+/* 1. 웹폰트 : 고은돋움체, 몬트세랏 얼터네이트 */
+
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*  font-family: "Gowun Dodum", sans-serif;
+font-family: "Montserrat Alternates", sans-serif; */
+
+/* 웹폰트 전체 적용하기 */
+body{
+  /* 한글체, 영문체 */
+ font-family: "Montserrat Alternates", "Gowun Dodum", sans-serif;
+ overflow-x: hidden;
+}
+
+/* 2. 공통 클래스 */
+/* 2-1. 속박스 */
+.inbox{
+  /* 플렉스 박스 */
+  display: flex;
+  /* 플렉스 래핑 fxww: 넘치면 알아서 떨어짐*/
+  flex-wrap: wrap;
+
+    /* 최대크기 지정 */
+    max-width: 1440px;
+    /* 마영오! */
+    margin: 0 auto;
+}
+
+/* 인박스 클리어세팅 + 클리어클래스세팅
+-> 플롯레프트에서 플렉스로 변경하면서 필요없어짐 */
+/* .inbox::after, .clb::after{
+    content:"";
+    display: block;
+    clear: both;
+} */
+
+/* 2-2. 파티션박스 
+.inbox 내부에 옆으로 흘러가는
+파티션 박스를 구성한다!
+float 방식으로 구현할 경우 
+부모박스의 가상요소로 clear 한다! 그래서 위에 부모박스 clear 추가해야함*/
+.part-box{
+    /* float: left;-> flex배워서 이제 안씀!!!!!!!!!!!!!!!!!! */
+    /* flex는 부모인 인박스에 주기!!!!!!!!!!!!!!!!!!!  */
+
+    /* 임시 최소높이 */
+    /* min-height: 200px; */
+
+    /* 임시외곽선 ol 두종색 두께종류색깔 */
+    /* outline: 2px dotted #ccc; */
+    /* outline은 border와 세팅법은 같음
+    단, 크기를 차지하지 않고 바깥쪽으로 아무 영향없이 보이기만 함! 
+    만들때 보기 편하라고 임시로 넣고 다만들고 주석다는거~~*/
+}
+
+/* 2-3. 파티션 박스 12그리드 비율 클래스 */
+
+/* 기본 컬럼 설정 */
+[class*="col-"] {
+    /* [] 대괄호는 속성 선택자. 
+    class*="col-" 는 클래스명이 col-가 들어가 있는 클래스 찾기  */
+
+    /* 컬럼당 양쪽 패딩값 10px */
+  padding: 0 10px;
+  /* 컬럼크기에 패딩값 포함설정 bxb */
+  box-sizing: border-box;
+}
+
+/* 12그리드 컬럼 클래스들 */
+/* 12기둥의 한개 두개 이런식으로 직관적으로 알기 쉬움 */
+
+/* CSS 계산함수
+    CSS(계산식)
+    더하기 + , 뺴기 - , 곱하기  * , 나누기 / 이다!!
+    ((주의: 더하기와 빼기 기호 앞 뒤에 반드시 공백 있어야함!! )) 
+    언제 쓸까? 왜 쓸까? 
+    직접 계산하지 않고 수식만으로 결과를 볼 수 있는 편의성
+    그리고 계산식의 원래 규칙을 파악할 수 있다 */
+
+.col-1 {
+  width: calc(100% / 12 * 1);
+/* calc(100% / 12등분 * 몇개)
+-> 12등분한 것 중 몇개의 컬럼수를 차지하는 비율인가?
+카큘레이터 유후~ 칼크 함수 우와~ 잘알아두기  */
+}
+
+.col-2 {
+  width: calc(100% / 12 * 2);
+}
+
+.col-3 {
+  width: calc(100% / 12 * 3);
+}
+
+.col-4 {
+  width: calc(100% / 12 * 4);
+}
+
+.col-5 {
+  width: calc(100% / 12 * 5);
+}
+
+.col-6 {
+  width: calc(100% / 12 * 6);
+}
+
+.col-7 {
+  width: calc(100% / 12 * 7);
+}
+
+.col-8 {
+  width: calc(100% / 12 * 8);
+}
+
+.col-9 {
+  width: calc(100% / 12 * 9);
+}
+
+.col-10 {
+  width: calc(100% / 12 * 10);
+}
+
+.col-11 {
+  width: calc(100% / 12 * 11);
+}
+
+.col-12 {
+  width: calc(100% / 12 * 12);
+}
