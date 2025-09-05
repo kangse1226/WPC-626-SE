@@ -7,7 +7,7 @@ body {
   padding: 0;
 }
 body {
-  background-image: linear-gradient(to bottom, #a4ffdc, rgb(195, 190, 255));
+  background-image: linear-gradient(to bottom, #a4b2ff, #4d8bef, #ef8ab2, #fd9d7a);
   /* 보이는 화면만큼 높이값을 가져! */
   height: 100vh;
 }
