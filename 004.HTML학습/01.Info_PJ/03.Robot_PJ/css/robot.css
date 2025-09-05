@@ -9,6 +9,8 @@
 body {
   /* 배경이미지 스크롤해도 안움직이는 고정형 세팅 */
   background: url(../images/bg3.jpg) no-repeat fixed top/cover;
+  font-size: 10px;
+  /* 바디 10px 했는데 왜 밑에 대사박스 rem해도 안됨?ㅠㅠㅠ */
 }
 
 /* 공사중 표시 */
@@ -19,6 +21,7 @@ body {
 /*************** 1. 상단영역 ***************/
 
 /*************** 2. 메인영역 ***************/
+
 .main-area {
   padding-top: 250px;
 }
@@ -26,7 +29,60 @@ body {
 /* 토끼의 대사박스 */
 .talk-box1{
   position: absolute;
-  left: -50%;
+  left: 15%;
+  top: 5%;
+/* 소리치는말풍선 */
+  width: 400px;
+  height: 200px;
+  background: url(../images/소리치는말풍선.png) no-repeat center/100% 100%;
+  text-align: center;
+
+  display: flex;
+  opacity: .8;
+
+  /* 글자 */
+  justify-content: center;
+  align-items: center;
+
+  font-size: 3rem;
+  color: #ff0505;
+  text-shadow: 1px 1px 1px #ffffff;
+
+}
+.talk-box2{
+  position: absolute;
+  left: 0%;
+  top: 30%;
+
+  width: 400px;
+  height: 300px;
+  /* 나레이션 말풍선 */
+  background: #cccccc00 url(../images/불길한말풍선.png) no-repeat center/100% 100%;
+ text-align: center;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+
+  /* 글자 */
+  
+  font-size: 1.6rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 10px #ff0000;
+
+  z-index: 2;
+}
+
+.talk-box3{
+  position: absolute;
+  left: 70%;
+  top: 30%;
+
+  /* 글자 */
+  
+  font-size: 1.6rem;
+  color: #fffefe;
+  text-shadow: 1px 1px 1px #ffffff;
+
 }
 
 /* 로봇토끼 박스 */
@@ -334,6 +390,127 @@ body {
 위까지가 로봇토끼 꾸미기
 ********************************************************** */
 
+
+/**************** 움직이는 큐브 추가 ***********************/
+/* 큐브박스 만들기 */
+.cube {
+  /* 박스의 위치를 중앙으로 */
+  position: absolute;
+  top: 10%;
+  right: 0%;
+  translate: -50% -50%;
+  /* 박스의 크기 */
+  width: 100px;
+  height: 100px;
+  /* 입체가 잘보이도록 살짝 회전: x축 10도, y축 30도 회전 */
+  /* transform: rotateX(x축각도) rotateY(y축각도); */
+  transform: rotateX(10deg) rotateY(30deg);
+
+  /* 입체설정 */
+  /******************************************* 
+        [ 입체로 설정하기 ]
+        - 입체로 설정할 요소의 부모박스에
+        아래와 같이 설정해준다!
+        (부모는 싸고 있는 요소)
+        transform-style 속성값은 아래 2가지
+        1. flat (기본값) : 2D
+        2. preserve-3d : 3D -> 이 값으로 설정함!
+        -> z축을 사용가능하게 된다!
+    *******************************************/
+  transform-style: preserve-3d;
+}
+/* 양수를 쓰면 반시계방향으로 움직임 */
+
+/* 큐브 각면 공통 */
+.cube span {
+  /* 앱솔은 자동블록! */
+  position: absolute;
+  /* 부모를 꽉 채우게 */
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid #515050f9;
+  /* 보더만큼 커지는 걸 방지: 보더박스는 패딩, 보더 내부 포함 */
+  box-sizing: border-box;
+
+  /* 반투명 */
+  opacity: 0.8;
+}
+
+/* 첫번째 큐브 앞면 */
+.cube span:nth-child(1) {
+  /* 화면 방향(z축)으로 이동하기 */
+  transform: translateZ(50px);
+  /* 배경이미지 */
+  background: url(../images/민지.jpg) no-repeat
+    center/cover;
+}
+/* 두번째 큐브 앞면 */
+.cube span:nth-child(2) {
+  /* y축 회전 + 화면 방향(z축)으로 이동하기  -> 순서가 중요함! 
+    적용순서에 따라 결과가 달라짐
+    - 회전부터 해라! */
+  transform: rotateY(90deg) translateZ(50px);
+
+  /* 배경이미지 */
+  background: url(../images/하니.jpg) no-repeat
+    center/cover;
+}
+
+/* 세번째 큐브 앞면 */
+.cube span:nth-child(3) {
+
+  transform: rotateY(180deg) translateZ(50px);
+  /* 배경이미지 */
+  background: url(../images/해린.jpg) no-repeat
+    center/cover;
+}
+/* 네번째 큐브 앞면 */
+.cube span:nth-child(4) {
+  transform: rotateY(-90deg) translateZ(50px);
+  /* 배경이미지 */
+  background: url(../images/다니.jpg) no-repeat center/cover;
+}
+/* 큐브의 윗면: 5번째 큐브 앞면 */
+.cube span:nth-child(5) {
+  /* 윗면에 오도록: x축으로 절한다고 생각하면 양의 숫자가 윗면! */
+  transform: rotateX(90deg) translateZ(50px);
+  /* 배경이미지 */
+  background: url(../images/혜인.jpg) no-repeat
+    center/100% 100%;
+}
+/* 큐브의 아랫면: 6번째 큐브 앞면 */
+.cube span:nth-child(6) {
+  /* 아랫면에 오도록 */
+  transform: rotateX(-90deg) translateZ(50px);
+  /* 배경이미지 */
+  background: url(../images/뉴진스.jpg) no-repeat
+    center/100% 100%;
+}
+
+/* 애니 적용 클래스 - 애니메이션: 이시이지반방마 */
+.rotate-cube {
+  /* 애니메이션 적용 */
+  animation: cube-ani 3s infinite linear;
+}
+/* 애니적용클래스 요소에 마우스오버시 애니 멈추기 */
+.rotate-cube:hover {
+  animation-play-state: paused;
+}
+
+
+/* 큐브 회전 키 프레임 */
+@keyframes cube-ani {
+  to {
+    /* x축 10도, y축 30도 돌아간상태에서 시작했기 때문에 360에 +계산필요*/
+    
+    /* x축은 양의방향, y축은 음의방향으로 회전할경우 */
+    transform: rotateX(370deg) rotateY(-330deg);
+  }
+}
+
+
+/***************토끼 설명 구역********************/
 /* 2-2. 설명박스 */
 .text-box {
   max-width: 800px;
