@@ -22,6 +22,43 @@ When to Use var, let, or const?
 ////////////////////////////////////////////////
 
 
+/* @@@@@@@@@@@@@@@@@**************쉬운방법등장!!********@@@@@@@@@@@@@@@@@@ */
+      /* 5.비율유지박스 :aspect-ratio 속성사용 */
+      .arbx {
+        /* 
+        [ aspect-ratio 속성 사용하기 ]
+        aspect-ratio: 가로비 / 세로비;
+
+        -> width값은 셋팅하고 height값은 auto임!
+        -> 값을 하나만 쓰면 가로비만 세로를 1로볼때
+        설정됨!
+
+        예) 
+        1:1 비율
+        aspect-ratio: 1 / 1;
+        aspect-ratio: 1;
+
+        16:9 비율
+        aspect-ratio: 16 / 9;
+
+        세로에 대한 가로 80% 비율
+        aspect-ratio: .8;
+        (aspect-ratio: .8 / 1; -> 세로비 생략됨!)
+
+        세로에 대한 가로 200% 비율
+        aspect-ratio: 2;
+        (aspect-ratio: 2 / 1; -> 세로비 생략됨!)
+
+        w3c 참고)
+        https://www.w3schools.com/cssref/css_pr_aspect-ratio.php
+    */
+        
+        /* 이미지와 같은 비를 만들기 위해 계산하지 말고
+        그대로 이미지의 가로크기 / 세로크기 를 px 단위빼고
+        써주면 이미지와 같은 비가 된다! */
+      }
+
+
 윈도우 + .
 이모지 
 

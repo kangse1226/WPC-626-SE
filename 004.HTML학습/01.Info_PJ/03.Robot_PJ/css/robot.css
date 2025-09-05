@@ -26,6 +26,7 @@ body {
 /* 토끼의 대사박스 */
 .talk-box1{
   position: absolute;
+  left: -50%;
 }
 
 /* 로봇토끼 박스 */
