@@ -126,18 +126,19 @@ body {
   rotate: X 90deg;
 }
 
+/* 아이폰애니클래스 */
+.rotate-iphone {
+  /* 애니메이션적용 */
+  animation: iphone-ani 2s 2 ease-in-out 1s 2 alternate;
+  /* 2초간, 처음과 끝을 천천히, 1초 기다린 후, 2번 실행, 반대방향 애니 세팅*/
+}
+
+
 /* 아이폰 회전 애니메이션 */
 @keyframes iphone-ani {
-  0% {
-    /* 초기상태 */
-    transform: rotateX(10deg) rotateY(30deg);
-  }
-  50% {
-    /* 중간상태 */
-    transform: rotateX(370deg) rotateY(390deg);
-  }
-  100% {
+
+  to {
     /* 최종상태 */
-    transform: rotateX(10deg) rotateY(30deg);
+    transform: rotateX(-350deg) rotateY(390deg);
   }
 }

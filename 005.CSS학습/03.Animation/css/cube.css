@@ -10,6 +10,13 @@ body {
   background-image: linear-gradient(to bottom, #a4b2ff, #4d8bef, #ef8ab2, #fd9d7a);
   /* 보이는 화면만큼 높이값을 가져! */
   height: 100vh;
+  
+  /* 기존의 기본커서 대신에 이미지가 나오게 하기 */
+  cursor: url(../images/logo.webp) 10 10, auto;
+  /* cursor: url(이미지경로) 핫스팟, auto; */
+  /* 핫스팟은 커서 포인트 위치 지정
+  아무것도 안주면 0 0 설정됨
+  설정된 값이 커서 포인터 위치값이 됨 */
 }
 
 /* 큐브박스 만들기 */
