@@ -70,7 +70,7 @@ body {
   /* z축으로 10px 뒤로 보내기 */
   translate: 0 0 -10px;
   /* 뒷면에서 바로 보여야하니까 y축 180도 회전 */
-  rotate: Y 180deg;
+  rotate: y 180deg;
 }
 /* 3. 오른쪽면 */
 .iphone span:nth-child(3) {
@@ -83,7 +83,7 @@ body {
   /* 크기의 반 나가서 회전 */
   right: -10px;
   /* y축 90도 회전 */
-  rotate: Y 90deg;
+  rotate: y 90deg;
 
 }
 /* 4. 왼쪽면 */
@@ -97,7 +97,7 @@ body {
   /* 크기의 반 나가서 회전 */
   left: -10px;
   /* y축 -90도 회전: 아이폰이미지에 그림자가 있어서 각도 맞춤 */
-  rotate: Y -90deg;
+  rotate: y -90deg;
 }
 /* 5. 아랫면 */
 .iphone span:nth-child(5) {
@@ -109,7 +109,7 @@ body {
   /* 아래쪽 끝으로 위치이동 */
   bottom: -10px;
   /* x축 90도 회전 */
-  rotate: X 90deg;
+  rotate: x 90deg;
 
 }
 
@@ -123,13 +123,13 @@ body {
   /* 위쪽 끝으로 위치이동 */
   top: -10px;
   /* x축 90도 회전 */
-  rotate: X 90deg;
+  rotate: x 90deg;
 }
 
 /* 아이폰애니클래스 */
 .rotate-iphone {
   /* 애니메이션적용 */
-  animation: iphone-ani 2s 2 ease-in-out 1s 2 alternate;
+  animation: iphone-ani 2s ease-in-out 1s 2 alternate;
   /* 2초간, 처음과 끝을 천천히, 1초 기다린 후, 2번 실행, 반대방향 애니 세팅*/
 }
 
