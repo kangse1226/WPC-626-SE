@@ -23,6 +23,11 @@ body {
   padding-top: 250px;
 }
 
+/* 토끼의 대사박스 */
+.talk-box1{
+  position: absolute;
+}
+
 /* 로봇토끼 박스 */
 .robot-box {
   /* 하단 여백만들기- 다리가 앱솔로 튀어나올경우 필요함 */
