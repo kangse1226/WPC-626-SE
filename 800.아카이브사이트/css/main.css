@@ -110,7 +110,7 @@ a.my-cha-link {
 /* 자기소개 겉박스 */
 #intro-box {
   /* 가로폭 끝까지 그라데이션 나오게 하기 위해 겉박스에 세팅함 */
-  background-image: linear-gradient(to bottom, #a14c4c, black);
+  background-image: linear-gradient(to bottom, #f9c2b7, rgb(0, 0, 0));
 }
 /* 자기소개 속박스 */
 .intro-box {
