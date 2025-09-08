@@ -5,12 +5,23 @@
 @import url(./core.css);
 @import url(./reset.css);
 
+/* rem단위를 위한 HTML 글자크기 세팅 -> 한번에 수정하기 좋아! */
+html {
+  font-size: 10px;
+  /* 1rem = 10px */
+
+   /* 스크롤 위치 이동시 부드럽게 애니메이션 이동설정
+  -> 이 설정은 전체 페이지이동일 경우 html에 셋팅함! */
+    scroll-behavior: smooth;
+}
+
 /* 전체 배경 넣기 */
 body {
   /* 배경이미지 스크롤해도 안움직이는 고정형 세팅 */
   background: url(../images/bg3.jpg) no-repeat fixed top/cover;
-  font-size: 10px;
-  /* 바디 10px 했는데 왜 밑에 대사박스 rem해도 안됨?ㅠㅠㅠ */
+  /* font-size: 10px; */
+  /* 바디 10px 했는데 왜 밑에 대사박스 rem해도 안됨?ㅠㅠㅠ
+   왜냐면 바디가 아니라 html에 해야하니까ㅋㅋ 루트는 html이지!ㅋㅋㅋㅋ*/
 }
 
 /* 공사중 표시 */
@@ -19,12 +30,171 @@ body {
 } */
 
 /*************** 1. 상단영역 ***************/
+/* 1-1.로고 */
+h1.logo{
+  /* 위치 */
+  /* 기준박스 정가운데오게 하기 */
+  position: fixed;
+  /* 정중앙 계산시 50%에서 기존 가로, 세로값의 절반을 뺀다: 즉 여기선 맥스(20vw,100px)를 기준으로 반띵 */
+  /* top: calc(50% - max(20vw,100px)/2); */
+  /* left: calc(50% - max(20vw,100px)/2); */
 
+  top: 2vw;
+  left: 2vw;
+  /* max는 두값중 큰값을 출력함(결과적으로 최소값설정) */
+  /* 백픽셀보다 안작아짐->즉 백픽셀이 최솟값임. 민 맥스 헷갈리지만 잘 생각해봐! */
+  width: max(10vw,100px);
+
+  height: max(10vw,100px);
+
+  border-radius: 50%;
+  z-index: 999;
+  background: rgb(255, 255, 255) url(../images/KakaoTalk_20250818_120420582_04.png) no-repeat center/150% 150%;
+  /* 그림자 */
+  box-shadow: 
+  inset 0 0 20px 5px #00000080,
+  0 0 20px 5px rgb(233, 213, 248);
+
+  /* 글자설정 */
+  text-align: center;
+  line-height: 20vw;
+  font-family: 'Orbitron';
+  font-size: max(20px,2.5vw);
+  color: rgb(243, 141, 236);
+  text-shadow: 0 0 10px #000;
+}
+
+/* 1-2.탑이동버튼 */
+.btn-top{
+  position: fixed;
+  bottom: 2.3vw;
+  right: 2.3vw;
+  width: max(5vw,50px);
+  height: max(5vw,50px);
+  border-radius: 50%;
+  border: 5px outset #fff;
+  background-color: #ccc;
+  z-index: 10;
+  box-sizing: content-box;
+  scale: 0.7;
+}
+
+/* a요소 확장 */
+.btn-top a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  
+  /* 글자셋팅 */
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font: max(1.4vw,15px)/max(5vw,50px) 'Black Ops One';
+  /* font: 스두크/줄체; */
+}
+/* 오버시 설정 */
+.btn-top:hover{
+  background-color: rgb(255, 68, 68);
+  /* outset 나온버튼, inset 들어간 버튼 */
+  border-style: inset;
+}
+.btn-top:hover a{
+  color: rgb(0, 0, 0);
+}
 /*************** 2. 메인영역 ***************/
 
 .main-area {
   padding-top: 250px;
 }
+
+/* 2-1-0. 로봇 말풍선 */
+.link-title{
+  position: absolute;
+  top: 10%;
+  left: 60%;
+  /* 로봇머리로 부터 위치 일정하게 */
+  transform: translateX(200px);
+
+  /* 로봇쪽에서 커지게 하기위해
+  트랜스폼 기준 변경(왼쪽아래) */
+  transform-origin: left bottom;
+  width: 20vw;
+  height: 17vw;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  line-height: 1;
+  text-decoration: none;
+  color: rgb(76, 3, 3);
+  font-size: 2.5rem;
+  border: 5px solid rgb(37, 37, 37);
+  box-sizing: border-box;
+
+  /* 스케일 조정 및 위치 올리기 */
+  scale: 0.6;
+  z-index: 1;
+}
+
+/* 가상요소로 삼각형 만들기 */
+.link-title::after{
+  content: '';
+  position: absolute;
+ 
+  top: 79.7%;
+    left: -4%;
+    /* 왜%인가? 유동적인 부모를 기준한 위치값이다! */
+    transform: rotate(45deg);
+      /* 가로,세로 크기 0 *
+    width: 0;
+    height: 0;
+     /* 보더탑 크기+색 설정 */
+    border-top: 7vw solid rgb(37, 37, 37);
+    /* 양쪽보더 크기+투명색 설정 */
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+}
+/* 로봇 말풍선 오버시 */
+.link-title:hover{
+  color: #fff;
+  background-image: 
+  radial-gradient(circle,rgb(244, 68, 118) 10%,blue 30%,rgb(244, 32, 32));
+}
+
+/* 
+    [ 원형 그라데이션 ]
+
+    - 기본형, 영역지정형은 박스모양을 따라감!
+
+    1) 기본형: 중앙중심, 모양은 박스크기에 맞춤
+    background-image: 
+        radial-gradient(색1,색2,색3,...);
+    - 시작색으로부터 중앙에서 시작됨
+
+    2) 영역 지정형:
+    background-image: 
+        radial-gradient(색1 몇%,색2 몇%,색3 몇%,...);
+    - 색 뒤에 한칸 띄고 %수치로 영역지정함
+
+    3) 그라데이션 모양을 원형으로 사용할 경우:
+    background-image: 
+        radial-gradient(circle,색1,색2,색3,...);
+    - circle 키워드를 첫번째에 사용함
+
+    4) 영역옵션 지정형: 중심점 변경
+    background-image: 
+        radial-gradient(옵션 at 가로위치 세로위치,색1,색2,색3,...);
+    - 옵션4가지 : closest-side / farthest-side
+                closest-corner / farthest-corner
+                ___________________________________
+                - closest는 중심점으로 좀더 모아진것
+                - farthest는 중심점에서 멀리 퍼진것
+                - side와 corner는 경계선과 끝부분옵션임
+    - 가로위치, 세로위치 (중심점) - 단위는 px / %
+*/
 
 /* 토끼의 대사박스 */
 .talk-box1{
@@ -51,11 +221,11 @@ body {
 }
 .talk-box2{
   position: absolute;
-  left: 0%;
+  left: 15%;
   top: 30%;
 
-  width: 400px;
-  height: 300px;
+  width: 300px;
+  height: 280px;
   /* 나레이션 말풍선 */
   background: #cccccc00 url(../images/불길한말풍선.png) no-repeat center/100% 100%;
  text-align: center;
@@ -63,6 +233,7 @@ body {
  justify-content: center;
  align-items: center;
 
+ scale: 0.8;
   /* 글자 */
   
   font-size: 1.6rem;
@@ -70,19 +241,6 @@ body {
   text-shadow: 2px 2px 10px #ff0000;
 
   z-index: 2;
-}
-
-.talk-box3{
-  position: absolute;
-  left: 70%;
-  top: 30%;
-
-  /* 글자 */
-  
-  font-size: 1.6rem;
-  color: #fffefe;
-  text-shadow: 1px 1px 1px #ffffff;
-
 }
 
 /* 로봇토끼 박스 */
@@ -195,23 +353,52 @@ body {
 
 /* 귀 */
 .robot-head > .ear {
-  top: -50%;
-  width: 120px;
+  top: -45%;
+  width: 115px;
   height: 220px;
   /* border-radius: 60px 40px 0 0; */
-  background: url(../images/fur.jpg) no-repeat center/auto;
+  background: url(../images/fur.jpg) no-repeat center/cover;
   z-index: -2;
 }
+
+
 /* 왼귀 */
 .ear1 {
-  left: 15%;
+  left: 16%;
   border-radius: 150px 60px;
+
+  /* 기준축변경 : 가로 세로 */
+  transform-origin: left bottom;
+  
+  /* 애니 호출 */
+  animation: ear1-moving-ani 0.5s ease-in-out 2s infinite alternate;
 }
+
+/* 계속 왼귀 흔들기 */
+@keyframes ear1-moving-ani {
+  to{
+    rotate: -12deg;
+  }
+}
+
 /* 오른귀 */
 .ear2 {
-  right: 15%;
+  right: 16%;
   border-radius: 60px 150px;
+
+   /* 기준축변경 : 가로 세로 */
+  transform-origin: right bottom;
+  
+  /* 애니 호출 */
+  animation: ear2-moving-ani 0.5s ease-in-out 2s infinite alternate;
 }
+/* 계속 오른귀 흔들기 */
+@keyframes ear2-moving-ani {
+  to{
+    rotate: 12deg;
+  }
+}
+
 /* 리본 */
 .robot-head > .ribbon {
   position: absolute;
@@ -320,10 +507,12 @@ body {
 }
 /* 오른팔 */
 .arm2 {
-  top: -37%;
-  right: -25%;
-  rotate: 60deg;
+      top: -48%;
+    right: -32%;  
+    rotate: 60deg;
 }
+
+
 /* 다리공통 */
 .leg {
   width: 40%;
@@ -625,3 +814,29 @@ body {
 }
 
 /*************** 4. 하단영역 ***************/
+/* 3-1. 회사정보 */
+#bottom-area{
+  position: relative;
+  /* z-index적용위해 포지션줌! */
+  z-index: 5;
+
+  margin-top: 100px;
+  margin-bottom: 100px;
+  color: #fff;
+  /* 글자크기 : 30px, 글자체 'Black Ops One' */
+  /* font: 3rem 'Black Ops One'; */
+  font-size: 3rem;
+  /* 글자그림자 */
+  text-shadow: 2px 2px 2px #000;
+  /* 글자중앙 */
+  text-align: center;
+  /* 패딩 : 가로/세로중 작은 화면기준 7%
+  -> vmin(작은쪽기준) , vmax(큰쪽기준) */
+  padding: 7vmin;
+  /* 반투명 배경넣기 : 검은색 반투명(0.5) 
+    rgb(0 0 0 / 0.5) -> 요즘 더 많이사용함@@@@@@@@@@@@@@@@@@@
+    rgba(0,0,0,0.5) ->옛날거..
+  */
+  background-color: rgb(0 0 0 / 0.5);
+
+}

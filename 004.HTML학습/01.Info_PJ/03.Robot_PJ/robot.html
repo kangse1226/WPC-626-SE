@@ -8,22 +8,26 @@
     <link rel="stylesheet" href="./css/robot.css" />
   </head>
   <body>
-    <!-- 1. 상단영역 헤더는 디아이브이친구임-->
+    <!-- 1. 상단영역: 헤더는 디아이브이친구임-->
     <!-- #top-area>header.top-area -->
     <div id="top-area">
-      <header class="top-area"></header>
+      <header class="top-area">
+         <!-- 1-1.로고 -->
+        <h1 class="logo">RaBBiN</h1>
+        <!-- 1-2.탑이동버튼 -->
+        <button class="btn-top">
+          <!-- #을 넣으면 위로감??????????????? -->
+          <a href="#">TOP</a>
+        </button>
+      </header>
     </div>
-    <!-- 2. 메인영역 메인은 한번밖에 못씀-->
+
+    <!-- 2. 메인영역: 메인은 한번밖에 못씀-->
     <!-- #main-area>main.main-area -->
     <div id="main-area">
       <main class="main-area">
-        <!-- 대사 -->
-            <div class="talk-box1">  쇼비맙!</div>
-             <div class="talk-box2"> 당신의 미적 감각은 <br> 도저히 눈뜨고 봐줄 수가 없군요!</div>
-             <div class="talk-box3"> 펜을 클릭하십시오. </div>
-          </div>
 
-          <!-- 큐브 : 정육면체 -->
+    <!-- 큐브 : 정육면체 -->
     <div class="cube rotate-cube">
         <span></span>
         <span></span>
@@ -32,9 +36,21 @@
         <span></span>
         <span></span>
     </div>
-    
+        
         <!-- 2-1. 로봇박스 -->
         <section class="robot-box">
+          <!-- 2-1-0.로봇말풍선 -->
+          <a
+            href="#text-box"
+            class="link-title"
+          >
+            안내문을 숙지하십시오.
+          </a>
+              <!-- 토끼 대사 -->
+            <div class="talk-box1">  쇼비맙!</div>
+             <div class="talk-box2"> 당신의 미적 감각은 <br> 도저히 눈뜨고 봐줄 수가 없군요!</div>
+            
+          
           <!-- 2-1-1. 로봇머리 -->
           <div class="robot-head">
             <!-- 얼굴 -->
@@ -87,6 +103,8 @@
             
         </section>
         <!-- 위 섹션박스가 로봇 토끼 꾸미기 -->
+
+
 
         <!-- 아래 섹션부터 설명 -->
         <!-- 2-2. 설명박스 -->
@@ -216,12 +234,15 @@
           </article>
         </section>
       </main>
+      
     </div>
     <!-- 3. 하단영역 -->
     <!-- #bottom-area>footer.bottom-area -->
     <div id="bottom-area">
       <footer class="bottom-area">
-        <!-- 3-1. 회사소개 -->
+        <!-- 3-1. 회사정보 -->
+         Rabbitronics Inc.
+
       </footer>
     </div>
   </body>
