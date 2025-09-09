@@ -105,7 +105,7 @@ body {
     - 회전부터 해라! */
   transform: rotateY(-90deg) translateZ(150px);
   /* 배경이미지 */
-  background: url(../images/logo.webp) no-repeat center/cover;
+  background: url(../images/logo.webp) no-repeat center/100% 100%;
 }
 /* 큐브의 윗면: 5번째 큐브 앞면 */
 .cube span:nth-child(5) {
