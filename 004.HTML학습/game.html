@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메이플스토리 유사 게임 웹사이트 기획안</title>
+<script>
+  if ( window.location.search.match(/print-pdf/gi) ) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'path/to/reveal.js/css/print/pdf.css'; // 경로 확인 필요
+    document.getElementsByTagName('head')[0].appendChild(link);
+  }
+</script>
+
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
         
@@ -474,13 +485,7 @@
         });
     </script>
 </body>
-</html></h4>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-
+</html>
         <!-- 슬라이드 3: 사용자 유형 구분 -->
         <div class="slide hidden" id="slide3">
             <div class="slide-header">
