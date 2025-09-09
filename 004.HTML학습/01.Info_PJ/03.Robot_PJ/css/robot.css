@@ -43,9 +43,9 @@ h1.logo{
   left: 2vw;
   /* max는 두값중 큰값을 출력함(결과적으로 최소값설정) */
   /* 백픽셀보다 안작아짐->즉 백픽셀이 최솟값임. 민 맥스 헷갈리지만 잘 생각해봐! */
-  width: max(10vw,100px);
+  width: max(8vw,80px);
 
-  height: max(10vw,100px);
+  height: max(8vw,80px);
 
   border-radius: 50%;
   z-index: 999;
@@ -57,9 +57,9 @@ h1.logo{
 
   /* 글자설정 */
   text-align: center;
-  line-height: 20vw;
+  line-height: 10vw;
   font-family: 'Orbitron';
-  font-size: max(20px,2.5vw);
+  font-size: max(20px,1.8vw);
   color: rgb(243, 141, 236);
   text-shadow: 0 0 10px #000;
 }
@@ -197,43 +197,44 @@ h1.logo{
 */
 
 /* 토끼의 대사박스 */
+/* 소리치는말풍선 */
 .talk-box1{
   position: absolute;
-  left: 15%;
-  top: 5%;
-/* 소리치는말풍선 */
+  left: 15vw;
+  top: 5vh;
   width: 400px;
   height: 200px;
   background: url(../images/소리치는말풍선.png) no-repeat center/100% 100%;
   text-align: center;
 
   display: flex;
-  opacity: .8;
+  opacity: .7;
 
   /* 글자 */
   justify-content: center;
   align-items: center;
 
-  font-size: 3rem;
+  font-size: 4rem;
+  font-weight: bold;
+  font-style: italic;
   color: #ff0505;
   text-shadow: 1px 1px 1px #ffffff;
 
 }
+/* 나레이션 말풍선 */
 .talk-box2{
   position: absolute;
-  left: 15%;
-  top: 30%;
-
+ left: 25vw;
+  top: 18vh;
   width: 300px;
   height: 280px;
-  /* 나레이션 말풍선 */
   background: #cccccc00 url(../images/불길한말풍선.png) no-repeat center/100% 100%;
  text-align: center;
   display: flex;
  justify-content: center;
  align-items: center;
 
- scale: 0.8;
+ 
   /* 글자 */
   
   font-size: 1.6rem;
@@ -375,11 +376,11 @@ h1.logo{
 }
 
 /* 계속 왼귀 흔들기 */
-@keyframes ear1-moving-ani {
+/* @keyframes ear1-moving-ani {
   to{
     rotate: -12deg;
   }
-}
+} */
 
 /* 오른귀 */
 .ear2 {
@@ -393,11 +394,11 @@ h1.logo{
   animation: ear2-moving-ani 0.5s ease-in-out 2s infinite alternate;
 }
 /* 계속 오른귀 흔들기 */
-@keyframes ear2-moving-ani {
+/* @keyframes ear2-moving-ani {
   to{
     rotate: 12deg;
   }
-}
+} */
 
 /* 리본 */
 .robot-head > .ribbon {
@@ -501,10 +502,30 @@ h1.logo{
 }
 /* 왼팔 */
 .arm1 {
-  top: -7%;
+  /* top: -7%;
   left: -15%;
-  rotate: 60deg;
+  rotate: 60deg; */
+    /* top: 20%;
+    left: -4%;
+    rotate: 64deg;
+  transform-origin: 80% 10%; */
+
+  top: 34%;
+    left: -11%;
+    rotate: 64deg;
+    transform-origin: 103% 5%;
+/* 애니 호출 */
+  animation: hand1-moving-ani 0.5s ease-in-out 2s infinite alternate;
 }
+
+/* 계속 왼팔 흔들기 */
+@keyframes hand1-moving-ani {
+  to{
+    rotate: 102deg;
+  }
+}
+
+
 /* 오른팔 */
 .arm2 {
       top: -48%;
