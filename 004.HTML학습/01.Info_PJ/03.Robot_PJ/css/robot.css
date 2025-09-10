@@ -354,25 +354,27 @@ h1.logo{
 
 /* 귀 */
 .robot-head > .ear {
-  top: -45%;
-  width: 115px;
+  top: -50%;
+  width: 120px;
   height: 220px;
   /* border-radius: 60px 40px 0 0; */
   background: url(../images/fur.jpg) no-repeat center/cover;
   z-index: -2;
+  /* scale */
 }
 
 
 /* 왼귀 */
 .ear1 {
   left: 16%;
-  border-radius: 150px 60px;
+  border-radius: 60% 60%;
+  rotate: -10deg;
 
   /* 기준축변경 : 가로 세로 */
-  transform-origin: left bottom;
+  /* transform-origin: left bottom; */
   
   /* 애니 호출 */
-  animation: ear1-moving-ani 0.5s ease-in-out 2s infinite alternate;
+  /* animation: ear1-moving-ani 0.5s ease-in-out 2s infinite alternate; */
 }
 
 /* 계속 왼귀 흔들기 */
@@ -385,13 +387,14 @@ h1.logo{
 /* 오른귀 */
 .ear2 {
   right: 16%;
-  border-radius: 60px 150px;
+  border-radius: 60% 60%;
+  rotate: 10deg;
 
    /* 기준축변경 : 가로 세로 */
-  transform-origin: right bottom;
+  /* transform-origin: right bottom; */
   
   /* 애니 호출 */
-  animation: ear2-moving-ani 0.5s ease-in-out 2s infinite alternate;
+  /* animation: ear2-moving-ani 0.5s ease-in-out 2s infinite alternate; */
 }
 /* 계속 오른귀 흔들기 */
 /* @keyframes ear2-moving-ani {
