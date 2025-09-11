@@ -44,20 +44,20 @@
         /* 부모는? .bx-if */
         width: 15vw;
         height: 15vw;
-        outline: 5px dotted lightgreen;
+        outline: 5px dotted rgb(144, 194, 238);
         border-radius: 50%;
-        background: url(./images/ifshow.jpg) no-repeat;
+        background: url(./images/sanrio.png) no-repeat;
         /* 배경위치 : 처음에 안보임 */
         background-position: -50% 0%;
         /* 배경크기 */
-        background-size: 300%;
+        background-size: 550%;
 
         /* 트랜지션 : 배경위치만! */
         transition: background-position 1s;
       }
       /* 가상요소로 글자넣기 */
       .jshow::before {
-        content: "칭찬스티커";
+        content: "참 잘했어요";
         position: relative;
         z-index: -1;
         /* 글자를 배경보다 아래로 
@@ -65,15 +65,17 @@
         이때 포지션 있어야함! */
         line-height: 15vw;
         font-size: 2vw;
-        color: lightseagreen;
+        color: rgb(1, 162, 255);
         font-weight: bold;
       }
       /* 가상요소 하트 */
       .jshow::after {
-        content: "♥";
+        content: "😊";
         position: absolute;
         top: 2%;
-        left: 50%;
+        left: 45%;
+
+        scale: 0.7;
         /* 하트중앙이동 */
         transform: translateX(-50%);
         z-index: -1;
@@ -161,8 +163,9 @@
       id="local"
       placeholder="지역명을 '도'를 빼고 쓰세요!"
       maxlength="10"
+      onkeypress="if(event.keyCode===13)국번보여줘()"
     />
-    <button class="btn-local">국번문의</button>
+    <button class="btn-local" onclick="국번보여줘()">국번문의</button>
 
     <br /><br />
     <hr />

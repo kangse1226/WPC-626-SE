@@ -12,7 +12,56 @@
     <!-- 1. 상단영역 -->
     <div id="top-area">
       <header class="top-area inbox">
-        <h2 class="temp-tit">상단영역</h2>
+        <h2 class="temp-tit blind">상단영역</h2>
+        <!-- 상단영역 플렉스부모박스 : .cont-box -->
+        <div class="cont-box">
+          <!-- 상단영역의 .content-box가 플렉스 있는 부모박스가 되고, 
+           형제인 로고박스와 메뉴박스는 옆으로 흘러감
+          메뉴박스 안의 탑메뉴랑 지엔비메뉴를 같이 그룹으로 묶어주기 
+           컨알에이!로 한번에 싼다 -->
+           
+          <!-- 1-1. 로고박스 -->
+           <section class="log-box">
+            <h1 class="logo">
+              <a href="#">
+                <img src="./images/new_logo.png" alt="tvn 새 로고">
+              </a>
+            </h1>
+           </section>
+          <!-- 1-2. 메뉴박스 -->
+           <section class="menu-box">
+<!-- 탑메뉴와 지엔비메뉴를 그룹으로 묶는다 : 메뉴박스 하위 메뉴그룹박스 -->
+            <div class="menu-group">
+              <!-- 1-2-1. 탑메뉴 -->
+              <nav class="top-menu">
+                <!-- ul>li*3>a{탑메뉴} -->
+                <ul>
+                  <li><a href="">로그인</a></li>
+                  <li><a href="">회원가입</a></li>
+                  <li><a href="">검색</a></li>
+                </ul>
+              </nav>
+              <!-- 1-2-2. GNB메뉴 -->
+              <nav class="gnb-menu">
+                <!-- ul>li*9>a{GNB메뉴} -->
+                <ul>
+                  <li><a href="">GNB메뉴</a></li>
+                  <li><a href="">GNB메뉴</a></li>
+                  <li><a href="">GNB메뉴</a></li>
+                  <li><a href="">GNB메뉴</a></li>
+                  <li><a href="">GNB메뉴</a></li>
+                  <li><a href="">GNB메뉴</a></li>
+                  <li><a href="">GNB메뉴</a></li>
+                  <li><a href="">GNB메뉴</a></li>
+                  <li><a href="">GNB메뉴</a></li>
+                </ul>
+              </nav>
+            </div>
+            
+           </section>
+
+        </div>
+         
       </header>
     </div>
 
@@ -26,7 +75,7 @@
       <main class="main-area">
         <!-- 2-1. 배너 영역 -->
          <section class="banner-part">
-            <h2 class="temp-tit">배너 영역</h2>
+            <h2 class="temp-tit">배너영역</h2>
          </section>
 
         <!-- 2-2. 캐릭터소개 영역 -->
