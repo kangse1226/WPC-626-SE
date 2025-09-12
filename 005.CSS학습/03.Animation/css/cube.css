@@ -1,6 +1,35 @@
 @charset "utf-8";
 /* 큐브 애니메이션 CSS - cube.css */
 
+/**************************************** 
+            [ CSS에서 변수 사용하기 ]
+
+            1. 변수 셋팅법
+            :root{
+                --변수명1: 값1;
+                --변수명2: 값2;
+                --변수명3: 값3;
+            }
+                변수명은 유후-예에 이런식으로 짓기
+
+            2. 변수 호출 사용법
+            var(--변수명)
+
+            ->>> 변수는 언제 사용하나?
+            - 같은 값이 여러부분에서 사용될때
+            미디어쿼리 등에서 변경이 필요한 경우
+            변수값만 변경하면 복잡한 값변경이 대체됨!
+
+        ****************************************/
+:root{
+  /* 큐브사이즈 지정 */
+  --cube-size: 300px;
+
+  /* 큐브 트랜지션 값 -> 큐브랑 큐브스팬, 그림자 다 수정해야하니까 변수로 만들엇어*/
+  --cube-transition: .8s cubic-bezier(0.32, -0.99, 0.82, 2.21);
+  /* cubic-bezier를 브라우저에서 만져가지고 복사해오기 */
+}
+
 html,
 body {
   margin: 0;
@@ -16,11 +45,23 @@ body {
   /* cursor: url(이미지경로) 핫스팟, auto; */
   /* 핫스팟은 커서 포인트 위치 지정
   아무것도 안주면 0 0 설정됨
-  설정된 값이 커서 포인터 위치값이 됨-> 노션참고 */
+  설정된 값이 커서 포인터 위치값이 됨-> 노션참고
+   예)
+  cursor: url("../images/cursor.png") 10 10, auto;
+  참고설명:
+  https://cerulean-spy-f57.notion.site/17-265e4c9eb928809993f1c5c8511af64a */
 
 /* 회전하는 큐브를 더 입체감있게 보이게 하기 위해
 싸고 있는 부모에게 원근 설정 */
   perspective: 60vh;
+}
+
+/* 큐브 크기변경 버튼 */
+.btn-size {
+  font-size: 2vw;
+  padding: 1vw;
+  margin: 1vw;
+  border-radius: 1vw;
 }
 
 /* 큐브박스 만들기 */
@@ -31,8 +72,8 @@ body {
   left: 50%;
   translate: -50% -50%;
   /* 박스의 크기 */
-  width: 300px;
-  height: 300px;
+  width: var(--cube-size);
+  height: var(--cube-size);
   /* 만들때 보기 좋으라고 임시로 */
   /* outline: 1px solid rgb(255, 106, 106); */
 
@@ -52,6 +93,11 @@ body {
         -> z축을 사용가능하게 된다!
     *******************************************/
   transform-style: preserve-3d;
+
+  /* 사이즈변경 애니메이션을 위한 트렌지션 */
+  transition: var(--cube-transition);
+
+
 }
 /* 양수를 쓰면 반시계방향으로 움직임 */
 
@@ -69,12 +115,15 @@ body {
 
   /* 반투명 */
   opacity: 0.8;
+
+   /* 사이즈변경 애니메이션을 위한 트렌지션 */
+   transition: var(--cube-transition);
 }
 
 /* 첫번째 큐브 앞면 */
 .cube span:nth-child(1) {
   /* 화면 방향(z축)으로 이동하기 */
-  transform: translateZ(150px);
+  transform: translateZ(calc(var(--cube-size)/2));
   /* 배경이미지 */
   background: url(../images/KakaoTalk_20250818_120420582_02.png) no-repeat
     center/cover;
@@ -84,7 +133,7 @@ body {
   /* y축 회전 + 화면 방향(z축)으로 이동하기  -> 순서가 중요함! 
     적용순서에 따라 결과가 달라짐
     - 회전부터 해라! */
-  transform: rotateY(90deg) translateZ(150px);
+  transform: rotateY(90deg) translateZ(calc(var(--cube-size)/2));
 
   /* 배경이미지 */
   background: url(../images/KakaoTalk_20250818_120420582_03.png) no-repeat
@@ -97,7 +146,7 @@ body {
   /* y축 회전 + 화면 방향(z축)으로 이동하기  -> 순서가 중요함! 
     적용순서에 따라 결과가 달라짐
     - 회전부터 해라! */
-  transform: rotateY(180deg) translateZ(150px);
+  transform: rotateY(180deg) translateZ(calc(var(--cube-size)/2));
   /* 배경이미지 */
   background: url(../images/KakaoTalk_20250818_120420582_05.png) no-repeat
     center/cover;
@@ -107,14 +156,14 @@ body {
   /* y축 회전 + 화면 방향(z축)으로 이동하기  -> 순서가 중요함! 
     적용순서에 따라 결과가 달라짐
     - 회전부터 해라! */
-  transform: rotateY(-90deg) translateZ(150px);
+  transform: rotateY(-90deg) translateZ(calc(var(--cube-size)/2));
   /* 배경이미지 */
   background: url(../images/logo.webp) no-repeat center/100% 100%;
 }
 /* 큐브의 윗면: 5번째 큐브 앞면 */
 .cube span:nth-child(5) {
   /* 윗면에 오도록: x축으로 절한다고 생각하면 양의 숫자가 윗면! */
-  transform: rotateX(90deg) translateZ(150px);
+  transform: rotateX(90deg) translateZ(calc(var(--cube-size)/2));
   /* 배경이미지 */
   background: url(../images/KakaoTalk_20250905_121645396.png) no-repeat
     center/100% 100%;
@@ -122,7 +171,7 @@ body {
 /* 큐브의 아랫면: 6번째 큐브 앞면 */
 .cube span:nth-child(6) {
   /* 아랫면에 오도록 */
-  transform: rotateX(-90deg) translateZ(150px);
+  transform: rotateX(-90deg) translateZ(calc(var(--cube-size)/2));
   /* 배경이미지 */
   background: url(../images/KakaoTalk_20250905_121645396_01.png) no-repeat
     center/100% 100%;
@@ -159,3 +208,30 @@ body {
             y축 양의 방향으로 30도에서 출발
             양의 방향 360도+30도=390도
             음의 방향 -360도+30도=-330도 */
+
+/* 큐브의 바닥 그림자박스 */
+.shadow {
+  position: absolute;
+  bottom: 0; /* 바닥에 위치 */
+  left: 50%;
+  translate: -50% 0;
+ 
+  width: var(--cube-size);
+  height: var(--cube-size);
+  background: rgba(0,0,0,0.4);
+  border-radius: 20%;
+  transform: rotateX(90deg) scale(1.2, 0.6); /* 납작하게 눌림 */
+  filter: blur(25px);
+  animation: shadow-ani 3s linear infinite;
+
+  /* 사이즈 변경 애니를 위해 트랜지션넣기 */
+  transition: var(--cube-transition);
+}
+
+/* 큐브 바닥 그림자 키프레임 */
+@keyframes shadow-ani {
+  0% { transform: rotateX(90deg) scale(1.5, 0.6) rotateZ(0); }
+  50%   { transform: rotateX(90deg) scale(1.8, 0.4) rotateZ(180deg); }
+  100%   { transform: rotateX(90deg) scale(1.5, 0.6) rotateZ(360deg); }
+}
+

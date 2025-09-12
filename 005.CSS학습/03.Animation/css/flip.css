@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 아이폰 회전 애니 CSS */
+/* 갤럭시플립 회전 애니 CSS */
 
 /* 웹폰트 */
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
@@ -12,27 +12,25 @@ body {
 
 body {
   height: 100vh;
-  background-image: linear-gradient(to bottom, #fff 20%, skyblue 40%, #fff);
+  background-image: linear-gradient(to bottom, #fff 20%, #0ee3d7 40%, #fff);
   /* 넘치는 자식요소 숨기기 */
   overflow: hidden;
 
   /* 회전하는 아이폰을 입체감있게 보이게 하기 위해서 원근 설정- 화면단위로!! */
-  perspective: 100vh;
+  perspective: 50vh;
 }
 
 /* 아이폰박스 */
-.iphone {
+.zflip {
   position: absolute;
   /* 박스 정중앙 보내기 */
-  top: 50% ;
-  left: 50%;
-  translate: -50% -50%;
- /* 가로크기 설정하지 않음 */
+top: 50%;
+left: 50%;
+translate: -50% -50%;
 
- /* 높이값이 보이는 화면의 60%크기이고, 가로세로비가 1:2 */
-  height: 60vh;
-  /* 비율 */
-  aspect-ratio: 1 / 2;
+  height: 5vh;
+aspect-ratio: 3/4; 
+/* 비율뭘로하지?ㅇ?ㅇ?? */
 
   /* 입체적용설정 */
   transform-style: preserve-3d;
@@ -40,14 +38,17 @@ body {
   /* 보기 편하게 회전적용 : x축 10도, y축 30도 */
   transform: rotateX(10deg) rotateY(30deg);
 
+  /* 사이즈 키우기 */
+  scale: 1.5;
+
   /* 임시선 */
   /* outline: 1px solid #000; */
 }
 /* 아이폰 각면 공통 */
-.iphone span {
+.zflip span {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 400px;
 
   /* 배경공통 */
   background-repeat: no-repeat;
@@ -57,13 +58,13 @@ body {
 }
 
 /* 1. 앞면 */
-.iphone span:nth-child(1) {
+.zflip span:nth-child(1) {
   background-image: url(../images/ip01.png);
   /* z축으로 10px 앞로 보내기 */
   translate: 0 0 10px;
 }
 /* 2. 뒷면 */
-.iphone span:nth-child(2) {
+.zflip span:nth-child(2) {
   background-image: url(../images/ip02.png);
 
   /* z축으로 10px 뒤로 보내기 */
@@ -72,7 +73,7 @@ body {
   rotate: y 180deg;
 }
 /* 3. 오른쪽면 */
-.iphone span:nth-child(3) {
+.zflip span:nth-child(3) {
   background-image: url(../images/ip03.png);
 
   /* 폰은 얇으니까 가로크기 재설정 */
@@ -85,7 +86,7 @@ body {
   rotate: y 90deg;
 }
 /* 4. 왼쪽면 */
-.iphone span:nth-child(4) {
+.zflip span:nth-child(4) {
   background-image: url(../images/ip04.png);
 
   /* 폰은 얇으니까 가로크기 재설정 */
@@ -98,7 +99,7 @@ body {
   rotate: y -90deg;
 }
 /* 5. 아랫면 */
-.iphone span:nth-child(5) {
+.zflip span:nth-child(5) {
   background-image: url(../images/ip05.png);
 
   /* 폰은 얇으니까 세로크기 재설정 */
@@ -111,7 +112,7 @@ body {
 }
 
 /* 6. 윗면 */
-.iphone span:nth-child(6) {
+.zflip span:nth-child(6) {
   background-image: url(../images/ip06.png);
 
   /* 폰은 얇으니까 세로크기 재설정 */
@@ -124,14 +125,15 @@ body {
 }
 
 /* 아이폰애니클래스 */
-.rotate-iphone {
+.rotate.zflip {
   /* 애니메이션적용 */
-  animation: iphone-ani 2s ease-in-out 1s 2 alternate;
+  animation: zflip-ani 2s ease-in-out 1s 2 alternate;
   /* 2초간, 처음과 끝을 천천히, 1초 기다린 후, 2번 실행, 반대방향 애니 세팅*/
 }
 
 /* 아이폰 회전 애니메이션 */
-@keyframes iphone-ani {
+
+@keyframes zflip-ani {
   to {
     /* 최종상태 */
     transform: rotateX(-350deg) rotateY(390deg);
@@ -143,14 +145,14 @@ body {
   /* 박스 포지션 */
   position: fixed;
   top: 2vh;
-
-  background: #000;
+  background: #ffc53c;
 }
 
 /* 글자박스 */
 .text-box {
   /* 플렉스박스 : ul과 ul도 옆으로 흐르게함 */
   display: flex;
+  
 
   /* 보이는 화면만큼 가로폭 */
   width: 100vw;
@@ -199,12 +201,13 @@ body {
   flex: 1;
   text-align: center;
   font-family: "Anton", sans-serif;
-  font-size: 3vw;
+  font-size: 1.5vw;
+  font-style: italic;
   /* outline: 2px dashed red; */
 
   /* 글자에 그라데이션 넣기: 3가지 세팅 필수!!! */
   /* 1. 배경색 그라데이션 넣기 또는 이미지 넣기 */
-  background-image: linear-gradient(to right, #0ee3d7, #0e24e3);
+  background-image: linear-gradient(to right, #0a0a0a, #ff0000);
   /* 2. 배경 클리핑 값 text로 설정 */
   background-clip: text;
   /* 3. 글자색 투명으로 설정 */
@@ -216,7 +219,7 @@ body {
   /* text-shadow: -5px -5px 1px rgb(27, 26, 29); */
   /* 질문?!?!@>@>@>@ 이렇게 하니까 그림자가 글자 위로 와여- 이건 클리핑한 글자라서 그럼
   그냥 그림자 주면 안되고 다르게!: 필터 드롭쉐도우 효과주기!!!!!!!!!! */
-  filter: drop-shadow(3px -3px 0px rgb(27, 26, 29));
+  filter: drop-shadow(3px 3px 7px rgb(255, 33, 33));
 
   /* 글자그림자를 text-shadow로 넣으면
   그라데이션 색 넣기 글자이므로 그림자가
