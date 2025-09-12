@@ -22,6 +22,20 @@ body * {
  .top-area .cont-box{
     justify-content: space-between;
  }
+/* 로고박스 */
+.logo-box{
+  width: 130px;
+  text-align: center;
+  padding: 10px 0;
+
+}
+
+/*메뉴박스 */
+.menu-box{
+    padding-right: 10px;
+}
+/* 질문: 배너제외한 모든 바디에 그냥 좌우 패딩 10px 넣으면 안되나여? -> 이게 정석인데 (공통은 공통처리)
+지금 연습중이라 한파트씩 만들다보니...*/
 
  /* 메뉴그룹 플렉스 */
  .menu-group{
@@ -37,6 +51,21 @@ body * {
      display: flex;
      font-size: 1.8rem;
  }
+
+/* 탑메뉴 */
+.top-menu ul{
+    font-size: 1.6rem;
+    gap: 2rem;
+}
+/* GNB메뉴 */
+.gnb-menu ul{
+    font-size: 1.8rem;
+    gap: 3.2rem;
+
+}
+
+
+
 
  /************************ 1.5. 드라마파트 메뉴  ************************/
  /************************ 2. 메인영역  ************************/
