@@ -12,7 +12,7 @@ body {
 
 body {
   height: 100vh;
-  background-image: linear-gradient(to bottom, #fff 20%, #0ee3d7 40%, #fff);
+  background-image: linear-gradient(to bottom, #fff, #883b3b 50%, #fff);
   /* 넘치는 자식요소 숨기기 */
   overflow: hidden;
 
@@ -29,7 +29,7 @@ left: 50%;
 translate: -50% -50%;
 
   height: 5vh;
-aspect-ratio: 3/4; 
+/* aspect-ratio: 3/4;  */
 /* 비율뭘로하지?ㅇ?ㅇ?? */
 
   /* 입체적용설정 */
@@ -38,13 +38,10 @@ aspect-ratio: 3/4;
   /* 보기 편하게 회전적용 : x축 10도, y축 30도 */
   transform: rotateX(10deg) rotateY(30deg);
 
-  /* 사이즈 키우기 */
-  scale: 1.5;
-
   /* 임시선 */
   /* outline: 1px solid #000; */
 }
-/* 아이폰 각면 공통 */
+/* 폰 각면 공통 */
 .zflip span {
   position: absolute;
   width: 200px;
@@ -125,7 +122,7 @@ aspect-ratio: 3/4;
 }
 
 /* 아이폰애니클래스 */
-.rotate.zflip {
+.zflip {
   /* 애니메이션적용 */
   animation: zflip-ani 2s ease-in-out 1s 2 alternate;
   /* 2초간, 처음과 끝을 천천히, 1초 기다린 후, 2번 실행, 반대방향 애니 세팅*/
@@ -191,7 +188,8 @@ aspect-ratio: 3/4;
 
   /* 초기화 */
   margin: 0;
-  padding: 0;
+  /* 패딩말고 간격 넓히는 다른 방법없을까? 질문 */
+  padding: 7px;
   list-style: none;
 }
 /* 글자박스 ul li */
@@ -207,7 +205,7 @@ aspect-ratio: 3/4;
 
   /* 글자에 그라데이션 넣기: 3가지 세팅 필수!!! */
   /* 1. 배경색 그라데이션 넣기 또는 이미지 넣기 */
-  background-image: linear-gradient(to right, #0a0a0a, #ff0000);
+  background-image: linear-gradient(to bottom, #0a0a0a, #ff0000);
   /* 2. 배경 클리핑 값 text로 설정 */
   background-clip: text;
   /* 3. 글자색 투명으로 설정 */
