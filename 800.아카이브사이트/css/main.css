@@ -5,6 +5,10 @@
 @import url(./reset.css);
 @import url(./core.css);
 
+html{
+  font-size: 10px;
+
+}
 /* 전체 배경 */
 body {
   background-color: #000000;
@@ -25,7 +29,7 @@ body {
 /* 로고이미지 */
 .logo {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 /* GMB 메뉴 */
@@ -83,7 +87,7 @@ a.my-cha-link {
 }
 
 .my-cha-link img {
-  height: 100px;
+  height: 70px;
 }
 
 /* 마우스 오버시 이미지 교체하기 */
@@ -106,37 +110,53 @@ a.my-cha-link {
   color: #ffffff;
 }
 
+
 /* 2-1. 자기소개 박스 */
 /* 자기소개 겉박스 */
 #intro-box {
   /* 가로폭 끝까지 그라데이션 나오게 하기 위해 겉박스에 세팅함 */
-  background-image: linear-gradient(to bottom, #f9c2b7, rgb(0, 0, 0));
+  background-image: linear-gradient(to top, #112D4E, #FF9494);
+
 }
 /* 자기소개 속박스 */
 .intro-box {
   /* 위아래 패딩 */
   padding: 136px 93px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 /* 자기소개글 타이틀 */
 .intro-box .txt-box h2 {
   color: #ffffff;
   font-weight: normal;
-  font-size: 40px;
+  font-size: 4rem;
   margin-bottom: 30px;
   font-style: italic;
+}
+/* 미디어쿼리: 텍스트박스이동 */
+@media (max-width: 1500px) {
+  .intro-box {
+    flex-direction: column;
+    gap: 5vh;
+  }
+  
 }
 
 /* 자기소개글 내용 타이틀 */
 .intro-box .txt-box p {
   color: #d4d0d0;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 2rem;
+  line-height: 3rem;
+  min-width: 397px;
 }
 
 /* 자기소개 이미지 박스 */
 .img-box {
   height: 428px;
+  max-height: 100%;
   border-radius: 27px;
   /* 모퉁이 부분 이미지 숨김 */
   overflow: hidden;
@@ -150,6 +170,10 @@ a.my-cha-link {
 }
 
 /* ************2-2. 나의 프로젝트 박스 */
+.pj-box{
+   background-image: linear-gradient(to bottom, #112D4E, #1B262C);
+}
+
 /* 공통 pj박스 직계 속 박스 div */
 .pj-box > div {
   /* padding-top:31px; */
@@ -236,7 +260,7 @@ core.css의 clb 클래스로 처리함! */
   right: 0;
   /* 부모는? .left-part가 렐러티브여서 부모ㅇㅇ */
   width: 0.5px;
-  height: 90%;
+  height: 70%;
   background-color: #535252;
 }
 
@@ -270,7 +294,7 @@ core.css의 clb 클래스로 처리함! */
   /* 마진값으로 돌아올 때 오른쪽으로 나가는 것처럼 보이기 */
   margin-left: 100%;
   /* 마진값의 %는 부모박스 (a요소)의 가로크기다! */
-  height: 3px;
+  height: 1.7px;
   background-color: #e9adad;
   /* 트랜지션 */
   transition: 0.5s linear;
@@ -302,22 +326,22 @@ core.css의 clb 클래스로 처리함! */
   /* 마진값의 %는 부모박스 (a요소)의 가로크기다! */
   height: 30px;
   /* 기차철길처럼보이게 */
-  border-bottom: 2px dashed #666565;
+  /* border-bottom: 2px dashed #666565; */
   /* 기차철길 대신 다른 걸로 바꿈*/
-  border-bottom: 3px solid #31c473;
+  border-bottom: 2px solid #31c473;
 
   /* 트랜지션 */
   transition: 2s linear;
 
   /*  gif 애니메이션 이미지를 배경으로 넣기 */
-  background: url(../images/train.gif) no-repeat right/auto 100%;
+  /* background: url(../images/train.gif) no-repeat right/auto 100%; */
   /* 이미지 x축 뒤집기 (스케일값이 음수가 되면 뒤집어진다)
   -> trnasform:scaleX(-1)
   참고: Y축 뒤집기는 트랜스폼:스케일대문자와이(-1) */
   /* transform: scaleX(-1); */
 
   /* 기차대신 뉴진스로고로 변경함- 방향반대로 할필요없으 */
-  background: url(../../005.CSS학습/뉴진스/로고\ \(1\).png) no-repeat left/auto 60%;
+  background: url(../../005.CSS학습/뉴진스/logo.png) no-repeat left/auto 60%;
 }
 /* a에 오버시 가상요소 글씨만큼 늘어나기 */
 .link-box a:hover::before {
