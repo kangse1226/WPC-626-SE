@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CGV 애니메이션 극장판!!</title>
+    <!-- 폰트어썸 아이콘 CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <!-- 메인 CSS -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- 미디어쿼리 CSS : 
+     덮어쓸 수 있게 메인 CSS 아래쪽에 위치해야함! -->
+    <link rel="stylesheet" href="./css/media.css" />
+    
+
+    <!-- 추가 기능 JS 외부파일
+     defer속성은 html태그 로딩후 실행함! -->
+     <script src="./js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- 1. 상단영역 -->
+    <div id="top-area">
+      <header class="top-area inbox"></header>
+    </div>
+    <!-- 2. 메인영역 -->
+    <div id="main-area">
+      <main class="main-area inbox">
+        <!-- 스크린박스 -->
+         <div class="screen"> 
+          <!-- 유튜브 아이프레임 -중앙화면 자동재생-->
+          <iframe src="https://www.youtube.com/embed/8p1VNDiI4WM?autoplay=1&mute=1&loop=1&playlist=8p1VNDiI4WM" allow="autoplay"></iframe>
+
+          <!-- 사이드 스크린박스 양쪽 -->
+          
+          <div class="side-screen">
+         <!-- 사이드 스크린박스 왼쪽 -->
+           <div class="side-screen1">
+          </div>
+         <!-- 사이드 스크린박스 오른쪽 -->
+           <div class="side-screen2">
+         </div>
+         </div>
+      </main>
+    </div>
+    
+    <!-- 3. 하단영역 -->
+    <div id="bottom-area">
+      <footer class="bottom-area inbox"></footer>
+    </div>
+    
+  </body>
+</html>
