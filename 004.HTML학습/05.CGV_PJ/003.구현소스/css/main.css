@@ -14,65 +14,164 @@ body {
 }
 
 /* 공사중 표시 : 구현시 박스표시 */
+/* 아웃라인은 아무런 영향이 없음 */
 /* *별표시는 모든요소를 선택함 */
-body * {
-  /* 아웃라인은 아무런 영향이 없음 */
+/* body * {
   outline: 2px dashed #ccc;
-}
+} */
 
 /*************** 1. 상단영역 ***************/
-.top-area{
+.top-area {
   height: 80px;
-
 }
 
 /*************** 2. 메인영역 ***************/
 
-.main-area{
+.main-area {
   position: relative;
   /* 자식요소들의 부모자격 */
 
   /* 부모에게 원근주기 */
-     perspective: 1000px;
-  height: 788px;
+  perspective: 1000px;
+  /* 최대높이값지정 */
+  /* mah788 */
+  max-height: 788px;
+
+  /* 비율박스 생성- 높이값 주지 않고 가로에 따라 비율 자동조절 */
+  aspect-ratio: 1200/788;
+  /* height: 788px; */
+
   /* 극장배경이미지 넣기 */
   background: url(../images/bg.jpg) no-repeat center top/cover;
 }
 
 /* 중앙 스크린박스 */
-.screen{
+.screen {
   position: absolute;
-    top: 17.3%;
-    left: 21.4%;
-    width: 58.3%;
-    height: 50.4%;
-    /* 비율유지박스만들거라서 퍼센트로!!!! */
+  top: 17.3%;
+  left: 21.4%;
+  width: 58.3%;
+  height: 50.4%;
+  /* 비율유지박스만들거라서 퍼센트로!!!! */
   background-color: rgb(0, 0, 0);
 }
 
 /* 스크린박스 하위 아이프레임 */
-.screen iframe{
+.screen iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
 
-/* 사이드 스크린박스 */
-
-.side-screen1{
+/* 2-2. 포스터 메뉴박스 */
+.poster-menu-box{
   position: absolute;
-   top: 0.3%;
-    left: -89.6%;
-    width: 89.3%;
-    height: 99.4%;
-    /* 비율유지박스만들거라서 퍼센트로!!!! */
-  background-color: rgb(255, 22, 22);
+  /* 포스터 메뉴박스 크기 조절 */
+    width: 66%;
 
-   transform-origin: right;
-  rotate: y 60deg;
+    /* 위치 조정 */
+  bottom: 5%;
+  /* 가로방향중앙 */
+  left: 50%;
+  translate:-50%;
 }
 
+/* 포스터메뉴박스 ul */
+.poster-menu-box ul{
+  display: flex;
+  gap: 1.7%;
+
+  /* 자식 li를 입체감있게 회전시키기 위해 부모박스에 원근설정. 보이는 화면의 70% */
+  perspective: 70vh;
+}
+
+/* 포스터 이미지 크기 조절 */
+.poster-menu-box img{
+
+  width: 100%;
+  /* height: 100%; */
+  aspect-ratio: 99/140;
+}
+/* 영화포스터 리스트 li가 영화정보박스의 부모 */
+.poster-menu-box li{
+  position: relative;
+  overflow: hidden;
+  /* 1주면 똑같이 등분 */
+  flex: 1;
+
+  /* x축으로 회전, 기준축 하단으로 변경- 원근설정은 부모박스에게 */
+  rotate: x 40deg;
+  transform-origin: bottom;
+
+  /* 트랜지션 */
+  transition: rotate .3s ease-in-out;
+
+}
+/* li에 오버시 변경 */
+.poster-menu-box li:hover{
+  /* 일어남! */
+  rotate: x 0deg;
+  /* 외곽선 */
+  outline: 1px solid #fff;
+  /* 가려지지 않게 설정 */
+  z-index: 1;
+}
+
+/* 영화정보박스*/
+.movie-info{
+  position: absolute;
+    /* 아래쪽에 내려가 있음! */
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* 반투명 검정배경 */
+  background-color: rgba(0 0 0/ 0.745);
+  text-align: center;
+  
+  /* 플렉스박스 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4%;
+  
+  /* 글자 */
+  /* 웹폰트체 적용 */
+  font-family: 'Jua', sans-serif;
+  /* 글자크기*/
+  font-size: min(1.4vw,14px);
+  /* 줄바꿈방지 */
+  white-space: nowrap;
+  /* 자간조절 */
+  letter-spacing: -1px;
+  /* 단어간격 */
+  /* word-spacing: 2px; */
+
+ /* 볼드체 해제!: h태그는 기본적으로 볼드여서 해제해야함 */
+  font-weight: normal;
+
+  /* 트랜지션 - li박스 x축 0.5s 회전 후 작동 */
+  transition: top .2s ease-out 0.5s;
+
+}
+
+/* 영화정보박스 li:hover */
+.poster-menu-box li:hover .movie-info{
+  top: 0;
+}
+
+
+/* 영화정보 중 타이틀 */
+.movie-info h2{
+  color: #00a985 ;
+  font-size:min(2vw,19px) ;
+}
+
+
+
 /*************** 3. 하단영역 ***************/
-.bottom-area{
+.bottom-area {
   height: 100px;
 }

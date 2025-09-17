@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CGV 애니메이션 극장판!!</title>
+    <title>내가 좋아하는 영화</title>
+    
     <!-- 폰트어썸 아이콘 CDN -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.postern.css"
     />
 
     <!-- 메인 CSS -->
@@ -33,17 +34,70 @@
          <div class="screen"> 
           <!-- 유튜브 아이프레임 -중앙화면 자동재생-->
           <iframe src="https://www.youtube.com/embed/8p1VNDiI4WM?autoplay=1&mute=1&loop=1&playlist=8p1VNDiI4WM" allow="autoplay"></iframe>
-
-          <!-- 사이드 스크린박스 양쪽 -->
-          
-          <div class="side-screen">
-         <!-- 사이드 스크린박스 왼쪽 -->
-           <div class="side-screen1">
-          </div>
-         <!-- 사이드 스크린박스 오른쪽 -->
-           <div class="side-screen2">
          </div>
-         </div>
+          <!-- 2-2. 메뉴 박스 -->
+           <nav class="poster-menu-box">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="./images/poster1.webp" alt="플립!">
+                  <!-- 영화개요박스 :제목을 묶어주는 시멘틱태그 hgroup-->
+                   <hgroup class="movie-info">
+                    <h2>플립</h2>
+                    <h3>매들린 캐럴,<br>캘런 매콜리프</h3>
+                    <h4>로맨스</h4>
+                   </hgroup>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./images/poster2.webp" alt="케이팝데몬헌터스">
+                    <hgroup class="movie-info">
+                     <h2>케이팝데몬헌터스</h2>
+                     <h3>아덴 조,<br>메이 홍,<br>유지영</h3>
+                     <h4>어반판타지, 케이팝</h4>
+                    </hgroup>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/poster3.webp" alt="스파이더맨뉴유니버스">
+                <hgroup class="movie-info">
+                    <h2>스파이더맨:뉴유니버스</h2>
+                    <h3>셔메이크 무어,<br> 헤일리 스타인펠드</h3>
+                    <h4>판타지</h4>
+                   </hgroup></a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/poster4.webp" alt="인사이드아웃2">
+                <hgroup class="movie-info">
+                    <h2>인사이드아웃2</h2>
+                    <h3>에이미 폴러,<br> 마야 호크</h3>
+                    <h4>드라마</h4>
+                   </hgroup></a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/poster5.jpg" alt="타이타닉">
+                <hgroup class="movie-info">
+                    <h2>타이타닉</h2>
+                    <h3>레오나르도 디카프리오,<br> 케이트 윈슬렛</h3>
+                    <h4>재난, 로맨스 </h4>
+                   </hgroup></a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/poster6.jpg" alt="원더">
+                <hgroup class="movie-info">
+                    <h2>원더</h2>
+                    <h3>제이컵 트람블레이,<br> 줄리아 로버츠</h3>
+                    <h4>드라마</h4>
+                   </hgroup></a>
+              </li>
+              
+            </ul>
+           </nav>
       </main>
     </div>
     
