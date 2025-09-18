@@ -356,8 +356,30 @@ const 윤아 = new Object({
     별명: "융프로디테",
     소속사: "스엠",
     팬레터: function(){
-        alert('연지영 너무 좋아');
-    }, // 팬레터 메서드 ///
+        alert('연지영~~!!');
+   
+     console.log("this:", this);
+
+    // 변경대상 : this.style
+    let mycss = this.style;
+
+    // 1. 배경변경
+    mycss.background =
+      "url(./images/yuna.jpg) repeat-x top/auto 100%";
+    // 2. 글자색
+    mycss.color = "#fff";
+    // 3. 글자그림자
+    mycss.textShadow = "0 0 5px #000";
+    // 4. 줄간격변경
+    mycss.lineHeight = "84px";
+    // 5. 박스 확대
+    mycss.scale = "1.2";
+    // 6. 트랜지션
+    mycss.transition = "1s ease-out 1s";
+
+    // 7. 글자내용변경
+    this.innerText = `윤아 최고! 승승장구! 화이팅!!!`;
+  }, // 팬레터 메서드 ///
 }); /// 윤아 객체 ///
 
 console.log("윤아 객체:",윤아);
@@ -366,9 +388,298 @@ console.log("윤아 객체:",윤아);
 출력박스[3].innerHTML += `
 당신이 좋아하는 배우는? ${윤아["당신의 이름은?"]} <br>
 / 대표작을 아세요? ${윤아.대표작}<br>
-/ 별명을 아세요? ${윤아["별명"]}<br>
+/ 별명을 아세요? ${윤아["별명"]} / 
 생일은? ${윤아.생일}/ 키는? ${윤아.키}
 `; //html 출력////
 
 //줄간격이 2줄이 한박스에 나오게 40px로 변경하기
 출력박스[3].style.lineHeight = "40px";
+
+// 툴팁 넣기
+// 객체호출법 2가지 :
+// 1) 객체명.속성명
+// 2) 객체명[문자형속성명]
+출력박스[3].title = `여기를 클릭하여 ${윤아["너의 당신의 이름은?"]}팬레터를 확인하세요!`;
+
+// 손가락모양 커서
+출력박스[3].style.cursor = "pointer";
+
+//윤아 객체의 팬레터 메서드를 클릭할 때 실행
+출력박스[3].onclick = 윤아.팬레터;
+
+// 줄간격 24px로 변경
+출력박스[3].style.lineHeight = "24px";
+
+/***************************************
+  [ new 키워드 없이 바로 객체 생성하기 ]
+  -> 객체 리터럴 (추천방식!) @@@@@@@@@
+
+  - 방법: 변수 선언 후 이퀄 뒤에 바로 중괄호 사용!
+  예) let obj = {속성명:값,속성명:값,...};
+
+  [ 객체의 속성 셋팅시
+  문자형 또는 변수형 사용하기 ]
+
+  1. 문자형 속성 - 따옴표로 싸는 방법
+
+  예) let obj = {"나는나":"호호호","너는너":"하하하"}
+  -> 문자형 속성의 객체 호출시
+  객체명[문자형속성명]
+  예) obj["나는나"]
+
+  2. 변수형 속성 - 따옴표로 안싸는 방법
+  예) let obj = {name:"차은우",tall:"186cm"};
+  -> 변수형 속성의 객체 호출시
+  객체명.속성명
+  예) obj.name
+
+  또는
+
+  객체명["속성명"]
+  예) obj["name"]
+  -> 반드시 변수형 속성명을 따옴표로 싸서
+  문자형으로 표시해야함!
+  obj[name] -> 에러남!
+
+  -> 만약 문자형으로 설정된 경우에도
+  변수형으로 사용될 수 있는 문자면 변수형호출가능!
+  예) var obj = {"하하하":"나나나"}
+      obj["하하하"] 또는 obj.하하하
+
+***************************************/
+
+// 2-2. 객체리터럴로 객체 생성하기 //////
+const 공유 = {
+    name: "공유",
+  tall: "184cm",
+  weight: "74kg",
+  com: "매니지먼트숲",
+  work: "도깨비,부산행",
+  msgFn: function (txt, ele) {
+    // txt - 메시지, ele - 호출요소
+    // 1. 메시지 띄우기(호출확인!)
+    alert("팬레터:" + txt);
+
+    // this의 의미는?
+    // 1)만약 함수를 별도로 호출하였으면
+    // 객체안의 메서드이므로 객체자신임!
+    // 2)만약 이벤트설정이 직접 할당되었으면
+    // 호출한 요소 자신이 this임!
+
+        // -> 객체안의 메서드 내부에서의 this는 객체 자신임!
+    console.log("this:", this);
+    console.log("나자신전달값:", ele);
+
+    // 2. CSS변경하기 : ele - 호출한 요소 자신
+    let mycss = ele.style;
+
+    // 2-1.배경이미지넣기
+    mycss.background =
+      "url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Gong_Yoo_%28Sep_2016%29.png/250px-Gong_Yoo_%28Sep_2016%29.png) repeat-x top/auto 100%";
+
+    //2-2. 글자색
+    mycss.color = "#fff";
+
+    //2-3. 글자그림자
+    mycss.textShadow = "0 0 5px #000";
+
+    //2-4. 줄간격
+    mycss.lineHeight = "30px";
+
+    //2-5. 높이값 변경
+    mycss.height = "100px";
+
+    //2-6. 상단패딩
+    mycss.paddingTop = "100px";
+
+    //2-7. 트랜지션
+    mycss.transition =
+      "2s ease-in-out .5s";
+  },
+};//공유 객체//////
+
+// 5번째 출력박스에 공유 객체 내용 출력하기 ///
+출력박스[4].innerHTML = `
+저는 ${공유.name}입니다. 
+    몸무게는 비밀인데요 그래도 말씀드리자면
+    ${공유.weight}입니다. ㅎㅎㅎ <br>
+    제 대표작은 ${공유.work}입니다. <br>
+    제 소속사는 모르시는 분들이 많은데
+    ${공유.com}입니다. 빠이빠이~~!
+`;
+// 줄간격 24px로 변경
+출력박스[4].style.lineHeight = "24px";
+
+// 툴팁 띄우기 &
+// 공유 객체의 팬레터메서드를 클릭할때 실행
+출력박스[4].title = 
+`여기를 클릭하여 ${공유.name} 팬레터를 확인하세요!`;
+출력박스[4].style.cursor = "pointer";
+
+// 이벤트설정 메서드를 사용하여 이벤트 설정하기
+// addEventListener(이벤트명, 함수명)
+// 기존 이벤트 속성에 할당하여 이벤트 설정하는 것과 달리
+// 여러개의 같은 이벤트를 등록하여 쓸 수 있다!
+
+//기존방식 : 이벤트속성(예 onclick)에 함수 할당하기
+// 출력박스[4].onclick = 공유.msgFn;
+
+// 이벤트설정 메서드로 이벤트 설정하기!
+// -> 여기서는 공유.msgFn()에 값을 보내야 하므로
+// 익명함수에 안에 호출을 구현한다!
+출력박스[4].addEventListener("click", function(){
+  공유.msgFn("공유! /n차기작도 기대해요! 화이팅!!!",this);
+  // 이벤트 설정이된 자기자신을 this로 보낸다!
+}); /// addEventListener() ///
+
+/***************************************************
+    [ 미션 :  내가 만든 객체 활용하기 ]
+    1. 주제 : 영화정보
+    2. 조건 : 객체의 변수명을 자신만의 이름으로
+    작성함. 단, 속성명을 동일하게 작성할것!
+    (속성명을 샘플에서 정해줄 예정)
+    3.  객체를 쌤과 모두에게 공유하기!(라이브에 쏘기!)
+***************************************************/
+
+// 성은의 오브젝트!!!
+// 변경 가능하도록 let으로 선언!
+let 성은 = {};
+// 오브젝트 형만 리터럴로 만들고 객체내용은 아래에서 생성!
+
+// 1. 영화제목
+성은.title = "히든 피겨스";
+// 2. 감독
+성은.director = "데오도르 멜피";
+// 3. 배우
+성은.actor = "옥타비아 스펜서, 타라지 P.헨슨, 자넬 모네";
+// 4. 장르
+성은.genre = "드라마";
+// 5. 관람가
+성은.ratings = "12세";
+// 6. 예고편
+성은.trailer = function(){
+    console.log("예고편:영화아이디");
+  // 예고편 플레이 함수호출!
+  playMovie("ItSUOpH4A5w");
+};
+
+
+///////////////////////////////
+// 화면에 정보를 보여주는 함수 //
+///////////////////////////////
+const 영화정보보여줘 = function () {
+  // 함수호출 확인
+  console.log("영화정보!!!");
+
+  // 1. 출력대상: 출력박스[5]
+  // 2. 내용넣기
+  출력박스[5].innerHTML = `
+      🎬 영화명 : ${성은.title}
+      🎥 감독 : ${성은.director} <br>
+      😎 배우 : ${성은.actor}
+      📺 장르 : ${성은.genre}
+      🔞 등급 : ${성은.ratings}
+    `;
+
+  // 툴팁 보이기
+  출력박스[5].title = `클릭하시면 ${tomObj.title}예고편을 보실 수 있습니다!`;
+
+  // 예고편 메서드 호출
+  출력박스[5].onclick = tomObj.trailer;
+}; ////// 영화정보보여줘 함수 //////////
+
+// 출력박스 CSS조정하기
+출력박스[5].style.lineHeight = "34px";
+출력박스[5].style.cursor = "pointer";
+출력박스[5].style.fontSize = "20px";
+
+
+//6번째 박스에 영화정보 나오게
+영화정보보여줘();
+
+/*****************************************
+    함수명 : playMovie
+    기능 : 영화예고편 화면 띄우기
+*****************************************/
+function playMovie(mcode) {
+  // mcode 영화아이디
+  // 함수호출 및 전달값 확인
+  console.log(
+    "예고편입니다",
+    mcode
+  );
+
+  // 1. 대상선정 : #mvbox
+  let mvbox =
+    document.querySelector("#mvbox");
+
+  // 2. 영화박스에 아이프레임 넣기
+  mvbox.innerHTML = `
+    <div id="mv">
+      <!-- 유튜브 아이프레임 -->
+      <iframe src="https://www.youtube.com/embed/${mcode}?autoplay=1" allow="autoplay"></iframe>
+      <!-- 닫기버튼 -->
+      <button class="cbtn">×</button>
+    </div>
+            `;
+
+  // 3. 삽입된 동영상 박스 CSS설정하기
+  let mv =
+    document.querySelector("#mv");
+  let css = mv.style;
+
+  css.position = "fixed";
+  css.top = "50%";
+  css.left = "50%";
+  css.transform =
+    "translate(-50%, -50%)";
+  css.width = "700px";
+  css.height = "450px";
+  css.backgroundColor = "#000";
+
+  // 4. 아이프레임 CSS설정
+  let ifr = mv.querySelector("iframe");
+  let ifrcss = ifr.style;
+  ifrcss.border = "none";
+  ifrcss.width = "100%";
+  ifrcss.height = "100%";
+
+  // 5. 닫기버튼  CSS셋팅하기
+  let cbtn = mv.querySelector(".cbtn");
+  // style.cssText 로 셋팅하자!
+  // 개별셋팅과 차이점은 이 설정은 모든 style속성의
+  // CSS 설정을 덮어씀! 주의!!!
+  // 반면 한 속성씩 셋팅하는 것은 한껀씩 개별 업데이트됨!
+  cbtn.style.cssText = `
+    position : absolute;
+    top : 0;
+    right : -70px;
+    width : 50px;
+    height : 50px;
+    border : none;
+    color : #fff;
+    background-color : blue;
+    font-size : 40px;
+    font-weight : bold;
+    border-radius: 50%;
+    cursor : pointer;
+    line-height : 50px;
+  `;
+
+  // 6. 닫기버튼 클릭시 #mv 제거하기
+  cbtn.onclick = function () {
+    mv.remove();
+    // remove() 는 DOM 메서드임!
+    // 선택요소를 제거함!
+
+    // body 암전효과 클래스 on 제거하기
+    document.body.classList.remove(
+      "on"
+    );
+  }; //////// 닫기버튼 이벤트함수 ///////
+
+  // 7. body 요소에 클래스 on주기
+  // 동영상 배경 암전효과
+  document.body.classList.add("on");
+} ///////////// playMovie 함수 ///////////
+///////////////////////////////////////////
