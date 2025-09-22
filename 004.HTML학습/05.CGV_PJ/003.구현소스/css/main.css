@@ -21,6 +21,13 @@ body {
 } */
 
 /*************** 1. 상단영역 ***************/
+/* 상단영역 전체를 내려서 커텐사이 공백 제거 */
+#top-area{
+    position: relative;
+    translate: 0 100%;
+    z-index: 999;
+}
+
 .top-area {
   /* 부모자격 렐러티브! */
   position: relative;
