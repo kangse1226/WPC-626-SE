@@ -47,3 +47,47 @@ const 아이프레임 = document.querySelector('.screen iframe');
 document.querySelector('.screen iframe')
 .src = `https://www.youtube.com/embed/ckHwZNuV-wQ?autoplay=1`;"
 ></a> */
+
+
+//2. 포스터 메뉴 클릭시 클래스 on 넣기(나머지는 빼기)
+//2-1. 이벤트 대상 === 변경대상(지금은 이벤트 대상과 변경 대상이 같음. )
+//포스터 메뉴 a 링크가 이벤트 대상이자 변경대상
+// element의 el 이 변수명이 중요한건아님 헐이라고 써도 상관없음 그러나 앞으로 el쓰자
+
+//위에 forEach에 써도 되는데 지금은 분리해서 써봄
+링크.forEach((el, idx, arr)=>{
+    //(el- 각요소, idx-순번, arr-html컬렉션 유사배열)
+
+    //2-2. 이벤트 대상 === 변경대상 -> 포스터메뉴 a링크
+//el.onclick = () => {};
+// 만약 이렇게 onclick 이벤트 속성으로 세팅하게 되면 이전에 세팅된 onclick 이벤트 속성값이 지워진다
+//왜냐면 한 요소 안에 한개의 동일 이벤트 속성만 있기 때문!!!
+
+    //그래서!! 이벤트 등록 전문 이벤트 addEventListener()를 사용함!
+    el.addEventListener('click', ()=>{
+        //(1) 모든 li에 on 클래스 제거하기- 부모인 li로 올라가야함
+        arr.forEach(x => x.parentElement.classList.remove('on'));
+
+        //(2) 포스터 a링크의 부모인 li에 on넣기 //parentElement: a링크의 부모요소인 li
+        el.parentElement.classList.add('on');
+
+    }); //addEventListener()///
+        
+});////forEach 메서드////
+
+
+
+    
+    //2-3.  포스터메뉴 a링크의 부모인 li에 on넣기
+    
+    // el.parentElement.classList.add('on');
+    //-> 근데 위에 onclick있는데 여기 또 onclick 할당하면  덮어써져서 위가 날라감
+    //-> add event listener  으아악 이벤트를 기존 것 덮어쓰지 않고 따로 메모리 만들어!!
+    // 만약 이렇게 onclick 이벤트 속성으로 세팅하게 되면 이전에 세팅된 onclick 이벤트 속성값이 지워진다
+    //왜냐면 한 요소 안에 한개의 동일 이벤트 속성만 있기 때문!!!
+    //요소 안에 동일 속성 못써 예를 들면 <header class="classname1" class="classname2"></header> 이렇게 못쓰잖아 알지?
+
+
+// 확인용
+링크.forEach(헐=>console.log(헐));
+//-> 링크를 돌면서 변수 헐에 각 요소를 순서대로 전달한다. 
