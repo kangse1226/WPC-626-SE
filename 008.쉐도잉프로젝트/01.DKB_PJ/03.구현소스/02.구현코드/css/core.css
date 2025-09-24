@@ -76,13 +76,23 @@ body{
     padding: 10px;
 }
 
-/* 공통 서브타이틀 */
+/* 공통 서브타이틀 나는 sub-title 이렇게 짓기*/
 .stit{
+    margin-top: 80px;
     padding-bottom: 32px;
     font-size: 3.8rem;
     font-weight: normal;
 }
-
+/* 공통 서브타이틀 아이콘 가상요소 */
+.stit::before {
+  content: "";
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin-right: 20px;
+  vertical-align: middle;
+  background: url(../images/icons/icon1.png) no-repeat center/90% 100%;
+}
 /* IR(Images Replacement) 
 - 배경이미지 설명 숨기기 클래스 */
 .ir{
