@@ -1,3 +1,24 @@
+객체 요소 속성에서
+target과 currenttarget 차이 중요
+이벤트가 발생한게 currenttarget
+
+휠 내리면 뭐 나타나게 하고 그런 설정하려면
+/ 휠 이벤트 막기 테스트 ////
+window.addEventListener(
+  "wheel",
+  () => {
+    // 기본기능막기
+    e.preventDefault();   
+    console.log("휠~~~~");
+    // 배경색 변경
+    myFn.qs("body").style.backgroundColor = "lightcoral";
+  },
+  { passive: false }
+);
+// 이벤트막기할 경우 
+window, body, document일 경우에는! 막기를 할 수 없게 셋팅됨!
+// 이것을 쓰려면 이벤트 설정시 맨뒤에 {passive:false} 설정을 추가한다!
+
 그룹선택자와 자손선택자의 차이가 뭐지./??
 \
 
