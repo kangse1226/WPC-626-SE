@@ -5,7 +5,28 @@
     <title>Sibling(+) 선택자</title>
     <!-- jQuery library -->
     <script src="../jquery-3.6.3.min.js"></script>
+    <style>
+      body {
+        font-size: 3vw;
+      }
+      /* li 번호 지우기 */
+      li {
+        list-style: none;
+      }
+    </style>
     <script>
+            $(()=>{
+      $('.first').click((e)=>{
+        //여기서 function(){}사용시 this도 가능
+        //$('+li',e.target)도 됨
+      $(e.target).next().css({
+        fontSize:'2em',
+        color:'red',
+        transition:'all .4s'
+        }).text('으아아아악')
+      });//click
+
+            });//제이쿼리 코드 블록//////
     </script>
   </head>
 
@@ -14,57 +35,57 @@
       <nav>
         <ul class="list">
           <li class="first">나를 클릭해봐~!</li>
-          <li class="second">내가 커지지! ㅋㅋ</li>
-          <li class="third">난 뭥미?</li>
+          <li class="second">크런치 타코 슈프림</li>
+          <li class="third">제품교환권</li>
         </ul>
       </nav>
       <nav>
         <ul class="list">
           <li class="first">나를 클릭해봐~!</li>
-          <li class="second">내가 커지지! ㅋㅋ</li>
-          <li class="third">난 뭥미?</li>
+          <li class="second">크런치 타코 슈프림</li>
+          <li class="third">제품교환권</li>
         </ul>
       </nav>
       <nav>
         <ul class="list">
           <li class="first">나를 클릭해봐~!</li>
-          <li class="second">내가 커지지! ㅋㅋ</li>
-          <li class="third">난 뭥미?</li>
+          <li class="second">크런치 타코 슈프림</li>
+          <li class="third">제품교환권</li>
         </ul>
       </nav>
       <nav>
         <ul class="list">
           <li class="first">나를 클릭해봐~!</li>
-          <li class="second">내가 커지지! ㅋㅋ</li>
-          <li class="third">난 뭥미?</li>
+          <li class="second">크런치 타코 슈프림</li>
+          <li class="third">제품교환권</li>
         </ul>
       </nav>
       <nav>
         <ul class="list">
           <li class="first">나를 클릭해봐~!</li>
-          <li class="second">내가 커지지! ㅋㅋ</li>
-          <li class="third">난 뭥미?</li>
+          <li class="second">크런치 타코 슈프림</li>
+          <li class="third">제품교환권</li>
         </ul>
       </nav>
       <nav>
         <ul class="list">
           <li class="first">나를 클릭해봐~!</li>
-          <li class="second">내가 커지지! ㅋㅋ</li>
-          <li class="third">난 뭥미?</li>
+          <li class="second">크런치 타코 슈프림</li>
+          <li class="third">제품교환권</li>
         </ul>
       </nav>
       <nav>
         <ul class="list">
           <li class="first">나를 클릭해봐~!</li>
-          <li class="second">내가 커지지! ㅋㅋ</li>
-          <li class="third">난 뭥미?</li>
+          <li class="second">크런치 타코 슈프림</li>
+          <li class="third">제품교환권</li>
         </ul>
       </nav>
       <nav>
         <ul class="list">
           <li class="first">나를 클릭해봐~!</li>
-          <li class="second">내가 커지지! ㅋㅋ</li>
-          <li class="third">난 뭥미?</li>
+          <li class="second">크런치 타코 슈프림</li>
+          <li class="third">제품교환권</li>
         </ul>
       </nav>
     </div>

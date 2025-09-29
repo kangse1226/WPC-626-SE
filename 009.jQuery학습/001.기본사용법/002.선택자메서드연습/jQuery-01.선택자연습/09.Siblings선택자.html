@@ -5,8 +5,30 @@
     <title>Siblings(~) 틸드 선택자</title>
     <!-- jQuery library -->
     <script src="../jquery-3.6.3.min.js"></script>
+    <style>
+      li{
+        list-style: none;
+      }
+    </style>
     <script>
+$(()=>{
+$('li').css({
+  // li 초기값
+  width: '100px',
+  height: '50px'
 
+})//여기에 이어서 click설정하기
+.click((e)=>{
+$('~li', e.target).css({
+  width: '500px',
+  height: '300px',
+  background: 'url(./img/초롱핑.jpg) no-repeat center/cover',
+  transtion: 'all .4s'
+})
+});//click
+
+
+});//제이쿼리 코드 블록
     </script>
   </head>
 
