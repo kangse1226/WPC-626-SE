@@ -255,8 +255,8 @@
   /* height: 906px; */
 }
 /* 영역 서브제목 아이콘 가상요소로 앞에 넣기 */
-.real-part .stit::before {
-  background-image: url(../images/icons/icon2.png);
+.field-part .stit::before {
+  background-image: url(../images/rabbit2.png);
 }
 /* 현장포토 그리드박스 */
 .live-box ul {
@@ -286,7 +286,7 @@
 }
 /* 영역 서브제목 아이콘 가상요소로 앞에 넣기 */
 .poster-part .stit::before {
-  background-image: url(../images/icons/icon3.png);
+  background-image: url(../images/rabbit3.png);
 }
 /* 대표이미지 그리드박스 */
 .poster-box ul {
@@ -326,28 +326,37 @@
   padding-top: 1.4rem;
 }
 /***************** 2-7. 최신동영상영역 *****************/
+/* 영역 서브제목 아이콘 가상요소로 앞에 넣기 */
+.video-part .stit::before {
+  background-image: url(../images/rabbit5.png);
+}
 .video-part .cont-box {
   position: relative;
   /* 부모자격 - 이동버튼의 부모 */
 }
+/* 스와이퍼 적용 랩퍼박스 */
 .clip-box ul {
+  /*-> 스와이퍼에서 처리하므로
+  flex설정 불필요!
+  트랜지션주면 방해됨! 불필요!!!
+   
   position: relative;
-  left: 0; /* 이동초기값 */
+  left: 0; 
   display: flex;
-  /* gap: 0 2%; */
-  /* 트랜지션 */
-  transition: left 0.3s ease-out;
+  transition: left 0.3s ease-out; */
+
+    /* 선택 및 드래그 금지 */
   user-select: none;
   -webkit-user-drag: none;
 }
-
+/* 스와이퍼 리스트 .swiper-slide */
 .clip-box li {
-  flex-basis: 25%;
-  flex-shrink: 0;
+  /* flex-basis: 25%;
+  flex-shrink: 0;->플렉스 설정 불필요!!!  */
   /* 플렉스 gap 속성대신 패딩으로 처리!
     이유는? 드래그시 영역아웃현상때문! */
-  padding: 0 1.1%;
-  box-sizing: border-box;
+  /* padding: 0 1.1%;
+  box-sizing: border-box; */
 }
 
 /* 동영상 이미지박스 */
