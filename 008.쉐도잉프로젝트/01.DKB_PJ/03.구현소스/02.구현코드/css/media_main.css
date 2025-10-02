@@ -1,61 +1,126 @@
-@charset    "UTF-8";
+@charset "UTF-8";
 /* 메인 페이지 미디어쿼리 media_main.css */
+
+/* 미디어쿼리에서는 !important를 사용할 때가 있음 */
 
 /* 1360px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1360px) {
   /* 전체 inbox 양쪽패딩 */
-    .inbox{
-        padding: 0 3vw;
-    }
-    
+  .inbox {
+    padding: 0 3vw;
+  }
 }
 /* 1360px 이하 미디어쿼리 종료 */
 
 /* 1200px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1200px) {
   /* 전체 글자 크기 변경 */
-    html{
-        font-size: 9px;
-    }
-    
+  html {
+    font-size: 9px;
+  }
 }
 /* 1200px 이하 미디어쿼리 종료 */
 
-/* 1024px 이하 미디어쿼리 시작 */
-@media screen and (max-width: 1024px) {
-    /* 전체 글자 크기 변경 */
-        html{
-            font-size: 8px;
-        }
-         /* 미리보기 파트 : 한줄에 3개씩 */
-    .preview-area li {
-    width: calc((100% - 1.5% * 2) / 3);
-    }
+/* 질문 왜 1360 1200 1024 인겨?? */
 
-/* 현장포토, 대표포스터: 한줄에 3개씩 */
-    .live-box ul, .poster-box ul {
+/* 1024px 이하 미디어쿼리 시작 */
+
+@media screen and (max-width: 1024px) {
+  /* 전체 글자 크기 변경 */
+  html {
+    font-size: 8px;
+  }  
+  /* 상단영역 높이값 변경 */
+.top-area{
+    height: 60px;
+}  
+/* 로고박스 스케일변경 */
+.logo-box{
+    scale: 0.5;
+}
+  /* 모바일용 버튼 그룹박스 보이기 */
+.btn-group{
+display: flex;
+}
+  /* 전체메뉴 박스 변경: 모바일형으로 수정*/
+  .menu-box {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100vw;
+    /* width: 0; */
+    height: 100vh;
+    background-color: #fff;
+    padding-right: 0;
+       /* 처음에 메뉴박스 숨기기 */
+    /* overflow: hidden; */
+    /* 숨기지 말고 오른쪽에서 왼쪽 방향으로 등장하게 변경 */
+  }
+  /* 메뉴그룹 변경 */
+.menu-group {
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 10vh 5vw;
+}
+ /* 탑메뉴 변경 */
+  .top-menu ul {
+    width: 85vw;
+    line-height: 4;
+    margin-top: 5vh;
+    border-bottom: 3px solid #ff3131;
+  }
+  /* GNB 메뉴 변경 */
+  .gnb-menu ul {
+    margin-top: 5vh;
+    flex-direction: column;
+    font-size: 2.5vh;
+  }
+
+  /* about tvn만 색 변경 */
+  .gnb-menu ul li:nth-child(1) a {
+    color: #ff3131 !important;
+  }
+
+  /* 미리보기 파트 : 한줄에 3개씩 */
+  .preview-area li {
+    width: calc((100% - 1.5% * 2) / 3);
+  }
+
+  /* 현장포토, 대표포스터: 한줄에 3개씩 */
+  .live-box ul,
+  .poster-box ul {
     grid-template-columns: repeat(3, 1fr);
-    grid-row: auto;
-    }
+  }
+  /* 대표포스터 li 그리드 설정 초기화! */
+  .poster-box ul li {
+    /* 가상클래스로 설정된 li도 강제적용위해
+    !important 사용함! */
+    grid-row: auto !important;
+  }
+  /* 하단영역 플렉스 방향 변경 및 수직방향 정렬조정 */
+  #bottom-area .cont-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 /* 1024px 이하 미디어쿼리 종료 */
 
 /* 800px 이하 미디어쿼리 시작 */
-@media screen and (max-width: 800px){
-    /* 드라마소개파트 : 한줄에 하나씩 세로방향*/
-    .intro-part .cont-box{
-        flex-direction: column;
-    }
-    /* 미리보기 파트 : 한줄에 2개씩 */
+@media screen and (max-width: 800px) {
+  /* 드라마소개파트 : 한줄에 하나씩 세로방향*/
+  .intro-part .cont-box {
+    flex-direction: column;
+  }
+  /* 미리보기 파트 : 한줄에 2개씩 */
   .preview-area li {
     width: calc((100% - 1.5% * 1) / 2);
   }
   /* 현장포토 & 대표포스터 : 한줄에 2개씩 */
-  .live-box ul, .poster-box ul {
+  .live-box ul,
+  .poster-box ul {
     grid-template-columns: repeat(2, 1fr);
-    grid-row: auto;
-  
-}
+  }
 }
 /* 800px 이하 미디어쿼리 종료 */
 
