@@ -36,19 +36,22 @@ body{
 }
 /* 로고박스 */
 .logo-box {
-  /* 로고의 부모자격  */
   position: relative;
- 
-  width: 130px;
-  text-align: center;
-  padding: 10px 0;
-
-  display: flex;
-  flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
+  /* 큐브로고의 부모자격 */
+  width: 126px;
+  height: 100%;
+  z-index: 1;
 }
+/* 로고타이틀박스 */
+h1.logo {
+  position: relative;
+  /* 부모자격 */
+  height: 100%;
+
+  /* background-image: radial-gradient(#00000054, transparent 71%, transparent); -> 확정된 그라데이션
+  이미지 비트맵으로 출력하기 때문에 애니메이션 불가! */
+}
+
 
 
 /* 가상요소 박스 그림자 */
@@ -114,7 +117,7 @@ h1.logo::before {
   gap: 3.2rem;
 }
 
-.gnb-menu ul li:nth-child(4) ::after {
+/* .gnb-menu ul li:nth-child(4) ::after {
   content: "∨";
     display: inline-block;
     transform: scale(0.5, 0.3);
@@ -131,16 +134,22 @@ h1.logo::before {
     display: inline-block;
     transform: scale(0.5, 0.3);
     margin-left: 3px;
-}
+} */
 
 /* 상위메뉴 li 오버시 a요소 글자 빨간색 */
 .gnb-menu > ul > li:hover > a {
   color: #f92f2f;
 }
+/* 서브표시 화살표 */
+.gnb-menu i {
+  font-size: 1rem;
+  vertical-align: 0.3rem;
+}
 
 /* 서브메뉴 */
 .sub-menu {
   position: absolute;
+  /* left값과 width값%는 부모를 찾는다! */
   left: 0;
   width: 100%;
   box-sizing: border-box;
