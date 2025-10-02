@@ -8,8 +8,7 @@ body {
   background-image: linear-gradient(
     to bottom,
     lightcoral,
-    lightgreen,
-    lightblue
+    rgb(5, 72, 255)
   );
 }
 /* 타이틀 */
